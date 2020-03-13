@@ -16,9 +16,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Res\ball.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="RES\bmp0.bmp">
       <Filter>Resource Files</Filter>
     </None>
@@ -59,15 +56,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Res\corner.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="RES\eraser3.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\game.ico">
@@ -169,13 +157,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="RES\recs1.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\cat.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\player01\E\Mann01_Back_00.bmp">
@@ -212,9 +194,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\player01\E\Mann01_Right_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\bitmap4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Gnd_Grass01.bmp">
@@ -254,6 +233,69 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Gnd_Bridge01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_00.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_00.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_00.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_00.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Grass01d.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Lava01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Dirt01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Bridge01.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

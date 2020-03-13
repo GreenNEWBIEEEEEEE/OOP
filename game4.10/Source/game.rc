@@ -88,8 +88,6 @@ IDB_HELP                BITMAP                  "..\\res\\help.bmp"
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-IDB_TEST_CAT            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\GameFramework_Practices\\Ma\\test1\\game4.10\\RES\\cat.bmp"
-
 IDB_PLAYER01_UP1        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\GameFramework_Practices\\Ma\\test1\\game4.10\\RES\\player01\\E\\Mann01_Back_00.bmp"
 
 IDB_PLAYER01_UP2        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\GameFramework_Practices\\Ma\\test1\\game4.10\\RES\\player01\\E\\Mann01_Back_01.bmp"
@@ -125,14 +123,6 @@ IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
 IDB_CONTINUE            BITMAP                  "..\\res\\continue.bmp"
 
 IDB_CENTER              BITMAP                  "..\\res\\center.bmp"
-
-IDB_BALL                BITMAP                  "..\\res\\ball.bmp"
-
-IDB_ERASER3             BITMAP                  "..\\res\\eraser3.bmp"
-
-IDB_ERASER2             BITMAP                  "..\\res\\eraser2.bmp"
-
-IDB_ERASER1             BITMAP                  "..\\res\\eraser1.bmp"
 
 IDB_BACKGROUND          BITMAP                  "..\\res\\ntutcsie.bmp"
 
