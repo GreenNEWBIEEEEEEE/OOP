@@ -5,6 +5,7 @@ namespace game_framework {
 	{
 	public:
 		Player();
+		~Player();
 		void LoadBitmap();
 		void SetMovingLeft(bool flag);
 		void SetMovingRight(bool flag);
@@ -14,18 +15,16 @@ namespace game_framework {
 		void OnShow(CGameMap *m);
 
 	private:
+		// 玩家角色圖片寬高
 		int width, height;
-		// Position(left and top) based on "map", not screen
+		// 玩家在地圖上的座標(點座標)
 		int x, y;
 
-		// Animations for moving(walking)
-		CAnimation *facingDirection = nullptr;
+		// 移動的動畫
+		CAnimation *facingDirection = nullptr; // 指向當前面向的方向之動畫
 		CAnimation aniMoveLeft, aniMoveRight, aniMoveUp, aniMoveDown;
 
-		// Flags of States
+		// 狀態旗標 : 是否上/下/左/右移
 		bool isMovingLeft , isMovingRight, isMovingUp, isMovingDown;
-
-
-
 	};
 }

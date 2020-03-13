@@ -26,15 +26,13 @@ namespace game_framework
 		//
 		// Textures of ground:
 		//
-		// grass01
 		CMovingBitmap gndGrass01;
 		CMovingBitmap gndDirt01;
 		CMovingBitmap gndBridge01;
 		CAnimation gndWater01;
 		
 
-		// 2D array of map information
-		// value 0 : grass01
+		// ¤Gºû¸ê®Æ°}¦C
 		const int ROW;
 		const int COL;
 		int **map = new int*[ROW];

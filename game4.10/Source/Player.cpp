@@ -18,6 +18,11 @@ namespace game_framework {
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
+
+	Player::~Player() {
+		facingDirection = nullptr;
+	}
+
 	void Player::LoadBitmap()
 	{
 		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT1, RGB(255,255,255));
@@ -58,19 +63,26 @@ namespace game_framework {
 		isMovingDown = flag;
 	}
 
-	// MAYBE FIXME
+	// OnMove
+	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
 	void Player::OnMove(CGameMap *m)
 	{
+		// 每一步移動量
 		const int STEP_SIZE = 5;
 		
 		if (isMovingLeft)
 		{
+			// 當按下方向鍵時可先切換面向的方向, 不管之後是否有真的要移動
 			facingDirection->OnMove();
 			facingDirection = &aniMoveLeft;
+			// 偵測障礙物 或 不可踩上去的地圖格子
+			// 目前設定為 玩家的圖片是兩個垂直格子(80*120), 單個格子是80*60
+			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
 			if (m->IsEmpty(x - STEP_SIZE, y + 80) && m->IsEmpty(x - STEP_SIZE, y + 120))
 			{
 				x -= STEP_SIZE;
-				m->SetSX(m->GetSX() - STEP_SIZE); // Change sx, sy of map
+				// 移動時切換map在screen上的座標 從而達到screen或是鏡頭跟著玩家的視覺效果
+				m->SetSX(m->GetSX() - STEP_SIZE); 
 			}
 		}
 		if (isMovingRight)
@@ -109,6 +121,8 @@ namespace game_framework {
 	{
 		if (facingDirection != nullptr)
 		{
+			// 畫出當前面向的方向的動畫
+			// 用m計算出玩家的地圖點座標(x,y) 在 screen上的座標 因為最終是要在screen上畫
 			facingDirection->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
 			facingDirection->OnShow();
 		}

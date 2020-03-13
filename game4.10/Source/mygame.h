@@ -38,10 +38,6 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-#include "CEraser.h"
-#include "CBall.h"
-#include "CBouncingBall.h"
-#include "CCat.h"
 #include "Player.h"
 #include "CGameMap.h"
 
@@ -96,8 +92,8 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		Player p1;
-		CGameMap mainMap;
+		Player p1; // 主玩家
+		CGameMap mainMap; // 主地圖
 
 	};
 
