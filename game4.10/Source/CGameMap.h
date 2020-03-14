@@ -1,6 +1,5 @@
 namespace game_framework
 {
-	
 	class CGameMap
 	{
 	public:
@@ -8,24 +7,25 @@ namespace game_framework
 		~CGameMap();
 		void LoadBitmap();
 		void OnShow();
-
-		//
+		
+		// 提供玩家或角色判斷即將移動的位置是否能夠行走, 也就是是否有障礙物
+		// 因此, 玩家或角色的Class中需要做移動(OnMove)的，請將CGameMap當作參數傳入(詳見老師的講義MapIntroduction)
 		bool IsEmpty(int x, int y) const;
 		
-		// 
+		// 取得與設定CGameMap在screen的(left, top)點座標
 		int GetSX() const;
 		int GetSY() const;
 		void SetSX(int nx);
 		void SetSY(int ny);
 		void SetSXSY(int nx, int ny);
 
-		// Convert to screenX and screenY for player
+		// 為玩家或角色計算轉換在screen上的點座標
+		// 此工作應當由CGameMap完成
+		// 因此, 玩家或角色的Class中需要做繪圖(OnShow)的，請將CGameMap當作參數傳入(詳見老師的講義MapIntroduction)
 		int ScreenX(int x) const;
 		int ScreenY(int y) const;
 	private:
-		//
-		// Textures of ground:
-		//
+		// 地圖格元素
 		CMovingBitmap gndGrass01;
 		CMovingBitmap gndDirt01;
 		CMovingBitmap gndBridge01;
@@ -37,8 +37,8 @@ namespace game_framework
 		const int COL;
 		int **map = new int*[ROW];
 
-		int sx, sy; // The (left,top) of the screen base on this map
-		int gndW, gndH; // Width and height of a ground texture
+		int sx, sy; // CGameMap在screen上的(left, top)
+		int gndW, gndH; // 單格大小
 
 	};
 }

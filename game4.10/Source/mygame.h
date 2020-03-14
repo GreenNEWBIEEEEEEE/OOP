@@ -92,7 +92,10 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		Player p1; // 主玩家
+		//
+		// 遊戲主體的各式物件/資源宣告在此:
+		// 
+		Player p1; // 玩家1
 		CGameMap mainMap; // 主地圖
 
 	};

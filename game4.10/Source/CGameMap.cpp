@@ -1,7 +1,7 @@
-#include "stdafx.h"   // necessary
-#include "resource.h" // necessary
-#include <mmsystem.h> // necessary
-#include <ddraw.h>    // necessary
+#include "stdafx.h"
+#include "resource.h"
+#include <mmsystem.h>
+#include <ddraw.h>
 #include "gamelib.h"
 #include "CGameMap.h"
 
