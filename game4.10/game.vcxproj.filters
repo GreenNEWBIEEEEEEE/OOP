@@ -109,10 +109,10 @@
     <ClCompile Include="Source\mygame.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
+    <ClCompile Include="Source\CGameMap.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CGameMap.cpp">
+    <ClCompile Include="Source\CPlayer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -144,10 +144,10 @@
     <ClInclude Include="Source\mygame.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h">
+    <ClInclude Include="Source\CGameMap.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CGameMap.h">
+    <ClInclude Include="Source\CPlayer.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -38,7 +38,7 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-#include "Player.h"
+#include "CPlayer.h"
 #include "CGameMap.h"
 
 namespace game_framework {
@@ -95,7 +95,7 @@ namespace game_framework {
 		//
 		// 遊戲主體的各式物件/資源宣告在此:
 		// 
-		Player p1; // 玩家1
+		CPlayer p1; // 玩家1
 		CGameMap mainMap; // 主地圖
 
 	};

@@ -1,11 +1,11 @@
 namespace game_framework {
 
 	class CGameMap;
-	class Player
+	class CPlayer
 	{
 	public:
-		Player();
-		~Player();
+		CPlayer();
+		~CPlayer();
 		void LoadBitmap();
 		void SetMovingLeft(bool flag);
 		void SetMovingRight(bool flag);

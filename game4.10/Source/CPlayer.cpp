@@ -3,11 +3,11 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
-#include "Player.h"
+#include "CPlayer.h"
 #include "CGameMap.h"
 
 namespace game_framework {
-	Player::Player() :
+	CPlayer::CPlayer() :
 		aniMoveLeft(3),
 		aniMoveRight(3),
 		aniMoveUp(3),
@@ -19,11 +19,11 @@ namespace game_framework {
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
 
-	Player::~Player() {
+	CPlayer::~CPlayer() {
 		facingDirection = nullptr;
 	}
 
-	void Player::LoadBitmap()
+	void CPlayer::LoadBitmap()
 	{
 		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT1, RGB(255,255,255));
 		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT2, RGB(255, 255, 255));
@@ -42,30 +42,30 @@ namespace game_framework {
 		aniMoveDown.AddBitmap(IDB_PLAYER01_DOWN3, RGB(255, 255, 255));
 	}
 
-	void Player::SetMovingLeft(bool flag)
+	void CPlayer::SetMovingLeft(bool flag)
 	{
 		isMovingLeft = flag;
 		
 	}
 
-	void Player::SetMovingRight(bool flag)
+	void CPlayer::SetMovingRight(bool flag)
 	{
 		isMovingRight = flag;
 	}
 
-	void Player::SetMovingUp(bool flag)
+	void CPlayer::SetMovingUp(bool flag)
 	{
 		isMovingUp = flag;
 	}
 
-	void Player::SetMovingDown(bool flag)
+	void CPlayer::SetMovingDown(bool flag)
 	{
 		isMovingDown = flag;
 	}
 
 	// OnMove
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
-	void Player::OnMove(CGameMap *m)
+	void CPlayer::OnMove(CGameMap *m)
 	{
 		// 每一步移動量
 		const int STEP_SIZE = 5;
@@ -117,7 +117,7 @@ namespace game_framework {
 		}
 	}
 
-	void Player::OnShow(CGameMap *m)
+	void CPlayer::OnShow(CGameMap *m)
 	{
 		if (facingDirection != nullptr)
 		{
