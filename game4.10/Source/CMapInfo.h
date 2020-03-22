@@ -18,6 +18,7 @@ namespace game_framework {
 			void SetElementID(int elementID);
 			void AddEvent(vector<string> eventCode);
 			bool IsTriggerPoint();
+			int GetElementID();
 		private:
 			int elementID;
 			int gndW;

@@ -6,7 +6,10 @@ namespace game_framework {
 	class CMapTransitionEvent : public CEvent
 	{
 		public:
-			void OnShow(CGameMap *m);
+			CMapTransitionEvent(int mapID);
+			void Execute();
+		private:
+			int mapID;
 	};
 
 }

@@ -1,19 +1,18 @@
 #include <mmsystem.h>
-#include <ddraw.h>
-#include <fstream>
-#include <string>
 #include <vector>
+#include <string>
+#include <fstream>
+#include <ddraw.h>
 #include "gamelib.h"
 #include "CGameMap.h"
 #include "CMapInfo.h"
 #include "stdafx.h"
 #include "resource.h"
-
 namespace game_framework {
-	CGameMap::CGameMap(string path) : COL(9), ROW(8)
+
+	CGameMap::CGameMap(string filePath) : COL(9), ROW(8)
 	{
 		fstream mapFile;
-		string filePath = "";
 		string data = "";
 
 		mapFile.open(filePath, ios::in);
@@ -40,17 +39,6 @@ namespace game_framework {
 				}
 			}
 		}
-
-		int map_init[8][9] = {
-			{1, -1, 1, 1, 1, 1, 1, 1, 1},
-			{1, -1, 1, 1, 1, 1, 1, 1, 1},
-			{1, -1, -1, 1, 1, 1, 1, 1, 1},
-			{1, 1, -1, 1, 1, 1, 1, 1, 1},
-			{1, 1, 3, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 1, 1, 1, 1},
-		};
 
 		sx = sy = 10;
 		gndW = 80; gndH = 60;
@@ -111,7 +99,8 @@ namespace game_framework {
 			for (int j = 0; j < COL; ++j)
 			{
 				int x = (j * gndW) - sx, y = (i * gndH) - sy;
-				switch (map[i][j])
+				int elementID = map[i][j].GetElementID();
+				switch (elementID)
 				{
 				case 1:
 					gndGrass01.SetTopLeft(x, y);
@@ -143,7 +132,8 @@ namespace game_framework {
 	bool CGameMap::IsEmpty(int x, int y) const
 	{
 		int gx = x / gndW, gy = y / gndH;
-		return map[gy][gx] > 0;
+		int elementID = map[gy][gx].GetElementID();
+		return elementID > 0;
 	}
 
 
@@ -181,7 +171,8 @@ namespace game_framework {
 	{
 
 		int gx = x / gndW, gy = y / gndH;
-		if (map[gx][gy].IsTriggerPoint()) {
+		if (map[gx][gy].IsTriggerPoint())
+		{
 			
 		}
 	}

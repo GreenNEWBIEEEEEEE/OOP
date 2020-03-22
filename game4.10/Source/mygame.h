@@ -40,6 +40,7 @@
 
 #include "CPlayer.h"
 #include "CGameMap.h"
+#include <string>
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -87,7 +88,10 @@ namespace game_framework {
 		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
-		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作		
+		static CGameMap* mainMap; // 主地圖
+		static CGameMap map1("map.txt");
+		static CGameMap map2("map2.txt");
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -96,8 +100,6 @@ namespace game_framework {
 		// 遊戲主體的各式物件/資源宣告在此:
 		// 
 		CPlayer p1; // 玩家1
-		CGameMap mainMap; // 主地圖
-
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

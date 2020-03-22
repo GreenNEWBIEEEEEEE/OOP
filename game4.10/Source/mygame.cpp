@@ -216,7 +216,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	//
 	//
-	p1.OnMove(&mainMap);
+	p1.OnMove(mainMap);
 
 }
 
@@ -230,7 +230,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	// 開始載入資料
 	//
-	mainMap.LoadBitmap();
+	mainMap->LoadBitmap();
 
 
 	//
@@ -340,12 +340,12 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	mainMap.OnShow();
+	mainMap->OnShow();
 
 	//
 	//
 	//
-	p1.OnShow(&mainMap);
+	p1.OnShow(mainMap);
 
 }
 }

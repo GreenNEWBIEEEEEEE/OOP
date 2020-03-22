@@ -3,8 +3,6 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
-#include "CPlayer.h"
-#include "CGameMap.h"
 #include "CMapInfo.h"
 #include <string>
 
@@ -29,16 +27,24 @@ namespace game_framework{
 	{
 		for (vector<string>::iterator i = eventCode.begin(); i != eventCode.end(); i++)
 		{
+			/*
 			switch (stoi(*i))
 			{
 			case 1:
 
 			}
+			*/
 		}
+	}
+
+	int CMapInfo::GetElementID()
+	{
+		return elementID;
 	}
 
 	bool CMapInfo::IsTriggerPoint()
 	{
 		return mapEvents.size() > 0;
 	}
+
 }

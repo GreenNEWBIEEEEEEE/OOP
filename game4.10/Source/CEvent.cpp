@@ -8,7 +8,7 @@
 
 namespace game_framework {
 
-	void CMapTransitionEvent::OnShow(CGameMap *m)
+	void CMapTransitionEvent::Execute(CGameMap *m)
 	{
 
 	}

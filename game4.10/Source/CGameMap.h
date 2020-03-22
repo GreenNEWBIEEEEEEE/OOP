@@ -1,15 +1,13 @@
 #ifndef CGAMEMAP_H
 #define CGAMEMAP_H
-#include <vector>
-#include <string>
-#include "CMapInfo.h"
+
 
 namespace game_framework
 {
 	class CGameMap
 	{
 	public:
-		CGameMap(string path);
+		CGameMap(string filePath);
 		~CGameMap();
 		void LoadBitmap();
 		void OnShow();

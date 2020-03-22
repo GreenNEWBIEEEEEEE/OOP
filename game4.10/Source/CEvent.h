@@ -6,7 +6,7 @@ namespace game_framework{
 	class CEvent
 	{
 		public:
-			virtual void OnShow(CGameMap *m);
+			virtual void Execute() = 0;
 
 		private:
 
