@@ -1,9 +1,15 @@
+#ifndef CGAMEMAP_H
+#define CGAMEMAP_H
+#include <vector>
+#include <string>
+#include "CMapInfo.h"
+
 namespace game_framework
 {
 	class CGameMap
 	{
 	public:
-		CGameMap();
+		CGameMap(string path);
 		~CGameMap();
 		void LoadBitmap();
 		void OnShow();
@@ -24,7 +30,10 @@ namespace game_framework
 		// 因此, 玩家或角色的Class中需要做繪圖(OnShow)的，請將CGameMap當作參數傳入(詳見老師的講義MapIntroduction)
 		int ScreenX(int x) const;
 		int ScreenY(int y) const;
+
+		void Trigger(int x, int y);
 	private:
+		vector<string> SplitString(string& data, string delimiter);
 		// 地圖格元素
 		CMovingBitmap gndGrass01;
 		CMovingBitmap gndDirt01;
@@ -33,12 +42,13 @@ namespace game_framework
 		
 
 		// 二維資料陣列
-		const int ROW;
-		const int COL;
-		int **map = new int*[ROW];
+		int ROW;
+		int COL;
+		CMapInfo **map = new CMapInfo*[ROW];
 
 		int sx, sy; // CGameMap在screen上的(left, top)
 		int gndW, gndH; // 單格大小
 
 	};
 }
+#endif

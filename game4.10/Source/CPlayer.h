@@ -1,3 +1,5 @@
+#ifndef CPLAYER_H
+#define CPLAYER_H
 namespace game_framework {
 
 	class CGameMap;
@@ -13,7 +15,8 @@ namespace game_framework {
 		void SetMovingDown(bool flag);
 		void OnMove(CGameMap *m);
 		void OnShow(CGameMap *m);
-
+		
+		void OnKeyDown(UINT key, CGameMap *m);
 	private:
 		// 玩家角色圖片寬高
 		int width, height;
@@ -28,3 +31,4 @@ namespace game_framework {
 		bool isMovingLeft , isMovingRight, isMovingUp, isMovingDown;
 	};
 }
+#endif

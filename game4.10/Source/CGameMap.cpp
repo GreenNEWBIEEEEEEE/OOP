@@ -1,14 +1,46 @@
-#include "stdafx.h"
-#include "resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
+#include <fstream>
+#include <string>
+#include <vector>
 #include "gamelib.h"
 #include "CGameMap.h"
-
+#include "CMapInfo.h"
+#include "stdafx.h"
+#include "resource.h"
 
 namespace game_framework {
-	CGameMap::CGameMap() : COL(9), ROW(8)
+	CGameMap::CGameMap(string path) : COL(9), ROW(8)
 	{
+		fstream mapFile;
+		string filePath = "";
+		string data = "";
+
+		mapFile.open(filePath, ios::in);
+		getline(mapFile, data);
+		ROW = stoi(data);
+
+		getline(mapFile, data);
+		COL = stoi(data);
+		
+
+		for (int i = 0; i < ROW; i++)
+		{
+			getline(mapFile, data);
+			
+			for (int j = 0; j < COL; j++)
+			{
+				vector<string> grid = SplitString(data, ", ");
+
+				for (vector<string>::iterator k = grid.begin(); k != grid.end(); k++)
+				{
+					vector<string> mapInfo = SplitString(*k, " ");
+					map[i][j].SetElementID(stoi(mapInfo[0]));
+					map[i][j].AddEvent(mapInfo);
+				}
+			}
+		}
+
 		int map_init[8][9] = {
 			{1, -1, 1, 1, 1, 1, 1, 1, 1},
 			{1, -1, 1, 1, 1, 1, 1, 1, 1},
@@ -22,14 +54,11 @@ namespace game_framework {
 
 		sx = sy = 10;
 		gndW = 80; gndH = 60;
-		for (int i = 0; i < ROW; ++i)
-		{
-			map[i] = new int[COL];
-			for (int j = 0; j < COL; ++j)
-				map[i][j] = map_init[i][j];
-		}
+
 		gndWater01.SetDelayCount(15);
 	}
+
+
 
 	CGameMap::~CGameMap()
 	{
@@ -37,6 +66,20 @@ namespace game_framework {
 			delete [] map[i];
 		delete [] map;
 		map = nullptr;
+	}
+
+	vector<string> CGameMap::SplitString(string& data, string delimiter)
+	{
+		vector<string> mapInfo;
+		size_t pos = 0;
+		string token = "";
+		while ((pos = data.find(delimiter)) != string::npos)
+		{
+			token = data.substr(0, pos);
+			mapInfo.push_back(token);
+			data.erase(0, pos + delimiter.length());
+		}
+		return mapInfo;
 	}
 
 	void CGameMap::LoadBitmap()
@@ -132,5 +175,14 @@ namespace game_framework {
 	int CGameMap::ScreenY(int y) const
 	{
 		return y - sy;
+	}
+
+	void CGameMap::Trigger(int x, int y)
+	{
+
+		int gx = x / gndW, gy = y / gndH;
+		if (map[gx][gy].IsTriggerPoint()) {
+			
+		}
 	}
 }

@@ -255,7 +255,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
+    <ClCompile Include="Source\CEvent.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
+    <ClCompile Include="Source\CMapInfo.cpp" />
+    <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -300,7 +303,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
+    <ClInclude Include="Source\CEvent.h" />
     <ClInclude Include="Source\CGameMap.h" />
+    <ClInclude Include="Source\CMapInfo.h" />
+    <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />

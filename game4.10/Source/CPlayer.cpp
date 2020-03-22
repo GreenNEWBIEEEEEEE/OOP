@@ -127,4 +127,13 @@ namespace game_framework {
 			facingDirection->OnShow();
 		}
 	}
+
+	void CPlayer::OnKeyDown(UINT key, CGameMap* m)
+	{
+		const char KEY_ENTER = 0x13;
+		if (key == KEY_ENTER)
+		{
+			m->Trigger(x, y);
+		}
+	}
 }
