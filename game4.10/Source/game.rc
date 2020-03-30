@@ -138,6 +138,14 @@ IDB_GND_WATER01_ANI05   BITMAP                  "..\\res\\WaterAnimation\\Gnd_Wa
 
 IDB_GND_BRIDGE01        BITMAP                  "..\\res\\Gnd_Bridge01.bmp"
 
+IDB_DIALOG_BG_01        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\temps\\game4.10\\RES\\Dialog_BG01.bmp"
+
+IDB_HOUSE_FLOOR_01      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\temps\\game4.10\\RES\\HouseFloor_01.bmp"
+
+IDB_House_Wall_01       BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\temps\\game4.10\\RES\\HouseWall_01.bmp"
+
+IDB_HOUSE_FLOOR_02      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\temps\\game4.10\\RES\\HouseFloor_02.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -145,6 +153,14 @@ IDB_GND_BRIDGE01        BITMAP                  "..\\res\\Gnd_Bridge01.bmp"
 //
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_PNG1                PNG                     "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\temps\\game4.10\\RES\\Dialog_BG01.png"
 
 #endif    // 中文 (繁體，台灣) resources
 /////////////////////////////////////////////////////////////////////////////

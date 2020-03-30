@@ -4,7 +4,8 @@
 #include <ddraw.h>
 #include "gamelib.h"
 #include "CPlayer.h"
-#include "CGameMap.h"
+#include "CGameDialog.h"
+#include "CMapManager.h"
 
 namespace game_framework {
 	CPlayer::CPlayer() :
@@ -14,7 +15,7 @@ namespace game_framework {
 		aniMoveDown(3)
 	{
 		width = 80; height = 120;
-		x = 300; y = 200;
+		x = lastX = 300; y = lastY = 200;
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 	}
@@ -63,9 +64,51 @@ namespace game_framework {
 		isMovingDown = flag;
 	}
 
+	void CPlayer::SetX(int x)
+	{
+		this->lastX = this->x;
+		this->x = x;
+	}
+
+	void CPlayer::SetY(int y)
+	{
+		this->lastY = this->y;
+		this->y = y;
+	}
+
+	int CPlayer::GetWidth() const
+	{
+		return width;
+	}
+
+	int CPlayer::GetHeight() const
+	{
+		return height;
+	}
+
+	int CPlayer::GetX() const 
+	{
+		return x;
+	}
+
+	int CPlayer::GetY() const
+	{
+		return y;
+	}
+
+	int CPlayer::GetLastX() const
+	{
+		return lastX;
+	}
+
+	int CPlayer::GetLastY() const
+	{
+		return lastY;
+	}
+		
 	// OnMove
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
-	void CPlayer::OnMove(CGameMap *m)
+	void CPlayer::OnMove(CGameMap* m)
 	{
 		// 每一步移動量
 		const int STEP_SIZE = 5;
@@ -117,7 +160,7 @@ namespace game_framework {
 		}
 	}
 
-	void CPlayer::OnShow(CGameMap *m)
+	void CPlayer::OnShow(CGameMap* m)
 	{
 		if (facingDirection != nullptr)
 		{
@@ -126,5 +169,11 @@ namespace game_framework {
 			facingDirection->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
 			facingDirection->OnShow();
 		}
+	}
+
+	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd)
+	{
+		// 傳入事件觸發
+		mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
 	}
 }

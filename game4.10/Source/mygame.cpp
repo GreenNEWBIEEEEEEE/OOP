@@ -189,9 +189,10 @@ void CGameStateOver::OnShow()
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame *g)
-: CGameState(g)
+	: CGameState(g)
 {
-	
+	mapManager.AddMap("Scripts/MapInfos/map01.txt");
+	mapManager.AddMap("Scripts/MapInfos/map02.txt");
 }
 
 CGameStateRun::~CGameStateRun()
@@ -212,16 +213,17 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	
 	
 	
-	
+	gameDialog.OnMove();
 	//
 	//
 	//
-	p1.OnMove(&mainMap);
+	p1.OnMove(mapManager.GetCurrentMap());
 
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -230,7 +232,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	// 開始載入資料
 	//
-	mainMap.LoadBitmap();
+	//mapManager.GetCurrentMap()->LoadBitmap();
 
 
 	//
@@ -240,11 +242,14 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	Sleep(300); // 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
 	//
 	// 繼續載入其他資料
-	//						
+	//
+	gameDialog.LoadBitmap();
 
+	mapManager.LoadBitmapAll();
 	//
 	//
 	//
+	
 	p1.LoadBitmap();
 	
 	//
@@ -257,26 +262,36 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 // 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard左箭頭
-	const char KEY_UP    = 0x26; // keyboard上箭頭
-	const char KEY_RIGHT = 0x27; // keyboard右箭頭
-	const char KEY_DOWN  = 0x28; // keyboard下箭頭
-	if (nChar == KEY_LEFT)
-	{
-		p1.SetMovingLeft(true);
+	// 當Game Dialog 正在顯示時Player不可做其他操作
+	if (gameDialog.IsEnable()) {
+		gameDialog.OnKeyDown(nChar);
 	}
-	if (nChar == KEY_RIGHT)
+	else
 	{
-		p1.SetMovingRight(true);
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog);
+		const char KEY_LEFT = 0x25; // keyboard左箭頭
+		const char KEY_UP = 0x26; // keyboard上箭頭
+		const char KEY_RIGHT = 0x27; // keyboard右箭頭
+		const char KEY_DOWN = 0x28; // keyboard下箭頭
+		if (nChar == KEY_LEFT)
+		{
+			p1.SetMovingLeft(true);
+		}
+		if (nChar == KEY_RIGHT)
+		{
+			p1.SetMovingRight(true);
+		}
+		if (nChar == KEY_UP)
+		{
+			p1.SetMovingUp(true);
+		}
+		if (nChar == KEY_DOWN)
+		{
+			p1.SetMovingDown(true);
+		}
 	}
-	if (nChar == KEY_UP) 
-	{
-		p1.SetMovingUp(true);
-	}	
-	if (nChar == KEY_DOWN)
-	{
-		p1.SetMovingDown(true);
-	}
+	
+	
 		
 }
 
@@ -340,12 +355,12 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	mainMap.OnShow();
+	mapManager.OnShow();
 
 	//
 	//
 	//
-	p1.OnShow(&mainMap);
-
+	p1.OnShow(mapManager.GetCurrentMap());
+	gameDialog.OnShow();
 }
 }

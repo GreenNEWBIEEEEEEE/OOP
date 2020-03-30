@@ -1,41 +1,34 @@
 #include "stdafx.h"
 #include "resource.h"
 #include <mmsystem.h>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <algorithm>
+#include <regex>
 #include <ddraw.h>
 #include "gamelib.h"
-#include "CGameMap.h"
+#include "CMapManager.h"
+#include "CMapInfo.h"
+#include "CMapEvent.h"
+#include "CPlayer.h"
+
 
 
 namespace game_framework {
-	CGameMap::CGameMap() : COL(9), ROW(8)
+	CGameMap::CGameMap(string mapinfo_path) : row(0), col(0)
 	{
-		int map_init[8][9] = {
-			{1, -1, 1, 1, 1, 1, 1, 1, 1},
-			{1, -1, 1, 1, 1, 1, 1, 1, 1},
-			{1, -1, -1, 1, 1, 1, 1, 1, 1},
-			{1, 1, -1, 1, 1, 1, 1, 1, 1},
-			{1, 1, 3, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 2, 2, 2, 1},
-			{1, 1, -1, 1, 1, 1, 1, 1, 1},
-		};
-
-		sx = sy = 10;
+		CreateMapInfos(mapinfo_path);
+		sx = sy = 0;
 		gndW = 80; gndH = 60;
-		for (int i = 0; i < ROW; ++i)
-		{
-			map[i] = new int[COL];
-			for (int j = 0; j < COL; ++j)
-				map[i][j] = map_init[i][j];
-		}
 		gndWater01.SetDelayCount(15);
 	}
 
 	CGameMap::~CGameMap()
 	{
-		for (int i = 0; i < ROW; ++i)
-			delete [] map[i];
-		delete [] map;
+		for (int i = 0; i < row; ++i)
+			delete[] map[i];
+		delete[] map;
 		map = nullptr;
 	}
 
@@ -47,6 +40,10 @@ namespace game_framework {
 		gndDirt01.LoadBitmap(IDB_GND_DIRT01);
 		//
 		gndBridge01.LoadBitmap(IDB_GND_BRIDGE01);
+		//
+		gndHouseFloor01.LoadBitmap(IDB_HOUSE_FLOOR_02);	
+		//
+		gndHouseWall01.LoadBitmap(IDB_House_Wall_01);
 		//
 		gndWater01.AddBitmap(IDB_GND_WATER01_ANI01);
 		gndWater01.AddBitmap(IDB_GND_WATER01_ANI02);
@@ -63,12 +60,12 @@ namespace game_framework {
 	void CGameMap::OnShow()
 	{
 		// 先畫地板圖
-		for (int i = 0; i < ROW; ++i)
+		for (int i = 0; i < row; ++i)
 		{
-			for (int j = 0; j < COL; ++j)
+			for (int j = 0; j < col; ++j)
 			{
 				int x = (j * gndW) - sx, y = (i * gndH) - sy;
-				switch (map[i][j])
+				switch (map[i][j].GetElemID())
 				{
 				case 1:
 					gndGrass01.SetTopLeft(x, y);
@@ -82,27 +79,44 @@ namespace game_framework {
 					gndBridge01.SetTopLeft(x, y);
 					gndBridge01.ShowBitmap();
 					break;
+				case 4:
+					gndHouseFloor01.SetTopLeft(x, y);
+					gndHouseFloor01.ShowBitmap();
+					break;
 				case -1:
 					gndWater01.SetTopLeft(x, y);
 					gndWater01.OnMove();
 					gndWater01.OnShow();
 					break;
+				case -2:
+					gndHouseWall01.SetTopLeft(x, y);
+					gndHouseWall01.ShowBitmap();
+					break;
 				default:
-					ASSERT(0);
 					break;
 				}
 			}
 		}
-
-		// 再畫建築物
 	}
 
 	bool CGameMap::IsEmpty(int x, int y) const
 	{
 		int gx = x / gndW, gy = y / gndH;
-		return map[gy][gx] > 0;
+		return (map[gy][gx]).IsEmpty();
 	}
 
+
+	// 觸發事件
+	// key
+	// x, y : 傳入player的位置
+	// 地圖管理器
+	void CGameMap::triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd)
+	{
+		int px = p->GetX(), py = p->GetY() + 90; // MAYBE FIXME
+		int gx = px / gndW, gy = py / gndH; // 求出格座標
+		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd);
+	}
+	
 
 	int CGameMap::GetSX() const
 	{
@@ -120,7 +134,6 @@ namespace game_framework {
 	{
 		sy = ny;
 	}
-	
 	void CGameMap::SetSXSY(int nx, int ny)
 	{
 		sx = nx; sy = ny;
@@ -132,5 +145,51 @@ namespace game_framework {
 	int CGameMap::ScreenY(int y) const
 	{
 		return y - sy;
+	}
+
+	void CGameMap::CreateMapInfos(string& mapinfo_path)
+	{
+		ifstream is;
+		is.open(mapinfo_path);
+		if (is)
+		{
+			// 先讀取row跟col才能初始化map的大小
+			string line;
+			is >> line; row = stoi(line);
+			is >> line; col = stoi(line);
+
+			// 初始化map空間大小
+			map = new CMapInfo*[row];
+			for (int i = 0; i < row; ++i) map[i] = new CMapInfo[col];
+			
+			// 分解並設定資料到每個格子
+			int i = -1; // row 的 index
+			while (i < row && getline(is, line))
+			{
+				int j = 0; // col 的 index
+
+				// 再從資料行(line)分解成一個個的cell
+				stringstream ss(line); string cell;
+				while (j < col && ss >> cell)
+				{
+					// 處理cell中的分隔符號 取代為空
+					CString csCell(cell.c_str());
+					csCell.Replace('|', ' ');
+					cell = (LPCTSTR)csCell;
+
+					// cell 繼續分解成各項資料 elemID eventID
+					stringstream sss(cell); string data;
+					sss >> data;				     // 先導出elemID
+					map[i][j].SetElemID(stoi(data)); // 設定每格elemID
+					
+					// 加入eventID
+					
+					while (sss >> data) map[i][j].AddEvent(stoi(data));
+					j++;
+				}
+				i++;
+			}
+		}
+		is.close();
 	}
 }
