@@ -1,6 +1,5 @@
-#include "stdafx.h"
-#include "resource.h"
 #include <mmsystem.h>
+<<<<<<< HEAD
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -21,8 +20,56 @@ namespace game_framework {
 		CreateMapInfos(mapinfo_path);
 		sx = sy = 0;
 		gndW = 80; gndH = 60;
+=======
+#include <vector>
+#include <string>
+#include <fstream>
+#include <ddraw.h>
+#include "gamelib.h"
+#include "CGameMap.h"
+#include "CMapInfo.h"
+#include "stdafx.h"
+#include "resource.h"
+namespace game_framework {
+
+	CGameMap::CGameMap(string filePath) : COL(9), ROW(8)
+	{
+		fstream mapFile;
+		string data = "";
+
+		mapFile.open(filePath, ios::in);
+		getline(mapFile, data);
+		ROW = stoi(data);
+
+		getline(mapFile, data);
+		COL = stoi(data);
+		
+
+		for (int i = 0; i < ROW; i++)
+		{
+			getline(mapFile, data);
+			
+			for (int j = 0; j < COL; j++)
+			{
+				vector<string> grid = SplitString(data, ", ");
+
+				for (vector<string>::iterator k = grid.begin(); k != grid.end(); k++)
+				{
+					vector<string> mapInfo = SplitString(*k, " ");
+					map[i][j].SetElementID(stoi(mapInfo[0]));
+					map[i][j].AddEvent(mapInfo);
+				}
+			}
+		}
+
+		sx = sy = 10;
+		gndW = 80; gndH = 60;
+
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 		gndWater01.SetDelayCount(15);
 	}
+
+
 
 	CGameMap::~CGameMap()
 	{
@@ -30,6 +77,20 @@ namespace game_framework {
 			delete[] map[i];
 		delete[] map;
 		map = nullptr;
+	}
+
+	vector<string> CGameMap::SplitString(string& data, string delimiter)
+	{
+		vector<string> mapInfo;
+		size_t pos = 0;
+		string token = "";
+		while ((pos = data.find(delimiter)) != string::npos)
+		{
+			token = data.substr(0, pos);
+			mapInfo.push_back(token);
+			data.erase(0, pos + delimiter.length());
+		}
+		return mapInfo;
 	}
 
 	void CGameMap::LoadBitmap()
@@ -65,7 +126,12 @@ namespace game_framework {
 			for (int j = 0; j < col; ++j)
 			{
 				int x = (j * gndW) - sx, y = (i * gndH) - sy;
+<<<<<<< HEAD
 				switch (map[i][j].GetElemID())
+=======
+				int elementID = map[i][j].GetElementID();
+				switch (elementID)
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 				{
 				case 1:
 					gndGrass01.SetTopLeft(x, y);
@@ -102,7 +168,12 @@ namespace game_framework {
 	bool CGameMap::IsEmpty(int x, int y) const
 	{
 		int gx = x / gndW, gy = y / gndH;
+<<<<<<< HEAD
 		return (map[gy][gx]).IsEmpty();
+=======
+		int elementID = map[gy][gx].GetElementID();
+		return elementID > 0;
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	}
 
 
@@ -147,6 +218,7 @@ namespace game_framework {
 		return y - sy;
 	}
 
+<<<<<<< HEAD
 	void CGameMap::CreateMapInfos(string& mapinfo_path)
 	{
 		ifstream is;
@@ -193,3 +265,15 @@ namespace game_framework {
 		is.close();
 	}
 }
+=======
+	void CGameMap::Trigger(int x, int y)
+	{
+
+		int gx = x / gndW, gy = y / gndH;
+		if (map[gx][gy].IsTriggerPoint())
+		{
+			
+		}
+	}
+}
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e

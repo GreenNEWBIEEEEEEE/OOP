@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
-      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
-    </Filter>
     <Filter Include="MFC">
       <UniqueIdentifier>{da904ee8-7f59-4a6c-b3ff-b91b6fb6d0ea}</UniqueIdentifier>
     </Filter>
@@ -13,6 +9,10 @@
     </Filter>
     <Filter Include="MyGame">
       <UniqueIdentifier>{0c798913-b7d2-4e26-8241-0f83266cd626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +115,11 @@
     <ClCompile Include="Source\CPlayer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\CMapEvent.cpp">
+=======
+    <ClCompile Include="Source\CEvent.cpp">
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CMapInfo.cpp">
@@ -124,12 +128,15 @@
     <ClCompile Include="Source\CMapTransitionEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\CMapManager.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CGameDialog.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+=======
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -165,7 +172,11 @@
     <ClInclude Include="Source\CPlayer.h">
       <Filter>MyGame</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\CMapEvent.h">
+=======
+    <ClInclude Include="Source\CEvent.h">
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CMapInfo.h">
@@ -174,12 +185,15 @@
     <ClInclude Include="Source\CMapTransitionEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\CMapManager.h">
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameDialog.h">
       <Filter>MyGame</Filter>
     </ClInclude>
+=======
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">

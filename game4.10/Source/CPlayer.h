@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #pragma once
+=======
+#ifndef CPLAYER_H
+#define CPLAYER_H
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 namespace game_framework {
 
 	class CGameMap;
@@ -17,6 +22,7 @@ namespace game_framework {
 		void SetMovingRight(bool flag);
 		void SetMovingUp(bool flag);
 		void SetMovingDown(bool flag);
+<<<<<<< HEAD
 		void SetX(int x);
 		void SetY(int y);
 		int GetWidth() const;
@@ -34,6 +40,12 @@ namespace game_framework {
 		void OnShow(CGameMap* m);
 		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd);
 
+=======
+		void OnMove(CGameMap *m);
+		void OnShow(CGameMap *m);
+		
+		void OnKeyDown(UINT key, CGameMap *m);
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	private:
 		// 玩家角色圖片寬高
 		int width, height;
@@ -54,3 +66,4 @@ namespace game_framework {
 		bool isMovingLeft , isMovingRight, isMovingUp, isMovingDown;
 	};
 }
+#endif

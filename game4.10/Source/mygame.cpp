@@ -217,7 +217,11 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	//
 	//
+<<<<<<< HEAD
 	p1.OnMove(mapManager.GetCurrentMap());
+=======
+	p1.OnMove(mainMap);
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 
 }
 
@@ -232,7 +236,11 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	// 開始載入資料
 	//
+<<<<<<< HEAD
 	//mapManager.GetCurrentMap()->LoadBitmap();
+=======
+	mainMap->LoadBitmap();
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 
 
 	//
@@ -355,12 +363,21 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
+<<<<<<< HEAD
 	mapManager.OnShow();
+=======
+	mainMap->OnShow();
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 
 	//
 	//
 	//
+<<<<<<< HEAD
 	p1.OnShow(mapManager.GetCurrentMap());
 	gameDialog.OnShow();
+=======
+	p1.OnShow(mainMap);
+
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 }
 }

@@ -40,8 +40,13 @@
 
 
 #include "CPlayer.h"
+<<<<<<< HEAD
 #include "CMapManager.h"
 #include "CGameDialog.h"
+=======
+#include "CGameMap.h"
+#include <string>
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -89,9 +94,16 @@ namespace game_framework {
 		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
+<<<<<<< HEAD
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
 
 		
+=======
+		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作		
+		static CGameMap* mainMap; // 主地圖
+		static CGameMap map1("map.txt");
+		static CGameMap map2("map2.txt");
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -100,9 +112,12 @@ namespace game_framework {
 		// 遊戲主體的各式物件/資源宣告在此:
 		// 
 		CPlayer p1; // 玩家1
+<<<<<<< HEAD
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 
+=======
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

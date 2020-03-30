@@ -171,9 +171,19 @@ namespace game_framework {
 		}
 	}
 
+<<<<<<< HEAD
 	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd)
 	{
 		// 傳入事件觸發
 		mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+=======
+	void CPlayer::OnKeyDown(UINT key, CGameMap* m)
+	{
+		const char KEY_ENTER = 0x13;
+		if (key == KEY_ENTER)
+		{
+			m->Trigger(x, y);
+		}
+>>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	}
 }
