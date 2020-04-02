@@ -248,24 +248,17 @@
     <None Include="res\game.rc2" />
     <None Include="RES\gamecurs.cur" />
     <None Include="res\gameDoc.ico" />
-    <None Include="RES\help.bmp" />
     <None Include="RES\loading.bmp" />
     <None Include="RES\ntutcsie.bmp" />
     <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CMapEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
     <ClCompile Include="Source\CMapManager.cpp" />
-=======
-    <ClCompile Include="Source\CEvent.cpp" />
-    <ClCompile Include="Source\CGameMap.cpp" />
-    <ClCompile Include="Source\CMapInfo.cpp" />
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -311,17 +304,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
-<<<<<<< HEAD
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CMapEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />
     <ClInclude Include="Source\CMapManager.h" />
-=======
-    <ClInclude Include="Source\CEvent.h" />
-    <ClInclude Include="Source\CGameMap.h" />
-    <ClInclude Include="Source\CMapInfo.h" />
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
     <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
@@ -341,59 +328,61 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Bridge01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Dirt01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Grass01d.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Lava01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_00.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_02.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_00.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_02.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_00.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_02.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_00.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_02.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani01.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani02.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani03.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani04.bmp" />
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani05.bmp" />
+    <Image Include="res\bitmap17.bmp" />
     <Image Include="res\bitmap4.bmp" />
+    <Image Include="res\bitmap5.bmp" />
+    <Image Include="res\bitmap9.bmp" />
     <Image Include="RES\Dialog_BG01.bmp" />
     <Image Include="RES\Dialog_BG01.png" />
-    <Image Include="RES\Gnd_Bridge01.bmp" />
-    <Image Include="RES\Gnd_Dirt01.bmp" />
-    <Image Include="RES\Gnd_Grass01.bmp" />
-    <Image Include="RES\Gnd_Grass01a.bmp" />
-    <Image Include="RES\Gnd_Grass01b.bmp" />
-    <Image Include="RES\Gnd_Grass01c.bmp" />
-    <Image Include="RES\Gnd_Grass01d.bmp" />
-    <Image Include="RES\Gnd_Lava01.bmp" />
-    <Image Include="RES\HouseFloor_01.bmp" />
-    <Image Include="RES\HouseFloor_02.bmp" />
-    <Image Include="RES\HouseWall_01.bmp" />
-    <Image Include="RES\player01\E\Mann01_Back_00.bmp" />
-    <Image Include="RES\player01\E\Mann01_Back_01.bmp" />
-    <Image Include="RES\player01\E\Mann01_Back_02.bmp" />
-    <Image Include="RES\player01\E\Mann01_Front_00.bmp" />
-    <Image Include="RES\player01\E\Mann01_Front_01.bmp" />
-    <Image Include="RES\player01\E\Mann01_Front_02.bmp" />
-    <Image Include="RES\player01\E\Mann01_Left_00.bmp" />
-    <Image Include="RES\player01\E\Mann01_Left_01.bmp" />
-    <Image Include="RES\player01\E\Mann01_Left_02.bmp" />
-    <Image Include="RES\player01\E\Mann01_Right_00.bmp" />
-    <Image Include="RES\player01\E\Mann01_Right_01.bmp" />
-    <Image Include="RES\player01\E\Mann01_Right_02.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolAxe.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHammer.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHand.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHoe.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSeed.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSickle.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolWateringCan.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\back\People_back01.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\back\People_back02.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\back\People_back03.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\front\People_front01.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\front\People_front02.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\front\People_front03.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\left\People_left01.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\left\People_left02.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\left\People_left03.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\right\People_right01.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\right\People_right02.bmp" />
+    <Image Include="RES\NewMaterial\Character\move\right\People_right03.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_01.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_02.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_06.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_11.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_12.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_16.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_17.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_18.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_19.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_20.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_21.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_22.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_23.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_24.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\house_25.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Bush.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Fence.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Grass.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\PlantSoil.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\River01.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\River02.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\River03.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\River04.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\River05.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Sand.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Soil.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Stone.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\Wood.bmp" />
     <Image Include="RES\recs1.bmp" />
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani01.bmp" />
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani02.bmp" />
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani03.bmp" />
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani04.bmp" />
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani05.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

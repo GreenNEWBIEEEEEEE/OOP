@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
     <Filter Include="MFC">
       <UniqueIdentifier>{da904ee8-7f59-4a6c-b3ff-b91b6fb6d0ea}</UniqueIdentifier>
     </Filter>
@@ -9,10 +13,6 @@
     </Filter>
     <Filter Include="MyGame">
       <UniqueIdentifier>{0c798913-b7d2-4e26-8241-0f83266cd626}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{1a913106-0be0-4476-b0ce-2aa855072614}</UniqueIdentifier>
-      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +70,6 @@
     <None Include="res\gameDoc.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="RES\help.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="RES\loading.bmp">
       <Filter>Resource Files</Filter>
     </None>
@@ -115,11 +112,7 @@
     <ClCompile Include="Source\CPlayer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\CMapEvent.cpp">
-=======
-    <ClCompile Include="Source\CEvent.cpp">
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CMapInfo.cpp">
@@ -128,15 +121,12 @@
     <ClCompile Include="Source\CMapTransitionEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\CMapManager.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CGameDialog.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-=======
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -172,11 +162,7 @@
     <ClInclude Include="Source\CPlayer.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Source\CMapEvent.h">
-=======
-    <ClInclude Include="Source\CEvent.h">
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CMapInfo.h">
@@ -185,15 +171,12 @@
     <ClInclude Include="Source\CMapTransitionEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Source\CMapManager.h">
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameDialog.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-=======
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -204,158 +187,164 @@
     <Image Include="RES\recs1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\player01\E\Mann01_Back_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Back_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Back_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Front_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Front_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Front_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Left_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Left_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Left_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Right_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Right_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\player01\E\Mann01_Right_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Grass01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Lava01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Dirt01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Grass01a.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Grass01b.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Grass01c.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Grass01d.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani03.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani04.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\WaterAnimation\Gnd_Water01_Ani05.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\Gnd_Bridge01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Back_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Front_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Left_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_00.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\player01\E\Mann01_Right_02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Grass01d.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Lava01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Dirt01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani02.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani03.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani04.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\WaterAnimation\Gnd_Water01_Ani05.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\GameFramework_Practices\Ma\test1\game4.10\RES\Gnd_Bridge01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="RES\Dialog_BG01.png" />
     <Image Include="RES\Dialog_BG01.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="RES\HouseFloor_01.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\bitmap4.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\HouseWall_01.bmp">
+    <Image Include="res\bitmap5.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\HouseFloor_02.bmp">
+    <Image Include="res\bitmap9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Bush.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Fence.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Stone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\back\People_back01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\back\People_back02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\back\People_back03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\front\People_front01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\front\People_front02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\front\People_front03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\left\People_left01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\left\People_left02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\left\People_left03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\right\People_right01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\right\People_right02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\move\right\People_right03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\PlantSoil.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\River01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\River02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\River03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\River04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\River05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Wood.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_23.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_24.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\house_25.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Sand.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Soil.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolAxe.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHammer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHand.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHoe.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSickle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolWateringCan.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -14,10 +14,16 @@ namespace game_framework {
 		aniMoveUp(3),
 		aniMoveDown(3)
 	{
-		width = 80; height = 120;
+		width = 53; height = 64;
 		x = lastX = 300; y = lastY = 200;
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
+
+		tool.push_back(0); 
+		tool.push_back(1);
+		tool.push_back(2);
+		tool.push_back(3);
+		toolSelector = 0;
 	}
 
 	CPlayer::~CPlayer() {
@@ -26,21 +32,78 @@ namespace game_framework {
 
 	void CPlayer::LoadBitmap()
 	{
-		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT1, RGB(255,255,255));
-		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT2, RGB(255, 255, 255));
-		aniMoveLeft.AddBitmap(IDB_PLAYER01_LEFT3, RGB(255, 255, 255));
 
-		aniMoveRight.AddBitmap(IDB_PLAYER01_RIGHT1, RGB(255, 255, 255));
-		aniMoveRight.AddBitmap(IDB_PLAYER01_RIGHT2, RGB(255, 255, 255));
-		aniMoveRight.AddBitmap(IDB_PLAYER01_RIGHT3, RGB(255, 255, 255));
+		aniMoveLeft.AddBitmap(IDB_People_left01, RGB(255, 255, 255));
+		aniMoveLeft.AddBitmap(IDB_People_left02, RGB(255, 255, 255));
+		aniMoveLeft.AddBitmap(IDB_People_left03, RGB(255, 255, 255));
 
-		aniMoveUp.AddBitmap(IDB_PLAYER01_UP1, RGB(255, 255, 255));
-		aniMoveUp.AddBitmap(IDB_PLAYER01_UP2, RGB(255, 255, 255));
-		aniMoveUp.AddBitmap(IDB_PLAYER01_UP3, RGB(255, 255, 255));
+		aniMoveRight.AddBitmap(IDB_People_right01, RGB(255, 255, 255));
+		aniMoveRight.AddBitmap(IDB_People_right02, RGB(255, 255, 255));
+		aniMoveRight.AddBitmap(IDB_People_right03, RGB(255, 255, 255));
 
-		aniMoveDown.AddBitmap(IDB_PLAYER01_DOWN1, RGB(255, 255, 255));
-		aniMoveDown.AddBitmap(IDB_PLAYER01_DOWN2, RGB(255, 255, 255));
-		aniMoveDown.AddBitmap(IDB_PLAYER01_DOWN3, RGB(255, 255, 255));
+		aniMoveUp.AddBitmap(IDB_People_back01, RGB(255, 255, 255));
+		aniMoveUp.AddBitmap(IDB_People_back02, RGB(255, 255, 255));
+		aniMoveUp.AddBitmap(IDB_People_back03, RGB(255, 255, 255));
+
+		aniMoveDown.AddBitmap(IDB_People_front01, RGB(255, 255, 255));
+		aniMoveDown.AddBitmap(IDB_People_front02, RGB(255, 255, 255));
+		aniMoveDown.AddBitmap(IDB_People_front03, RGB(255, 255, 255));
+
+		aniChangeTool_0.AddBitmap(IDB_ChangeToolAxe, RGB(255, 255, 255));
+		aniChangeTool_0.AddBitmap(IDB_ChangeToolAxe, RGB(255, 255, 255));
+		aniChangeTool_0.AddBitmap(IDB_ChangeToolAxe, RGB(255, 255, 255));
+		aniChangeTool_0.AddBitmap(IDB_ChangeToolAxe, RGB(255, 255, 255));
+		aniChangeTool_0.AddBitmap(IDB_ChangeToolAxe, RGB(255, 255, 255));
+
+		aniChangeTool_1.AddBitmap(IDB_ChangeToolHammer, RGB(255, 255, 255));
+		aniChangeTool_1.AddBitmap(IDB_ChangeToolHammer, RGB(255, 255, 255));
+		aniChangeTool_1.AddBitmap(IDB_ChangeToolHammer, RGB(255, 255, 255));
+		aniChangeTool_1.AddBitmap(IDB_ChangeToolHammer, RGB(255, 255, 255));
+		aniChangeTool_1.AddBitmap(IDB_ChangeToolHammer, RGB(255, 255, 255));
+
+		aniChangeTool_2.AddBitmap(IDB_ChangeToolHand, RGB(255, 255, 255));
+		aniChangeTool_2.AddBitmap(IDB_ChangeToolHand, RGB(255, 255, 255));
+		aniChangeTool_2.AddBitmap(IDB_ChangeToolHand, RGB(255, 255, 255));
+		aniChangeTool_2.AddBitmap(IDB_ChangeToolHand, RGB(255, 255, 255));
+		aniChangeTool_2.AddBitmap(IDB_ChangeToolHand, RGB(255, 255, 255));
+
+		aniChangeTool_3.AddBitmap(IDB_ChangeToolHoe, RGB(255, 255, 255));
+		aniChangeTool_3.AddBitmap(IDB_ChangeToolHoe, RGB(255, 255, 255));
+		aniChangeTool_3.AddBitmap(IDB_ChangeToolHoe, RGB(255, 255, 255));
+		aniChangeTool_3.AddBitmap(IDB_ChangeToolHoe, RGB(255, 255, 255));
+		aniChangeTool_3.AddBitmap(IDB_ChangeToolHoe, RGB(255, 255, 255));
+
+		aniChangeTool_4.AddBitmap(IDB_ChangeToolSeed, RGB(255, 255, 255));
+		aniChangeTool_4.AddBitmap(IDB_ChangeToolSeed, RGB(255, 255, 255));
+		aniChangeTool_4.AddBitmap(IDB_ChangeToolSeed, RGB(255, 255, 255));
+		aniChangeTool_4.AddBitmap(IDB_ChangeToolSeed, RGB(255, 255, 255));
+		aniChangeTool_4.AddBitmap(IDB_ChangeToolSeed, RGB(255, 255, 255));
+
+		aniChangeTool_5.AddBitmap(IDB_ChangeToolSickle, RGB(255, 255, 255));
+		aniChangeTool_5.AddBitmap(IDB_ChangeToolSickle, RGB(255, 255, 255));
+		aniChangeTool_5.AddBitmap(IDB_ChangeToolSickle, RGB(255, 255, 255));
+		aniChangeTool_5.AddBitmap(IDB_ChangeToolSickle, RGB(255, 255, 255));
+		aniChangeTool_5.AddBitmap(IDB_ChangeToolSickle, RGB(255, 255, 255));
+
+		/*
+		aniPlantLeft.AddBitmap(IDB_PLAYER01_PLANTLEFT1, RGB(255,255,255));
+		aniPlantLeft.AddBitmap(IDB_PLAYER01_PLANTLEFT2, RGB(255, 255, 255));
+		aniPlantLeft.AddBitmap(IDB_PLAYER01_PLANTLEFT3, RGB(255, 255, 255));
+
+		aniPlantRight.AddBitmap(IDB_PLAYER01_PLANTRIGHT1, RGB(255, 255, 255));
+		aniPlantRight.AddBitmap(IDB_PLAYER01_PLANTRIGHT2, RGB(255, 255, 255));
+		aniPlantRight.AddBitmap(IDB_PLAYER01_PLANTRIGHT3, RGB(255, 255, 255));
+
+		aniPlantUp.AddBitmap(IDB_PLAYER01_PLANTUP1, RGB(255, 255, 255));
+		aniPlantUp.AddBitmap(IDB_PLAYER01_PLANTUP2, RGB(255, 255, 255));
+		aniPlantUp.AddBitmap(IDB_PLAYER01_PLANTUP3, RGB(255, 255, 255));
+
+		aniPlantDown.AddBitmap(IDB_PLAYER01_PLANTDOWN1, RGB(255, 255, 255));
+		aniPlantDown.AddBitmap(IDB_PLAYER01_PLANTDOWN2, RGB(255, 255, 255));
+		aniPlantDown.AddBitmap(IDB_PLAYER01_PLANTDOWN3, RGB(255, 255, 255));
+		
+		aniChangeTool_0.AddBitmap(IDB_PLAYER01_CHANGETOOL_0_1, RGB(255, 255, 255));
+		*/
 	}
 
 	void CPlayer::SetMovingLeft(bool flag)
@@ -169,21 +232,56 @@ namespace game_framework {
 			facingDirection->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
 			facingDirection->OnShow();
 		}
+
+
 	}
 
-<<<<<<< HEAD
 	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd)
 	{
+		const char KEY_A = 0x41;  // keyboard A鍵
+		const char KEY_Q = 0x51; // keyboard Q鍵
 		// 傳入事件觸發
 		mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
-=======
-	void CPlayer::OnKeyDown(UINT key, CGameMap* m)
-	{
-		const char KEY_ENTER = 0x13;
-		if (key == KEY_ENTER)
+
+		if (key == KEY_Q)
 		{
-			m->Trigger(x, y);
+			toolSelector++;
+			if (toolSelector < 0)
+				toolSelector = tool.size() - 1;
+			else if (toolSelector >= tool.size())
+				toolSelector = 0;
+
+			switch (toolSelector)
+			{
+			case 0:
+				facingDirection = &aniChangeTool_0;
+				break;
+			case 1:
+				facingDirection = &aniChangeTool_1;
+				break;
+			case 2:
+				facingDirection = &aniChangeTool_2;
+				break;
+			case 3:
+				facingDirection = &aniChangeTool_3;
+				break;
+			case 4:
+				facingDirection = &aniChangeTool_4;
+				break;
+			case 5:
+				facingDirection = &aniChangeTool_5;
+				break;
+			default:
+				break;
+			}
 		}
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
+		if (key == KEY_A)
+		{
+			
+		}
+
+
+
+
 	}
 }

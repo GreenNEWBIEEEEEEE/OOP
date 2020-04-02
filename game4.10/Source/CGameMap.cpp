@@ -1,5 +1,6 @@
+#include "stdafx.h"
+#include "resource.h"
 #include <mmsystem.h>
-<<<<<<< HEAD
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -19,57 +20,9 @@ namespace game_framework {
 	{
 		CreateMapInfos(mapinfo_path);
 		sx = sy = 0;
-		gndW = 80; gndH = 60;
-=======
-#include <vector>
-#include <string>
-#include <fstream>
-#include <ddraw.h>
-#include "gamelib.h"
-#include "CGameMap.h"
-#include "CMapInfo.h"
-#include "stdafx.h"
-#include "resource.h"
-namespace game_framework {
-
-	CGameMap::CGameMap(string filePath) : COL(9), ROW(8)
-	{
-		fstream mapFile;
-		string data = "";
-
-		mapFile.open(filePath, ios::in);
-		getline(mapFile, data);
-		ROW = stoi(data);
-
-		getline(mapFile, data);
-		COL = stoi(data);
-		
-
-		for (int i = 0; i < ROW; i++)
-		{
-			getline(mapFile, data);
-			
-			for (int j = 0; j < COL; j++)
-			{
-				vector<string> grid = SplitString(data, ", ");
-
-				for (vector<string>::iterator k = grid.begin(); k != grid.end(); k++)
-				{
-					vector<string> mapInfo = SplitString(*k, " ");
-					map[i][j].SetElementID(stoi(mapInfo[0]));
-					map[i][j].AddEvent(mapInfo);
-				}
-			}
-		}
-
-		sx = sy = 10;
-		gndW = 80; gndH = 60;
-
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
-		gndWater01.SetDelayCount(15);
+		gndW = 64; gndH = 53;
+		//gndWater01.SetDelayCount(15);
 	}
-
-
 
 	CGameMap::~CGameMap()
 	{
@@ -79,43 +32,38 @@ namespace game_framework {
 		map = nullptr;
 	}
 
-	vector<string> CGameMap::SplitString(string& data, string delimiter)
-	{
-		vector<string> mapInfo;
-		size_t pos = 0;
-		string token = "";
-		while ((pos = data.find(delimiter)) != string::npos)
-		{
-			token = data.substr(0, pos);
-			mapInfo.push_back(token);
-			data.erase(0, pos + delimiter.length());
-		}
-		return mapInfo;
-	}
-
 	void CGameMap::LoadBitmap()
 	{
-		//
-		gndGrass01.LoadBitmap(IDB_GND_GRASS01);
-		//
-		gndDirt01.LoadBitmap(IDB_GND_DIRT01);
-		//
-		gndBridge01.LoadBitmap(IDB_GND_BRIDGE01);
-		//
-		gndHouseFloor01.LoadBitmap(IDB_HOUSE_FLOOR_02);	
-		//
-		gndHouseWall01.LoadBitmap(IDB_House_Wall_01);
-		//
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI01);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI02);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI03);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI04);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI05);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI05);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI04);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI03);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI02);
-		gndWater01.AddBitmap(IDB_GND_WATER01_ANI01);
+		sand.LoadBitmap(IDB_Sand);
+		plantSoil.LoadBitmap(IDB_PlantSoil);
+		grass.LoadBitmap(IDB_Grass);
+		soil.LoadBitmap(IDB_Soil);
+
+		fence.LoadBitmap(IDB_Fence);
+		bush.LoadBitmap(IDB_Bush);
+		stone.LoadBitmap(IDB_Stone);
+		wood.LoadBitmap(IDB_Wood);
+		river.AddBitmap(IDB_River01);
+		river.AddBitmap(IDB_River02);
+		river.AddBitmap(IDB_River03);
+		river.AddBitmap(IDB_River04);
+		river.AddBitmap(IDB_River05);
+		houseOutside_01.LoadBitmap(IDB_HouseOutside00);
+		houseOutside_02.LoadBitmap(IDB_HouseOutside01);
+		houseOutside_03.LoadBitmap(IDB_HouseOutside02);
+		houseOutside_04.LoadBitmap(IDB_HouseOutside03);
+		houseOutside_05.LoadBitmap(IDB_HouseOutside04);
+		houseOutside_06.LoadBitmap(IDB_HouseOutside05);
+		houseOutside_07.LoadBitmap(IDB_HouseOutside06);
+		houseOutside_08.LoadBitmap(IDB_HouseOutside07);
+		houseOutside_09.LoadBitmap(IDB_HouseOutside08);
+		houseOutside_10.LoadBitmap(IDB_HouseOutside09);
+		houseOutside_11.LoadBitmap(IDB_HouseOutside10);
+		houseOutside_12.LoadBitmap(IDB_HouseOutside11);
+		houseOutside_13.LoadBitmap(IDB_HouseOutside12);
+		houseOutside_14.LoadBitmap(IDB_HouseOutside13);
+		houseOutside_15.LoadBitmap(IDB_HouseOutside14);
+
 	}
 
 	void CGameMap::OnShow()
@@ -126,38 +74,108 @@ namespace game_framework {
 			for (int j = 0; j < col; ++j)
 			{
 				int x = (j * gndW) - sx, y = (i * gndH) - sy;
-<<<<<<< HEAD
 				switch (map[i][j].GetElemID())
-=======
-				int elementID = map[i][j].GetElementID();
-				switch (elementID)
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 				{
+				case 0:
+					sand.SetTopLeft(x, y);
+					sand.ShowBitmap();
+					break;
 				case 1:
-					gndGrass01.SetTopLeft(x, y);
-					gndGrass01.ShowBitmap();
+					plantSoil.SetTopLeft(x, y);
+					plantSoil.ShowBitmap();
 					break;
 				case 2:
-					gndDirt01.SetTopLeft(x, y);
-					gndDirt01.ShowBitmap();
+					grass.SetTopLeft(x, y);
+					grass.ShowBitmap();
 					break;
 				case 3:
-					gndBridge01.SetTopLeft(x, y);
-					gndBridge01.ShowBitmap();
+					soil.SetTopLeft(x, y);
+					soil.ShowBitmap();
 					break;
 				case 4:
-					gndHouseFloor01.SetTopLeft(x, y);
-					gndHouseFloor01.ShowBitmap();
 					break;
 				case -1:
-					gndWater01.SetTopLeft(x, y);
-					gndWater01.OnMove();
-					gndWater01.OnShow();
+					fence.SetTopLeft(x, y);
+					fence.ShowBitmap();
 					break;
 				case -2:
-					gndHouseWall01.SetTopLeft(x, y);
-					gndHouseWall01.ShowBitmap();
+					river.SetTopLeft(x, y);
+					river.OnMove();
+					river.OnShow();
 					break;
+				case -3:
+					bush.SetTopLeft(x, y);
+					bush.ShowBitmap();
+					break;
+				case -4:
+					stone.SetTopLeft(x, y);
+					stone.ShowBitmap();
+					break;
+				case -5:
+					wood.SetTopLeft(x, y);
+					wood.ShowBitmap();
+					break;
+				case -6:
+					houseOutside_01.SetTopLeft(x, y);
+					houseOutside_01.ShowBitmap();
+					break;
+				case -7:
+					houseOutside_02.SetTopLeft(x, y);
+					houseOutside_02.ShowBitmap();
+					break;
+				case -8:
+					houseOutside_03.SetTopLeft(x, y);
+					houseOutside_03.ShowBitmap();
+					break;
+				case -9:
+					houseOutside_04.SetTopLeft(x, y);
+					houseOutside_04.ShowBitmap();
+					break;
+				case -10:
+					houseOutside_05.SetTopLeft(x, y);
+					houseOutside_05.ShowBitmap();
+					break;
+				case -11:
+					houseOutside_06.SetTopLeft(x, y);
+					houseOutside_06.ShowBitmap();
+					break;
+				case -12:
+					houseOutside_07.SetTopLeft(x, y);
+					houseOutside_07.ShowBitmap();
+					break;
+				case -13:
+					houseOutside_08.SetTopLeft(x, y);
+					houseOutside_08.ShowBitmap();
+					break;
+				case -14:
+					houseOutside_09.SetTopLeft(x, y);
+					houseOutside_09.ShowBitmap();
+					break;
+				case -15:
+					houseOutside_10.SetTopLeft(x, y);
+					houseOutside_10.ShowBitmap();
+					break;
+				case -16:
+					houseOutside_11.SetTopLeft(x, y);
+					houseOutside_11.ShowBitmap();
+					break;
+				case -17:
+					houseOutside_12.SetTopLeft(x, y);
+					houseOutside_12.ShowBitmap();
+					break;
+				case -18:
+					houseOutside_13.SetTopLeft(x, y);
+					houseOutside_13.ShowBitmap();
+					break;
+				case -19:
+					houseOutside_14.SetTopLeft(x, y);
+					houseOutside_14.ShowBitmap();
+					break;
+				case -20:
+					houseOutside_15.SetTopLeft(x, y);
+					houseOutside_15.ShowBitmap();
+					break;
+
 				default:
 					break;
 				}
@@ -168,12 +186,7 @@ namespace game_framework {
 	bool CGameMap::IsEmpty(int x, int y) const
 	{
 		int gx = x / gndW, gy = y / gndH;
-<<<<<<< HEAD
 		return (map[gy][gx]).IsEmpty();
-=======
-		int elementID = map[gy][gx].GetElementID();
-		return elementID > 0;
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	}
 
 
@@ -218,7 +231,6 @@ namespace game_framework {
 		return y - sy;
 	}
 
-<<<<<<< HEAD
 	void CGameMap::CreateMapInfos(string& mapinfo_path)
 	{
 		ifstream is;
@@ -265,15 +277,3 @@ namespace game_framework {
 		is.close();
 	}
 }
-=======
-	void CGameMap::Trigger(int x, int y)
-	{
-
-		int gx = x / gndW, gy = y / gndH;
-		if (map[gx][gy].IsTriggerPoint())
-		{
-			
-		}
-	}
-}
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 #pragma once
-=======
-#ifndef CPLAYER_H
-#define CPLAYER_H
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 namespace game_framework {
 
 	class CGameMap;
@@ -22,7 +17,6 @@ namespace game_framework {
 		void SetMovingRight(bool flag);
 		void SetMovingUp(bool flag);
 		void SetMovingDown(bool flag);
-<<<<<<< HEAD
 		void SetX(int x);
 		void SetY(int y);
 		int GetWidth() const;
@@ -31,7 +25,13 @@ namespace game_framework {
 		int GetY() const;
 		int GetLastX() const;
 		int GetLastY() const;
-
+		/*
+		int GetDirection() const;
+		void SetPlantingLeft(bool flag);
+		void SetPlantingRight(bool flag);
+		void SetPlantingUp(bool flag);
+		void SetPlantingDown(bool flag);
+		*/
 		///
 		/// 遊戲流程
 		///
@@ -40,12 +40,6 @@ namespace game_framework {
 		void OnShow(CGameMap* m);
 		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd);
 
-=======
-		void OnMove(CGameMap *m);
-		void OnShow(CGameMap *m);
-		
-		void OnKeyDown(UINT key, CGameMap *m);
->>>>>>> e2e1e32b2e3fbb9303805f93de1773125d6ea93e
 	private:
 		// 玩家角色圖片寬高
 		int width, height;
@@ -61,9 +55,21 @@ namespace game_framework {
 		// 移動的動畫
 		CAnimation *facingDirection = nullptr; // 指向當前面向的方向之動畫
 		CAnimation aniMoveLeft, aniMoveRight, aniMoveUp, aniMoveDown;
-
 		// 狀態旗標 : 是否上/下/左/右移
-		bool isMovingLeft , isMovingRight, isMovingUp, isMovingDown;
+		bool isMovingLeft, isMovingRight, isMovingUp, isMovingDown;
+
+		/*
+		CAnimation aniPlantLeft, aniPlantRight, aniPlantUp, aniPlantDown;
+		bool isPlantingLeft, isPlantingRight, isPlantingRight, isPlantingRight;
+		*/
+		CAnimation aniChangeTool_0;
+		CAnimation aniChangeTool_1;
+		CAnimation aniChangeTool_2;
+		CAnimation aniChangeTool_3;
+		CAnimation aniChangeTool_4;
+		CAnimation aniChangeTool_5;
+		// 工具
+		vector<int> tool;
+		unsigned int toolSelector;
 	};
 }
-#endif
