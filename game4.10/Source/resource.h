@@ -112,6 +112,17 @@
 #define IDB_ChangeToolSickle            278
 #define IDB_BITMAP15                    279
 #define IDB_ChangeToolWateringCan       279
+#define IDB_HouseFloor                  283
+#define IDB_BITMAP5                     284
+#define IDB_HouseWall                   284
+#define IDB_HouseWall02                 285
+#define IDB_BITMAP10                    286
+#define IDB_HouseWall03                 286
+#define IDB_UseToolPlantSeed01          287
+#define IDB_UseToolPlantSeed02          288
+#define IDB_UseToolPlantSeed03          289
+#define IDB_BITMAP14                    290
+#define IDB_UseToolPlantSeed04          290
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -124,7 +135,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        280
+#define _APS_NEXT_RESOURCE_VALUE        291
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

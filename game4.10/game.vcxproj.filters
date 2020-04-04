@@ -127,6 +127,9 @@
     <ClCompile Include="Source\CGameDialog.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CMapFarmingEvent.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -175,6 +178,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameDialog.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CMapFarmingEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -345,6 +351,30 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolWateringCan.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseFloor_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\plant\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\plant\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\plant\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\plant\04.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

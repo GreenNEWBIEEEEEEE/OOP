@@ -1,5 +1,7 @@
 #pragma once
+
 #include "CMapManager.h"
+
 namespace game_framework{
 	class CMapEvent
 	{
