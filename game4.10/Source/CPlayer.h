@@ -78,6 +78,7 @@ namespace game_framework {
 		CAnimation aniChangeTool_3;
 		CAnimation aniChangeTool_4;
 		CAnimation aniChangeTool_5;
+		CAnimation aniChangeTool_6;
 
 		// 使用工具的動畫
 		bool isUsingTool = false;
@@ -86,19 +87,28 @@ namespace game_framework {
 		CAnimation aniUseTool_1_back;
 		CAnimation aniUseTool_1_left;
 		CAnimation aniUseTool_1_right;
+
 		CAnimation aniUseTool_2_front;
 		CAnimation aniUseTool_2_back;
 		CAnimation aniUseTool_2_left;
 		CAnimation aniUseTool_2_right;
+
 		CAnimation aniUseTool_3_front;
 		CAnimation aniUseTool_3_back;
 		CAnimation aniUseTool_3_left;
 		CAnimation aniUseTool_3_right;
+
 		CAnimation aniUseTool_4;
+
 		CAnimation aniUseTool_5_front;
 		CAnimation aniUseTool_5_back;
 		CAnimation aniUseTool_5_left;
 		CAnimation aniUseTool_5_right;
+
+		CAnimation aniUseTool_6_front;
+		CAnimation aniUseTool_6_back;
+		CAnimation aniUseTool_6_left;
+		CAnimation aniUseTool_6_right;
 
 		// 工/道具的背包
 		vector<int> tool;

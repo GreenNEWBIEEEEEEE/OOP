@@ -192,21 +192,139 @@ IDB_ChangeToolSickle    BITMAP                  "..\\RES\\NewMaterial\\Character
 
 IDB_ChangeToolWateringCan BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolWateringCan.bmp"
 
-IDB_HouseFloor          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\House\\images_BMP\\HouseFloor_01.bmp"
+IDB_HouseFloor          BITMAP                  "..\\RES\\NewMaterial\\House\\images_BMP\\HouseFloor_01.bmp"
 
-IDB_HouseWall           BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_01.bmp"
+IDB_HouseWall           BITMAP                  "..\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_01.bmp"
 
-IDB_HouseWall02         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_02.bmp"
+IDB_HouseWall02         BITMAP                  "..\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_02.bmp"
 
-IDB_HouseWall03         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_03.bmp"
+IDB_HouseWall03         BITMAP                  "..\\RES\\NewMaterial\\House\\images_BMP\\HouseWall_03.bmp"
 
-IDB_UseToolPlantSeed01  BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\plant\\01.bmp"
+IDB_UseToolPlantSeed01  BITMAP                  "..\\RES\\NewMaterial\\Character\\plant\\01.bmp"
 
-IDB_UseToolPlantSeed02  BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\plant\\02.bmp"
+IDB_UseToolPlantSeed02  BITMAP                  "..\\RES\\NewMaterial\\Character\\plant\\02.bmp"
 
-IDB_UseToolPlantSeed03  BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\plant\\03.bmp"
+IDB_UseToolPlantSeed03  BITMAP                  "..\\RES\\NewMaterial\\Character\\plant\\03.bmp"
 
-IDB_UseToolPlantSeed04  BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\plant\\04.bmp"
+IDB_UseToolPlantSeed04  BITMAP                  "..\\RES\\NewMaterial\\Character\\plant\\04.bmp"
+
+IDB_UseToolSickle_Back_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\back\\01.bmp"
+
+IDB_UseToolSickle_Back_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\back\\02.bmp"
+
+IDB_UseToolSickle_Back_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\back\\03.bmp"
+
+IDB_UseToolSickle_Back_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\back\\04.bmp"
+
+IDB_UseToolSickle_Front_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\front\\01.bmp"
+
+IDB_UseToolSickle_Front_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\front\\02.bmp"
+
+IDB_UseToolSickle_Front_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\front\\03.bmp"
+
+IDB_UseToolSickle_Front_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\front\\04.bmp"
+
+IDB_UseToolSickle_Left_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\left\\01.bmp"
+
+IDB_UseToolSickle_Left_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\left\\02.bmp"
+
+IDB_UseToolSickle_Left_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\left\\03.bmp"
+
+IDB_UseToolSickle_Left_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\left\\04.bmp"
+
+IDB_UseToolSickle_Right_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\right\\01.bmp"
+
+IDB_UseToolSickle_Right_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\right\\02.bmp"
+
+IDB_UseToolSickle_Right_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\right\\03.bmp"
+
+IDB_UseToolSickle_Right_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolSickle\\right\\04.bmp"
+
+IDB_UseToolAxe_Back_01  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\back\\01.bmp"
+
+IDB_UseToolAxe_Back_02  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\back\\02.bmp"
+
+IDB_UseToolAxe_Front_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\front\\01.bmp"
+
+IDB_UseToolAxe_Front_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\front\\02.bmp"
+
+IDB_UseToolAxe_Front_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\front\\03.bmp"
+
+IDB_UseToolAxe_Left_01  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\left\\01.bmp"
+
+IDB_UseToolAxe_Left_02  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\left\\02.bmp"
+
+IDB_UseToolAxe_Left_03  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\left\\03.bmp"
+
+IDB_UseToolAxe_Right_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\right\\01.bmp"
+
+IDB_UseToolAxe_Right_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\right\\02.bmp"
+
+IDB_UseToolAxe_Right_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolAxe\\right\\03.bmp"
+
+IDB_UseToolWateringCan_Back_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\back\\01.bmp"
+
+IDB_UseToolWateringCan_Back_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\back\\02.bmp"
+
+IDB_UseToolWateringCan_Front_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\front\\01.bmp"
+
+IDB_UseToolWateringCan_Front_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\front\\02.bmp"
+
+IDB_UseToolWateringCan_Left_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\left\\01.bmp"
+
+IDB_UseToolWateringCan_Left_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\left\\02.bmp"
+
+IDB_UseToolWateringCan_Right_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\right\\01.bmp"
+
+IDB_UseToolWateringCan_Right_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolWateringCan\\right\\02.bmp"
+
+IDB_UseToolHammer_Back_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\back\\01.bmp"
+
+IDB_UseToolHammer_Back_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\back\\02.bmp"
+
+IDB_UseToolHammer_Front_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\front\\01.bmp"
+
+IDB_UseToolHammer_Front_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\front\\02.bmp"
+
+IDB_UseToolHammer_Front_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\front\\03.bmp"
+
+IDB_UseToolHammer_Left_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\left\\01.bmp"
+
+IDB_UseToolHammer_Left_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\left\\02.bmp"
+
+IDB_UseToolHammer_Left_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\left\\03.bmp"
+
+IDB_UseToolHammer_Right_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\right\\01.bmp"
+
+IDB_UseToolHammer_Right_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\right\\02.bmp"
+
+IDB_UseToolHammer_Right_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHammer\\right\\03.bmp"
+
+IDB_UseToolHoe_Back_01  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\back\\01.bmp"
+
+IDB_UseToolHoe_Back_02  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\back\\02.bmp"
+
+IDB_UseToolHoe_Front_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\front\\01.bmp"
+
+IDB_UseToolHoe_Front_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\front\\02.bmp"
+
+IDB_UseToolHoe_Front_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\front\\03.bmp"
+
+IDB_UseToolHoe_Left_01  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\left\\01.bmp"
+
+IDB_UseToolHoe_Left_02  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\left\\02.bmp"
+
+IDB_UseToolHoe_Left_03  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\left\\03.bmp"
+
+IDB_UseToolHoe_Left_04  BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\left\\04.bmp"
+
+IDB_UseToolHoe_Right_01 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\right\\01.bmp"
+
+IDB_UseToolHoe_Right_02 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\right\\02.bmp"
+
+IDB_UseToolHoe_Right_03 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\right\\03.bmp"
+
+IDB_UseToolHoe_Right_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\right\\04.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
