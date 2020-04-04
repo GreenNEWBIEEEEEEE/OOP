@@ -75,6 +75,11 @@ namespace game_framework
 		CMovingBitmap houseOutside_13;
 		CMovingBitmap houseOutside_14;
 		CMovingBitmap houseOutside_15;
+		CMovingBitmap noticeBoard;
+		CMovingBitmap houseFloor;
+		CMovingBitmap houseWall;
+		CMovingBitmap houseWall_02;
+		CMovingBitmap houseWall_03;
 
 		
 

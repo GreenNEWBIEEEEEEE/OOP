@@ -63,6 +63,11 @@ namespace game_framework {
 		houseOutside_13.LoadBitmap(IDB_HouseOutside12);
 		houseOutside_14.LoadBitmap(IDB_HouseOutside13);
 		houseOutside_15.LoadBitmap(IDB_HouseOutside14);
+		noticeBoard.LoadBitmap(IDB_NoticeBoard);
+		houseFloor.LoadBitmap(IDB_HouseFloor);
+		houseWall.LoadBitmap(IDB_HouseWall);
+		houseWall_02.LoadBitmap(IDB_HouseWall02);
+		houseWall_03.LoadBitmap(IDB_HouseWall03);
 
 	}
 
@@ -93,6 +98,8 @@ namespace game_framework {
 					soil.ShowBitmap();
 					break;
 				case 4:
+					houseFloor.SetTopLeft(x, y);
+					houseFloor.ShowBitmap();
 					break;
 				case -1:
 					fence.SetTopLeft(x, y);
@@ -174,6 +181,22 @@ namespace game_framework {
 				case -20:
 					houseOutside_15.SetTopLeft(x, y);
 					houseOutside_15.ShowBitmap();
+					break;
+				case -21:
+					noticeBoard.SetTopLeft(x, y);
+					noticeBoard.ShowBitmap();
+					break;
+				case -22:
+					houseWall.SetTopLeft(x, y);
+					houseWall.ShowBitmap();
+					break;
+				case -23:
+					houseWall_02.SetTopLeft(x, y);
+					houseWall_02.ShowBitmap();
+					break;
+				case -24:
+					houseWall_03.SetTopLeft(x, y);
+					houseWall_03.ShowBitmap();
 					break;
 
 				default:

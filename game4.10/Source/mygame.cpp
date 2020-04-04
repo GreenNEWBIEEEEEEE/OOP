@@ -306,13 +306,11 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (nChar == KEY_LEFT)
 	{
 		p1.SetMovingLeft(false);
-	}
-		
+	}	
 	if (nChar == KEY_RIGHT)
 	{
 		p1.SetMovingRight(false);
 	}
-		
 	if (nChar == KEY_UP)
 	{
 		p1.SetMovingUp(false);
@@ -321,6 +319,8 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		p1.SetMovingDown(false);
 	}
+
+	p1.OnKeyUp(nChar, &mapManager, &gameDialog);
 }
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作

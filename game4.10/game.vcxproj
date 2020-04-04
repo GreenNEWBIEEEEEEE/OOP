@@ -257,6 +257,7 @@
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CMapEvent.cpp" />
+    <ClCompile Include="Source\CMapFarmingEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
     <ClCompile Include="Source\CMapManager.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
@@ -307,6 +308,7 @@
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CMapEvent.h" />
+    <ClInclude Include="Source\CMapFarmingEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />
     <ClInclude Include="Source\CMapManager.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
@@ -353,6 +355,14 @@
     <Image Include="RES\NewMaterial\Character\move\right\People_right01.bmp" />
     <Image Include="RES\NewMaterial\Character\move\right\People_right02.bmp" />
     <Image Include="RES\NewMaterial\Character\move\right\People_right03.bmp" />
+    <Image Include="RES\NewMaterial\Character\plant\01.bmp" />
+    <Image Include="RES\NewMaterial\Character\plant\02.bmp" />
+    <Image Include="RES\NewMaterial\Character\plant\03.bmp" />
+    <Image Include="RES\NewMaterial\Character\plant\04.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseFloor_01.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_01.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_02.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_03.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_02.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_06.bmp" />
