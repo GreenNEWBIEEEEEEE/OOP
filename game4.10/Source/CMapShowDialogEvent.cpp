@@ -29,12 +29,13 @@ namespace game_framework
 			gd->Enable();
 			break;
 		case 10002:
-			gd->AddMessage("Press Q to Change tool.");
+			gd->AddMessage("Press W to change tools.");
 			gd->AddMessage("Now you have :");
 			gd->AddMessage("An axe.");
 			gd->AddMessage("A hammer.");
 			gd->AddMessage("A hoe.");
 			gd->AddMessage("A seed bag.");
+			gd->AddMessage("A waterer.");
 			gd->AddMessage("A sickle.");
 			gd->Enable();
 			break;
@@ -45,7 +46,11 @@ namespace game_framework
 			gd->Enable();
 			break;
 		case 10004:
-			gd->AddMessage("This is a notice board");
+			gd->AddMessage("This is a notice board.");
+			gd->Enable();
+			break;
+		case 10005:
+			gd->AddMessage("Here is your home.");
 			gd->Enable();
 			break;
 		default:

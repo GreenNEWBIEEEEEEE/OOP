@@ -12,20 +12,30 @@
 
 
 namespace game_framework {
-	CMapTransitionEvent::CMapTransitionEvent()
-		: CMapEvent(0, 0x0D)
+	CMapTransitionEvent::CMapTransitionEvent(int eventCode)
+		: CMapEvent(eventCode, 0x0D)
 	{
 		
 	}
 
 	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager * mm, CGameDialog *gd)
 	{
-		gd->AddMessage("Welcome to your home.");
-		gd->AddMessage("This is a game dialog.");
-		gd->AddMessage("Press SPACE to finish this dialog.");
-		gd->Enable();
-
-		mm->ChangeMap(1);
-		p->SetX(300); p->SetY(200); // FIXME
+		switch (eventCode)
+		{
+		case 20001:
+			mm->ChangeMap(1);
+			mm->GetCurrentMap()->SetSXSY(200, 500);
+			p->SetX(7 * 64);
+			p->SetY(12 * 53);
+			break;
+		case 20002:
+			mm->ChangeMap(0);
+			mm->GetCurrentMap()->SetSXSY(400, 100);
+			p->SetX(10 * 64);
+			p->SetY(5 * 53);
+			break;
+		default:
+			break;
+		}
 	}
 }

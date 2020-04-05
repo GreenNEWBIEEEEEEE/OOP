@@ -281,12 +281,14 @@ namespace game_framework {
 	{
 		this->lastX = this->x;
 		this->x = x;
+		bx = x + 64;
 	}
 
 	void CPlayer::SetY(int y)
 	{
 		this->lastY = this->y;
 		this->y = y;
+		by = y + 40;
 	}
 
 	int CPlayer::GetWidth() const
@@ -434,12 +436,12 @@ namespace game_framework {
 	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
-		const char KEY_Q = 0x51; // keyboard Q鍵
+		const char KEY_W = 'W'; // keyboard Q鍵
 
 		//
-		// 按Q切換玩家手上拿的工具
+		// 按W切換玩家手上拿的工具
 		//
-		if (key == KEY_Q)
+		if (key == KEY_W)
 		{
 			// 切換工具選擇器
 			toolSelector++;
@@ -556,10 +558,10 @@ namespace game_framework {
 	void CPlayer::OnKeyUp(UINT key, CMapManager * mm, CGameDialog * gd)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
-		const char KEY_Q = 0x51; // keyboard Q鍵
+		const char KEY_W = 'W'; // keyboard Q鍵
 
 		// 放開Q鍵 變回原來的姿勢
-		if (key == KEY_Q)
+		if (key == KEY_W)
 		{
 			Sleep(200);
 			facingDirection = lastFacingDirection;

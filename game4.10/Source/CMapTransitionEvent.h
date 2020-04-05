@@ -3,7 +3,7 @@
 namespace game_framework {
 	class CMapTransitionEvent : public CMapEvent {
 	public:
-		CMapTransitionEvent();
+		CMapTransitionEvent(int eventCode);
 		~CMapTransitionEvent() {};
 		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd);
 	};

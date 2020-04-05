@@ -91,6 +91,7 @@ namespace game_framework {
 			else
 			{
 				allDone = true;
+				Disable();
 			}
 
 		}

@@ -90,9 +90,6 @@ namespace game_framework{
 	{
 		switch (eventCode)
 		{
-		case 0:
-			events.push_back(new CMapTransitionEvent());
-			break;
 		case 5:
 			events.push_back(new CMapFarmingEvent());
 			break;
@@ -111,6 +108,11 @@ namespace game_framework{
 		case 10005:
 			events.push_back(new CMapShowDialogEvent(10005));
 			break;
+		case 20001:
+			events.push_back(new CMapTransitionEvent(20001));
+			break;
+		case 20002:
+			events.push_back(new CMapTransitionEvent(20002));
 		default:
 			break;
 		}

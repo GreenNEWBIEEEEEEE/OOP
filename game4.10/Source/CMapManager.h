@@ -12,6 +12,7 @@ namespace game_framework {
 		void ChangeMap(unsigned mapID);
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
+		void OnMove();
 		void OnShow();
 	private:
 		unsigned selector = 0;

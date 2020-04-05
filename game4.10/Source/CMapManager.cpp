@@ -51,6 +51,12 @@ namespace game_framework {
 		for (unsigned i = 0; i < maps.size(); ++i)
 			maps[i]->LoadBitmap();
 	}
+
+	void CMapManager::OnMove()
+	{
+		for (unsigned i = 0; i < maps.size(); ++i)
+			maps.at(i)->OnMove();
+	}
 	
 	///
 	///
