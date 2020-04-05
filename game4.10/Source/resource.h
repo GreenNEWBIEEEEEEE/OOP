@@ -183,6 +183,12 @@
 #define IDB_UseToolHoe_Right_03         349
 #define IDB_BITMAP16                    350
 #define IDB_UseToolHoe_Right_04         350
+#define IDB_Radish_Seed_D               351
+#define IDB_Radish_Seed_W               352
+#define IDB_Radish_Grow01_D             353
+#define IDB_Radish_Grow01_W             354
+#define IDB_BITMAP11                    355
+#define IDB_Radish_Mature               355
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -195,7 +201,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        351
+#define _APS_NEXT_RESOURCE_VALUE        356
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

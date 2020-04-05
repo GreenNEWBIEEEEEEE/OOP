@@ -211,7 +211,7 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 	
-	
+	mapManager.GetCurrentMap()->OnMove();
 	
 	gameDialog.OnMove();
 	//

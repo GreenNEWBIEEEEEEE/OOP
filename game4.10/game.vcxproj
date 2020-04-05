@@ -260,6 +260,7 @@
     <ClCompile Include="Source\CMapFarmingEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
     <ClCompile Include="Source\CMapManager.cpp" />
+    <ClCompile Include="Source\CMapShowDialogEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -311,6 +312,7 @@
     <ClInclude Include="Source\CMapFarmingEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />
     <ClInclude Include="Source\CMapManager.h" />
+    <ClInclude Include="Source\CMapShowDialogEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
@@ -418,6 +420,11 @@
     <Image Include="RES\NewMaterial\Character\toolWateringCan\left\02.bmp" />
     <Image Include="RES\NewMaterial\Character\toolWateringCan\right\01.bmp" />
     <Image Include="RES\NewMaterial\Character\toolWateringCan\right\02.bmp" />
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Grow01_D.bmp" />
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Grow01_W.bmp" />
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Mature.bmp" />
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_D.bmp" />
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_W.bmp" />
     <Image Include="res\newmaterial\house\images_bmp\bitmap11.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseFloor_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_01.bmp" />

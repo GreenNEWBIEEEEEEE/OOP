@@ -130,6 +130,9 @@
     <ClCompile Include="Source\CMapFarmingEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CMapShowDialogEvent.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -181,6 +184,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CMapFarmingEvent.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CMapShowDialogEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -555,6 +561,21 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\NewMaterial\Character\toolHoe\right\04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_D.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_W.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Grow01_D.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Grow01_W.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Crops\Radish\Radish_Mature.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

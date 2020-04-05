@@ -326,6 +326,16 @@ IDB_UseToolHoe_Right_03 BITMAP                  "..\\RES\\NewMaterial\\Character
 
 IDB_UseToolHoe_Right_04 BITMAP                  "..\\RES\\NewMaterial\\Character\\toolHoe\\right\\04.bmp"
 
+IDB_Radish_Seed_D       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Seed_D.bmp"
+
+IDB_Radish_Seed_W       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Seed_W.bmp"
+
+IDB_Radish_Grow01_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Grow01_D.bmp"
+
+IDB_Radish_Grow01_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Grow01_W.bmp"
+
+IDB_Radish_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Mature.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

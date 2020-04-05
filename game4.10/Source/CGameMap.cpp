@@ -21,7 +21,6 @@ namespace game_framework {
 		CreateMapInfos(mapinfo_path);
 		sx = sy = 0;
 		gndW = 64; gndH = 53;
-		//gndWater01.SetDelayCount(15);
 	}
 
 	CGameMap::~CGameMap()
@@ -69,6 +68,19 @@ namespace game_framework {
 		houseWall_02.LoadBitmap(IDB_HouseWall02);
 		houseWall_03.LoadBitmap(IDB_HouseWall03);
 
+		radish_Seed_D.LoadBitmap(IDB_Radish_Seed_D);
+		radish_Seed_W.LoadBitmap(IDB_Radish_Seed_W);
+		radish_Grow01_D.LoadBitmap(IDB_Radish_Grow01_D);
+		radish_Grow01_W.LoadBitmap(IDB_Radish_Grow01_W);
+		radish_Mature.LoadBitmap(IDB_Radish_Mature);
+
+	}
+
+	void CGameMap::OnMove()
+	{
+		for (int i = 0; i < row; ++i)
+			for (int j = 0; j < col; ++j)
+				map[i][j].OnMove();
 	}
 
 	void CGameMap::OnShow()
@@ -100,6 +112,26 @@ namespace game_framework {
 				case 4:
 					houseFloor.SetTopLeft(x, y);
 					houseFloor.ShowBitmap();
+					break;
+				case 5:
+					radish_Seed_D.SetTopLeft(x, y);
+					radish_Seed_D.ShowBitmap();
+					break;
+				case 6:
+					radish_Seed_W.SetTopLeft(x, y);
+					radish_Seed_W.ShowBitmap();
+					break;
+				case 7:
+					radish_Grow01_D.SetTopLeft(x, y);
+					radish_Grow01_D.ShowBitmap();
+					break;
+				case 8:
+					radish_Grow01_W.SetTopLeft(x, y);
+					radish_Grow01_W.ShowBitmap();
+					break;
+				case 9:
+					radish_Mature.SetTopLeft(x, y);
+					radish_Mature.ShowBitmap();
 					break;
 				case -1:
 					fence.SetTopLeft(x, y);
@@ -219,7 +251,7 @@ namespace game_framework {
 	// 地圖管理器
 	void CGameMap::triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd)
 	{
-		int px = p->GetX(), py = p->GetY() + 90; // MAYBE FIXME
+		int px = p->GetBodyX() + 30, py = p->GetBodyY() + 60; // MAYBE FIXME
 		int gx = px / gndW, gy = py / gndH; // 求出格座標
 		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd);
 	}
@@ -252,6 +284,14 @@ namespace game_framework {
 	int CGameMap::ScreenY(int y) const
 	{
 		return y - sy;
+	}
+
+	CMapInfo * CGameMap::GetMapInfo(int gx, int gy) const
+	{
+		if (gx >= 0 && gx < col && gy >= 0 && gy < row)
+			return &(map[gy][gx]);
+		else
+			return nullptr;
 	}
 
 	void CGameMap::CreateMapInfos(string& mapinfo_path)

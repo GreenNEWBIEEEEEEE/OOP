@@ -12,28 +12,224 @@
 
 namespace game_framework
 {
-	CMapFarmingEvent::CMapFarmingEvent(int eventCode = 1, UINT keyCode = 'A')
-		: CMapEvent(eventCode, keyCode)
-	{
+	CMapFarmingEvent::CMapFarmingEvent() : CMapEvent(5, 'A'){}
 
-	}
-
-	CMapFarmingEvent::~CMapFarmingEvent()
-	{
-
-	}
+	CMapFarmingEvent::~CMapFarmingEvent() {}
 
 	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd)
 	{
+		// 看player手上拿的工具來決定要幹嘛
+		switch (p->GetCurrentTool())
+		{
+		// 斧頭: 用於砍年輪樹幹
+		case 1:
+			CutTrunk(p, mm, gd); // 呼叫砍年輪樹幹的子事件函數
+			break;
 
+		// 種子袋: 用於播種
+		case 4:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
+
+		// 鐮刀: 用於除草
+		case 5: 
+			Weed(p, mm, gd); // 呼叫除草的子事件函數
+			break;
+
+		// 澆水器: 用於澆水
+		case 6:
+			Water(p, mm, gd);
+			break;
+
+		// 不動作
+		default:
+			break;
+		}
 	}
 
 	int CMapFarmingEvent::getEventID() const
 	{
 		return CMapEvent::getEventID();
 	}
+
 	UINT CMapFarmingEvent::getKeyCode() const
 	{
 		return CMapEvent::getKeyCode();
 	}
+
+
+	///
+	/// 農務事件的個別事件(子事件)之子函數(例如: 除草/種菜等)
+	///
+	// 除草
+	void CMapFarmingEvent::Weed(CPlayer *p, CMapManager *mm, CGameDialog *gd)
+	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 利用剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+		
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr)
+		{
+			// 先檢查可耕
+			if (eMapInfo->IsArable())
+			{
+				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
+				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+				if (landState == CMapInfo::ArableLandState::hasWeeds)
+				{
+					eMapInfo->SetElemID(1); // 變成空地
+					// **重要: 要改變狀態**
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::EmptyLand);
+				}
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
+	}
+	// 砍年輪樹幹
+	void CMapFarmingEvent::CutTrunk(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 以剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr)
+		{
+			// 先檢查可耕
+			if (eMapInfo->IsArable())
+			{
+				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
+				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+				if (landState == CMapInfo::ArableLandState::hasTrunk)
+				{
+					eMapInfo->SetElemID(1); // 變成空地
+					// **重要: 要改變狀態**
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::EmptyLand);
+				}
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
+	}
+	// 播種
+	void CMapFarmingEvent::Plant(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+		// 播種9宮格與代號:
+		// e0 e1 e2
+		// e3 pg e5
+		// e6 e7 e8
+
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得全部9格的格座標
+		int ex[9] = 
+		{
+			pgx - 1, pgx, pgx + 1,
+			pgx - 1, pgx, pgx + 1,
+			pgx - 1, pgx, pgx + 1,
+		};
+		int ey[9] =
+		{
+			pgy - 1, pgy - 1, pgy - 1,
+			pgy, pgy, pgy,
+			pgy + 1, pgy + 1, pgy + 1,
+		};
+
+		// 執行事件內容
+		for (unsigned i = 0; i < 9; ++i)
+		{
+			// 取得MapInfo
+			CMapInfo * eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex[i], ey[i]);
+
+			// 該格不為空 且 是可耕地
+			if (eMapInfo != nullptr && eMapInfo->IsArable())
+			{
+				// 是空地才能播種
+				if (eMapInfo->GetArableLandState() == CMapInfo::ArableLandState::EmptyLand)
+				{
+					// 更換圖片
+					eMapInfo->SetElemID(5);
+					// 更換狀態
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+				}
+			}
+		}
+
+	}
+	// 澆水
+	void CMapFarmingEvent::Water(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 利用剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr && eMapInfo->IsArable())
+		{
+			// 檢查可耕地狀態
+			CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+			// 已撒種子但是尚未澆水
+			if (landState == CMapInfo::ArableLandState::seedPlanted)
+			{
+				// 更換圖及狀態
+				eMapInfo->SetElemID(6);
+				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredSeedPlanted);
+				// ***啟動計時器***
+				eMapInfo->EnableGrowingCounter();
+			}
+			// 達到一個成長階段但是尚未澆水
+			if (landState == CMapInfo::ArableLandState::isGrowing)
+			{
+				// 更換圖及狀態
+				eMapInfo->SetElemID(8);
+				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredIsGrowing);
+				// ***啟動計時器***
+				eMapInfo->EnableGrowingCounter();
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
+	}
+	// 採收
+	void CMapFarmingEvent::Harvest(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+
+	}
+
 }

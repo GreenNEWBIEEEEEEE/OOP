@@ -23,9 +23,12 @@ namespace game_framework {
 		int GetHeight() const;
 		int GetX() const;
 		int GetY() const;
+		int GetBodyX() const;
+		int GetBodyY() const;
 		int GetLastX() const;
 		int GetLastY() const;
 		int GetDirection() const;
+		int GetCurrentTool() const;
 
 		///
 		/// 遊戲流程
@@ -52,6 +55,7 @@ namespace game_framework {
 		// 玩家方向旗標
 		// 1=上, 2=下, 3=左, 4=右
 		int direction = 2;
+		int lastDirection;
 		
 		// 玩家現在在哪張地圖/場景上
 		int mapID; 

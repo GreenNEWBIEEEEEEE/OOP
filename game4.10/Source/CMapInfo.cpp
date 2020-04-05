@@ -7,16 +7,44 @@
 #include "CGameMap.h"
 #include "CMapInfo.h"
 #include "CMapTransitionEvent.h"
+#include "CMapFarmingEvent.h"
+#include "CMapShowDialogEvent.h"
 #include "CMapManager.h"
 
+
 namespace game_framework{
+
+	 // 可耕地狀態
+	enum ArableLandState;
+
 	CMapInfo::CMapInfo() : elemID(0)
 	{
+		isArable = false;
 	}
 
 	CMapInfo::CMapInfo(int elemID)
 	{
 		this->elemID = elemID;
+		switch (this->elemID)
+		{
+		case 1:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::EmptyLand;
+			break;
+		case 3:
+			isArable = true;
+			break;
+		case -3:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::hasWeeds;
+			break;
+		case -5:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::hasTrunk;
+			break;
+		default:
+			break;
+		}
 	}
 
 	CMapInfo::~CMapInfo()
@@ -31,6 +59,26 @@ namespace game_framework{
 	void CMapInfo::SetElemID(int elemID)
 	{
 		this->elemID = elemID;
+		switch (this->elemID)
+		{
+		case 1:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::EmptyLand;
+			break;
+		case 3:
+			isArable = true;
+			break;
+		case -3:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::hasWeeds;
+			break;
+		case -5:
+			isArable = true;
+			landState = CMapInfo::ArableLandState::hasTrunk;
+			break;
+		default:
+			break;
+		}
 	}
 
 	int CMapInfo::GetElemID() const
@@ -45,6 +93,24 @@ namespace game_framework{
 		case 0:
 			events.push_back(new CMapTransitionEvent());
 			break;
+		case 5:
+			events.push_back(new CMapFarmingEvent());
+			break;
+		case 10001:
+			events.push_back(new CMapShowDialogEvent(10001));
+			break;
+		case 10002:
+			events.push_back(new CMapShowDialogEvent(10002));
+			break;
+		case 10003:
+			events.push_back(new CMapShowDialogEvent(10003));
+			break;
+		case 10004:
+			events.push_back(new CMapShowDialogEvent(10004));
+			break;
+		case 10005:
+			events.push_back(new CMapShowDialogEvent(10005));
+			break;
 		default:
 			break;
 		}
@@ -57,13 +123,21 @@ namespace game_framework{
 
 	void CMapInfo::triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd)
 	{
-		for (unsigned i = 0; i < events.size(); ++i) {
-			
+		for (unsigned i = 0; i < events.size(); ++i) 
+		{	
 			// 如果player按的key 所對應的事件存在的話，執行事件
 
 			if (events[i]->getKeyCode() == keyCode) {
-				TRACE("\ntriggered\n");
+				TRACE("\nAn event triggered.\n");
 				events[i]->Execute(p, mm, gd);
+
+				///
+				/// FOR DEBUGGING
+				/// 
+				if (events[i]->getEventID() == 5)
+				{
+					TRACE("\nFarming Event Triggered\n");
+				}
 			}
 		}
 	}
@@ -71,5 +145,63 @@ namespace game_framework{
 	bool CMapInfo::IsEmpty() const
 	{
 		return elemID >= 0;
+	}
+
+	bool CMapInfo::IsArable() const
+	{
+		return isArable;
+	}
+
+	CMapInfo::ArableLandState CMapInfo::GetArableLandState() const
+	{
+		return landState;
+	}
+
+	void CMapInfo::SetArableLandState(CMapInfo::ArableLandState state)
+	{
+		this->landState = state;
+	}
+	void CMapInfo::EnableGrowingCounter()
+	{
+		isGrowingCounterEnable = true;
+	}
+	void CMapInfo::DisableGrowingCounter()
+	{
+		isGrowingCounterEnable = false;
+	}
+	bool CMapInfo::IsGrowingCounterEnable() const
+	{
+		return isGrowingCounterEnable;
+		
+	}
+	void CMapInfo::CountForGrowing()
+	{
+		if (growingCounter < GROWING_COUNTER_MAX)
+			growingCounter++;
+		else
+		{
+			growingCounter = 0;
+			if (isArable)
+			{
+				if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+				{
+					landState = CMapInfo::ArableLandState::isGrowing;
+					elemID = 7;
+				}
+				else if (landState == CMapInfo::ArableLandState::wateredIsGrowing) {
+					landState = CMapInfo::ArableLandState::isMature;
+					elemID = 9;
+				}
+			}
+			isGrowingCounterEnable = false;
+		}
+	}
+
+	void CMapInfo::OnMove()
+	{
+		if (isGrowingCounterEnable)
+		{
+			CountForGrowing();
+		}
 	}
 }

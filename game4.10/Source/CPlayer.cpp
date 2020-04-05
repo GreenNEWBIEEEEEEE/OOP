@@ -16,10 +16,9 @@ namespace game_framework {
 	{
 		width = 64; height = 80;
 		x = lastX = 300; y = lastY = 200;
-		bx = x + 64; by = y + 40; //
+		bx = x + 64; by = y + 40;
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
-
 
 		tool.push_back(0); // 手
 		tool.push_back(1); // 斧頭
@@ -28,7 +27,7 @@ namespace game_framework {
 		tool.push_back(4); // 種子袋
 		tool.push_back(5); // 鐮刀
 		tool.push_back(6); // 澆水器
-		toolSelector = 0;  // 一開始是手
+		toolSelector = 1;  // 一開始是手
 
 		// 設定 使用工具動作 的動畫每幀切換時間間隔
 		aniUseTool_0.SetDelayCount(3);
@@ -310,6 +309,16 @@ namespace game_framework {
 		return y;
 	}
 
+	int CPlayer::GetBodyX() const
+	{
+		return bx;
+	}
+
+	int CPlayer::GetBodyY() const
+	{
+		return by;
+	}
+
 	int CPlayer::GetLastX() const
 	{
 		return lastX;
@@ -324,6 +333,11 @@ namespace game_framework {
 	{
 		return direction;
 	}
+
+	int CPlayer::GetCurrentTool() const
+	{
+		return toolSelector;
+	}
 		
 	// OnMove
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
@@ -335,6 +349,7 @@ namespace game_framework {
 		if (isMovingLeft)
 		{
 			// 更改方向旗標
+			lastDirection = direction;
 			direction = 3;
 
 			// 當按下方向鍵時可先切換面向的方向, 不管之後是否有真的要移動
@@ -355,6 +370,7 @@ namespace game_framework {
 		if (isMovingRight)
 		{
 			// 更改方向旗標
+			lastDirection = direction;
 			direction = 4;
 
 			facingDirection->OnMove();
@@ -370,6 +386,7 @@ namespace game_framework {
 		if (isMovingUp)
 		{
 			// 更改方向旗標
+			lastDirection = direction;
 			direction = 1;
 
 			facingDirection->OnMove();
@@ -385,6 +402,7 @@ namespace game_framework {
 		if (isMovingDown)
 		{
 			// 更改方向旗標
+			lastDirection = direction;
 			direction = 2;
 
 			facingDirection->OnMove();
@@ -417,9 +435,6 @@ namespace game_framework {
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_Q = 0x51; // keyboard Q鍵
-
-		// 傳入事件觸發
-		mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
 
 		//
 		// 按Q切換玩家手上拿的工具
@@ -466,20 +481,19 @@ namespace game_framework {
 				break;
 			}
 		}
-		
 		//
-		// 按A執行工具動作與執行農務事件
+		// 按A使用工具動作的動畫與執行農務事件
 		//
-		if (key == KEY_A)
+		else if (key == KEY_A)
 		{
+			// 使用工具動畫的旗標
 			isUsingTool = true;
 
-			// 看看現在玩家拿甚麼工具
+			// 看看現在玩家拿甚麼工具 顯示動畫
 			switch (toolSelector)
 			{
 			case 0: // FIXME
 				isUsingTool = false;
-				facingDirection = facingDirection;
 				break;
 			case 1:
 				lastFacingDirection = facingDirection;
@@ -528,6 +542,14 @@ namespace game_framework {
 			default:
 				break;
 			}
+			
+			// 傳入農務事件觸發
+			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+		}
+		else
+		{
+			// 傳入其他事件觸發
+			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
 		}
 	}
 
@@ -547,9 +569,8 @@ namespace game_framework {
 		if (key == KEY_A)
 		{
 			isUsingTool = false;
+			direction = lastDirection;
 			facingDirection = lastFacingDirection;
 		}
-
-
 	}
 }
