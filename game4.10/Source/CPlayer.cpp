@@ -369,7 +369,7 @@ namespace game_framework {
 				m->SetSX(m->GetSX() - STEP_SIZE); 
 			}
 		}
-		if (isMovingRight)
+		else if (isMovingRight)
 		{
 			// 更改方向旗標
 			lastDirection = direction;
@@ -385,7 +385,7 @@ namespace game_framework {
 				m->SetSX(m->GetSX() + STEP_SIZE);
 			}
 		}
-		if (isMovingUp)
+		else if (isMovingUp)
 		{
 			// 更改方向旗標
 			lastDirection = direction;
@@ -401,7 +401,7 @@ namespace game_framework {
 				m->SetSY(m->GetSY() - STEP_SIZE);
 			}
 		}
-		if (isMovingDown)
+		else if (isMovingDown)
 		{
 			// 更改方向旗標
 			lastDirection = direction;
@@ -417,6 +417,16 @@ namespace game_framework {
 				m->SetSY(m->GetSY() + STEP_SIZE);
 			}
 		}
+		else if (isUsingTool) {
+			if (facingDirection->IsFinalBitmap()) {
+				facingDirection->Reset();
+				isUsingTool = false;
+				direction = lastDirection;
+				facingDirection = lastFacingDirection;
+			}
+			else
+				facingDirection->OnMove();
+		}
 	}
 
 	void CPlayer::OnShow(CGameMap* m)
@@ -427,8 +437,7 @@ namespace game_framework {
 			// 用m計算出玩家的地圖點座標(x,y) 在 screen上的座標 因為最終是要在screen上畫
 			facingDirection->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
 
-			if (isUsingTool)
-				facingDirection->OnMove();
+		
 			facingDirection->OnShow();
 		}
 	}
@@ -567,12 +576,6 @@ namespace game_framework {
 			facingDirection = lastFacingDirection;
 		}
 
-		// 放開A鍵 
-		if (key == KEY_A)
-		{
-			isUsingTool = false;
-			direction = lastDirection;
-			facingDirection = lastFacingDirection;
-		}
+	
 	}
 }
