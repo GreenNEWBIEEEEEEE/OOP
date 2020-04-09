@@ -21,6 +21,11 @@ namespace game_framework
 
 	void CMapShowDialogEvent::Execute(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
+		//
+		// 規範：
+		// 對話框「內容」事件碼的範圍，須從10001~20000
+		// 數量上基本上很夠用了
+		// 
 		switch (eventCode)
 		{
 		case 10001:

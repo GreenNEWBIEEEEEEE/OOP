@@ -226,6 +226,7 @@ namespace game_framework
 		// 結束事件內容
 		eMapInfo = nullptr;
 	}
+
 	// 採收
 	void CMapFarmingEvent::Harvest(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
