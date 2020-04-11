@@ -21,11 +21,19 @@ namespace game_framework
 		// 看player手上拿的工具來決定要幹嘛
 		switch (p->GetCurrentTool())
 		{
+		case 0:
+			Harvest(p, mm, gd); // 呼叫收成子事件函數
+			break;
 		// 斧頭: 用於砍年輪樹幹
 		case 1:
 			CutTrunk(p, mm, gd); // 呼叫砍年輪樹幹的子事件函數
 			break;
-
+		case 2:
+			BreakStone(p, mm, gd); // 呼叫收成子事件函數
+			break;
+		case 3:
+			Hoeing(p, mm, gd); // 呼叫鋤地子事件函數
+			break;
 		// 種子袋: 用於播種
 		case 4:
 			Plant(p, mm, gd); // 呼叫播種子事件函數
@@ -86,11 +94,11 @@ namespace game_framework
 			{
 				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
-				if (landState == CMapInfo::ArableLandState::hasWeeds)
+				if (landState == CMapInfo::ArableLandState::hasWeeds || landState == CMapInfo::ArableLandState::isGrowing || landState == CMapInfo::ArableLandState::wateredIsGrowing || landState == CMapInfo::ArableLandState::isMature)
 				{
-					eMapInfo->SetElemID(1); // 變成空地
+					eMapInfo->SetElemID(3); // 變成空地
 					// **重要: 要改變狀態**
-					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::EmptyLand);
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
 				}
 			}
 		}
@@ -125,9 +133,9 @@ namespace game_framework
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
 				if (landState == CMapInfo::ArableLandState::hasTrunk)
 				{
-					eMapInfo->SetElemID(1); // 變成空地
+					eMapInfo->SetElemID(3); // 變成空地
 					// **重要: 要改變狀態**
-					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::EmptyLand);
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
 				}
 			}
 		}
@@ -230,7 +238,114 @@ namespace game_framework
 	// 採收
 	void CMapFarmingEvent::Harvest(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
 
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 以剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr)
+		{
+			// 先檢查可耕
+			if (eMapInfo->IsArable())
+			{
+				// 檢查可耕地狀態 若是isMature 就可以收成; 否則不動作
+				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+				if (landState == CMapInfo::ArableLandState::isMature)
+				{
+					eMapInfo->SetElemID(3); // 變成泥土
+					// **重要: 要改變狀態**
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
+				}
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
 	}
+
+	void CMapFarmingEvent::BreakStone(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 以剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr)
+		{
+			// 先檢查可耕
+			if (eMapInfo->IsArable())
+			{
+				// 檢查可耕地狀態 若是hasStone 就可以除石頭; 否則不動作
+				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+				if (landState == CMapInfo::ArableLandState::hasStone)
+				{
+					eMapInfo->SetElemID(3); // 變成空地
+					// **重要: 要改變狀態**
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
+				}
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
+	}
+	//鋤地
+	void CMapFarmingEvent::Hoeing(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	{
+		// 取得player現在站的格座標
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+
+		// 取得player面向的事件作用格的格座標
+		int ex = pgx, ey = pgy;
+		if (p->GetDirection() == 1) ey--;
+		else if (p->GetDirection() == 2) ey++;
+		else if (p->GetDirection() == 3) ex--;
+		else ex++;
+
+		// 以剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
+		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
+
+		// 開始執行內容
+		// 先檢查MapInfo有沒有正確取到
+		if (eMapInfo != nullptr)
+		{
+			// 先檢查可耕
+			if (eMapInfo->IsArable())
+			{
+				// 檢查可耕地狀態 若是Soil 就可以耕地; 否則不動作
+				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
+				if (landState == CMapInfo::ArableLandState::Soil)
+				{
+					eMapInfo->SetElemID(1); // 變成鬆土
+					// **重要: 要改變狀態**
+					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::EmptyLand);
+				}
+			}
+		}
+
+		// 結束事件內容
+		eMapInfo = nullptr;
+	}
+
 
 }

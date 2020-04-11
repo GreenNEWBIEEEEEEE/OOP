@@ -33,6 +33,7 @@ namespace game_framework{
 			break;
 		case 3:
 			isArable = true;
+			landState = CMapInfo::ArableLandState::Soil;
 			break;
 		case -3:
 			isArable = true;
@@ -66,7 +67,7 @@ namespace game_framework{
 			landState = CMapInfo::ArableLandState::EmptyLand;
 			break;
 		case 3:
-			isArable = true;
+			landState = CMapInfo::ArableLandState::Soil;
 			break;
 		case -3:
 			isArable = true;

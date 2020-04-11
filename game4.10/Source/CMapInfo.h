@@ -6,8 +6,10 @@ namespace game_framework {
 		// 可耕地狀態
 		enum ArableLandState 
 		{
+			Soil,                         // 泥土
 			EmptyLand,                    // 空地
 			hasWeeds,                     // 有雜草
+			hasStone,					  // 有石頭
 			hasTrunk,                     // 有樹幹
 			seedPlanted,                  // 已播撒種子
 			wateredSeedPlanted,           // 已播撒種子並且已澆水

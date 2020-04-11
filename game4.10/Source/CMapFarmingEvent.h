@@ -33,5 +33,9 @@ namespace game_framework
 		void Water(CPlayer *p, CMapManager *mm, CGameDialog *gd);
 		// 採收子事件
 		void Harvest(CPlayer *p, CMapManager *mm, CGameDialog *gd);
+		// 鋤地子事件
+		void Hoeing(CPlayer *p, CMapManager *mm, CGameDialog *gd);
+		// 破壞石頭事件
+		void BreakStone(CPlayer *p, CMapManager *mm, CGameDialog *gd);
 	};
 }
