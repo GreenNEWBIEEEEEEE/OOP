@@ -7,6 +7,11 @@ namespace game_framework {
 	class CPlayer
 	{
 	public:
+		enum MoveState
+		{
+			RadishMove,					// 帶著白蘿蔔走路
+			NormalMove					// 一般走路
+		};
 		CPlayer();
 		~CPlayer();
 
@@ -29,7 +34,9 @@ namespace game_framework {
 		int GetLastY() const;
 		int GetDirection() const;
 		int GetCurrentTool() const;
-
+		void ChangeMoveState(int mapInfoID);
+		MoveState GetCurrentMoveState();
+		void Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight);
 		///
 		/// 遊戲流程
 		///
@@ -40,6 +47,8 @@ namespace game_framework {
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
 
 	private:
+		MoveState currentMoveState = NormalMove;
+
 		// 目前一整張玩家圖(包含上下左右 換工具 工具動作) "版面" 都是 128*120
 		// 玩家角色圖片寬高
 		int width, height;
@@ -67,6 +76,7 @@ namespace game_framework {
 		CAnimation *lastFacingDirection = nullptr;
 		CAnimation *facingDirection = nullptr; // 指向當前面向的方向之動畫
 		CAnimation aniMoveLeft, aniMoveRight, aniMoveUp, aniMoveDown;
+		CAnimation aniRadishMoveLeft, aniRadishMoveRight, aniRadishMoveUp, aniRadishMoveDown;
 		// 狀態旗標 : 是否上/下/左/右移
 		bool isMovingLeft, isMovingRight, isMovingUp, isMovingDown;
 

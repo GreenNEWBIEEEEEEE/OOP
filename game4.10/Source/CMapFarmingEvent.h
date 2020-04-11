@@ -37,5 +37,7 @@ namespace game_framework
 		void Hoeing(CPlayer *p, CMapManager *mm, CGameDialog *gd);
 		// 破壞石頭事件
 		void BreakStone(CPlayer *p, CMapManager *mm, CGameDialog *gd);
+		// 賣農作物事件
+		//void SellCrop(CPlayer *p, CMapManager *mm, CGameDialog *gd);
 	};
 }

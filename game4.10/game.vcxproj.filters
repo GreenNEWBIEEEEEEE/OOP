@@ -578,5 +578,41 @@
     <Image Include="RES\NewMaterial\Crops\Radish\Radish_Mature.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\back\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\back\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\back\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\front\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\front\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\front\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\left\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\left\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\left\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\right\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\right\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\harvestMove\right\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

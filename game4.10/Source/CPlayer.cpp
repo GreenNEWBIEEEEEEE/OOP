@@ -88,6 +88,27 @@ namespace game_framework {
 		}
 		
 		///
+		/// 載入上下左右移動的動畫
+		/// 
+		{
+			aniRadishMoveLeft.AddBitmap(IDB_PeopleRadish_left01, RGB(255, 255, 255));
+			aniRadishMoveLeft.AddBitmap(IDB_PeopleRadish_left02, RGB(255, 255, 255));
+			aniRadishMoveLeft.AddBitmap(IDB_PeopleRadish_left03, RGB(255, 255, 255));
+
+			aniRadishMoveRight.AddBitmap(IDB_PeopleRadish_right01, RGB(255, 255, 255));
+			aniRadishMoveRight.AddBitmap(IDB_PeopleRadish_right02, RGB(255, 255, 255));
+			aniRadishMoveRight.AddBitmap(IDB_PeopleRadish_right03, RGB(255, 255, 255));
+
+			aniRadishMoveUp.AddBitmap(IDB_PeopleRadish_back01, RGB(255, 255, 255));
+			aniRadishMoveUp.AddBitmap(IDB_PeopleRadish_back02, RGB(255, 255, 255));
+			aniRadishMoveUp.AddBitmap(IDB_PeopleRadish_back03, RGB(255, 255, 255));
+
+			aniRadishMoveDown.AddBitmap(IDB_PeopleRadish_front01, RGB(255, 255, 255));
+			aniRadishMoveDown.AddBitmap(IDB_PeopleRadish_front02, RGB(255, 255, 255));
+			aniRadishMoveDown.AddBitmap(IDB_PeopleRadish_front03, RGB(255, 255, 255));
+		}
+
+		///
 		/// 載入切換工具的動畫
 		/// 請參閱各個工具的編號
 		///
@@ -340,14 +361,36 @@ namespace game_framework {
 	{
 		return toolSelector;
 	}
-		
+	
+	void CPlayer::ChangeMoveState(int mapInfoID)
+	{
+		switch (mapInfoID)
+		{
+		case 9:
+			currentMoveState = RadishMove;
+			break;
+		default:
+			currentMoveState = NormalMove;
+			break;
+		}
+	}
+
 	// OnMove
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
 	void CPlayer::OnMove(CGameMap* m)
 	{
+		
+		
+		if (currentMoveState == RadishMove)
+			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight);
+		else if (currentMoveState == NormalMove)
+			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight);
+	}
+
+	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight)
+	{
 		// 每一步移動量
 		const int STEP_SIZE = 5;
-		
 		if (isMovingLeft)
 		{
 			// 更改方向旗標
@@ -356,7 +399,7 @@ namespace game_framework {
 
 			// 當按下方向鍵時可先切換面向的方向, 不管之後是否有真的要移動
 			facingDirection->OnMove();
-			facingDirection = &aniMoveLeft;
+			facingDirection = moveLeft;
 			// 偵測障礙物 或 不可踩上去的地圖格子
 			// 目前設定為 玩家的圖片是64*80
 			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
@@ -366,7 +409,7 @@ namespace game_framework {
 				bx -= STEP_SIZE;
 				ex -= STEP_SIZE;
 				// 移動時切換map在screen上的座標 從而達到screen或是鏡頭跟著玩家的視覺效果
-				m->SetSX(m->GetSX() - STEP_SIZE); 
+				m->SetSX(m->GetSX() - STEP_SIZE);
 			}
 		}
 		else if (isMovingRight)
@@ -376,8 +419,8 @@ namespace game_framework {
 			direction = 4;
 
 			facingDirection->OnMove();
-			facingDirection = &aniMoveRight;
-			if (m->IsEmpty(bx + width +STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80))
+			facingDirection = moveRight;
+			if (m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80))
 			{
 				x += STEP_SIZE;
 				bx += STEP_SIZE;
@@ -392,8 +435,8 @@ namespace game_framework {
 			direction = 1;
 
 			facingDirection->OnMove();
-			facingDirection = &aniMoveUp;
-			if (m->IsEmpty(bx , by + 64 - STEP_SIZE) && m->IsEmpty(bx + width , by + 64 - STEP_SIZE))
+			facingDirection = moveUp;
+			if (m->IsEmpty(bx, by + 64 - STEP_SIZE) && m->IsEmpty(bx + width, by + 64 - STEP_SIZE))
 			{
 				y -= STEP_SIZE;
 				by -= STEP_SIZE;
@@ -408,7 +451,7 @@ namespace game_framework {
 			direction = 2;
 
 			facingDirection->OnMove();
-			facingDirection = &aniMoveDown;
+			facingDirection = moveDown;
 			if (m->IsEmpty(bx, by + 80 + STEP_SIZE) && m->IsEmpty(bx + width, by + 80 + STEP_SIZE))
 			{
 				y += STEP_SIZE;
@@ -562,6 +605,11 @@ namespace game_framework {
 			// 傳入其他事件觸發
 			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
 		}
+	}
+
+	CPlayer::MoveState CPlayer::GetCurrentMoveState()
+	{
+		return currentMoveState;
 	}
 
 	void CPlayer::OnKeyUp(UINT key, CMapManager * mm, CGameDialog * gd)

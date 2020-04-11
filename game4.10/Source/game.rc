@@ -336,6 +336,30 @@ IDB_Radish_Grow01_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Ra
 
 IDB_Radish_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Radish\\Radish_Mature.bmp"
 
+IDB_PeopleRadish_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\back\\01.bmp"
+
+IDB_PeopleRadish_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\back\\02.bmp"
+
+IDB_PeopleRadish_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\back\\03.bmp"
+
+IDB_PeopleRadish_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\front\\01.bmp"
+
+IDB_PeopleRadish_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\front\\02.bmp"
+
+IDB_PeopleRadish_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\front\\03.bmp"
+
+IDB_PeopleRadish_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\left\\01.bmp"
+
+IDB_PeopleRadish_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\left\\02.bmp"
+
+IDB_PeopleRadish_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\left\\03.bmp"
+
+IDB_PeopleRadish_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\right\\01.bmp"
+
+IDB_PeopleRadish_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\right\\02.bmp"
+
+IDB_PeopleRadish_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\right\\03.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
