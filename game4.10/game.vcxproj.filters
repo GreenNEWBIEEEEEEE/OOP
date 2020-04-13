@@ -133,6 +133,31 @@
     <ClCompile Include="Source\CMapShowDialogEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="CTool.cpp" />
+    <ClCompile Include="Source\CTool.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolAxe.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolHoe.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolSeed.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolSickle.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolWaterer.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolHammer.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CToolHand.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -187,6 +212,31 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CMapShowDialogEvent.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CTool.h" />
+    <ClInclude Include="Source\CTool.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolAxe.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolHoe.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolSeed.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolSickle.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolWaterer.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolHammer.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolHand.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

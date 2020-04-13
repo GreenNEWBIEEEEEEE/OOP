@@ -5,7 +5,6 @@ namespace game_framework {
 	public:
 		CGameDialog();
 		~CGameDialog();
-		void SetMessage(string msg);
 		void AddMessage(string msg);
 
 		void Enable();
@@ -21,7 +20,6 @@ namespace game_framework {
 	private:
 		//
 		vector<string> messages;
-		string message;
 		string messageToShow;
 		unsigned strSelector;
 		unsigned ss;

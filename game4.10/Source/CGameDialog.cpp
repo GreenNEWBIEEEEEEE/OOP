@@ -17,11 +17,6 @@ namespace game_framework {
 
 	CGameDialog::~CGameDialog() {}
 
-	void CGameDialog::SetMessage(string msg)
-	{
-		message = msg;
-	}
-
 	void CGameDialog::AddMessage(string msg)
 	{
 		messages.push_back(msg);

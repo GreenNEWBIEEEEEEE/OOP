@@ -253,6 +253,7 @@
     <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CTool.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
@@ -262,6 +263,14 @@
     <ClCompile Include="Source\CMapManager.cpp" />
     <ClCompile Include="Source\CMapShowDialogEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
+    <ClCompile Include="Source\CTool.cpp" />
+    <ClCompile Include="Source\CToolAxe.cpp" />
+    <ClCompile Include="Source\CToolHammer.cpp" />
+    <ClCompile Include="Source\CToolHand.cpp" />
+    <ClCompile Include="Source\CToolHoe.cpp" />
+    <ClCompile Include="Source\CToolSeed.cpp" />
+    <ClCompile Include="Source\CToolSickle.cpp" />
+    <ClCompile Include="Source\CToolWaterer.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -305,6 +314,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CTool.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
@@ -314,6 +324,14 @@
     <ClInclude Include="Source\CMapManager.h" />
     <ClInclude Include="Source\CMapShowDialogEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
+    <ClInclude Include="Source\CTool.h" />
+    <ClInclude Include="Source\CToolAxe.h" />
+    <ClInclude Include="Source\CToolHammer.h" />
+    <ClInclude Include="Source\CToolHand.h" />
+    <ClInclude Include="Source\CToolHoe.h" />
+    <ClInclude Include="Source\CToolSeed.h" />
+    <ClInclude Include="Source\CToolSickle.h" />
+    <ClInclude Include="Source\CToolWaterer.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />

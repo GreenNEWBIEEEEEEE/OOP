@@ -274,6 +274,8 @@ namespace game_framework
 					eMapInfo->SetElemID(3); // 變成泥土
 					// **重要: 要改變狀態**
 					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
+
+					
 				}
 			}
 		}

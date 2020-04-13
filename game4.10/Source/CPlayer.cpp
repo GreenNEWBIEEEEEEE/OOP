@@ -6,7 +6,14 @@
 #include "CPlayer.h"
 #include "CGameDialog.h"
 #include "CMapManager.h"
-
+#include "CTool.h"
+#include "CToolHand.h"
+#include "CToolAxe.h"
+#include "CToolHammer.h"
+#include "CToolHoe.h"
+#include "CToolSeed.h"
+#include "CToolSickle.h"
+#include "CToolWaterer.h"
 namespace game_framework {
 	CPlayer::CPlayer() :
 		aniMoveLeft(3),
@@ -20,14 +27,14 @@ namespace game_framework {
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 
-		tool.push_back(0); // 手
-		tool.push_back(1); // 斧頭
-		tool.push_back(2); // 槌子
-		tool.push_back(3); // 鋤頭
-		tool.push_back(4); // 種子袋
-		tool.push_back(5); // 鐮刀
-		tool.push_back(6); // 澆水器
-		toolSelector = 1;  // 一開始是手
+		backpack.push_back(new CToolHand(0, 1)); // 手
+		backpack.push_back(new CToolAxe(1, 1)); // 斧頭
+		backpack.push_back(new CToolHammer(2, 1)); // 槌子
+		backpack.push_back(new CToolHoe(3, 1)); // 鋤頭
+		backpack.push_back(new CToolHoe(4, 6)); // 種子袋
+		backpack.push_back(new CToolHoe(5, 1)); // 鐮刀
+		backpack.push_back(new CToolHoe(6, 1)); // 澆水器
+		toolSelector = 0;  // 一開始是手
 
 		// 設定 使用工具動作 的動畫每幀切換時間間隔
 		aniUseTool_0.SetDelayCount(3);
@@ -62,6 +69,8 @@ namespace game_framework {
 
 	CPlayer::~CPlayer() {
 		facingDirection = nullptr;
+		for (vector<CTool*>::iterator i = backpack.begin(); i != backpack.end(); i++)
+			delete *i;
 	}
 
 	void CPlayer::LoadBitmap()
@@ -497,8 +506,8 @@ namespace game_framework {
 		{
 			// 切換工具選擇器
 			toolSelector++;
-			if (toolSelector < 0) toolSelector = tool.size() - 1;
-			else if (toolSelector >= tool.size()) toolSelector = 0;
+			if (toolSelector < 0) toolSelector = backpack.size() - 1;
+			else if (toolSelector >= backpack.size()) toolSelector = 0;
 
 			// 看看選擇了哪個 來切換玩家的圖
 			switch (toolSelector)

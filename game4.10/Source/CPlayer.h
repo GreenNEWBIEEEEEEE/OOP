@@ -1,6 +1,6 @@
 #pragma once
 namespace game_framework {
-
+	class CTool;
 	class CGameMap;
 	class CMapManager;
 	class CGameDialog;
@@ -125,7 +125,7 @@ namespace game_framework {
 		CAnimation aniUseTool_6_right;
 
 		// 工/道具的背包
-		vector<int> tool;
+		vector<CTool*> backpack;
 		unsigned int toolSelector;
 	};
 }
