@@ -13,7 +13,6 @@ namespace game_framework {
 		strSelector = 0;
 		ss = 0;
 		enable = false;
-		done = true;
 	}
 
 	void CBackpackMenu::SetBackpack(vector<CTool*>* playerBackpack) 
@@ -30,8 +29,7 @@ namespace game_framework {
 	void CBackpackMenu::Enable()
 	{
 		TRACE("\n Backpack Menu is enable now. \n");
-		enable = canContinue = true;
-		done = allDone = false;
+		enable = true;
 		strSelector = 0;
 		ss = 0;
 	}
@@ -51,8 +49,8 @@ namespace game_framework {
 	void CBackpackMenu::LoadBitmap()
 	{
 		backpackMenu.LoadBitmap(IDB_BackpackMenu);
-		selector.LoadBitmap(IDB_Selector);
-		question.LoadBitmap(IDB_Question);
+		selector.LoadBitmap(IDB_Selector, RGB(255, 255, 255));
+		question.LoadBitmap(IDB_Question, RGB(255, 255, 255));
 	}
 
 	void CBackpackMenu::OnKeyDown(UINT key)
@@ -72,18 +70,18 @@ namespace game_framework {
 		}
 		else if (key == KEY_RIGHT)
 		{
-			if (selectCol + 1 <= COL)
+			if (selectCol + 1 < COL)
 				selectCol += 1;
 		}
 		else if (key == KEY_DOWN)
 		{
-			if (selectRow <= ROW)
+			if (selectRow + 1 < ROW)
 				selectRow += 1;
 		}
 		else if (key == KEY_UP)
 		{
-			if (selectRow >= 0)
-			selectRow -= 1;
+			if (selectRow - 1 >= 0)
+				selectRow -= 1;
 		}
 		else if (key == KEY_D)
 		{
@@ -91,27 +89,7 @@ namespace game_framework {
 		}
 	}
 
-	void CBackpackMenu::OnMove()
-	{
-		if (enable)
-		{
-			if (strSelector < messages.size())
-			{
-				if (ss < (messages[strSelector].size())) {
-					ss++;
-				}
-				else {
-					messageToShow = "";
-					done = true;
-				}
-			}
-			else
-			{
-				allDone = true;
-				Disable();
-			}
-		}
-	}
+	
 
 	void CBackpackMenu::OnShow()
 	{
@@ -119,6 +97,7 @@ namespace game_framework {
 		int column = 4;
 		int width = 130;
 		int fixWidth = 20;
+		int fixHeight = 20;
 		int height = 114;
 		unsigned int tool = 0;
 		if (enable)
@@ -131,7 +110,7 @@ namespace game_framework {
 			{
 				for (int j = 0; j < column; ++j)
 				{
-					int x = j * width, y = i * height;
+					int x = j * width + fixWidth, y = i * height + fixHeight;
 					if (tool >= playerBackpack->size())
 					{
 						question.SetTopLeft(x, y);
@@ -139,47 +118,32 @@ namespace game_framework {
 					}
 					else
 						(*playerBackpack)[tool++]->ShowIcon(x, y);
+
+
 				}
 			}
 
 			// Draw Selector
-			int x = selectCol * width, y = selectRow * height;
+			int x = selectCol * width + fixWidth, y = selectRow * height + fixHeight;
 
 			selector.SetTopLeft(x, y);
 			selector.ShowBitmap();
 
 			// Draw text
-			CDC *pDC = nullptr;
+
+			CDC *pDC = CDDraw::GetBackCDC();
 			CFont f, *fp = nullptr;
-			pDC = CDDraw::GetBackCDC();
+			CString info = (*playerBackpack)[selectRow * column  + selectCol]->GetInfo().c_str();
+
 			f.CreatePointFont(160, "Consolas");
 
 			fp = pDC->SelectObject(&f);
 			pDC->SetBkColor(RGB(63, 72, 204));
 			pDC->SetTextColor(RGB(255, 255, 255));
+			pDC->TextOut(50, 380, info);
+			pDC->SelectObject(fp);
+			CDDraw::ReleaseBackCDC();
 
-
-
-			// 所有字元顯示結束後 固定顯示一整個字串
-			if (done)
-			{
-				CString out(messages[strSelector].c_str());
-				pDC->TextOut(40, 370, out);
-				canContinue = false;
-				pDC->SelectObject(fp);
-				CDDraw::ReleaseBackCDC();
-			}
-			else
-			{
-				for (unsigned i = 0; i < ss; ++i)
-					messageToShow.push_back(messages[strSelector].at(i));
-
-				CString out(messageToShow.c_str());
-				pDC->TextOut(40, 370, out);
-				messageToShow = "";
-				pDC->SelectObject(fp);
-				CDDraw::ReleaseBackCDC();
-			}
 
 		}
 	

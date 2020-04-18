@@ -31,9 +31,9 @@ namespace game_framework {
 		backpack.push_back(new CToolAxe(1, 1)); // 斧頭
 		backpack.push_back(new CToolHammer(2, 1)); // 槌子
 		backpack.push_back(new CToolHoe(3, 1)); // 鋤頭
-		backpack.push_back(new CToolHoe(4, 6)); // 種子袋
-		backpack.push_back(new CToolHoe(5, 1)); // 鐮刀
-		backpack.push_back(new CToolHoe(6, 1)); // 澆水器
+		backpack.push_back(new CToolSeed(4, 6)); // 種子袋
+		backpack.push_back(new CToolSickle(5, 1)); // 鐮刀
+		backpack.push_back(new CToolWaterer(6, 1)); // 澆水器
 		toolSelector = 0;  // 一開始是手
 
 		// 設定 使用工具動作 的動畫每幀切換時間間隔
@@ -78,7 +78,7 @@ namespace game_framework {
 		///
 		/// 載入上下左右移動的動畫
 		/// 
-		for (int i = 0; i < 7; i++)
+		for (unsigned int i = 0; i < backpack.size(); i++)
 		{
 			backpack[i]->LoadBitmap();
 		}

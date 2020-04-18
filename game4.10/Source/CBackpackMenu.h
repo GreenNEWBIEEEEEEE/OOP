@@ -16,7 +16,6 @@ namespace game_framework {
 
 			void LoadBitmap();
 			void OnKeyDown(UINT key);
-			void OnMove();
 			void OnShow();
 		private:
 			//
@@ -31,9 +30,6 @@ namespace game_framework {
 			
 			// Flags
 			bool enable;
-			bool canContinue;
-			bool done;
-			bool allDone;
 
 			// Icon
 			CMovingBitmap selector;

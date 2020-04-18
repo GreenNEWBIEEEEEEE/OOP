@@ -65,13 +65,13 @@ namespace game_framework {
 	}
 	void CTool::LoadBitmap()
 	{
-		hand.LoadBitmap(IDB_Axe);
-		axe.LoadBitmap(IDB_Axe);
-		hammer.LoadBitmap(IDB_Hammer);
-		hoe.LoadBitmap(IDB_Hoe);
-		seed01.LoadBitmap(IDB_Seed01);
-		sickle.LoadBitmap(IDB_Sickle);
-		waterer.LoadBitmap(IDB_WateringCan);
+		hand.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
+		axe.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
+		hammer.LoadBitmap(IDB_Hammer, RGB(255, 255, 255));
+		hoe.LoadBitmap(IDB_Hoe, RGB(255, 255, 255));
+		seed01.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
+		sickle.LoadBitmap(IDB_Sickle, RGB(255, 255, 255));
+		waterer.LoadBitmap(IDB_WateringCan, RGB(255, 255, 255));
 	}
 
 }

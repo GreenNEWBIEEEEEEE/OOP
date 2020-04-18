@@ -371,11 +371,11 @@ void CGameStateRun::OnShow()
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
 	mapManager.OnShow();
-	backpackMenu.OnShow();
 	//
 	//
 	//
 	p1.OnShow(mapManager.GetCurrentMap());
+	backpackMenu.OnShow();
 	gameDialog.OnShow();
 }
 }
