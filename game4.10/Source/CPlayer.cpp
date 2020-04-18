@@ -292,6 +292,11 @@ namespace game_framework {
 	
 	}
 
+	void CPlayer::SetToolSelector(unsigned int select)
+	{
+		toolSelector = select;
+	}
+
 	void CPlayer::SetMovingLeft(bool flag)
 	{
 		isMovingLeft = flag;
@@ -399,8 +404,6 @@ namespace game_framework {
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
 	void CPlayer::OnMove(CGameMap* m)
 	{
-		
-		
 		if (currentMoveState == RadishMove)
 			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight);
 		else if (currentMoveState == NormalMove)

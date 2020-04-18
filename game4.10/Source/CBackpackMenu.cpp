@@ -3,6 +3,7 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
+#include "CPlayer.h"
 #include "CTool.h"
 #include "CBackpackMenu.h"
 
@@ -10,8 +11,6 @@ namespace game_framework {
 
 	CBackpackMenu::CBackpackMenu()
 	{
-		strSelector = 0;
-		ss = 0;
 		enable = false;
 	}
 
@@ -21,23 +20,16 @@ namespace game_framework {
 	}
 	CBackpackMenu::~CBackpackMenu() {}
 
-	void CBackpackMenu::AddMessage(string msg)
-	{
-		messages.push_back(msg);
-	}
 
 	void CBackpackMenu::Enable()
 	{
 		TRACE("\n Backpack Menu is enable now. \n");
 		enable = true;
-		strSelector = 0;
-		ss = 0;
 	}
 
 	void CBackpackMenu::Disable()
 	{
 		enable = false;
-		messages.clear();
 		TRACE("\n Backpack Menu is disable now. \n");
 	}
 
@@ -53,7 +45,7 @@ namespace game_framework {
 		question.LoadBitmap(IDB_Question, RGB(255, 255, 255));
 	}
 
-	void CBackpackMenu::OnKeyDown(UINT key)
+	void CBackpackMenu::OnKeyDown(UINT key, CPlayer* player)
 	{
 		int COL = 4;
 		int ROW = 3;
@@ -62,6 +54,7 @@ namespace game_framework {
 		const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
 		const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
 		const char KEY_D = 0x44; // keyboard D
+		const char KEY_A = 0x41;
 
 		if (key == KEY_LEFT)
 		{
@@ -83,6 +76,10 @@ namespace game_framework {
 			if (selectRow - 1 >= 0)
 				selectRow -= 1;
 		}
+		else if (key == KEY_A)
+		{
+			player->SetToolSelector(selectRow * column + selectCol);
+		}
 		else if (key == KEY_D)
 		{
 			Disable();
@@ -93,12 +90,6 @@ namespace game_framework {
 
 	void CBackpackMenu::OnShow()
 	{
-		int row = 3;
-		int column = 4;
-		int width = 130;
-		int fixWidth = 20;
-		int fixHeight = 20;
-		int height = 114;
 		unsigned int tool = 0;
 		if (enable)
 		{

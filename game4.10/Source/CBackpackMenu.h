@@ -6,7 +6,6 @@ namespace game_framework {
 			CBackpackMenu();
 			void SetBackpack(vector<CTool*>* playerBackpack);
 			~CBackpackMenu();
-			void AddMessage(string msg);
 			
 
 			void Enable();
@@ -15,17 +14,19 @@ namespace game_framework {
 			bool IsEnable() const;
 
 			void LoadBitmap();
-			void OnKeyDown(UINT key);
+			void OnKeyDown(UINT key, CPlayer* player);
 			void OnShow();
 		private:
 			//
 			int selectRow = 0;
 			int selectCol = 0;
+			int row = 3;
+			int column = 4;
+			int width = 130;
+			int fixWidth = 20;
+			int fixHeight = 20;
+			int height = 114;
 			vector<CTool*>* playerBackpack;
-			vector<string> messages;
-			string messageToShow;
-			unsigned strSelector;
-			unsigned ss;
 			CMovingBitmap backpackMenu;
 			
 			// Flags

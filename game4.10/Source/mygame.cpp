@@ -272,7 +272,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		gameDialog.OnKeyDown(nChar);
 	}
 	else if (backpackMenu.IsEnable()) {
-		backpackMenu.OnKeyDown(nChar);
+		backpackMenu.OnKeyDown(nChar, &p1);
 	}
 	else
 	{
