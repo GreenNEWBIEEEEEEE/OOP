@@ -78,7 +78,10 @@ namespace game_framework {
 		///
 		/// 載入上下左右移動的動畫
 		/// 
-		backpack[0]->LoadBitmap();
+		for (int i = 0; i < 7; i++)
+		{
+			backpack[i]->LoadBitmap();
+		}
 		{
 			aniMoveLeft.AddBitmap(IDB_People_left01, RGB(255, 255, 255));
 			aniMoveLeft.AddBitmap(IDB_People_left02, RGB(255, 255, 255));
