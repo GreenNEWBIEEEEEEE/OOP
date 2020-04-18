@@ -7,7 +7,7 @@
 
 namespace game_framework {
 
-	CToolWaterer::CToolWaterer(int toolID, int number) : CTool(toolID, number) {}
+	CToolWaterer::CToolWaterer(int toolID, int number) : CTool(toolID, number) { toolName = "Waterer"; }
 	CToolWaterer::~CToolWaterer() {}
 
 }

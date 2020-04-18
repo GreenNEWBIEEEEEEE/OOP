@@ -158,6 +158,9 @@
     <ClCompile Include="Source\CToolHand.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CBackpackMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -237,6 +240,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CToolHand.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CBackpackMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -662,6 +668,42 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\NewMaterial\Character\harvestMove\right\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\BackpackMenu.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\BackpackMenu.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Axe.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Hammer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Hoe.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Question.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Seed01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Seed02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Seed03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Sickle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\WateringCan.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Selector.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

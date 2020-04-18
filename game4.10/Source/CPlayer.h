@@ -34,6 +34,7 @@ namespace game_framework {
 		int GetLastY() const;
 		int GetDirection() const;
 		int GetCurrentTool() const;
+		vector<CTool*>* GetBackpack();
 		void ChangeMoveState(int mapInfoID);
 		MoveState GetCurrentMoveState();
 		void Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight);

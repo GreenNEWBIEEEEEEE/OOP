@@ -78,6 +78,7 @@ namespace game_framework {
 		///
 		/// 載入上下左右移動的動畫
 		/// 
+		backpack[0]->LoadBitmap();
 		{
 			aniMoveLeft.AddBitmap(IDB_People_left01, RGB(255, 255, 255));
 			aniMoveLeft.AddBitmap(IDB_People_left02, RGB(255, 255, 255));
@@ -284,6 +285,8 @@ namespace game_framework {
 			aniUseTool_6_right.AddBitmap(IDB_UseToolWateringCan_Right_01, RGB(255, 255, 255));
 			aniUseTool_6_right.AddBitmap(IDB_UseToolWateringCan_Right_02, RGB(255, 255, 255));
 		}
+
+	
 	}
 
 	void CPlayer::SetMovingLeft(bool flag)
@@ -370,7 +373,12 @@ namespace game_framework {
 	{
 		return toolSelector;
 	}
-	
+
+	vector<CTool*>* CPlayer::GetBackpack()
+	{
+		return &backpack;
+	}
+
 	void CPlayer::ChangeMoveState(int mapInfoID)
 	{
 		switch (mapInfoID)

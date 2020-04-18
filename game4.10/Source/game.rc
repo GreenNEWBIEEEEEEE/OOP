@@ -360,6 +360,28 @@ IDB_PeopleRadish_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\
 
 IDB_PeopleRadish_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\harvestMove\\right\\03.bmp"
 
+IDB_BackpackMenu        BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\BackpackMenu.bmp"
+
+IDB_Hammer              BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Hammer.bmp"
+
+IDB_Hoe                 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Hoe.bmp"
+
+IDB_Question            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Question.bmp"
+
+IDB_Seed01              BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Seed01.bmp"
+
+IDB_Seed02              BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Seed02.bmp"
+
+IDB_Seed03              BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Seed03.bmp"
+
+IDB_Sickle              BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Sickle.bmp"
+
+IDB_Axe                 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Axe.bmp"
+
+IDB_WateringCan         BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\WateringCan.bmp"
+
+IDB_Selector            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project5\\oopcourse822\\game4.10\\RES\\Backpack\\Selector.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

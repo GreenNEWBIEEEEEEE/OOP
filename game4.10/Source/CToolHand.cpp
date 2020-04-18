@@ -7,7 +7,7 @@
 
 namespace game_framework {
 
-	CToolHand::CToolHand(int toolID, int number) : CTool(toolID, number) {}
+	CToolHand::CToolHand(int toolID, int number) : CTool(toolID, number) { toolName = "Hand"; }
 	CToolHand::~CToolHand() {}
 
 }

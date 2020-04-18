@@ -7,7 +7,7 @@
 
 namespace game_framework {
 
-	CToolHammer::CToolHammer(int toolID, int number) : CTool(toolID, number) {}
+	CToolHammer::CToolHammer(int toolID, int number) : CTool(toolID, number) { toolName = "Hammer"; }
 	CToolHammer::~CToolHammer() {}
 
 }

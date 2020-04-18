@@ -193,6 +193,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 {
 	mapManager.AddMap("Scripts/MapInfos/map01.txt");
 	mapManager.AddMap("Scripts/MapInfos/map02.txt");
+	backpackMenu.SetBackpack(p1.GetBackpack());
 }
 
 CGameStateRun::~CGameStateRun()
@@ -243,6 +244,11 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	// 繼續載入其他資料
 	//
+	p1.LoadBitmap();
+	backpackMenu.SetBackpack(p1.GetBackpack());
+
+
+	backpackMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
 
 	mapManager.LoadBitmapAll();
@@ -250,7 +256,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//
 	
-	p1.LoadBitmap();
 	
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
@@ -266,6 +271,9 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	if (gameDialog.IsEnable()) {
 		gameDialog.OnKeyDown(nChar);
 	}
+	else if (backpackMenu.IsEnable()) {
+		backpackMenu.OnKeyDown(nChar);
+	}
 	else
 	{
 		p1.OnKeyDown(nChar, &mapManager, &gameDialog);
@@ -273,6 +281,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
+		const char KEY_S = 0x53; // keyboard S
 
 		if (nChar == KEY_LEFT)
 		{
@@ -290,7 +299,11 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		{
 			p1.SetMovingDown(true);
 		}
-		
+		if (nChar == KEY_S)
+		{
+			backpackMenu.Enable();
+		}
+
 	}
 	
 	
@@ -358,7 +371,7 @@ void CGameStateRun::OnShow()
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
 	mapManager.OnShow();
-
+	backpackMenu.OnShow();
 	//
 	//
 	//

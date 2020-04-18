@@ -7,7 +7,7 @@
 
 namespace game_framework {
 
-	CToolSeed::CToolSeed(int toolID, int number) : CTool(toolID, number) {}
+	CToolSeed::CToolSeed(int toolID, int number) : CTool(toolID, number) { toolName = "Seed"; }
 	CToolSeed::~CToolSeed() {}
 
 }

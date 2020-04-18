@@ -42,6 +42,7 @@
 #include "CPlayer.h"
 #include "CMapManager.h"
 #include "CGameDialog.h"
+#include "CBackpackMenu.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -102,7 +103,7 @@ namespace game_framework {
 		CPlayer p1; // ª±®a1
 		CMapManager mapManager;
 		CGameDialog gameDialog;
-
+		CBackpackMenu backpackMenu;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

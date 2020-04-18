@@ -7,7 +7,7 @@
 
 namespace game_framework {
 
-	CToolSickle::CToolSickle(int toolID, int number) : CTool(toolID, number) {}
+	CToolSickle::CToolSickle(int toolID, int number) : CTool(toolID, number) { toolName = "Sickle"; }
 	CToolSickle::~CToolSickle() {}
 
 }
