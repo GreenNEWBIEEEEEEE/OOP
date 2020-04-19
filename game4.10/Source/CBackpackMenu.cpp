@@ -40,8 +40,8 @@ namespace game_framework {
 
 	void CBackpackMenu::LoadBitmap()
 	{
-		backpackMenu.LoadBitmap(IDB_BackpackMenu);
-		selector.LoadBitmap(IDB_Selector, RGB(255, 255, 255));
+		backpackMenu.LoadBitmap(IDB_BackpackMenu, RGB(0,0,0));
+		selector.LoadBitmap(IDB_Selector);
 		question.LoadBitmap(IDB_Question, RGB(255, 255, 255));
 	}
 
@@ -96,6 +96,12 @@ namespace game_framework {
 			// Draw background
 			backpackMenu.ShowBitmap();
 
+			// Draw Selector
+			int x = selectCol * width + fixWidth, y = selectRow * height + fixHeight;
+
+			selector.SetTopLeft(x, y);
+			selector.ShowBitmap();
+
 			// Draw Logo
 			for (int i = 0; i < row; ++i)
 			{
@@ -114,11 +120,7 @@ namespace game_framework {
 				}
 			}
 
-			// Draw Selector
-			int x = selectCol * width + fixWidth, y = selectRow * height + fixHeight;
-
-			selector.SetTopLeft(x, y);
-			selector.ShowBitmap();
+			
 
 			// Draw text
 
