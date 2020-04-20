@@ -18,48 +18,40 @@ namespace game_framework
 
 	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd)
 	{
-		if (p->GetCurrentMoveState() == CPlayer::NormalMove)
+		// 看player手上拿的工具來決定要幹嘛
+		switch (p->GetCurrentTool())
 		{
-			// 看player手上拿的工具來決定要幹嘛
-			switch (p->GetCurrentTool())
-			{
-			case 0:
-					Harvest(p, mm, gd); // 呼叫收成子事件函數
-				break;
-				// 斧頭: 用於砍年輪樹幹
-			case 1:
-				CutTrunk(p, mm, gd); // 呼叫砍年輪樹幹的子事件函數
-				break;
-			case 2:
-				BreakStone(p, mm, gd); // 呼叫收成子事件函數
-				break;
-			case 3:
-				Hoeing(p, mm, gd); // 呼叫鋤地子事件函數
-				break;
-				// 種子袋: 用於播種
-			case 4:
-				Plant(p, mm, gd); // 呼叫播種子事件函數
-				break;
+		case 0:
+			Harvest(p, mm, gd); // 呼叫收成子事件函數
+			break;
+			// 斧頭: 用於砍年輪樹幹
+		case 1:
+			CutTrunk(p, mm, gd); // 呼叫砍年輪樹幹的子事件函數
+			break;
+		case 2:
+			BreakStone(p, mm, gd); // 呼叫收成子事件函數
+			break;
+		case 3:
+			Hoeing(p, mm, gd); // 呼叫鋤地子事件函數
+			break;
+			// 種子袋: 用於播種
+		case 4:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
 
-				// 鐮刀: 用於除草
-			case 5:
-				Weed(p, mm, gd); // 呼叫除草的子事件函數
-				break;
+			// 鐮刀: 用於除草
+		case 5:
+			Weed(p, mm, gd); // 呼叫除草的子事件函數
+			break;
 
-				// 澆水器: 用於澆水
-			case 6:
-				Water(p, mm, gd);
-				break;
+			// 澆水器: 用於澆水
+		case 6:
+			Water(p, mm, gd);
+			break;
 
-				// 不動作
-			default:
-				break;
-			}
-		}
-		else
-		{
-			p->ChangeMoveState(0);
-			//SellCrop();
+			// 不動作
+		default:
+			break;
 		}
 	}
 
@@ -270,12 +262,10 @@ namespace game_framework
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
 				if (landState == CMapInfo::ArableLandState::isMature)
 				{
-					p->ChangeMoveState(eMapInfo->GetElemID());
+					p->ChangeMoveState(CPlayer::MoveState::RadishMove);
 					eMapInfo->SetElemID(3); // 變成泥土
 					// **重要: 要改變狀態**
 					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
-
-					
 				}
 			}
 		}

@@ -387,17 +387,9 @@ namespace game_framework {
 		return &backpack;
 	}
 
-	void CPlayer::ChangeMoveState(int mapInfoID)
+	void CPlayer::ChangeMoveState(MoveState state)
 	{
-		switch (mapInfoID)
-		{
-		case 9:
-			currentMoveState = RadishMove;
-			break;
-		default:
-			currentMoveState = NormalMove;
-			break;
-		}
+		currentMoveState = state;
 	}
 
 	// OnMove
@@ -621,7 +613,11 @@ namespace game_framework {
 			}
 			
 			// 傳入農務事件觸發
-			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+			// 
+			if (this->currentMoveState == MoveState::NormalMove)
+				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+			else
+				this->currentMoveState = MoveState::NormalMove;
 		}
 		else
 		{
