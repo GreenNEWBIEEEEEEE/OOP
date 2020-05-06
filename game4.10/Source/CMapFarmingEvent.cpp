@@ -9,6 +9,7 @@
 #include "CMapEvent.h"
 #include "CMapInfo.h"
 #include "CMapFarmingEvent.h"
+#include "CTool.h"
 
 namespace game_framework
 {
@@ -16,7 +17,7 @@ namespace game_framework
 
 	CMapFarmingEvent::~CMapFarmingEvent() {}
 
-	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd)
+	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		// 看player手上拿的工具來決定要幹嘛
 		switch (p->GetCurrentTool())
@@ -146,6 +147,15 @@ namespace game_framework
 	// 播種
 	void CMapFarmingEvent::Plant(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
+		// 先檢查玩家的種子袋數量至少要有1以上
+		if (p->GetBackpack()->at(4)->GetNumber() < 1)
+		{
+			// 顯示提示並結束
+			gd->AddMessage("You don't have enough seed!");
+			gd->Enable();
+			return; 
+		}
+
 		// 播種9宮格與代號:
 		// e0 e1 e2
 		// e3 pg e5
@@ -168,6 +178,10 @@ namespace game_framework
 			pgy + 1, pgy + 1, pgy + 1,
 		};
 
+		// 播種一次 不管灑到幾格 都是扣一袋種子
+		// Flag 是否成功播種
+		bool planted = false;
+
 		// 執行事件內容
 		for (unsigned i = 0; i < 9; ++i)
 		{
@@ -180,6 +194,7 @@ namespace game_framework
 				// 是空地才能播種
 				if (eMapInfo->GetArableLandState() == CMapInfo::ArableLandState::EmptyLand)
 				{
+					planted = true;
 					// 更換圖片
 					eMapInfo->SetElemID(5);
 					// 更換狀態
@@ -188,7 +203,13 @@ namespace game_framework
 			}
 		}
 
+		// 若有播種，扣種子袋數量
+		if (planted)
+		{
+			p->GetBackpack()->at(4)->DecreaseNumber(1);
+		}
 	}
+
 	// 澆水
 	void CMapFarmingEvent::Water(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{

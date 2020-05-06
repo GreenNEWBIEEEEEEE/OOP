@@ -124,6 +124,9 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "mygame.h"
+#include <wingdi.h> // 107590016
+
+#pragma comment(lib, "msimg32.lib") // 107590016
 
 namespace game_framework {
 

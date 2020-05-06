@@ -18,7 +18,7 @@ namespace game_framework {
 		
 	}
 
-	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager * mm, CGameDialog *gd)
+	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		//
 		// 規範：
@@ -32,9 +32,9 @@ namespace game_framework {
 			
 			// 因為轉換後原來的位置會不適合
 			// 所以要調整地圖的screen位置以及playery在地圖上的位置
-			mm->GetCurrentMap()->SetSXSY(200, 500);
-			p->SetX(7 * 64);
-			p->SetY(12 * 53);
+			mm->GetCurrentMap()->SetSXSY(50, 500);
+			p->SetX(4 * 64);
+			p->SetY(11 * 53);
 			break;
 		case 20002:
 			mm->ChangeMap(0);

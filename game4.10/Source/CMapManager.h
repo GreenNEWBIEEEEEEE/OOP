@@ -8,12 +8,13 @@ namespace game_framework {
 	public:
 		CMapManager();
 		~CMapManager();
-		void AddMap(string path);
+		void AddMap(string path, bool hasWeather);
 		void ChangeMap(unsigned mapID);
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
 		void OnMove();
 		void OnShow();
+		void OnShow_Weather();
 	private:
 		unsigned selector = 0;
 		std::vector<CGameMap*> maps;

@@ -5,12 +5,18 @@ namespace game_framework{
 		public:
 			CTool(int toolID, int number);
 			~CTool();
-			bool IsEnable();
+			bool IsEnable() const;
 			void LoadBitmap();
 			void ShowIcon(int x, int y);
-			string GetInfo();
+			string GetInfo() const;
+			int GetToolID() const;
+			int GetNumber() const;
 
-			int GetToolID();
+			// ¼W´î¼Æ¶q
+			void IncreaseNumber(int number);
+			void DecreaseNumber(int number);
+
+			
 		protected:
 			int toolID;
 			string toolName;

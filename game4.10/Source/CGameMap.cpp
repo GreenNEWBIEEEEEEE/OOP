@@ -12,15 +12,24 @@
 #include "CMapInfo.h"
 #include "CMapEvent.h"
 #include "CPlayer.h"
+#include "CWeather.h"
+#include "CShopMenu.h"
+#include "CPlantShopMenu.h"
 
 
 
 namespace game_framework {
-	CGameMap::CGameMap(string mapinfo_path) : row(0), col(0)
+	CGameMap::CGameMap(string mapinfo_path, bool hasWeather) : row(0), col(0)
 	{
 		CreateMapInfos(mapinfo_path);
-		sx = sy = 0;
+		sx = 400, sy = 150;
 		gndW = 64; gndH = 53;
+
+		// Create weather
+		if (hasWeather)
+		{
+			this->weather = new CWeather();
+		}
 	}
 
 	CGameMap::~CGameMap()
@@ -29,6 +38,12 @@ namespace game_framework {
 			delete[] map[i];
 		delete[] map;
 		map = nullptr;
+
+		if (weather != nullptr)
+		{
+			delete weather;
+			weather = nullptr;
+		}
 	}
 
 	void CGameMap::LoadBitmap()
@@ -37,6 +52,8 @@ namespace game_framework {
 		plantSoil.LoadBitmap(IDB_PlantSoil);
 		grass.LoadBitmap(IDB_Grass);
 		soil.LoadBitmap(IDB_Soil);
+		tileFloor.LoadBitmap(IDB_TileFloor01);
+		redFlower.LoadBitmap(IDB_RedFlower);
 
 		fence.LoadBitmap(IDB_Fence);
 		bush.LoadBitmap(IDB_Bush);
@@ -67,6 +84,67 @@ namespace game_framework {
 		houseWall.LoadBitmap(IDB_HouseWall);
 		houseWall_02.LoadBitmap(IDB_HouseWall02);
 		houseWall_03.LoadBitmap(IDB_HouseWall03);
+		houseWall_04.LoadBitmap(IDB_HouseWall04);
+
+		// Bed: -46~-51
+		{
+			bed_01.LoadBitmap(IDB_Bed01);
+			bed_02.LoadBitmap(IDB_Bed02);
+			bed_03.LoadBitmap(IDB_Bed03);
+			bed_04.LoadBitmap(IDB_Bed04);
+			bed_05.LoadBitmap(IDB_Bed05);
+			bed_06.LoadBitmap(IDB_Bed06);
+		}
+
+		// Desk
+		{
+			desk_01.LoadBitmap(IDB_Desk01);
+			desk_02.LoadBitmap(IDB_Desk02);
+			desk_03.LoadBitmap(IDB_Desk03);
+			desk_04.LoadBitmap(IDB_Desk04);
+		}
+
+		// Side Table
+		{
+			sideTable_01.LoadBitmap(IDB_SideTable01);
+			sideTable_02.LoadBitmap(IDB_SideTable02);
+		}
+
+		// Fire place
+		{
+			fireplace_01.LoadBitmap(IDB_Fireplace01);
+			fireplace_02.LoadBitmap(IDB_Fireplace02);
+			fireplace_03.LoadBitmap(IDB_Fireplace03);
+			fireplace_04.LoadBitmap(IDB_Fireplace04);
+			fireplace_05.LoadBitmap(IDB_Fireplace05);
+			fireplace_06.LoadBitmap(IDB_Fireplace06);
+			fireplace_07.LoadBitmap(IDB_Fireplace07);
+			fireplace_08.LoadBitmap(IDB_Fireplace08);
+		}
+
+		// Clock Calendar
+		{
+			clockCalendar_01.LoadBitmap(IDB_ClockCalendar01);
+			clockCalendar_02.LoadBitmap(IDB_ClockCalendar02);
+			clockCalendar_03.LoadBitmap(IDB_ClockCalendar03);
+		}
+
+		// Kitchen stove
+		{
+			kitchenStove_01.LoadBitmap(IDB_KitchenStove01);
+			kitchenStove_02.LoadBitmap(IDB_KitchenStove02);
+			kitchenStove_03.LoadBitmap(IDB_KitchenStove03);
+		}
+
+		// TV
+		{
+			TV_01.LoadBitmap(IDB_TV01);
+			TV_02.LoadBitmap(IDB_TV02);
+			TV_03.LoadBitmap(IDB_TV03);
+			TV_04.LoadBitmap(IDB_TV04);
+			TV_05.LoadBitmap(IDB_TV05);
+			TV_06.LoadBitmap(IDB_TV06);
+		}
 
 		radish_Seed_D.LoadBitmap(IDB_Radish_Seed_D);
 		radish_Seed_W.LoadBitmap(IDB_Radish_Seed_W);
@@ -74,17 +152,51 @@ namespace game_framework {
 		radish_Grow01_W.LoadBitmap(IDB_Radish_Grow01_W);
 		radish_Mature.LoadBitmap(IDB_Radish_Mature);
 
+		// PlantShop	
+		{
+			PlantShop_01.LoadBitmap(IDB_PlantShopHouse_Morning_s01);
+			PlantShop_02.LoadBitmap(IDB_PlantShopHouse_Morning_s02);
+			PlantShop_03.LoadBitmap(IDB_PlantShopHouse_Morning_s03);
+			PlantShop_04.LoadBitmap(IDB_PlantShopHouse_Morning_s04);
+			PlantShop_05.LoadBitmap(IDB_PlantShopHouse_Morning_s05);
+			PlantShop_06.LoadBitmap(IDB_PlantShopHouse_Morning_s06);
+			PlantShop_07.LoadBitmap(IDB_PlantShopHouse_Morning_s07);
+			PlantShop_08.LoadBitmap(IDB_PlantShopHouse_Morning_s08);
+			PlantShop_09.LoadBitmap(IDB_PlantShopHouse_Morning_s09);
+			PlantShop_010.LoadBitmap(IDB_PlantShopHouse_Morning_s010);
+			PlantShop_011.LoadBitmap(IDB_PlantShopHouse_Morning_s011);
+			PlantShop_012.LoadBitmap(IDB_PlantShopHouse_Morning_s012);
+			PlantShop_013.LoadBitmap(IDB_PlantShopHouse_Morning_s013);
+			PlantShop_014.LoadBitmap(IDB_PlantShopHouse_Morning_s014);
+			PlantShop_015.LoadBitmap(IDB_PlantShopHouse_Morning_s015);
+			PlantShop_016.LoadBitmap(IDB_PlantShopHouse_Morning_s016);
+			PlantShop_017.LoadBitmap(IDB_PlantShopHouse_Morning_s017);
+			PlantShop_018.LoadBitmap(IDB_PlantShopHouse_Morning_s018);
+			PlantShop_019.LoadBitmap(IDB_PlantShopHouse_Morning_s019);
+			PlantShop_020.LoadBitmap(IDB_PlantShopHouse_Morning_s020);
+		}
+
+		if (weather != nullptr)
+		{
+			weather->LoadBitmap();
+		}
 	}
 
 	void CGameMap::OnMove()
 	{
+		// 單格Mapinfo的OnMove主要用於農作物計數
 		for (int i = 0; i < row; ++i)
 			for (int j = 0; j < col; ++j)
 				map[i][j].OnMove();
+
+		// 如果這個Map是有天氣現象，則需要呼叫weather的OnMove, 主要做天氣視覺動畫的更新
+		if (weather != nullptr)
+			weather->OnMove();
 	}
 
 	void CGameMap::OnShow()
 	{
+
 		// 先畫地板圖
 		for (int i = 0; i < row; ++i)
 		{
@@ -132,6 +244,10 @@ namespace game_framework {
 				case 9:
 					radish_Mature.SetTopLeft(x, y);
 					radish_Mature.ShowBitmap();
+					break;
+				case 10:
+					tileFloor.SetTopLeft(x, y);
+					tileFloor.ShowBitmap();
 					break;
 				case -1:
 					fence.SetTopLeft(x, y);
@@ -230,12 +346,235 @@ namespace game_framework {
 					houseWall_03.SetTopLeft(x, y);
 					houseWall_03.ShowBitmap();
 					break;
-
+				case -25:
+					PlantShop_01.SetTopLeft(x, y);
+					PlantShop_01.ShowBitmap();
+					break;
+				case -26:
+					PlantShop_02.SetTopLeft(x, y);
+					PlantShop_02.ShowBitmap();
+					break;
+				case -27:
+					PlantShop_03.SetTopLeft(x, y);
+					PlantShop_03.ShowBitmap();
+					break;
+				case -28:
+					PlantShop_04.SetTopLeft(x, y);
+					PlantShop_04.ShowBitmap();
+					break;
+				case -29:
+					PlantShop_05.SetTopLeft(x, y);
+					PlantShop_05.ShowBitmap();
+					break;
+				case -30:
+					PlantShop_06.SetTopLeft(x, y);
+					PlantShop_06.ShowBitmap();
+					break;
+				case -31:
+					PlantShop_07.SetTopLeft(x, y);
+					PlantShop_07.ShowBitmap();
+					break;
+				case -32:
+					PlantShop_08.SetTopLeft(x, y);
+					PlantShop_08.ShowBitmap();
+					break;
+				case -33:
+					PlantShop_09.SetTopLeft(x, y);
+					PlantShop_09.ShowBitmap();
+					break;
+				case -34:
+					PlantShop_010.SetTopLeft(x, y);
+					PlantShop_010.ShowBitmap();
+					break;
+				case -35:
+					PlantShop_011.SetTopLeft(x, y);
+					PlantShop_011.ShowBitmap();
+					break;
+				case -36:
+					PlantShop_012.SetTopLeft(x, y);
+					PlantShop_012.ShowBitmap();
+					break;
+				case -37:
+					PlantShop_013.SetTopLeft(x, y);
+					PlantShop_013.ShowBitmap();
+					break;
+				case -38:
+					PlantShop_014.SetTopLeft(x, y);
+					PlantShop_014.ShowBitmap();
+					break;
+				case -39:
+					PlantShop_015.SetTopLeft(x, y);
+					PlantShop_015.ShowBitmap();
+					break;
+				case -40:
+					PlantShop_016.SetTopLeft(x, y);
+					PlantShop_016.ShowBitmap();
+					break;
+				case -41:
+					PlantShop_017.SetTopLeft(x, y);
+					PlantShop_017.ShowBitmap();
+					break;
+				case -42:
+					PlantShop_018.SetTopLeft(x, y);
+					PlantShop_018.ShowBitmap();
+					break;
+				case -43:
+					PlantShop_019.SetTopLeft(x, y);
+					PlantShop_019.ShowBitmap();
+					break;
+				case -44:
+					PlantShop_020.SetTopLeft(x, y);
+					PlantShop_020.ShowBitmap();
+					break;
+				case -45:
+					redFlower.SetTopLeft(x, y);
+					redFlower.ShowBitmap();
+					break;
+				case -46:
+					bed_01.SetTopLeft(x, y);
+					bed_01.ShowBitmap();
+					break;
+				case -47:
+					bed_02.SetTopLeft(x, y);
+					bed_02.ShowBitmap();
+					break;
+				case -48:
+					bed_03.SetTopLeft(x, y);
+					bed_03.ShowBitmap();
+					break;
+				case -49:
+					bed_04.SetTopLeft(x, y);
+					bed_04.ShowBitmap();
+					break;
+				case -50:
+					bed_05.SetTopLeft(x, y);
+					bed_05.ShowBitmap();
+					break;
+				case -51:
+					bed_06.SetTopLeft(x, y);
+					bed_06.ShowBitmap();
+					break;
+				case -52:
+					houseWall_04.SetTopLeft(x, y);
+					houseWall_04.ShowBitmap();
+					break;
+				case -53:
+					desk_01.SetTopLeft(x, y);
+					desk_01.ShowBitmap();
+					break;
+				case -54:
+					desk_02.SetTopLeft(x, y);
+					desk_02.ShowBitmap();
+					break;
+				case -55:
+					desk_03.SetTopLeft(x, y);
+					desk_03.ShowBitmap();
+					break;
+				case -56:
+					desk_04.SetTopLeft(x, y);
+					desk_04.ShowBitmap();
+					break;
+				case -57:
+					sideTable_01.SetTopLeft(x, y);
+					sideTable_01.ShowBitmap();
+					break;
+				case -58:
+					sideTable_02.SetTopLeft(x, y);
+					sideTable_02.ShowBitmap();
+					break;
+				case -59:
+					fireplace_01.SetTopLeft(x, y);
+					fireplace_01.ShowBitmap();
+					break;
+				case -60:
+					fireplace_02.SetTopLeft(x, y);
+					fireplace_02.ShowBitmap();
+					break;
+				case -61:
+					fireplace_03.SetTopLeft(x, y);
+					fireplace_03.ShowBitmap();
+					break;
+				case -62:
+					fireplace_04.SetTopLeft(x, y);
+					fireplace_04.ShowBitmap();
+					break;
+				case -63:
+					fireplace_05.SetTopLeft(x, y);
+					fireplace_05.ShowBitmap();
+					break;
+				case -64:
+					fireplace_06.SetTopLeft(x, y);
+					fireplace_06.ShowBitmap();
+					break;
+				case -65:
+					fireplace_07.SetTopLeft(x, y);
+					fireplace_07.ShowBitmap();
+					break;
+				case -66:
+					fireplace_08.SetTopLeft(x, y);
+					fireplace_08.ShowBitmap();
+					break;
+				case -67:
+					clockCalendar_01.SetTopLeft(x, y);
+					clockCalendar_01.ShowBitmap();
+					break;
+				case -68:
+					clockCalendar_02.SetTopLeft(x, y);
+					clockCalendar_02.ShowBitmap();
+					break;
+				case -69:
+					clockCalendar_03.SetTopLeft(x, y);
+					clockCalendar_03.ShowBitmap();
+					break;
+				case -70:
+					kitchenStove_01.SetTopLeft(x, y);
+					kitchenStove_01.ShowBitmap();
+					break;
+				case -71:
+					kitchenStove_02.SetTopLeft(x, y);
+					kitchenStove_02.ShowBitmap();
+					break;
+				case -72:
+					kitchenStove_03.SetTopLeft(x, y);
+					kitchenStove_03.ShowBitmap();
+					break;
+				case -73:
+					TV_01.SetTopLeft(x, y);
+					TV_01.ShowBitmap();
+					break;
+				case -74:
+					TV_02.SetTopLeft(x, y);
+					TV_02.ShowBitmap();
+					break;
+				case -75:
+					TV_03.SetTopLeft(x, y);
+					TV_03.ShowBitmap();
+					break;
+				case -76:
+					TV_04.SetTopLeft(x, y);
+					TV_04.ShowBitmap();
+					break;
+				case -77:
+					TV_05.SetTopLeft(x, y);
+					TV_05.ShowBitmap();
+					break;
+				case -78:
+					TV_06.SetTopLeft(x, y);
+					TV_06.ShowBitmap();
+					break;
 				default:
 					break;
 				}
 			}
 		}
+	}
+
+	// 天氣視覺動畫不會跟OnShow一起顯示，需獨立出來
+	void CGameMap::OnShow_Weather()
+	{
+		// 顯示天氣視覺動畫
+		if (weather != nullptr)
+			weather->OnShow();
 	}
 
 	bool CGameMap::IsEmpty(int x, int y) const
@@ -249,11 +588,11 @@ namespace game_framework {
 	// key
 	// x, y : 傳入player的位置
 	// 地圖管理器
-	void CGameMap::triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd)
+	void CGameMap::triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		int px = p->GetBodyX() + 30, py = p->GetBodyY() + 60; // MAYBE FIXME
 		int gx = px / gndW, gy = py / gndH; // 求出格座標
-		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd);
+		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd, sm);
 	}
 	
 
@@ -276,6 +615,11 @@ namespace game_framework {
 	void CGameMap::SetSXSY(int nx, int ny)
 	{
 		sx = nx; sy = ny;
+	}
+	void CGameMap::SmoothMoveViewTo(int sx, int sy)
+	{
+		this->sx = sx;
+		this->sy = sy;
 	}
 	int CGameMap::ScreenX(int x) const
 	{
@@ -331,7 +675,9 @@ namespace game_framework {
 					
 					// 加入eventID
 					
-					while (sss >> data) map[i][j].AddEvent(stoi(data));
+					while (sss >> data) {
+						map[i][j].AddEvent(stoi(data));
+					}
 					j++;
 				}
 				i++;

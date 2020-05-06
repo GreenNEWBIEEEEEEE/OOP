@@ -191,8 +191,8 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g)
 {
-	mapManager.AddMap("Scripts/MapInfos/map01.txt");
-	mapManager.AddMap("Scripts/MapInfos/map02.txt");
+	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
+	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
 	backpackMenu.SetBackpack(p1.GetBackpack());
 }
 
@@ -211,13 +211,10 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
-	
+
 	mapManager.OnMove();
-	
 	gameDialog.OnMove();
-	//
-	//
-	//
+	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap());
 
 }
@@ -235,7 +232,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//mapManager.GetCurrentMap()->LoadBitmap();
 
-
 	//
 	// 完成部分Loading動作，提高進度
 	//
@@ -246,16 +242,13 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	p1.LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
-
-
 	backpackMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
-
+	plantShopMenu.LoadBitmap();
 	mapManager.LoadBitmapAll();
 	//
 	//
 	//
-	
 	
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
@@ -274,9 +267,14 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (backpackMenu.IsEnable()) {
 		backpackMenu.OnKeyDown(nChar, &p1);
 	}
+	else if (plantShopMenu.IsEnable())
+	{
+		plantShopMenu.OnKeyDown(nChar);
+	}
 	else
 	{
-		p1.OnKeyDown(nChar, &mapManager, &gameDialog);
+		CShopMenu *sm = &plantShopMenu;
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm);
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
@@ -302,12 +300,11 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		if (nChar == KEY_S)
 		{
 			backpackMenu.Enable();
+			// 在此傳入player現在的money以及HP值 以便再menu顯示
+			backpackMenu.SetMoneyField(p1.GetMoney());
+			backpackMenu.SetHPField(p1.GetHealthPoint());
 		}
-
 	}
-	
-	
-		
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -371,11 +368,10 @@ void CGameStateRun::OnShow()
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
 	mapManager.OnShow();
-	//
-	//
-	//
 	p1.OnShow(mapManager.GetCurrentMap());
+	mapManager.OnShow_Weather();
 	backpackMenu.OnShow();
+	plantShopMenu.OnShow();
 	gameDialog.OnShow();
 }
 }

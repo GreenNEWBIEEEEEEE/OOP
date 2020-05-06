@@ -11,7 +11,7 @@ namespace game_framework
 
 		~CMapShowDialogEvent();
 
-		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd);
+		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
 
 	};
 }

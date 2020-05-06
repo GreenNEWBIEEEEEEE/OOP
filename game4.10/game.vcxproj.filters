@@ -133,7 +133,6 @@
     <ClCompile Include="Source\CMapShowDialogEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="CTool.cpp" />
     <ClCompile Include="Source\CTool.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -159,6 +158,18 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CBackpackMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CWeather.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CMapShopEvent.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CPlantShopMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CShopMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -217,7 +228,6 @@
     <ClInclude Include="Source\CMapShowDialogEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="CTool.h" />
     <ClInclude Include="Source\CTool.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -243,6 +253,18 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CBackpackMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CWeather.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CMapShopEvent.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CPlantShopMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CShopMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -704,6 +726,225 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Backpack\Selector.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Dialog_BG02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Coin.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Heart.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Dialog_BG01_No.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Dialog_BG01_Yes.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\RainMask01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\RainMask02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FogMask01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FogMask02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\FogMask03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\RainMask03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ShopMenus\ShopMenuBlackBG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ShopMenus\PlantShopSelector.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GrayMask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\TileFloor01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Dialog_BG01_F4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\O1Mask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\BlackMask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\RedFlower.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\SideTable\SideTable01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\SideTable\SideTable02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV06.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

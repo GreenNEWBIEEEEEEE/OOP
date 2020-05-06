@@ -1,5 +1,8 @@
 #pragma once
 #include "CGameDialog.h"
+#include "CShopMenu.h"
+#include "CPlantShopMenu.h"
+
 namespace game_framework {
 	class CMapInfo {
 	public:
@@ -31,7 +34,7 @@ namespace game_framework {
 
 		bool hasEvents() const;
 
-		void triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd);
+		void triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd, CShopMenu *sm);
 
 		bool IsEmpty() const;
 

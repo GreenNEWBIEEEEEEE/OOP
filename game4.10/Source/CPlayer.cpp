@@ -14,6 +14,8 @@
 #include "CToolSeed.h"
 #include "CToolSickle.h"
 #include "CToolWaterer.h"
+#include "CShopMenu.h"
+
 namespace game_framework {
 	CPlayer::CPlayer() :
 		aniMoveLeft(3),
@@ -22,7 +24,7 @@ namespace game_framework {
 		aniMoveDown(3)
 	{
 		width = 64; height = 80;
-		x = lastX = 300; y = lastY = 200;
+		x = lastX = 600; y = lastY = 300;
 		bx = x + 64; by = y + 40;
 		facingDirection = &aniMoveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
@@ -65,6 +67,10 @@ namespace game_framework {
 		aniUseTool_6_back.SetDelayCount(10);
 		aniUseTool_6_left.SetDelayCount(10);
 		aniUseTool_6_right.SetDelayCount(10);
+
+		// 設定金錢、體力值
+		money = 100;
+		healthPoint = 100;
 	}
 
 	CPlayer::~CPlayer() {
@@ -382,6 +388,30 @@ namespace game_framework {
 		return toolSelector;
 	}
 
+	int CPlayer::GetHealthPoint() const
+	{
+		return this->healthPoint;
+	}
+
+	void CPlayer::DecreaseHealthPoint(int hp)
+	{
+		if (hp <= this->healthPoint)
+			healthPoint -= hp;
+	}
+
+	int CPlayer::GetMoney() const
+	{
+		return money;
+	}
+
+	void CPlayer::DecreaseMoney(int money)
+	{
+		if (money <= this->money)
+			this->money -= money;
+	}
+
+	
+
 	vector<CTool*>* CPlayer::GetBackpack()
 	{
 		return &backpack;
@@ -451,7 +481,7 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveUp;
-			if (m->IsEmpty(bx, by + 64 - STEP_SIZE) && m->IsEmpty(bx + width, by + 64 - STEP_SIZE))
+			if (m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE))
 			{
 				y -= STEP_SIZE;
 				by -= STEP_SIZE;
@@ -467,7 +497,8 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveDown;
-			if (m->IsEmpty(bx, by + 80 + STEP_SIZE) && m->IsEmpty(bx + width, by + 80 + STEP_SIZE))
+			// bx+/-5 寬度設小一點
+			if (m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE))
 			{
 				y += STEP_SIZE;
 				by += STEP_SIZE;
@@ -500,7 +531,7 @@ namespace game_framework {
 		}
 	}
 
-	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd)
+	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
@@ -607,6 +638,7 @@ namespace game_framework {
 				else if (direction == 2) facingDirection = &aniUseTool_6_front;
 				else if (direction == 3) facingDirection = &aniUseTool_6_left;
 				else facingDirection = &aniUseTool_6_right;
+
 				break;
 			default:
 				break;
@@ -615,14 +647,14 @@ namespace game_framework {
 			// 傳入農務事件觸發
 			// 
 			if (this->currentMoveState == MoveState::NormalMove)
-				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sm);
 			else
 				this->currentMoveState = MoveState::NormalMove;
 		}
 		else
 		{
 			// 傳入其他事件觸發
-			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd);
+			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sm);
 		}
 	}
 

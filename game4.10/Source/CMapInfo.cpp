@@ -9,7 +9,9 @@
 #include "CMapTransitionEvent.h"
 #include "CMapFarmingEvent.h"
 #include "CMapShowDialogEvent.h"
+#include "CMapShopEvent.h"
 #include "CMapManager.h"
+
 
 
 namespace game_framework{
@@ -87,12 +89,16 @@ namespace game_framework{
 		return elemID;
 	}
 
+	// 新增事件 這裡也要註冊
 	void CMapInfo::AddEvent(int eventCode)
 	{
 		switch (eventCode)
 		{
 		case 5:
 			events.push_back(new CMapFarmingEvent());
+			break;
+		case 6:
+			events.push_back(new CMapShopEvent(6));
 			break;
 		case 10001:
 			events.push_back(new CMapShowDialogEvent(10001));
@@ -109,6 +115,9 @@ namespace game_framework{
 		case 10005:
 			events.push_back(new CMapShowDialogEvent(10005));
 			break;
+		case 10006:
+			events.push_back(new CMapShowDialogEvent(10006));
+			break;
 		case 20001:
 			events.push_back(new CMapTransitionEvent(20001));
 			break;
@@ -124,15 +133,15 @@ namespace game_framework{
 		return events.size() > 0;
 	}
 
-	void CMapInfo::triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd)
+	void CMapInfo::triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd, CShopMenu *sm)
 	{
-		for (unsigned i = 0; i < events.size(); ++i) 
+		for (unsigned i = 0; i < events.size(); ++i)
 		{	
 			// 如果player按的key 所對應的事件存在的話，執行事件
 
 			if (events[i]->getKeyCode() == keyCode) {
 				TRACE("\nAn event triggered.\n");
-				events[i]->Execute(p, mm, gd);
+				events[i]->Execute(p, mm, gd, sm);
 
 				///
 				/// FOR DEBUGGING

@@ -7,11 +7,6 @@
 #include "CTool.h"
 
 namespace game_framework {
-	bool CTool::IsEnable()
-	{
-		return number > 0;
-	}
-
 	CTool::CTool(int toolID, int number)
 	{
 		this->toolID = toolID;
@@ -49,20 +44,6 @@ namespace game_framework {
 
 	}
 
-	int CTool::GetToolID()
-	{
-		return toolID;
-	}
-
-	void CTool::ShowIcon(int x, int y)
-	{
-		icon->SetTopLeft(x, y);
-		icon->ShowBitmap();
-	}
-	string CTool::GetInfo()
-	{
-		return toolName + "  *" + to_string(number);
-	}
 	void CTool::LoadBitmap()
 	{
 		hand.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
@@ -73,5 +54,50 @@ namespace game_framework {
 		sickle.LoadBitmap(IDB_Sickle, RGB(255, 255, 255));
 		waterer.LoadBitmap(IDB_WateringCan, RGB(255, 255, 255));
 	}
+
+	bool CTool::IsEnable() const
+	{
+		return number > 0;
+	}
+
+	int CTool::GetToolID() const
+	{
+		return toolID;
+	}
+
+	int CTool::GetNumber() const
+	{
+		return this->number;
+		return 0;
+	}
+
+	void CTool::ShowIcon(int x, int y)
+	{
+		icon->SetTopLeft(x, y);
+		icon->ShowBitmap();
+	}
+
+	string CTool::GetInfo() const
+	{
+		return toolName + "  *" + to_string(number);
+	}
+
+	void CTool::IncreaseNumber(int number)
+	{
+		if (number > 0)
+		{
+			this->number += number;
+		}
+	}
+
+	void CTool::DecreaseNumber(int number)
+	{
+		if (this->number >= number)
+		{
+			this->number -= number;
+		}
+	}
+
+	
 
 }

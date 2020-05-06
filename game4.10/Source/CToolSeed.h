@@ -6,5 +6,7 @@ namespace game_framework {
 		public:
 			CToolSeed(int toolID, int number);
 			~CToolSeed();
+
+			
 	};
 }

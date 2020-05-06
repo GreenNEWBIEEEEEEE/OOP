@@ -23,6 +23,8 @@
     <RootNamespace>game</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>
+    </ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'" Label="Configuration">
@@ -159,6 +161,7 @@
       <WarningLevel>Level3</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalOptions>**/utf-8** %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -253,7 +256,6 @@
     <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CTool.cpp" />
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
@@ -262,8 +264,10 @@
     <ClCompile Include="Source\CMapFarmingEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
     <ClCompile Include="Source\CMapManager.cpp" />
+    <ClCompile Include="Source\CMapShopEvent.cpp" />
     <ClCompile Include="Source\CMapShowDialogEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
+    <ClCompile Include="Source\CPlantShopMenu.cpp" />
     <ClCompile Include="Source\CTool.cpp" />
     <ClCompile Include="Source\CToolAxe.cpp" />
     <ClCompile Include="Source\CToolHammer.cpp" />
@@ -272,6 +276,7 @@
     <ClCompile Include="Source\CToolSeed.cpp" />
     <ClCompile Include="Source\CToolSickle.cpp" />
     <ClCompile Include="Source\CToolWaterer.cpp" />
+    <ClCompile Include="Source\CWeather.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -293,6 +298,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Source\CPlayer.cpp" />
+    <ClCompile Include="Source\CShopMenu.cpp" />
     <ClCompile Include="Source\StdAfx.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -315,7 +321,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CTool.h" />
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CGameDialog.h" />
@@ -324,8 +329,10 @@
     <ClInclude Include="Source\CMapFarmingEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />
     <ClInclude Include="Source\CMapManager.h" />
+    <ClInclude Include="Source\CMapShopEvent.h" />
     <ClInclude Include="Source\CMapShowDialogEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
+    <ClInclude Include="Source\CPlantShopMenu.h" />
     <ClInclude Include="Source\CTool.h" />
     <ClInclude Include="Source\CToolAxe.h" />
     <ClInclude Include="Source\CToolHammer.h" />
@@ -334,12 +341,14 @@
     <ClInclude Include="Source\CToolSeed.h" />
     <ClInclude Include="Source\CToolSickle.h" />
     <ClInclude Include="Source\CToolWaterer.h" />
+    <ClInclude Include="Source\CWeather.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\CPlayer.h" />
     <ClInclude Include="Source\Resource.h" />
+    <ClInclude Include="Source\CShopMenu.h" />
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
     <ClInclude Include="Source\mygame.h" />
@@ -355,7 +364,9 @@
     <Image Include="RES\BackpackMenu.bmp" />
     <Image Include="RES\Backpack\Axe.bmp" />
     <Image Include="RES\Backpack\BackpackMenu.bmp" />
+    <Image Include="RES\Backpack\Coin.bmp" />
     <Image Include="RES\Backpack\Hammer.bmp" />
+    <Image Include="RES\Backpack\Heart.bmp" />
     <Image Include="RES\Backpack\Hoe.bmp" />
     <Image Include="RES\Backpack\Question.bmp" />
     <Image Include="RES\Backpack\Seed01.bmp" />
@@ -368,8 +379,17 @@
     <Image Include="res\bitmap4.bmp" />
     <Image Include="res\bitmap5.bmp" />
     <Image Include="res\bitmap9.bmp" />
+    <Image Include="RES\BlackMask640x480_01.bmp" />
     <Image Include="RES\Dialog_BG01.bmp" />
     <Image Include="RES\Dialog_BG01.png" />
+    <Image Include="res\Dialog_BG01_F4.bmp" />
+    <Image Include="RES\Dialog_BG01_No.bmp" />
+    <Image Include="RES\Dialog_BG01_Yes.bmp" />
+    <Image Include="RES\Dialog_BG02.bmp" />
+    <Image Include="RES\FogMask01.bmp" />
+    <Image Include="RES\FogMask02.bmp" />
+    <Image Include="RES\FogMask03.bmp" />
+    <Image Include="RES\GrayMask640x480_01.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolAxe.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHammer.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHand.bmp" />
@@ -469,11 +489,44 @@
     <Image Include="RES\NewMaterial\Crops\Radish\Radish_Mature.bmp" />
     <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_D.bmp" />
     <Image Include="RES\NewMaterial\Crops\Radish\Radish_Seed_W.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed04.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed05.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Bed\Bed06.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\ClockCalendar\ClockCalendar03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Desk\Desk04.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace04.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace05.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace06.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace07.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\Fireplace\Fireplace08.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\KitchenStove\KitchenStove03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\SideTable\SideTable01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\SideTable\SideTable02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV01.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV02.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV03.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV04.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV05.bmp" />
+    <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV06.bmp" />
     <Image Include="res\newmaterial\house\images_bmp\bitmap11.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseFloor_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_02.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_03.bmp" />
+    <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_04.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_02.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\house_06.bmp" />
@@ -494,6 +547,7 @@
     <Image Include="RES\NewMaterial\Terrain\Grass.bmp" />
     <Image Include="RES\NewMaterial\Terrain\NoticeBoard.bmp" />
     <Image Include="RES\NewMaterial\Terrain\PlantSoil.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\RedFlower.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River01.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River02.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River03.bmp" />
@@ -502,8 +556,36 @@
     <Image Include="RES\NewMaterial\Terrain\Sand.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Soil.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Stone.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\TileFloor01.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Wood.bmp" />
+    <Image Include="RES\O1Mask640x480_01.bmp" />
+    <Image Include="RES\RainMask01.bmp" />
+    <Image Include="RES\RainMask02.bmp" />
+    <Image Include="RES\RainMask03.bmp" />
     <Image Include="RES\recs1.bmp" />
+    <Image Include="RES\ShopMenus\PlantShopSelector.bmp" />
+    <Image Include="RES\ShopMenus\ShopMenuBlackBG.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s02.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s03.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s04.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s05.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s06.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s07.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s08.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s09.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s10.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s11.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s12.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s13.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s14.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s15.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s16.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s17.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s18.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s19.bmp" />
+    <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s20.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -43,6 +43,9 @@
 #include "CMapManager.h"
 #include "CGameDialog.h"
 #include "CBackpackMenu.h"
+#include "CWeather.h"
+#include "CPlantShopMenu.h"
+#include "CPlantShopMenu.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -104,6 +107,7 @@ namespace game_framework {
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;
+		CPlantShopMenu plantShopMenu;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

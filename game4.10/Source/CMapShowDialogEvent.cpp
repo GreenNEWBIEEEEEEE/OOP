@@ -9,6 +9,8 @@
 
 namespace game_framework
 {
+	
+
 	CMapShowDialogEvent::CMapShowDialogEvent(int eventCode)
 		: CMapEvent(eventCode, ' ')
 	{
@@ -19,29 +21,28 @@ namespace game_framework
 	{
 	}
 
-	void CMapShowDialogEvent::Execute(CPlayer * p, CMapManager * mm, CGameDialog * gd)
+	void CMapShowDialogEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		//
 		// 規範：
-		// 對話框「內容」事件碼的範圍，須從10001~20000
+		// 對話框「內容」事件碼的範圍	，須從10001~20000
 		// 數量上基本上很夠用了
 		// 
 		switch (eventCode)
 		{
 		case 10001:
-			gd->AddMessage("Welcome to play this game.");
-			gd->AddMessage("Have fun!");
-			gd->Enable();
-			break;
+				gd->AddQuestion("Do you like this game?");
+				gd->AddOptionResultMessage("Thank!", "Danke!");
+				gd->AddOptionResultMessage("Have fun!", "Habe Spass!");
+				gd->Enable();
+
+				break;
 		case 10002:
 			gd->AddMessage("Press W to change tools.");
-			gd->AddMessage("Now you have :");
-			gd->AddMessage("An axe.");
-			gd->AddMessage("A hammer.");
-			gd->AddMessage("A hoe.");
-			gd->AddMessage("A seed bag.");
-			gd->AddMessage("A waterer.");
-			gd->AddMessage("A sickle.");
+			gd->AddMessage("Press S to open backpack menu.");
+			gd->AddMessage("In backpack menu. . .");
+			gd->AddMessage("press A to select tool, ");
+			gd->AddMessage("and press D to leave menu.");
 			gd->Enable();
 			break;
 		case 10003:
@@ -56,6 +57,12 @@ namespace game_framework
 			break;
 		case 10005:
 			gd->AddMessage("Here is your home.");
+			gd->Enable();
+			break;
+		case 10006:
+			gd->AddMessage("Here is Plant Shop.");
+			gd->AddMessage("You can buy seeds in this shop.");
+			gd->AddMessage("Press H at the door to enter shop.");
 			gd->Enable();
 			break;
 		default:

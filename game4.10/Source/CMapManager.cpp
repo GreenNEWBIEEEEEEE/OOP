@@ -9,6 +9,7 @@ namespace game_framework {
 
 	CMapManager::CMapManager()
 	{
+
 	}
 
 	CMapManager::~CMapManager()
@@ -22,9 +23,9 @@ namespace game_framework {
 	///
 	///
 	///
-	void game_framework::CMapManager::AddMap(string path)
+	void game_framework::CMapManager::AddMap(string path, bool hasWeather)
 	{
-		maps.push_back(new CGameMap(path));
+		maps.push_back(new CGameMap(path, hasWeather));
 	}
 
 	///
@@ -64,6 +65,10 @@ namespace game_framework {
 	void CMapManager::OnShow()
 	{
 		maps[selector]->OnShow();
+	}
+	void CMapManager::OnShow_Weather()
+	{
+		maps[selector]->OnShow_Weather();
 	}
 }
 

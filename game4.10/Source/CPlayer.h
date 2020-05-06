@@ -4,6 +4,7 @@ namespace game_framework {
 	class CGameMap;
 	class CMapManager;
 	class CGameDialog;
+	class CShopMenu;
 	class CPlayer
 	{
 	public:
@@ -34,6 +35,10 @@ namespace game_framework {
 		int GetLastY() const;
 		int GetDirection() const;
 		int GetCurrentTool() const;
+		int GetHealthPoint() const;
+		void DecreaseHealthPoint(int hp);
+		int GetMoney() const;
+		void DecreaseMoney(int money);
 		vector<CTool*>* GetBackpack();
 		void SetToolSelector(unsigned int select);
 		void ChangeMoveState(MoveState state);
@@ -45,7 +50,7 @@ namespace game_framework {
 		void LoadBitmap();
 		void OnMove(CGameMap* m);
 		void OnShow(CGameMap* m);
-		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd);
+		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
 
 	private:
@@ -129,5 +134,10 @@ namespace game_framework {
 		// 工/道具的背包
 		vector<CTool*> backpack;
 		unsigned int toolSelector;
+
+		// 玩家屬性
+		int money;
+		int healthPoint;
+
 	};
 }
