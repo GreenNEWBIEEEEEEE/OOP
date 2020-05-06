@@ -268,6 +268,7 @@
     <ClCompile Include="Source\CMapShowDialogEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\CPlantShopMenu.cpp" />
+    <ClCompile Include="Source\CTimer.cpp" />
     <ClCompile Include="Source\CTool.cpp" />
     <ClCompile Include="Source\CToolAxe.cpp" />
     <ClCompile Include="Source\CToolHammer.cpp" />
@@ -333,6 +334,7 @@
     <ClInclude Include="Source\CMapShowDialogEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\CPlantShopMenu.h" />
+    <ClInclude Include="Source\CTimer.h" />
     <ClInclude Include="Source\CTool.h" />
     <ClInclude Include="Source\CToolAxe.h" />
     <ClInclude Include="Source\CToolHammer.h" />
