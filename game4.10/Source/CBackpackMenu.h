@@ -5,6 +5,7 @@ namespace game_framework {
 		public:
 			CBackpackMenu();
 			void SetBackpack(vector<CTool*>* playerBackpack);
+			void SetTimer(CTimer* timer);
 			~CBackpackMenu();
 			
 
@@ -30,6 +31,7 @@ namespace game_framework {
 			int fixWidth = 60;
 			int fixHeight = 70;
 			vector<CTool*>* playerBackpack;
+			CTimer* timer;
 			CMovingBitmap backpackMenu;
 
 			// Money field and HP field

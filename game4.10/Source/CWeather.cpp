@@ -4,7 +4,7 @@
 #include <ddraw.h>
 #include "gamelib.h"
 #include "CWeather.h"
-
+#include "CTimer.h"
 namespace game_framework
 {
 	CWeather::CWeather()
@@ -15,6 +15,11 @@ namespace game_framework
 	CWeather::~CWeather()
 	{
 	}
+	/*
+	void CWeather::ChooseWeather(CTimer* timer)
+	{
+	}
+	*/
 
 	void CWeather::LoadBitmap()
 	{

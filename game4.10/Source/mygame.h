@@ -103,6 +103,7 @@ namespace game_framework {
 		//
 		// 遊戲主體的各式物件/資源宣告在此:
 		// 
+		CTimer timer;
 		CPlayer p1; // 玩家1
 		CMapManager mapManager;
 		CGameDialog gameDialog;

@@ -6,7 +6,7 @@ namespace game_framework {
 		int year = 2000;
 		int month = 1;
 		int day = 1;
-		int hour = 8;
+		int hour = 13;
 		enum class Brightness {
 			Morning,
 			Dusk,
@@ -15,15 +15,24 @@ namespace game_framework {
 
 		CTimer();
 		~CTimer();
+		void LoadBitmap();
 		void OnShow();
 		void OnMove();
+		int GetYear();
+		int GetMonth();
+		int GetDay();
+		int GetHour();
+		int GetHourCounter();
 		void CountTime();    // 計數
 		void UpdateDate();   // 更新日期
 		void UpdateBrightness();
 		int GetNumberOfDays();
 	private:
 		CTimer::Brightness state = CTimer::Brightness::Morning;
-		const int HOUR_COUNTER_MAX = 2000; // onMove執行2000次等於一小時
+		const int HOUR_COUNTER_MAX = 60; // onMove執行2000次等於一小時
 		int hourCounter = 0;
+
+		CMovingBitmap dusk;
+		CMovingBitmap evening;
 	};
 }

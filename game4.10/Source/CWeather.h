@@ -19,6 +19,7 @@ namespace game_framework {
 		void LoadBitmap();
 		void OnMove();
 		void OnShow();
+		//void ChooseWeather(CTimer* timer);
 
 	private:
 		CMovingBitmap test_mask;

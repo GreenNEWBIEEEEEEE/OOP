@@ -388,6 +388,7 @@
     <Image Include="RES\Dialog_BG01_No.bmp" />
     <Image Include="RES\Dialog_BG01_Yes.bmp" />
     <Image Include="RES\Dialog_BG02.bmp" />
+    <Image Include="RES\DuskMask.bmp" />
     <Image Include="RES\FogMask01.bmp" />
     <Image Include="RES\FogMask02.bmp" />
     <Image Include="RES\FogMask03.bmp" />

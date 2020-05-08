@@ -216,6 +216,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap());
+	timer.OnMove();
 
 }
 
@@ -242,6 +243,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	p1.LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
+	backpackMenu.SetTimer(&timer);
+	timer.LoadBitmap();
 	backpackMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
 	plantShopMenu.LoadBitmap();
@@ -370,8 +373,10 @@ void CGameStateRun::OnShow()
 	mapManager.OnShow();
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
+	timer.OnShow();
 	backpackMenu.OnShow();
 	plantShopMenu.OnShow();
 	gameDialog.OnShow();
+	
 }
 }

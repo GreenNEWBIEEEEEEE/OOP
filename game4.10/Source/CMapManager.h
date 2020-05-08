@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CGameMap.h"
+#include "CTimer.h"
 #include <vector>
 
 namespace game_framework {

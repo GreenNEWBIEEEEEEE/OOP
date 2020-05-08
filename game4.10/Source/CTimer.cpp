@@ -24,6 +24,12 @@ namespace game_framework {
 			state = CTimer::Brightness::Evening;
 	}
 
+	void CTimer::LoadBitmap()
+	{
+		dusk.LoadBitmap(IDB_OrangeMask, RGB(255, 157, 78));
+		evening.LoadBitmap(IDB_BlackMask, RGB(255, 255, 255));
+	}
+
 	void CTimer::CountTime()
 	{
 		if (hourCounter < HOUR_COUNTER_MAX)
@@ -73,5 +79,44 @@ namespace game_framework {
 			month = 1;
 			year += 1;
 		}
+	}
+
+	void CTimer::OnShow()
+	{
+		if (state == CTimer::Brightness::Dusk)
+		{
+			dusk.SetTopLeft(0, 0);
+			dusk.ShowBitmap();
+		}
+		else if (state == CTimer::Brightness::Evening)
+		{
+			dusk.SetTopLeft(0, 0);
+			evening.ShowBitmap();
+		}
+	}
+
+	int CTimer::GetYear()
+	{
+		return year;
+	}
+
+	int CTimer::GetMonth()
+	{
+		return month;
+	}
+
+	int CTimer::GetDay()
+	{
+		return day;
+	}
+
+	int CTimer::GetHour()
+	{
+		return hour;
+	}
+
+	int CTimer::GetHourCounter()
+	{
+		return hourCounter;
 	}
 }

@@ -5,6 +5,7 @@
 #include "gamelib.h"
 #include "CPlayer.h"
 #include "CTool.h"
+#include "CTimer.h"
 #include "CBackpackMenu.h"
 #include <iostream>
 
@@ -13,6 +14,11 @@ namespace game_framework {
 	CBackpackMenu::CBackpackMenu()
 	{
 		enable = false;
+	}
+
+	void CBackpackMenu::SetTimer(CTimer* timer)
+	{
+		this->timer = timer;
 	}
 
 	void CBackpackMenu::SetBackpack(vector<CTool*>* playerBackpack)
@@ -111,7 +117,7 @@ namespace game_framework {
 
 			// First block:
 			// Draw money and HP(health point)
-			CString moneyStr, HPStr;
+			CString moneyStr, HPStr, timeStr;
 
 			HPIcon.SetTopLeft(50, 15);
 			HPIcon.ShowBitmap();
@@ -122,6 +128,10 @@ namespace game_framework {
 			moneyIcon.ShowBitmap();
 			moneyStr.Format("%d", moneyField);
 			DrawTexts(moneyStr, 250, 20, 150);
+
+
+			timeStr.Format("%d/%d/%d  %d o'clock", timer->GetYear(), timer->GetMonth(), timer->GetDay(), timer->GetHour());
+			DrawTexts(timeStr, 400, 20, 150);
 
 			// Second block:
 			// Draw Selector(cursor)
