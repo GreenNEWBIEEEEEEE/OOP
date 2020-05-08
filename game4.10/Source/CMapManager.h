@@ -13,9 +13,10 @@ namespace game_framework {
 		void ChangeMap(unsigned mapID);
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
-		void OnMove();
+		void OnMove(CTimer* timer);
 		void OnShow();
 		void OnShow_Weather();
+		void OnShow_Timer(CTimer* timer);
 	private:
 		unsigned selector = 0;
 		std::vector<CGameMap*> maps;

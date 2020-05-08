@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CTimer.h"
 namespace game_framework
 {
 	class CMapInfo;
@@ -15,9 +15,10 @@ namespace game_framework
 		CGameMap(string mapinfo_path, bool hasWeather);
 		~CGameMap();
 		void LoadBitmap();
-		void OnMove();
+		void OnMove(CTimer* timer);
 		void OnShow();
 		void OnShow_Weather();
+		void OnShow_Timer(CTimer* timer);
 		
 		// 提供玩家或角色判斷即將移動的位置是否能夠行走, 也就是是否有障礙物
 		// 因此, 玩家或角色的Class中需要做移動(OnMove)的，請將CGameMap當作參數傳入(詳見老師的講義MapIntroduction)

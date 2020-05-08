@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CTimer.h"
 #include <atlimage.h>
 
 namespace game_framework {
@@ -17,11 +17,14 @@ namespace game_framework {
 		~CWeather();
 
 		void LoadBitmap();
-		void OnMove();
+		void OnMove(CTimer* timer);
 		void OnShow();
-		//void ChooseWeather(CTimer* timer);
+		void ChooseWeather(CTimer* timer);
 
 	private:
+		bool rainy = false;
+		bool typhoon = false;
+		bool sunny = true;
 		CMovingBitmap test_mask;
 		CAnimation rain;
 		WeatherType weatherType = WeatherType::Rain;

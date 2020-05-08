@@ -212,7 +212,7 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 
-	mapManager.OnMove();
+	mapManager.OnMove(&timer);
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap());
@@ -373,7 +373,7 @@ void CGameStateRun::OnShow()
 	mapManager.OnShow();
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
-	timer.OnShow();
+	mapManager.OnShow_Timer(&timer);
 	backpackMenu.OnShow();
 	plantShopMenu.OnShow();
 	gameDialog.OnShow();

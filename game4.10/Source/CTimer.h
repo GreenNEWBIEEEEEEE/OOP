@@ -13,6 +13,13 @@ namespace game_framework {
 			Evening
 		};
 
+		enum class Season {
+			Spring,
+			Summer,
+			Autumn,
+			Winter
+		};
+
 		CTimer();
 		~CTimer();
 		void LoadBitmap();
@@ -23,12 +30,15 @@ namespace game_framework {
 		int GetDay();
 		int GetHour();
 		int GetHourCounter();
+		CTimer::Season GetCurrentSeason();
 		void CountTime();    // 計數
 		void UpdateDate();   // 更新日期
 		void UpdateBrightness();
+		void UpdateSeason();
 		int GetNumberOfDays();
 	private:
 		CTimer::Brightness state = CTimer::Brightness::Morning;
+		CTimer::Season currentSeason = CTimer::Season::Spring;
 		const int HOUR_COUNTER_MAX = 60; // onMove執行2000次等於一小時
 		int hourCounter = 0;
 

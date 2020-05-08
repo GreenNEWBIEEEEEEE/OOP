@@ -15,11 +15,44 @@ namespace game_framework
 	CWeather::~CWeather()
 	{
 	}
-	/*
+	
 	void CWeather::ChooseWeather(CTimer* timer)
 	{
+		CTimer::Season currentSeason = timer->GetCurrentSeason();
+		int rnd = (rand() % 100);
+
+		if (currentSeason == CTimer::Season::Spring)
+		{
+			sunny = rnd < 95;             // 95%
+			rainy = rnd >= 95;			  // 5%
+			typhoon = false;
+		}
+		else if (currentSeason == CTimer::Season::Summer)
+		{
+			sunny = rnd < 40;             // 40%
+			rainy = rnd >= 40;            // 60%
+			typhoon = false;
+		}
+		else if (currentSeason == CTimer::Season::Autumn)
+		{
+			sunny = rnd < 60;             // 60%
+			rainy = rnd >= 60 && rnd < 90;// 30%
+			typhoon = rnd >= 90;	      // 10%
+		}
+		else if (currentSeason == CTimer::Season::Winter)
+		{
+			sunny = rnd < 90;             // 90%
+			rainy = rnd >= 90;			  // 10%
+			typhoon = false;	     
+		}
+
+		if (sunny)
+			weatherType = WeatherType::Sunny;
+		else if (rainy)
+			weatherType = WeatherType::Rain;
+		else if (typhoon)
+			weatherType = WeatherType::Typhoon;
 	}
-	*/
 
 	void CWeather::LoadBitmap()
 	{
@@ -35,8 +68,13 @@ namespace game_framework
 		}
 	}
 
-	void CWeather::OnMove()
+	void CWeather::OnMove(CTimer* timer)
 	{
+		if (timer->GetHour() == 8 && timer->GetHourCounter() == 0)
+		{
+			ChooseWeather(timer);
+		}
+
 		switch (weatherType)
 		{
 		case WeatherType::Rain:
@@ -46,6 +84,8 @@ namespace game_framework
 			// Do nothing
 			break;
 		}
+		
+
 	}
 
 	void CWeather::OnShow()

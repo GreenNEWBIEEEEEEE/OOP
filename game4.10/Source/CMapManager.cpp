@@ -54,10 +54,10 @@ namespace game_framework {
 
 	}
 
-	void CMapManager::OnMove()
+	void CMapManager::OnMove(CTimer* timer)
 	{
 		for (unsigned i = 0; i < maps.size(); ++i)
-			maps.at(i)->OnMove();
+			maps.at(i)->OnMove(timer);
 	}
 	
 	///
@@ -70,6 +70,10 @@ namespace game_framework {
 	void CMapManager::OnShow_Weather()
 	{
 		maps[selector]->OnShow_Weather();
+	}
+	void CMapManager::OnShow_Timer(CTimer* timer)
+	{
+		maps[selector]->OnShow_Timer(timer);
 	}
 }
 

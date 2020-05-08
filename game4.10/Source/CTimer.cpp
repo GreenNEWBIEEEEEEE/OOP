@@ -24,6 +24,23 @@ namespace game_framework {
 			state = CTimer::Brightness::Evening;
 	}
 
+	CTimer::Season CTimer::GetCurrentSeason()
+	{
+		return currentSeason;
+	}
+
+	void CTimer::UpdateSeason()
+	{
+		if (month >= 1 && month <= 3)
+			currentSeason = CTimer::Season::Spring;
+		else if (month >= 4 && month <= 6)
+			currentSeason = CTimer::Season::Summer;
+		else if (month >= 7 && month <= 9)
+			currentSeason = CTimer::Season::Autumn;
+		else
+			currentSeason = CTimer::Season::Winter;
+	}
+
 	void CTimer::LoadBitmap()
 	{
 		dusk.LoadBitmap(IDB_OrangeMask, RGB(255, 157, 78));
@@ -42,6 +59,7 @@ namespace game_framework {
 			hour += 1;
 			UpdateDate();
 			UpdateBrightness();
+			UpdateSeason();
 		}
 	}
 

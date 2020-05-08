@@ -15,6 +15,7 @@
 #include "CWeather.h"
 #include "CShopMenu.h"
 #include "CPlantShopMenu.h"
+#include "CTimer.h"
 
 
 
@@ -182,7 +183,7 @@ namespace game_framework {
 		}
 	}
 
-	void CGameMap::OnMove()
+	void CGameMap::OnMove(CTimer* timer)
 	{
 		// 單格Mapinfo的OnMove主要用於農作物計數
 		for (int i = 0; i < row; ++i)
@@ -191,7 +192,7 @@ namespace game_framework {
 
 		// 如果這個Map是有天氣現象，則需要呼叫weather的OnMove, 主要做天氣視覺動畫的更新
 		if (weather != nullptr)
-			weather->OnMove();
+			weather->OnMove(timer);
 	}
 
 	void CGameMap::OnShow()
@@ -577,6 +578,12 @@ namespace game_framework {
 			weather->OnShow();
 	}
 
+	void CGameMap::OnShow_Timer(CTimer* timer)
+	{
+		if (weather != nullptr)		// 因為weather的動畫跟timer的動畫一樣是區分室內室外，所以用weather判斷也行
+			timer->OnShow();
+	}
+	
 	bool CGameMap::IsEmpty(int x, int y) const
 	{
 		int gx = x / gndW, gy = y / gndH;
