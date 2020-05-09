@@ -435,7 +435,6 @@ namespace game_framework {
 	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight)
 	{
 		// 每一步移動量
-		const int STEP_SIZE = 5;
 		if (isMovingLeft)
 		{
 			// 更改方向旗標
@@ -535,6 +534,7 @@ namespace game_framework {
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
+		const char KEY_B = 'B';  // keyboard B鍵
 
 		//
 		// 按W切換玩家手上拿的工具
@@ -651,6 +651,10 @@ namespace game_framework {
 			else
 				this->currentMoveState = MoveState::NormalMove;
 		}
+		else if (key == KEY_B)
+		{
+			STEP_SIZE = 50;
+		}
 		else
 		{
 			// 傳入其他事件觸發
@@ -667,14 +671,17 @@ namespace game_framework {
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
-
+		const char KEY_B = 'B'; // keyboard B鍵
 		// 放開Q鍵 變回原來的姿勢
 		if (key == KEY_W)
 		{
 			Sleep(200);
 			facingDirection = lastFacingDirection;
 		}
-
+		else if (key == KEY_B)
+		{
+			STEP_SIZE = 5;
+		}
 	
 	}
 }

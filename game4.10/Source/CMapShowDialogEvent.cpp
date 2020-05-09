@@ -5,6 +5,7 @@
 #include "gamelib.h"
 #include "CPlayer.h"
 #include "CGameDialog.h"
+#include "CWeather.h"
 #include "CMapShowDialogEvent.h"
 
 namespace game_framework
@@ -28,6 +29,11 @@ namespace game_framework
 		// 對話框「內容」事件碼的範圍	，須從10001~20000
 		// 數量上基本上很夠用了
 		// 
+
+		CWeather* weather = mm->GetOutsideWeather();
+		string today = "The weather today is " + weather->ForecastWeather() + ".";
+		string tomorrow = "The weather tomorrow is " +  weather->ForecastFutureWeather() + ".";
+
 		switch (eventCode)
 		{
 		case 10001:
@@ -63,6 +69,15 @@ namespace game_framework
 			gd->AddMessage("Here is Plant Shop.");
 			gd->AddMessage("You can buy seeds in this shop.");
 			gd->AddMessage("Press H at the door to enter shop.");
+			gd->Enable();
+			break;
+		case 10007:
+			gd->AddMessage(today);
+			gd->AddMessage(tomorrow);
+			gd->Enable();
+			break;
+		case 10008:
+			gd->AddQuestion("Do you want to sleep through one day?");
 			gd->Enable();
 			break;
 		default:

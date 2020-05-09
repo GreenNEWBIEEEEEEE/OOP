@@ -14,6 +14,26 @@ namespace game_framework {
 		CountTime();
 	}
 
+	void CTimer::OnKeyDown(UINT key)
+	{
+		const char KEY_B = 'B';
+
+		if (key == KEY_B)
+		{
+			TIME_SPEED = 50;
+		}
+	}
+
+	void CTimer::OnKeyUp(UINT key)
+	{
+		const char KEY_B = 'B';
+
+		if (key == KEY_B)
+		{
+			TIME_SPEED = 1;
+		}
+	}
+
 	void CTimer::UpdateBrightness()
 	{
 		if (hour >= 8 && hour <= 16)
@@ -51,7 +71,7 @@ namespace game_framework {
 	{
 		if (hourCounter < HOUR_COUNTER_MAX)
 		{
-			hourCounter++;
+			hourCounter += TIME_SPEED;
 		}
 		else
 		{
@@ -61,6 +81,11 @@ namespace game_framework {
 			UpdateBrightness();
 			UpdateSeason();
 		}
+	}
+	
+	bool CTimer::IsNewDay()
+	{
+		return GetHour() == 8 && GetHourCounter() == 0;
 	}
 
 	int CTimer::GetNumberOfDays()

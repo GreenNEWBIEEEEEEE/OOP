@@ -16,42 +16,96 @@ namespace game_framework
 	{
 	}
 	
+	string CWeather::ForecastWeather()
+	{
+		if (weatherType == WeatherType::Sunny)
+			return "Sunny";
+		else if (weatherType == WeatherType::Rain)
+			return "Rainy";
+		else
+			return "Typhoon";
+	}
+
+	string CWeather::ForecastFutureWeather()
+	{
+		
+		if (mistake)
+		{
+			if (nextSunny)
+			{
+				return "Rainy";
+			}
+
+			else if (nextRainy)
+			{
+				return "Typhoon";
+			}
+
+			else
+			{
+				return "Typhoon";
+			}
+		}
+		else
+		{
+			if (nextDayWeatherType == WeatherType::Sunny)
+				return "Sunny";
+			else if (nextDayWeatherType == WeatherType::Rain)
+				return "Rainy";
+			else
+				return "Typhoon";
+		}
+		
+	}
+
 	void CWeather::ChooseWeather(CTimer* timer)
 	{
 		CTimer::Season currentSeason = timer->GetCurrentSeason();
 		int rnd = (rand() % 100);
+		mistake = (rand() % 100) >= 95;		// 隔天天氣預報誤報機率5%
+											// ChooseWeather一天觸發一次，所以誤報會是一整天
 
 		if (currentSeason == CTimer::Season::Spring)
 		{
-			sunny = rnd < 95;             // 95%
-			rainy = rnd >= 95;			  // 5%
-			typhoon = false;
+			nextSunny = rnd < 95;             // 95%
+			nextRainy = rnd >= 95;			  // 5%
+			nextTyphoon = false;
 		}
 		else if (currentSeason == CTimer::Season::Summer)
 		{
-			sunny = rnd < 40;             // 40%
-			rainy = rnd >= 40;            // 60%
-			typhoon = false;
+			nextSunny = rnd < 40;             // 40%
+			nextRainy = rnd >= 40;            // 60%
+			nextTyphoon = false;
 		}
 		else if (currentSeason == CTimer::Season::Autumn)
 		{
-			sunny = rnd < 60;             // 60%
-			rainy = rnd >= 60 && rnd < 90;// 30%
-			typhoon = rnd >= 90;	      // 10%
+			nextSunny = rnd < 60;             // 60%
+			nextRainy = rnd >= 60 && rnd < 90;// 30%
+			nextTyphoon = rnd >= 90;	      // 10%
 		}
 		else if (currentSeason == CTimer::Season::Winter)
 		{
-			sunny = rnd < 90;             // 90%
-			rainy = rnd >= 90;			  // 10%
-			typhoon = false;	     
+			nextSunny = rnd < 90;             // 90%
+			nextRainy = rnd >= 90;			  // 10%
+			nextTyphoon = false;	     
 		}
 
+		/*
 		if (sunny)
 			weatherType = WeatherType::Sunny;
 		else if (rainy)
 			weatherType = WeatherType::Rain;
 		else if (typhoon)
 			weatherType = WeatherType::Typhoon;
+		*/
+		weatherType = nextDayWeatherType;
+
+		if (nextSunny)
+			nextDayWeatherType = WeatherType::Sunny;
+		else if (nextRainy)
+			nextDayWeatherType = WeatherType::Rain;
+		else if (nextTyphoon)
+			nextDayWeatherType = WeatherType::Typhoon;
 	}
 
 	void CWeather::LoadBitmap()
@@ -68,9 +122,10 @@ namespace game_framework
 		}
 	}
 
+
 	void CWeather::OnMove(CTimer* timer)
 	{
-		if (timer->GetHour() == 8 && timer->GetHourCounter() == 0)
+		if (timer->IsNewDay())
 		{
 			ChooseWeather(timer);
 		}

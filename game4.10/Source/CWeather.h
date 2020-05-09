@@ -20,13 +20,17 @@ namespace game_framework {
 		void OnMove(CTimer* timer);
 		void OnShow();
 		void ChooseWeather(CTimer* timer);
-
+		string ForecastWeather();
+		string ForecastFutureWeather();
 	private:
-		bool rainy = false;
-		bool typhoon = false;
-		bool sunny = true;
+		bool mistake = false; // 隔天天氣預報誤報
+
+		bool nextRainy = false;
+		bool nextTyphoon = false;
+		bool nextSunny = true;
 		CMovingBitmap test_mask;
 		CAnimation rain;
 		WeatherType weatherType = WeatherType::Rain;
+		WeatherType nextDayWeatherType = WeatherType::Sunny;
 	};
 }

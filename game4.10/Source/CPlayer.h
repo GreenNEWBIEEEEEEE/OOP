@@ -59,7 +59,7 @@ namespace game_framework {
 		// 目前一整張玩家圖(包含上下左右 換工具 工具動作) "版面" 都是 128*120
 		// 玩家角色圖片寬高
 		int width, height;
-
+		int STEP_SIZE = 5;
 		// 玩家在地圖上的座標(點座標)
 		int x, y;   // 整張圖的點座標
 		int bx, by; // 玩家真正身體(body)的點座標

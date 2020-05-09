@@ -47,6 +47,11 @@ namespace game_framework {
 		}
 	}
 
+	CWeather* CGameMap::GetWeather()
+	{
+		return weather;
+	}
+
 	void CGameMap::LoadBitmap()
 	{
 		sand.LoadBitmap(IDB_Sand);

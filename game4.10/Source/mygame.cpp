@@ -284,6 +284,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		const char KEY_DOWN = 0x28; // keyboard§UΩb¿Y
 		const char KEY_S = 0x53; // keyboard S
 
+		timer.OnKeyDown(nChar);
+
 		if (nChar == KEY_LEFT)
 		{
 			p1.SetMovingLeft(true);
@@ -332,7 +334,7 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		p1.SetMovingDown(false);
 	}
-
+	timer.OnKeyUp(nChar);
 	p1.OnKeyUp(nChar, &mapManager, &gameDialog);
 }
 
