@@ -56,7 +56,7 @@ namespace game_framework {
 
 	CWeather* CMapManager::GetOutsideWeather()
 	{
-		return maps[0]->GetWeather();
+		return maps[0]->GetWeather(); // 地圖0是戶外
 	}
 
 	void CMapManager::OnMove(CTimer* timer)
@@ -69,9 +69,9 @@ namespace game_framework {
 	///
 	///
 
-	void CMapManager::OnShow()
+	void CMapManager::OnShow(CTimer* timer)
 	{
-		maps[selector]->OnShow();
+		maps[selector]->OnShow(timer);
 	}
 	void CMapManager::OnShow_Weather()
 	{

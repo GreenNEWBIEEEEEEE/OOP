@@ -211,12 +211,11 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
-
+	timer.OnMove();
 	mapManager.OnMove(&timer);
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap());
-	timer.OnMove();
 
 }
 
@@ -372,7 +371,7 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	mapManager.OnShow();
+	mapManager.OnShow(&timer);
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer(&timer);

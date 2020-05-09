@@ -190,17 +190,17 @@ namespace game_framework {
 
 	void CGameMap::OnMove(CTimer* timer)
 	{
-		// 單格Mapinfo的OnMove主要用於農作物計數
-		for (int i = 0; i < row; ++i)
-			for (int j = 0; j < col; ++j)
-				map[i][j].OnMove();
-
 		// 如果這個Map是有天氣現象，則需要呼叫weather的OnMove, 主要做天氣視覺動畫的更新
 		if (weather != nullptr)
 			weather->OnMove(timer);
+
+		// 單格Mapinfo的OnMove主要用於農作物計數
+		for (int i = 0; i < row; ++i)
+			for (int j = 0; j < col; ++j)
+				map[i][j].OnMove(timer, weather);
 	}
 
-	void CGameMap::OnShow()
+	void CGameMap::OnShow(CTimer* timer)
 	{
 
 		// 先畫地板圖

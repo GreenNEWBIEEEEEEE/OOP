@@ -15,7 +15,7 @@ namespace game_framework {
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
 		void OnMove(CTimer* timer);
-		void OnShow();
+		void OnShow(CTimer* timer);
 		void OnShow_Weather();
 		void OnShow_Timer(CTimer* timer);
 	private:

@@ -50,9 +50,9 @@ namespace game_framework {
 		
 		bool IsGrowingCounterEnable() const;
 		
-		void CountForGrowing();
+		void CountForGrowing(CTimer* timer);
 
-		void OnMove();
+		void OnMove(CTimer* timer, CWeather* weather);
 
 	private:
 		int elemID;
@@ -63,8 +63,6 @@ namespace game_framework {
 
 		
 		bool isGrowingCounterEnable = false;
-		const int GROWING_COUNTER_MAX = 350;
-		int growingCounter = 0;
 		
 	};
 }

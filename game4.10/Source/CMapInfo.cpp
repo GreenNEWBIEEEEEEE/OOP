@@ -10,6 +10,7 @@
 #include "CMapFarmingEvent.h"
 #include "CMapShowDialogEvent.h"
 #include "CMapShopEvent.h"
+#include "CWeather.h"
 #include "CMapManager.h"
 
 
@@ -192,13 +193,11 @@ namespace game_framework{
 		return isGrowingCounterEnable;
 		
 	}
-	void CMapInfo::CountForGrowing()
+	void CMapInfo::CountForGrowing(CTimer* timer)
 	{
-		if (growingCounter < GROWING_COUNTER_MAX)
-			growingCounter++;
-		else
+		TRACE("\n NewDay = %d  Hour = %d   Counter = %d\n", timer->IsNewDay(), timer->GetHour(), timer->GetHourCounter());
+		if (timer->IsNewDay())
 		{
-			growingCounter = 0;
 			if (isArable)
 			{
 				if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
@@ -215,11 +214,51 @@ namespace game_framework{
 		}
 	}
 
-	void CMapInfo::OnMove()
+	void CMapInfo::OnMove(CTimer* timer, CWeather* weather)
 	{
+		bool destroy = false;
 		if (isGrowingCounterEnable)
 		{
-			CountForGrowing();
+			CountForGrowing(timer);
+		}
+
+		if (weather != nullptr)
+		{
+			if (weather->ForecastWeather() == "Rainy")
+			{
+				if (isArable)
+				{
+					switch (elemID) {
+					case 5:
+						SetElemID(6);
+						landState = wateredSeedPlanted;
+						EnableGrowingCounter();
+						break;
+					case 7:
+						SetElemID(8);
+						landState = wateredIsGrowing;
+						EnableGrowingCounter();
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			else if (weather->ForecastWeather() == "Typhoon")
+			{
+				//TRACE("\n NewDay = %d  Hour = %d   Counter = %d\n", timer->IsNewDay(), timer->GetHour(), timer->GetHourCounter());
+				if (isArable)
+				{
+					if (timer->IsNewDay())
+						destroy = (rand() % 100) >= 80; // 20%¾÷²v»ä­·ºR·´
+
+					if (destroy)
+					{
+						SetElemID(3);
+						landState = Soil;
+					}
+				}
+			}
 		}
 	}
 }

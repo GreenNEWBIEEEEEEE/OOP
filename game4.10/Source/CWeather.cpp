@@ -127,6 +127,7 @@ namespace game_framework
 	{
 		if (timer->IsNewDay())
 		{
+			TRACE("\nTRIGGER CHOOSE WEATHER\n");
 			ChooseWeather(timer);
 		}
 
