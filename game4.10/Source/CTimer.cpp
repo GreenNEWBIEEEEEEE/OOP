@@ -4,6 +4,7 @@
 #include <ddraw.h>
 #include "gamelib.h"
 #include "CTimer.h"
+#include "CWeather.h"
 
 namespace game_framework {
 	CTimer::CTimer(){}
@@ -59,6 +60,17 @@ namespace game_framework {
 			currentSeason = CTimer::Season::Autumn;
 		else
 			currentSeason = CTimer::Season::Winter;
+	}
+
+	void CTimer::ChangeToNewDay(CWeather* weather, CTimer* timer)
+	{
+		hourCounter = 0;
+		hour = 8;
+		day += 1;
+		UpdateDate();
+		UpdateBrightness();
+		UpdateSeason();
+		weather->ChooseWeather(timer);
 	}
 
 	void CTimer::LoadBitmap()

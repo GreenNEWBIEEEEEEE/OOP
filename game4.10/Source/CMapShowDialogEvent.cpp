@@ -76,10 +76,6 @@ namespace game_framework
 			gd->AddMessage(tomorrow);
 			gd->Enable();
 			break;
-		case 10008:
-			gd->AddQuestion("Do you want to sleep through one day?");
-			gd->Enable();
-			break;
 		default:
 			break;
 		}

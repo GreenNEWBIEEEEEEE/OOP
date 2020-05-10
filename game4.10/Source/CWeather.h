@@ -1,8 +1,9 @@
 #pragma once
-#include "CTimer.h"
+
 #include <atlimage.h>
 
 namespace game_framework {
+	class CTimer;
 	class CWeather
 	{
 	public:

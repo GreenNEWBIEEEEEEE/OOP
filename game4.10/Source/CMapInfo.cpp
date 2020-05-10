@@ -12,6 +12,7 @@
 #include "CMapShopEvent.h"
 #include "CWeather.h"
 #include "CMapManager.h"
+#include "CMapSleepEvent.h"
 
 
 
@@ -130,6 +131,13 @@ namespace game_framework{
 			break;
 		case 20002:
 			events.push_back(new CMapTransitionEvent(20002));
+			break;
+		case 30000:
+			events.push_back(new CMapSleepEvent(30000));
+			break;
+		case 30001:
+			events.push_back(new CMapSleepEvent(30001));
+			break;
 		default:
 			break;
 		}

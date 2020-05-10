@@ -59,7 +59,17 @@ namespace game_framework {
 		return maps[0]->GetWeather(); // 地圖0是戶外
 	}
 
-	void CMapManager::OnMove(CTimer* timer)
+	void CMapManager::SetTimer(CTimer* timer)
+	{
+		this->timer = timer;
+	}
+
+	CTimer* CMapManager::GetTimer()
+	{
+		return timer;
+	}
+
+	void CMapManager::OnMove()
 	{
 		for (unsigned i = 0; i < maps.size(); ++i)
 			maps.at(i)->OnMove(timer);
@@ -69,7 +79,7 @@ namespace game_framework {
 	///
 	///
 
-	void CMapManager::OnShow(CTimer* timer)
+	void CMapManager::OnShow()
 	{
 		maps[selector]->OnShow(timer);
 	}
@@ -77,7 +87,7 @@ namespace game_framework {
 	{
 		maps[selector]->OnShow_Weather();
 	}
-	void CMapManager::OnShow_Timer(CTimer* timer)
+	void CMapManager::OnShow_Timer()
 	{
 		maps[selector]->OnShow_Timer(timer);
 	}

@@ -14,12 +14,15 @@ namespace game_framework {
 		CWeather* CMapManager::GetOutsideWeather();
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
-		void OnMove(CTimer* timer);
-		void OnShow(CTimer* timer);
+		void OnMove();
+		void OnShow();
 		void OnShow_Weather();
-		void OnShow_Timer(CTimer* timer);
+		void OnShow_Timer();
+		void SetTimer(CTimer* timer);
+		CTimer* GetTimer();
 	private:
 		unsigned selector = 0;
+		CTimer* timer;
 		std::vector<CGameMap*> maps;
 	};
 }

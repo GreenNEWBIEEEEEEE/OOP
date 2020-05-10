@@ -266,6 +266,7 @@
     <ClCompile Include="Source\CMapManager.cpp" />
     <ClCompile Include="Source\CMapShopEvent.cpp" />
     <ClCompile Include="Source\CMapShowDialogEvent.cpp" />
+    <ClCompile Include="Source\CMapSleepEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\CPlantShopMenu.cpp" />
     <ClCompile Include="Source\CTimer.cpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="Source\CMapManager.h" />
     <ClInclude Include="Source\CMapShopEvent.h" />
     <ClInclude Include="Source\CMapShowDialogEvent.h" />
+    <ClInclude Include="Source\CMapSleepEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\CPlantShopMenu.h" />
     <ClInclude Include="Source\CTimer.h" />

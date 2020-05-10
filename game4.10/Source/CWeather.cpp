@@ -90,14 +90,6 @@ namespace game_framework
 			nextTyphoon = false;	     
 		}
 
-		/*
-		if (sunny)
-			weatherType = WeatherType::Sunny;
-		else if (rainy)
-			weatherType = WeatherType::Rain;
-		else if (typhoon)
-			weatherType = WeatherType::Typhoon;
-		*/
 		weatherType = nextDayWeatherType;
 
 		if (nextSunny)

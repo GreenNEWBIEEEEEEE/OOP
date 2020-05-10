@@ -212,7 +212,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 	timer.OnMove();
-	mapManager.OnMove(&timer);
+	mapManager.OnMove();
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap());
@@ -243,6 +243,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	p1.LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
+	mapManager.SetTimer(&timer);
 	timer.LoadBitmap();
 	backpackMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
@@ -371,10 +372,10 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	mapManager.OnShow(&timer);
+	mapManager.OnShow();
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
-	mapManager.OnShow_Timer(&timer);
+	mapManager.OnShow_Timer();
 	backpackMenu.OnShow();
 	plantShopMenu.OnShow();
 	gameDialog.OnShow();

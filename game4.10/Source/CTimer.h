@@ -1,5 +1,7 @@
 #pragma once
+
 namespace game_framework {
+	class CWeather;
 	class CTimer
 	{
 	public:
@@ -30,6 +32,7 @@ namespace game_framework {
 		int GetDay();
 		int GetHour();
 		int GetHourCounter();
+		void ChangeToNewDay(CWeather* weather, CTimer* timer);
 		bool IsNewDay();
 		CTimer::Season GetCurrentSeason();
 		void CountTime();    // ­p¼Æ

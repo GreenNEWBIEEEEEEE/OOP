@@ -49,6 +49,13 @@ namespace game_framework {
 		cbFunc = cbp;
 	}
 
+	void CGameDialog::SetCallback(CallbackForChangeToNewDay cbfctnd, CTimer* timer, CWeather* weather)
+	{
+		this->cbfctnd = cbfctnd;
+		this->timer = timer;
+		this->weather = weather;
+	}
+
 	void CGameDialog::SetCallback(CallbackWithResult cbfwdor)
 	{
 		this->cbfwdor = cbfwdor;
@@ -82,10 +89,15 @@ namespace game_framework {
 			cbfwdor_sm(currentOptionResult, sm);
 		}
 		
+		if (cbfctnd != nullptr)
+		{
+			cbfctnd(currentOptionResult, timer, weather);
+		}
 		// 這一輪的對話框已結束 讓函式指標無效化
 		cbFunc = nullptr;
 		cbfwdor = nullptr;
 		cbfwdor_sm = nullptr;
+		cbfctnd = nullptr;
 		
 		dialogMessages.clear();
 		TRACE("\n Game Dialog is disable now. \n");

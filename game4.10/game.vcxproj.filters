@@ -175,6 +175,9 @@
     <ClCompile Include="Source\CTimer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CMapSleepEvent.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -271,6 +274,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CTimer.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CMapSleepEvent.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
