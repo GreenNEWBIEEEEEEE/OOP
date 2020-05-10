@@ -6,6 +6,7 @@
 #include "CMapSleepEvent.h"
 #include "CGameDialog.h"
 #include "CMapManager.h"
+#include "CPlayer.h"
 
 
 namespace game_framework
@@ -21,7 +22,19 @@ namespace game_framework
 		if (result == CGameDialog::DialogOptionsResult::Yes)
 		{
 			timer->ChangeToNewDay(weather, timer);
+			timer->SetTimerSpeed(1);
 		}
+	}
+
+	void ChangeMapToHome(CMapManager* mm, CPlayer* p)
+	{
+		mm->ChangeMap(1);
+
+		// 因為轉換後原來的位置會不適合
+		// 所以要調整地圖的screen位置以及playery在地圖上的位置
+		mm->GetCurrentMap()->SetSXSY(0, 200);
+		p->SetX(2 * 64);
+		p->SetY(7 * 53);
 	}
 
 	void CMapSleepEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
@@ -34,9 +47,11 @@ namespace game_framework
 			gd->Enable();
 			break;
 		case 30001:
-			//gd->SetCallback(&ChangeToNewDay);
-			//gd->AddQuestion("Do you want to sleep 'til tomorrow?");
-			//gd->Enable();
+			gd->SetCallback(&ChangeMapToHome, mm, p);
+			gd->SetCallback(&ChangeToNewDay, mm->GetTimer(), mm->GetOutsideWeather());
+			gd->AddMessage("Now it's 12:00 a.m.");
+			gd->AddMessage("We have to force you to go home.");
+			gd->Enable();
 			break;
 		default:
 			break;

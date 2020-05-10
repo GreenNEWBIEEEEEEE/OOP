@@ -14,6 +14,8 @@ namespace game_framework {
 		typedef void(*CallbackForChangeToNewDay) (DialogOptionsResult, CTimer*, CWeather*);
 		typedef void(*CallbackWithResult)(DialogOptionsResult);
 		typedef void(*CallbackWithResultForShopMenu)(DialogOptionsResult, CShopMenu*);
+		typedef void(*CallbackForTransitionMap)(CMapManager*, CPlayer*);
+
 		CGameDialog();
 		~CGameDialog();
 		void AddMessage(string msg);
@@ -26,6 +28,7 @@ namespace game_framework {
 		void SetCallback(CallbackWithResult cbp);
 		void SetCallback(CallbackWithResultForShopMenu cbp, CShopMenu* sm);
 		void SetCallback(CallbackForChangeToNewDay cbp, CTimer* timer, CWeather* weather);
+		void SetCallback(CallbackForTransitionMap cbp, CMapManager* mm, CPlayer* p);
 		void Enable();
 		void Disable();
 
@@ -133,9 +136,14 @@ namespace game_framework {
 		CallbackWithResult cbfwdor = nullptr;
 		CallbackWithResultForShopMenu cbfwdor_sm = nullptr;
 		CallbackForChangeToNewDay cbfctnd = nullptr;
+		CallbackForTransitionMap cbftm = nullptr;
+
+
 		CShopMenu *sm = nullptr;
 		CTimer* timer = nullptr;
 		CWeather* weather = nullptr;
+		CMapManager* mm = nullptr;
+		CPlayer* p = nullptr;
 
 	private:
 		void DrawTexts(CString text, int posX, int posY, int fontSize);

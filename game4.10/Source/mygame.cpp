@@ -211,7 +211,9 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
-	timer.OnMove();
+
+	CShopMenu *sm = &plantShopMenu;
+	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sm);
 	mapManager.OnMove();
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();

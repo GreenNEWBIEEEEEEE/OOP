@@ -56,6 +56,13 @@ namespace game_framework {
 		this->weather = weather;
 	}
 
+	void CGameDialog::SetCallback(CallbackForTransitionMap cbp, CMapManager* mm, CPlayer* p)
+	{
+		this->cbftm = cbp;
+		this->mm = mm;
+		this->p = p;
+	}
+
 	void CGameDialog::SetCallback(CallbackWithResult cbfwdor)
 	{
 		this->cbfwdor = cbfwdor;
@@ -89,6 +96,11 @@ namespace game_framework {
 			cbfwdor_sm(currentOptionResult, sm);
 		}
 		
+		if (cbftm != nullptr)
+		{
+			cbftm(mm, p);
+		}
+
 		if (cbfctnd != nullptr)
 		{
 			cbfctnd(currentOptionResult, timer, weather);
@@ -97,6 +109,7 @@ namespace game_framework {
 		cbFunc = nullptr;
 		cbfwdor = nullptr;
 		cbfwdor_sm = nullptr;
+		cbftm = nullptr;
 		cbfctnd = nullptr;
 		
 		dialogMessages.clear();

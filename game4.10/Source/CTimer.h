@@ -2,6 +2,10 @@
 
 namespace game_framework {
 	class CWeather;
+	class CPlayer;
+	class CMapManager;
+	class CGameDialog;
+	class CShopMenu;
 	class CTimer
 	{
 	public:
@@ -26,12 +30,13 @@ namespace game_framework {
 		~CTimer();
 		void LoadBitmap();
 		void OnShow();
-		void OnMove();
+		void OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
 		int GetYear();
 		int GetMonth();
 		int GetDay();
 		int GetHour();
 		int GetHourCounter();
+		void SetTimerSpeed(int speed);
 		void ChangeToNewDay(CWeather* weather, CTimer* timer);
 		bool IsNewDay();
 		CTimer::Season GetCurrentSeason();
@@ -39,6 +44,7 @@ namespace game_framework {
 		void UpdateDate();   // 更新日期
 		void UpdateBrightness();
 		void UpdateSeason();
+		void ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm); // 半夜12點強制遣返回家
 		int GetNumberOfDays();
 		void OnKeyDown(UINT key);
 		void OnKeyUp(UINT key);

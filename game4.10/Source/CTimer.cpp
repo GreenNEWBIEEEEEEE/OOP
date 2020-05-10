@@ -5,14 +5,29 @@
 #include "gamelib.h"
 #include "CTimer.h"
 #include "CWeather.h"
+#include "CPlayer.h"
+#include "CGameDialog.h"
+#include "CShopMenu.h"
+#include "CMapManager.h"
+#include "CMapEvent.h"
+#include "CMapTransitionEvent.h"
+#include "CMapShowDialogEvent.h"
+#include "CMapSleepEvent.h"
 
 namespace game_framework {
 	CTimer::CTimer(){}
 	CTimer::~CTimer(){}
 
-	void CTimer::OnMove()
+	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
 		CountTime();
+		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)
+		{
+			SetTimerSpeed(0);
+			hour = 23;
+			hourCounter = HOUR_COUNTER_MAX - 5;
+			ForceToRepatriate(weather, timer, p, mm, gd, sm);
+		}
 	}
 
 	void CTimer::OnKeyDown(UINT key)
@@ -23,6 +38,13 @@ namespace game_framework {
 		{
 			TIME_SPEED = 50;
 		}
+	}
+
+	void CTimer::ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	{
+		CMapSleepEvent* toHome = new CMapSleepEvent(30001);
+		toHome->Execute(p, mm, gd, sm);
+		delete toHome;
 	}
 
 	void CTimer::OnKeyUp(UINT key)
@@ -71,6 +93,11 @@ namespace game_framework {
 		UpdateBrightness();
 		UpdateSeason();
 		weather->ChooseWeather(timer);
+	}
+
+	void CTimer::SetTimerSpeed(int speed)
+	{
+		TIME_SPEED = speed;
 	}
 
 	void CTimer::LoadBitmap()
