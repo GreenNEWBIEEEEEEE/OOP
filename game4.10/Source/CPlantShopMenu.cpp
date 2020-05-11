@@ -60,6 +60,11 @@ namespace game_framework
 		return goodSelector;
 	}
 
+	CTimer * CPlantShopMenu::GetTimer() const
+	{
+		return this->timer;
+	}
+
 	void CPlantShopMenu::Enable()
 	{
 		GAME_ASSERT(

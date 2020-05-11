@@ -16,6 +16,7 @@ namespace game_framework
 		void SetPlayerDataOnce(CPlayer *player);
 		void SetGameDialogOnce(CGameDialog *gd);
 		int GetCurrentSelection() const;
+		CTimer* GetTimer() const;
 		
 		void Enable();
 		void Enable(CPlayer *p, CGameDialog *gd);

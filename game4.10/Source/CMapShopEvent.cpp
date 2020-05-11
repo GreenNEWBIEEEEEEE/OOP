@@ -40,11 +40,20 @@ namespace game_framework
 		switch (eventCode)
 		{
 		case 6: // Plant Shop
-			psm->Enable(p, gd);
-			gd->SetCallback(&HandlePlantShop, sm);
-			gd->AddQuestion("Do you want to buy some seed?");
-			gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
-			gd->Enable();
+			if (psm->GetTimer()->GetHour() >= 19)
+			{
+				gd->AddMessage("Closed now!");
+				gd->Enable();
+			}
+			else
+			{
+				psm->Enable(p, gd);
+				gd->SetCallback(&HandlePlantShop, sm);
+				gd->AddQuestion("Do you want to buy some seed?");
+				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
+				gd->Enable();
+			}
+			
 			break;
 		case 7:
 			break;
