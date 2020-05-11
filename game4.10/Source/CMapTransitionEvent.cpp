@@ -36,6 +36,12 @@ namespace game_framework {
 			p->SetX(4 * 64);
 			p->SetY(11 * 53);
 			break;
+		case 20002:
+			mm->ChangeMap(0);
+			mm->GetCurrentMap()->SetSXSY(400, 100);
+			p->SetX(10 * 64);
+			p->SetY(5 * 53);
+			break;
 		default:
 			break;
 		}
