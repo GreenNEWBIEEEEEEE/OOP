@@ -9,6 +9,7 @@
 #include "CMapEvent.h"
 #include "CMapInfo.h"
 #include "CMapTransitionEvent.h"
+#include "CWeather.h"
 
 
 namespace game_framework {
@@ -20,6 +21,8 @@ namespace game_framework {
 
 	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
+		CWeather* weather = mm->GetOutsideWeather();
+		string today = weather->ForecastWeather();
 		//
 		// 規範：
 		// 場景轉換「內容」事件碼的範圍，須從10001~20000
@@ -37,10 +40,19 @@ namespace game_framework {
 			p->SetY(11 * 53);
 			break;
 		case 20002:
-			mm->ChangeMap(0);
-			mm->GetCurrentMap()->SetSXSY(400, 100);
-			p->SetX(10 * 64);
-			p->SetY(5 * 53);
+			if (today != "Typhoon")
+			{
+				mm->ChangeMap(0);
+				mm->GetCurrentMap()->SetSXSY(400, 100);
+				p->SetX(10 * 64);
+				p->SetY(5 * 53);
+			}
+			else
+			{
+				gd->AddMessage("You can't go outside.");
+				gd->AddMessage("because of typhoon.");
+				gd->Enable();
+			}
 			break;
 		default:
 			break;

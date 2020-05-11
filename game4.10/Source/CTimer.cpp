@@ -132,7 +132,7 @@ namespace game_framework {
 	
 	bool CTimer::IsNewDay()
 	{
-		return GetHour() == 8 && GetHourCounter() == 0 ;
+		return hour == 8 && hourCounter == 2 ;
 	}
 
 	int CTimer::GetNumberOfDays()
