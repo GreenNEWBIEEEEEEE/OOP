@@ -12,17 +12,25 @@
 #include "CMapEvent.h"
 #include "CMapTransitionEvent.h"
 #include "CMapShowDialogEvent.h"
+#include "CPlantShopMenu.h"
 #include "CMapSleepEvent.h"
+#include "CBackpackMenu.h"
 
 namespace game_framework {
 	CTimer::CTimer(){}
 	CTimer::~CTimer(){}
 
-	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CBackpackMenu *bpm)
 	{
 		CountTime();
 		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)
 		{
+			// 先把目前的所有dialog 商店都disable
+			gd->Disable();
+			((CPlantShopMenu*)sm)->Disable();
+			bpm->Disable();
+			
+
 			SetTimerSpeed(0);
 			hour = 23;
 			hourCounter = HOUR_COUNTER_MAX - 5;

@@ -526,7 +526,7 @@ IDB_TV05                BITMAP                  "..\\RES\\NewMaterial\\House\\Ho
 
 IDB_TV06                BITMAP                  "..\\RES\\NewMaterial\\House\\HouseIndoor\\TV\\TV06.bmp"
 
-IDB_DuskMask            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\DuskMask.bmp"
+IDB_DuskMask            BITMAP                  "..\\RES\\DuskMask.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

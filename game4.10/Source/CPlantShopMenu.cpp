@@ -20,8 +20,10 @@ namespace game_framework
 	{
 	}
 
-	CPlantShopMenu::CPlantShopMenu(CGameDialog * gd)
+	CPlantShopMenu::CPlantShopMenu(CGameDialog * gd, CTimer *timer)
 	{
+		this->gd = gd;
+		this->timer = timer;
 	}
 
 	void CPlantShopMenu::LoadBitmap()
@@ -84,7 +86,7 @@ namespace game_framework
 		this->enable_infoboard = false;
 		// player/gd不再使用 因此回復成nullptr
 		player = nullptr;
-		gd = nullptr;
+		//gd = nullptr;
 	}
 
 	void CPlantShopMenu::Disable_InfoBoard()

@@ -6,6 +6,7 @@ namespace game_framework {
 	class CMapManager;
 	class CGameDialog;
 	class CShopMenu;
+	class CBackpackMenu;
 	class CTimer
 	{
 	public:
@@ -30,7 +31,7 @@ namespace game_framework {
 		~CTimer();
 		void LoadBitmap();
 		void OnShow();
-		void OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
+		void OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CBackpackMenu *bpm);
 		int GetYear();
 		int GetMonth();
 		int GetDay();

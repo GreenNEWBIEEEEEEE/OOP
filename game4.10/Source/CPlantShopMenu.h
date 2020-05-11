@@ -2,6 +2,7 @@
 
 #include "CShopMenu.h"
 #include "CPlayer.h"
+#include "CTimer.h"
 
 namespace game_framework
 {
@@ -10,7 +11,7 @@ namespace game_framework
 	{
 	public:
 		CPlantShopMenu();
-		CPlantShopMenu(CGameDialog *gd);
+		CPlantShopMenu(CGameDialog *gd, CTimer *timer);
 
 		void SetPlayerDataOnce(CPlayer *player);
 		void SetGameDialogOnce(CGameDialog *gd);
@@ -32,6 +33,7 @@ namespace game_framework
 
 	private:
 		CGameDialog * gd = nullptr;
+		CTimer *timer = nullptr;
 
 		bool enable = false;
 		bool enable_infoboard = false;

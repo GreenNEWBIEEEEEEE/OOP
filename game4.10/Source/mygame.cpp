@@ -189,7 +189,8 @@ void CGameStateOver::OnShow()
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame *g)
-	: CGameState(g)
+	: CGameState(g),
+	plantShopMenu(&gameDialog, &timer)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
@@ -213,7 +214,7 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 
 	CShopMenu *sm = &plantShopMenu;
-	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sm);
+	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sm, &backpackMenu);
 	mapManager.OnMove();
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
