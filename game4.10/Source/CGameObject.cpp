@@ -8,6 +8,17 @@
 #include "CGameObject.h"
 
 namespace game_framework {
+
+	CGameObject::CGameObject()
+	{
+
+	}
+
+	CGameObject::~CGameObject()
+	{
+
+	}
+
 	void CGameObject::SetMovingLeft(bool flag)
 	{
 		isMovingLeft = flag;

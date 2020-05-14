@@ -980,5 +980,32 @@
     <Image Include="RES\DuskMask.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\newmaterial\house\images_bmp\bitmap28.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Down\Chicken_Down01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Down\Chicken_Down02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Left\Chicken_Left01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Left\Chicken_Left02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Right\Chicken_Right01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Right\Chicken_Right02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

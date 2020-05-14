@@ -528,6 +528,22 @@ IDB_TV06                BITMAP                  "..\\RES\\NewMaterial\\House\\Ho
 
 IDB_DuskMask            BITMAP                  "..\\RES\\DuskMask.bmp"
 
+IDB_Chicken_front01     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down01.bmp"
+
+IDB_Chicken_front02     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down02.bmp"
+
+IDB_Chicken_left01      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left01.bmp"
+
+IDB_Chicken_left02      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left02.bmp"
+
+IDB_Chicken_right01     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right01.bmp"
+
+IDB_Chicken_right02     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right02.bmp"
+
+IDB_Chicken_back01      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up01.bmp"
+
+IDB_Chicken_back02      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up02.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

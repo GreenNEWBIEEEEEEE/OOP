@@ -10,10 +10,25 @@
 #include "CPlayer.h"
 namespace game_framework
 {
+	CChicken::CChicken()
+	{
+		width = 64; height = 80;
+		x = lastX = 200; y = lastY = 300;
+		bx = x + 64; by = y + 40;
+		currentDirection = CAnimal::Direction::Down;
+		currentMove = &moveDown;
+		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
+	}
+
+	CChicken::~CChicken()
+	{
+
+	}
+
 	void CChicken::OnShow(CGameMap* m)
 	{
-		if (m == map)
-		{
+		//if (m == map)
+		//{
 			if (currentMove != nullptr)
 			{
 				// 畫出當前面向的方向的動畫
@@ -23,12 +38,30 @@ namespace game_framework
 
 				currentMove->OnShow();
 			}
-		}
+		//}
 	}
 
 	void CChicken::LoadBitmap()
 	{
+		{
+			moveLeft.AddBitmap(IDB_Chicken_left01, RGB(255, 255, 255));
+			moveLeft.AddBitmap(IDB_Chicken_left02, RGB(255, 255, 255));
+		}
 
+		{
+			moveRight.AddBitmap(IDB_Chicken_right01, RGB(255, 255, 255));
+			moveRight.AddBitmap(IDB_Chicken_right02, RGB(255, 255, 255));
+		}
+
+		{
+			moveUp.AddBitmap(IDB_Chicken_back01, RGB(255, 255, 255));
+			moveUp.AddBitmap(IDB_Chicken_back02, RGB(255, 255, 255));
+		}
+
+		{
+			moveDown.AddBitmap(IDB_Chicken_front01, RGB(255, 255, 255));
+			moveDown.AddBitmap(IDB_Chicken_front02, RGB(255, 255, 255));
+		}
 	}
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
@@ -103,7 +136,6 @@ namespace game_framework
 				y += STEP_SIZE;
 				by += STEP_SIZE;
 				ey += STEP_SIZE;
-				m->SetSY(m->GetSY() + STEP_SIZE);
 			}
 		}
 		

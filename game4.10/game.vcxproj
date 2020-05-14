@@ -371,6 +371,14 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="RES\Animal\Chicken\Animation\Down\Chicken_Down01.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Down\Chicken_Down02.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Left\Chicken_Left01.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Left\Chicken_Left02.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Right\Chicken_Right01.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Right\Chicken_Right02.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up01.bmp" />
+    <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up02.bmp" />
     <Image Include="RES\BackpackMenu.bmp" />
     <Image Include="RES\Backpack\Axe.bmp" />
     <Image Include="RES\Backpack\BackpackMenu.bmp" />
@@ -533,6 +541,7 @@
     <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV05.bmp" />
     <Image Include="RES\NewMaterial\House\HouseIndoor\TV\TV06.bmp" />
     <Image Include="res\newmaterial\house\images_bmp\bitmap11.bmp" />
+    <Image Include="res\newmaterial\house\images_bmp\bitmap28.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseFloor_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_01.bmp" />
     <Image Include="RES\NewMaterial\House\images_BMP\HouseWall_02.bmp" />

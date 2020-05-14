@@ -300,6 +300,15 @@
 #define IDB_TV06                        454
 #define IDB_BITMAP27                    455
 #define IDB_DuskMask                    455
+#define IDB_Chicken_front01             458
+#define IDB_Chicken_front02             459
+#define IDB_Chicken_left01              460
+#define IDB_Chicken_left02              461
+#define IDB_Chicken_right01             462
+#define IDB_Chicken_right02             463
+#define IDB_Chicken_back01              464
+#define IDB_BITMAP36                    465
+#define IDB_Chicken_back02              465
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -312,7 +321,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        456
+#define _APS_NEXT_RESOURCE_VALUE        466
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

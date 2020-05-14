@@ -6,6 +6,8 @@ namespace game_framework {
 	class CGameObject
 	{
 	public:
+		CGameObject();
+		~CGameObject();
 		void SetMovingLeft(bool flag);
 		void SetMovingRight(bool flag);
 		void SetMovingUp(bool flag);

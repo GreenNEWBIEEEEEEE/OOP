@@ -7,6 +7,8 @@ namespace game_framework
 	class CChicken : public CAnimal
 	{
 	public:
+		CChicken();
+		~CChicken();
 		void LoadBitmap();
 		void OnMove(CGameMap* m, vector<CGameObject*>* obj);
 		void OnShow(CGameMap* m);

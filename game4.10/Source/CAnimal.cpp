@@ -12,8 +12,13 @@
 
 namespace game_framework
 {
-	CAnimal::CAnimal(){}
-	CAnimal::~CAnimal(){}
+	CAnimal::CAnimal()
+	{
+	}
+
+	CAnimal::~CAnimal()
+	{
+	}
 
 	void CAnimal::SetMap(CGameMap* map)
 	{
