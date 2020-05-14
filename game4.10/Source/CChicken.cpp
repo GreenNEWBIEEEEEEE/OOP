@@ -12,9 +12,9 @@ namespace game_framework
 {
 	CChicken::CChicken()
 	{
-		width = 64; height = 80;
-		x = lastX = 200; y = lastY = 300;
-		bx = x + 64; by = y + 40;
+		width = 64; height = 53;
+		x = lastX = 200; y = lastY = 400;
+		bx = x; by = y;
 		currentDirection = CAnimal::Direction::Down;
 		currentMove = &moveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
@@ -85,7 +85,7 @@ namespace game_framework
 			// 偵測障礙物 或 不可踩上去的地圖格子
 			// 目前設定為 玩家的圖片是64*80
 			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
-			if (m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0))
+			if (m->IsEmpty(bx - STEP_SIZE, by) && m->IsEmpty(bx - STEP_SIZE, by + height) && !DetectCollision(obj, -STEP_SIZE, 0))
 			{
 				x -= STEP_SIZE;
 				bx -= STEP_SIZE;
@@ -100,7 +100,7 @@ namespace game_framework
 
 			currentMove->OnMove();
 			currentMove = &moveRight;
-			if (m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80) && !DetectCollision(obj, STEP_SIZE, 0))
+			if (m->IsEmpty(bx + width + STEP_SIZE, by) && m->IsEmpty(bx + width + STEP_SIZE, by + height) && !DetectCollision(obj, STEP_SIZE, 0))
 			{
 				x += STEP_SIZE;
 				bx += STEP_SIZE;
@@ -115,7 +115,7 @@ namespace game_framework
 
 			currentMove->OnMove();
 			currentMove = &moveUp;
-			if (m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
+			if (m->IsEmpty(bx, by - STEP_SIZE) && m->IsEmpty(bx + width, by - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
 			{
 				y -= STEP_SIZE;
 				by -= STEP_SIZE;
@@ -131,7 +131,7 @@ namespace game_framework
 			currentMove->OnMove();
 			currentMove = &moveDown;
 			// bx+/-5 寬度設小一點
-			if (m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
+			if (m->IsEmpty(bx, by + height + STEP_SIZE) && m->IsEmpty(bx + width, by + height + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
 			{
 				y += STEP_SIZE;
 				by += STEP_SIZE;
