@@ -178,6 +178,15 @@
     <ClCompile Include="Source\CMapSleepEvent.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CAnimal.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CChicken.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameObject.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -277,6 +286,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CMapSleepEvent.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CAnimal.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CChicken.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameObject.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

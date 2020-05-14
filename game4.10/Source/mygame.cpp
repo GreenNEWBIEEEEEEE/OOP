@@ -218,7 +218,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	mapManager.OnMove();
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
-	p1.OnMove(mapManager.GetCurrentMap());
+	p1.OnMove(mapManager.GetCurrentMap(), &obj);
 
 }
 
@@ -255,7 +255,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//
 	//
-	
+	obj.push_back(&p1);
+	obj.push_back(&c1);
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
 	//
@@ -280,7 +281,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else
 	{
 		CShopMenu *sm = &plantShopMenu;
-		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm);
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm, &obj);
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭

@@ -15,7 +15,8 @@
 #include "CToolSickle.h"
 #include "CToolWaterer.h"
 #include "CShopMenu.h"
-
+#include "CAnimal.h"
+#include "CGameObject.h"
 namespace game_framework {
 	CPlayer::CPlayer() :
 		aniMoveLeft(3),
@@ -303,79 +304,12 @@ namespace game_framework {
 		toolSelector = select;
 	}
 
-	void CPlayer::SetMovingLeft(bool flag)
+	void CPlayer::DecreaseMoney(int money)
 	{
-		isMovingLeft = flag;
-		
-	}
-
-	void CPlayer::SetMovingRight(bool flag)
-	{
-		isMovingRight = flag;
-	}
-
-	void CPlayer::SetMovingUp(bool flag)
-	{
-		isMovingUp = flag;
-	}
-
-	void CPlayer::SetMovingDown(bool flag)
-	{
-		isMovingDown = flag;
-	}
-
-	void CPlayer::SetX(int x)
-	{
-		this->lastX = this->x;
-		this->x = x;
-		bx = x + 64;
-	}
-
-	void CPlayer::SetY(int y)
-	{
-		this->lastY = this->y;
-		this->y = y;
-		by = y + 40;
-	}
-
-	int CPlayer::GetWidth() const
-	{
-		return width;
-	}
-
-	int CPlayer::GetHeight() const
-	{
-		return height;
-	}
-
-	int CPlayer::GetX() const
-	{
-		return x;
-	}
-
-	int CPlayer::GetY() const
-	{
-		return y;
-	}
-
-	int CPlayer::GetBodyX() const
-	{
-		return bx;
-	}
-
-	int CPlayer::GetBodyY() const
-	{
-		return by;
-	}
-
-	int CPlayer::GetLastX() const
-	{
-		return lastX;
-	}
-
-	int CPlayer::GetLastY() const
-	{
-		return lastY;
+		if (money <= this->money)
+		{
+			this->money -= money;
+		}
 	}
 
 	int CPlayer::GetDirection() const
@@ -388,29 +322,10 @@ namespace game_framework {
 		return toolSelector;
 	}
 
-	int CPlayer::GetHealthPoint() const
-	{
-		return this->healthPoint;
-	}
-
-	void CPlayer::DecreaseHealthPoint(int hp)
-	{
-		if (hp <= this->healthPoint)
-			healthPoint -= hp;
-	}
-
 	int CPlayer::GetMoney() const
 	{
 		return money;
 	}
-
-	void CPlayer::DecreaseMoney(int money)
-	{
-		if (money <= this->money)
-			this->money -= money;
-	}
-
-	
 
 	vector<CTool*>* CPlayer::GetBackpack()
 	{
@@ -424,15 +339,15 @@ namespace game_framework {
 
 	// OnMove
 	// 需要傳入m 透過m回傳現在位置的屬性(EX: 是否是障礙物...等)
-	void CPlayer::OnMove(CGameMap* m)
+	void CPlayer::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
 		if (currentMoveState == RadishMove)
-			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight);
+			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight, obj);
 		else if (currentMoveState == NormalMove)
-			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight);
+			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
 	}
 
-	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight)
+	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj)
 	{
 		// 每一步移動量
 		if (isMovingLeft)
@@ -447,7 +362,7 @@ namespace game_framework {
 			// 偵測障礙物 或 不可踩上去的地圖格子
 			// 目前設定為 玩家的圖片是64*80
 			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
-			if (m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80))
+			if (m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0))
 			{
 				x -= STEP_SIZE;
 				bx -= STEP_SIZE;
@@ -464,7 +379,7 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveRight;
-			if (m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80))
+			if (m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80) && !DetectCollision(obj, STEP_SIZE, 0))
 			{
 				x += STEP_SIZE;
 				bx += STEP_SIZE;
@@ -480,7 +395,7 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveUp;
-			if (m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE))
+			if (m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
 			{
 				y -= STEP_SIZE;
 				by -= STEP_SIZE;
@@ -497,7 +412,7 @@ namespace game_framework {
 			facingDirection->OnMove();
 			facingDirection = moveDown;
 			// bx+/-5 寬度設小一點
-			if (m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE))
+			if (m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
 			{
 				y += STEP_SIZE;
 				by += STEP_SIZE;
@@ -530,7 +445,8 @@ namespace game_framework {
 		}
 	}
 
-	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+
+	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, vector<CGameObject*>* obj)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
@@ -644,6 +560,16 @@ namespace game_framework {
 				break;
 			}
 			
+			if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
+				(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
+				(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
+				(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) )
+			{
+				CAnimal* facingAnimal = GetFacingAnimal();
+				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+			}
+
 			// 傳入農務事件觸發
 			// 
 			if (this->currentMoveState == MoveState::NormalMove)

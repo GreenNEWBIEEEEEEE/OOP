@@ -38,8 +38,10 @@
  *      3. Use ShowInitProgress(percent) to display loading progress.
 */
 
-
+#include "CGameObject.h"
 #include "CPlayer.h"
+#include "CAnimal.h"
+#include "CChicken.h"
 #include "CMapManager.h"
 #include "CGameDialog.h"
 #include "CBackpackMenu.h"
@@ -104,10 +106,12 @@ namespace game_framework {
 		// 
 		CTimer timer;
 		CPlayer p1; // 玩家1
+		CChicken c1;
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;
 		CPlantShopMenu plantShopMenu;
+		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
