@@ -182,6 +182,101 @@ namespace game_framework {
 			PlantShop_020.LoadBitmap(IDB_PlantShopHouse_Morning_s020);
 		}
 
+		// Chicken house(outdoor)
+		{
+			chickenHouse_01.LoadBitmap(IDB_ChickenHouse01);
+			chickenHouse_02.LoadBitmap(IDB_ChickenHouse02);
+			chickenHouse_03.LoadBitmap(IDB_ChickenHouse03);
+			chickenHouse_04.LoadBitmap(IDB_ChickenHouse04);
+			chickenHouse_05.LoadBitmap(IDB_ChickenHouse05);
+			chickenHouse_06.LoadBitmap(IDB_ChickenHouse06);
+			chickenHouse_07.LoadBitmap(IDB_ChickenHouse07);
+			chickenHouse_08.LoadBitmap(IDB_ChickenHouse08);
+			chickenHouse_09.LoadBitmap(IDB_ChickenHouse09);
+			chickenHouse_10.LoadBitmap(IDB_ChickenHouse10);
+			chickenHouse_11.LoadBitmap(IDB_ChickenHouse11);
+			chickenHouse_12.LoadBitmap(IDB_ChickenHouse12);
+			chickenHouse_13.LoadBitmap(IDB_ChickenHouse13);
+			chickenHouse_14.LoadBitmap(IDB_ChickenHouse14);
+		}
+
+		// Chicken house(indoor) Walls
+		{
+			chickenHouse_Wall01.LoadBitmap(IDB_ChickenHouse_Wall01);
+			chickenHouse_Wall02.LoadBitmap(IDB_ChickenHouse_Wall02);
+			chickenHouse_Wall03.LoadBitmap(IDB_ChickenHouse_Wall03);
+		}
+
+		// Chicken house(indoor) NoticeBoard
+		{
+			chickenHouse_NoticeBoard.LoadBitmap(IDB_ChickenHouse_NoticeBoard);
+		}
+
+		// Chicken house(indoor) CropBox
+		{
+			chickenHouse_CropBox01.LoadBitmap(IDB_ChickenHouse_CropBox01);
+			chickenHouse_CropBox02.LoadBitmap(IDB_ChickenHouse_CropBox02);
+			chickenHouse_CropBox03.LoadBitmap(IDB_ChickenHouse_CropBox03);
+			chickenHouse_CropBox04.LoadBitmap(IDB_ChickenHouse_CropBox04);
+		}
+
+		// Chicken house(indoor) StoreBox
+		{
+			chickenHouse_StoreBox01.LoadBitmap(IDB_ChickenHouse_StoreBox01);
+			chickenHouse_StoreBox02.LoadBitmap(IDB_ChickenHouse_StoreBox02);
+			chickenHouse_StoreBox03.LoadBitmap(IDB_ChickenHouse_StoreBox03);
+			chickenHouse_StoreBox04.LoadBitmap(IDB_ChickenHouse_StoreBox04);
+		}
+
+		// Chicken house(indoor) FoodBox
+		{
+			chickenHouse_FoodBox01.LoadBitmap(IDB_ChickenHouse_FoodBox01);
+			chickenHouse_FoodBox02.LoadBitmap(IDB_ChickenHouse_FoodBox02);
+			chickenHouse_FoodBox03.LoadBitmap(IDB_ChickenHouse_FoodBox03);
+			chickenHouse_FoodBox04.LoadBitmap(IDB_ChickenHouse_FoodBox04);
+			chickenHouse_FoodBox05.LoadBitmap(IDB_ChickenHouse_FoodBox05);
+			chickenHouse_FoodBox06.LoadBitmap(IDB_ChickenHouse_FoodBox06);
+			chickenHouse_FoodBox07.LoadBitmap(IDB_ChickenHouse_FoodBox07);
+			chickenHouse_FoodBox08.LoadBitmap(IDB_ChickenHouse_FoodBox08);
+			chickenHouse_FoodBox09.LoadBitmap(IDB_ChickenHouse_FoodBox09);
+		}
+
+		// Chicken house(indoor) Floors
+		{
+			chickenHouse_Floor01.LoadBitmap(IDB_ChickenHouse_Floor01);
+
+			chickenHouse_Floor02_01.LoadBitmap(IDB_ChickenHouse_Floor02_01);
+			chickenHouse_Floor02_02.LoadBitmap(IDB_ChickenHouse_Floor02_02);
+
+			chickenHouse_Floor03_01.LoadBitmap(IDB_ChickenHouse_Floor03_01);
+			chickenHouse_Floor03_02.LoadBitmap(IDB_ChickenHouse_Floor03_02);
+			chickenHouse_Floor03_03.LoadBitmap(IDB_ChickenHouse_Floor03_03);
+			chickenHouse_Floor03_04.LoadBitmap(IDB_ChickenHouse_Floor03_04);
+			chickenHouse_Floor03_05.LoadBitmap(IDB_ChickenHouse_Floor03_05);
+
+			chickenHouse_Floor04_01.LoadBitmap(IDB_ChickenHouse_Floor04_01);
+			chickenHouse_Floor04_02.LoadBitmap(IDB_ChickenHouse_Floor04_02);
+			chickenHouse_Floor04_03.LoadBitmap(IDB_ChickenHouse_Floor04_03);
+			chickenHouse_Floor04_04.LoadBitmap(IDB_ChickenHouse_Floor04_04);
+			chickenHouse_Floor04_05.LoadBitmap(IDB_ChickenHouse_Floor04_05);
+			chickenHouse_Floor04_06.LoadBitmap(IDB_ChickenHouse_Floor04_06);
+
+			chickenHouse_Floor05_01.LoadBitmap(IDB_ChickenHouse_Floor05_01);
+			chickenHouse_Floor05_02.LoadBitmap(IDB_ChickenHouse_Floor05_02);
+			chickenHouse_Floor05_03.LoadBitmap(IDB_ChickenHouse_Floor05_03);
+			chickenHouse_Floor05_04.LoadBitmap(IDB_ChickenHouse_Floor05_04);
+			chickenHouse_Floor05_05.LoadBitmap(IDB_ChickenHouse_Floor05_05);
+			chickenHouse_Floor05_06.LoadBitmap(IDB_ChickenHouse_Floor05_06);
+
+			chickenHouse_Floor06_01.LoadBitmap(IDB_ChickenHouse_Floor06_01);
+			chickenHouse_Floor06_02.LoadBitmap(IDB_ChickenHouse_Floor06_02);
+			chickenHouse_Floor06_03.LoadBitmap(IDB_ChickenHouse_Floor06_03);
+			chickenHouse_Floor06_04.LoadBitmap(IDB_ChickenHouse_Floor06_04);
+			chickenHouse_Floor06_05.LoadBitmap(IDB_ChickenHouse_Floor06_05);
+		}
+		
+
+
 		if (weather != nullptr)
 		{
 			weather->LoadBitmap();
@@ -255,6 +350,110 @@ namespace game_framework {
 					tileFloor.SetTopLeft(x, y);
 					tileFloor.ShowBitmap();
 					break;
+				case 11:
+					chickenHouse_Floor01.SetTopLeft(x, y);
+					chickenHouse_Floor01.ShowBitmap();
+					break;
+				case 12:
+					chickenHouse_Floor02_01.SetTopLeft(x, y);
+					chickenHouse_Floor02_01.ShowBitmap();
+					break;
+				case 13:
+					chickenHouse_Floor02_02.SetTopLeft(x, y);
+					chickenHouse_Floor02_02.ShowBitmap();
+					break;
+				case 14:
+					chickenHouse_Floor03_01.SetTopLeft(x, y);
+					chickenHouse_Floor03_01.ShowBitmap();
+					break;
+				case 15:
+					chickenHouse_Floor03_02.SetTopLeft(x, y);
+					chickenHouse_Floor03_02.ShowBitmap();
+					break;
+				case 16:
+					chickenHouse_Floor03_03.SetTopLeft(x, y);
+					chickenHouse_Floor03_03.ShowBitmap();
+					break;
+				case 17:
+					chickenHouse_Floor03_04.SetTopLeft(x, y);
+					chickenHouse_Floor03_04.ShowBitmap();
+					break;
+				case 18:
+					chickenHouse_Floor03_05.SetTopLeft(x, y);
+					chickenHouse_Floor03_05.ShowBitmap();
+					break;
+				case 19:
+					chickenHouse_Floor04_01.SetTopLeft(x, y);
+					chickenHouse_Floor04_01.ShowBitmap();
+					break;
+				case 20:
+					chickenHouse_Floor04_02.SetTopLeft(x, y);
+					chickenHouse_Floor04_02.ShowBitmap();
+					break;
+				case 21:
+					chickenHouse_Floor04_03.SetTopLeft(x, y);
+					chickenHouse_Floor04_03.ShowBitmap();
+					break;
+				case 22:
+					chickenHouse_Floor04_04.SetTopLeft(x, y);
+					chickenHouse_Floor04_04.ShowBitmap();
+					break;
+				case 23:
+					chickenHouse_Floor04_05.SetTopLeft(x, y);
+					chickenHouse_Floor04_05.ShowBitmap();
+					break;
+				case 24:
+					chickenHouse_Floor04_06.SetTopLeft(x, y);
+					chickenHouse_Floor04_06.ShowBitmap();
+					break;
+				case 25:
+					chickenHouse_Floor05_01.SetTopLeft(x, y);
+					chickenHouse_Floor05_01.ShowBitmap();
+					break;
+				case 26:
+					chickenHouse_Floor05_02.SetTopLeft(x, y);
+					chickenHouse_Floor05_02.ShowBitmap();
+					break;
+				case 27:
+					chickenHouse_Floor05_03.SetTopLeft(x, y);
+					chickenHouse_Floor05_03.ShowBitmap();
+					break;
+				case 28:
+					chickenHouse_Floor05_04.SetTopLeft(x, y);
+					chickenHouse_Floor05_04.ShowBitmap();
+					break;
+				case 29:
+					chickenHouse_Floor05_05.SetTopLeft(x, y);
+					chickenHouse_Floor05_05.ShowBitmap();
+					break;
+				case 30:
+					chickenHouse_Floor05_06.SetTopLeft(x, y);
+					chickenHouse_Floor05_06.ShowBitmap();
+					break;
+				case 31:
+					chickenHouse_Floor06_01.SetTopLeft(x, y);
+					chickenHouse_Floor06_01.ShowBitmap();
+					break;
+				case 32:
+					chickenHouse_Floor06_02.SetTopLeft(x, y);
+					chickenHouse_Floor06_02.ShowBitmap();
+					break;
+				case 33:
+					chickenHouse_Floor06_03.SetTopLeft(x, y);
+					chickenHouse_Floor06_03.ShowBitmap();
+					break;
+				case 34:
+					chickenHouse_Floor06_04.SetTopLeft(x, y);
+					chickenHouse_Floor06_04.ShowBitmap();
+					break;
+				case 35:
+					chickenHouse_Floor06_05.SetTopLeft(x, y);
+					chickenHouse_Floor06_05.ShowBitmap();
+					break;
+
+				////////////////////////////////////////////
+				////////////////////////////////////////////
+				////////////////////////////////////////////
 				case -1:
 					fence.SetTopLeft(x, y);
 					fence.ShowBitmap();
@@ -567,6 +766,146 @@ namespace game_framework {
 				case -78:
 					TV_06.SetTopLeft(x, y);
 					TV_06.ShowBitmap();
+					break;
+				case -79:
+					chickenHouse_01.SetTopLeft(x, y);
+					chickenHouse_01.ShowBitmap();
+					break;
+				case -80:
+					chickenHouse_02.SetTopLeft(x, y);
+					chickenHouse_02.ShowBitmap();
+					break;
+				case -81:
+					chickenHouse_03.SetTopLeft(x, y);
+					chickenHouse_03.ShowBitmap();
+					break;
+				case -82:
+					chickenHouse_04.SetTopLeft(x, y);
+					chickenHouse_04.ShowBitmap();
+					break;
+				case -83:
+					chickenHouse_05.SetTopLeft(x, y);
+					chickenHouse_05.ShowBitmap();
+					break;
+				case -84:
+					chickenHouse_06.SetTopLeft(x, y);
+					chickenHouse_06.ShowBitmap();
+					break;
+				case -85:
+					chickenHouse_07.SetTopLeft(x, y);
+					chickenHouse_07.ShowBitmap();
+					break;
+				case -86:
+					chickenHouse_08.SetTopLeft(x, y);
+					chickenHouse_08.ShowBitmap();
+					break;
+				case -87:
+					chickenHouse_09.SetTopLeft(x, y);
+					chickenHouse_09.ShowBitmap();
+					break;
+				case -88:
+					chickenHouse_10.SetTopLeft(x, y);
+					chickenHouse_10.ShowBitmap();
+					break;
+				case -89:
+					chickenHouse_11.SetTopLeft(x, y);
+					chickenHouse_11.ShowBitmap();
+					break;
+				case -90:
+					chickenHouse_12.SetTopLeft(x, y);
+					chickenHouse_12.ShowBitmap();
+					break;
+				case -91:
+					chickenHouse_13.SetTopLeft(x, y);
+					chickenHouse_13.ShowBitmap();
+					break;
+				case -92:
+					chickenHouse_14.SetTopLeft(x, y);
+					chickenHouse_14.ShowBitmap();
+					break;
+				case -93:
+					chickenHouse_Wall01.SetTopLeft(x, y);
+					chickenHouse_Wall01.ShowBitmap();
+					break;
+				case -94:
+					chickenHouse_Wall02.SetTopLeft(x, y);
+					chickenHouse_Wall02.ShowBitmap();
+					break;
+				case -95:
+					chickenHouse_Wall03.SetTopLeft(x, y);
+					chickenHouse_Wall03.ShowBitmap();
+					break;
+				case -96:
+					chickenHouse_NoticeBoard.SetTopLeft(x, y);
+					chickenHouse_NoticeBoard.ShowBitmap();
+					break;
+				case -97:
+					chickenHouse_CropBox01.SetTopLeft(x, y);
+					chickenHouse_CropBox01.ShowBitmap();
+					break;
+				case -98:
+					chickenHouse_CropBox02.SetTopLeft(x, y);
+					chickenHouse_CropBox02.ShowBitmap();
+					break;
+				case -99:
+					chickenHouse_CropBox03.SetTopLeft(x, y);
+					chickenHouse_CropBox03.ShowBitmap();
+					break;
+				case -100:
+					chickenHouse_CropBox04.SetTopLeft(x, y);
+					chickenHouse_CropBox04.ShowBitmap();
+					break;
+				case -101:
+					chickenHouse_StoreBox01.SetTopLeft(x, y);
+					chickenHouse_StoreBox01.ShowBitmap();
+					break;
+				case -102:
+					chickenHouse_StoreBox02.SetTopLeft(x, y);
+					chickenHouse_StoreBox02.ShowBitmap();
+					break;
+				case -103:
+					chickenHouse_StoreBox03.SetTopLeft(x, y);
+					chickenHouse_StoreBox03.ShowBitmap();
+					break;
+				case -104:
+					chickenHouse_StoreBox04.SetTopLeft(x, y);
+					chickenHouse_StoreBox04.ShowBitmap();
+					break;
+				case -105:
+					chickenHouse_FoodBox01.SetTopLeft(x, y);
+					chickenHouse_FoodBox01.ShowBitmap();
+					break;
+				case -106:
+					chickenHouse_FoodBox02.SetTopLeft(x, y);
+					chickenHouse_FoodBox02.ShowBitmap();
+					break;
+				case -107:
+					chickenHouse_FoodBox03.SetTopLeft(x, y);
+					chickenHouse_FoodBox03.ShowBitmap();
+					break;
+				case -108:
+					chickenHouse_FoodBox04.SetTopLeft(x, y);
+					chickenHouse_FoodBox04.ShowBitmap();
+					break;
+				case -109:
+					chickenHouse_FoodBox05.SetTopLeft(x, y);
+					chickenHouse_FoodBox05.ShowBitmap();
+					break;
+				case -110:
+					chickenHouse_FoodBox06.SetTopLeft(x, y);
+					chickenHouse_FoodBox06.ShowBitmap();
+					break;
+				case -111:
+					chickenHouse_FoodBox07.SetTopLeft(x, y);
+					chickenHouse_FoodBox07.ShowBitmap();
+					break;
+				case -112:
+					chickenHouse_FoodBox08.SetTopLeft(x, y);
+					chickenHouse_FoodBox08.ShowBitmap();
+					break;
+				case -113:
+					chickenHouse_FoodBox09.SetTopLeft(x, y);
+					chickenHouse_FoodBox09.ShowBitmap();
 					break;
 				default:
 					break;

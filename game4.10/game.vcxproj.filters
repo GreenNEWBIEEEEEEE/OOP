@@ -1007,5 +1007,188 @@
     <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up02.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\newmaterial\house\images_bmp\bitmap29.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Outdoor\ChickenHouse14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Wall\ChickenHouse_Wall01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Wall\ChickenHouse_Wall02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Wall\ChickenHouse_Wall03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\NoticeBoard\ChickenHouse_NoticeBoard.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodStoreBox\ChickenHouse_FoodStoreBox01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodStoreBox\ChickenHouse_FoodStoreBox02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodStoreBox\ChickenHouse_FoodStoreBox03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodStoreBox\ChickenHouse_FoodStoreBox04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\FoodBox\ChickenHouse_FoodBox09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor01\ChickenHouse_Floor01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor02\ChickenHouse_Floor02_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor02\ChickenHouse_Floor02_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor03\ChickenHouse_Floor03_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor03\ChickenHouse_Floor03_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor03\ChickenHouse_Floor03_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor03\ChickenHouse_Floor03_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor03\ChickenHouse_Floor03_05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor04\ChickenHouse_Floor04_06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor05\ChickenHouse_Floor05_06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

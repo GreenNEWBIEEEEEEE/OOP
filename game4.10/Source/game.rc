@@ -528,21 +528,141 @@ IDB_TV06                BITMAP                  "..\\RES\\NewMaterial\\House\\Ho
 
 IDB_DuskMask            BITMAP                  "..\\RES\\DuskMask.bmp"
 
-IDB_Chicken_front01     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down01.bmp"
+IDB_Chicken_front01     BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down01.bmp"
 
-IDB_Chicken_front02     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down02.bmp"
+IDB_Chicken_front02     BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down02.bmp"
 
-IDB_Chicken_left01      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left01.bmp"
+IDB_Chicken_left01      BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left01.bmp"
 
-IDB_Chicken_left02      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left02.bmp"
+IDB_Chicken_left02      BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Left\\Chicken_Left02.bmp"
 
-IDB_Chicken_right01     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right01.bmp"
+IDB_Chicken_right01     BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right01.bmp"
 
-IDB_Chicken_right02     BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right02.bmp"
+IDB_Chicken_right02     BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Right\\Chicken_Right02.bmp"
 
-IDB_Chicken_back01      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up01.bmp"
+IDB_Chicken_back01      BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up01.bmp"
 
-IDB_Chicken_back02      BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project6\\oopcourse822\\game4.10\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up02.bmp"
+IDB_Chicken_back02      BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Up\\Chicken_Up02.bmp"
+
+IDB_ChickenHouse01      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse01.bmp"
+
+IDB_ChickenHouse02      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse02.bmp"
+
+IDB_ChickenHouse03      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse03.bmp"
+
+IDB_ChickenHouse04      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse04.bmp"
+
+IDB_ChickenHouse05      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse05.bmp"
+
+IDB_ChickenHouse06      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse06.bmp"
+
+IDB_ChickenHouse07      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse07.bmp"
+
+IDB_ChickenHouse08      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse08.bmp"
+
+IDB_ChickenHouse09      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse09.bmp"
+
+IDB_ChickenHouse10      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse10.bmp"
+
+IDB_ChickenHouse11      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse11.bmp"
+
+IDB_ChickenHouse12      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse12.bmp"
+
+IDB_ChickenHouse13      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse13.bmp"
+
+IDB_ChickenHouse14      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Outdoor\\ChickenHouse14.bmp"
+
+IDB_ChickenHouse_Wall01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Wall\\ChickenHouse_Wall01.bmp"
+
+IDB_ChickenHouse_Wall02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Wall\\ChickenHouse_Wall02.bmp"
+
+IDB_ChickenHouse_Wall03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Wall\\ChickenHouse_Wall03.bmp"
+
+IDB_ChickenHouse_NoticeBoard BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\NoticeBoard\\ChickenHouse_NoticeBoard.bmp"
+
+IDB_ChickenHouse_CropBox01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\CropBox\\ChickenHouse_CropBox01.bmp"
+
+IDB_ChickenHouse_CropBox02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\CropBox\\ChickenHouse_CropBox02.bmp"
+
+IDB_ChickenHouse_CropBox03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\CropBox\\ChickenHouse_CropBox03.bmp"
+
+IDB_ChickenHouse_CropBox04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\CropBox\\ChickenHouse_CropBox04.bmp"
+
+IDB_ChickenHouse_StoreBox01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodStoreBox\\ChickenHouse_FoodStoreBox01.bmp"
+
+IDB_ChickenHouse_StoreBox02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodStoreBox\\ChickenHouse_FoodStoreBox02.bmp"
+
+IDB_ChickenHouse_StoreBox03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodStoreBox\\ChickenHouse_FoodStoreBox03.bmp"
+
+IDB_ChickenHouse_StoreBox04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodStoreBox\\ChickenHouse_FoodStoreBox04.bmp"
+
+IDB_ChickenHouse_FoodBox01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox01.bmp"
+
+IDB_ChickenHouse_FoodBox02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox02.bmp"
+
+IDB_ChickenHouse_FoodBox03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox03.bmp"
+
+IDB_ChickenHouse_FoodBox04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox04.bmp"
+
+IDB_ChickenHouse_FoodBox05 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox05.bmp"
+
+IDB_ChickenHouse_FoodBox06 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox06.bmp"
+
+IDB_ChickenHouse_FoodBox07 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox07.bmp"
+
+IDB_ChickenHouse_FoodBox08 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox08.bmp"
+
+IDB_ChickenHouse_FoodBox09 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\FoodBox\\ChickenHouse_FoodBox09.bmp"
+
+IDB_ChickenHouse_Floor01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor01\\ChickenHouse_Floor01.bmp"
+
+IDB_ChickenHouse_Floor02_01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor02\\ChickenHouse_Floor02_01.bmp"
+
+IDB_ChickenHouse_Floor02_02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor02\\ChickenHouse_Floor02_02.bmp"
+
+IDB_ChickenHouse_Floor03_01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor03\\ChickenHouse_Floor03_01.bmp"
+
+IDB_ChickenHouse_Floor03_02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor03\\ChickenHouse_Floor03_02.bmp"
+
+IDB_ChickenHouse_Floor03_03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor03\\ChickenHouse_Floor03_03.bmp"
+
+IDB_ChickenHouse_Floor03_04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor03\\ChickenHouse_Floor03_04.bmp"
+
+IDB_ChickenHouse_Floor03_05 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor03\\ChickenHouse_Floor03_05.bmp"
+
+IDB_ChickenHouse_Floor04_01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_01.bmp"
+
+IDB_ChickenHouse_Floor04_02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_02.bmp"
+
+IDB_ChickenHouse_Floor04_03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_03.bmp"
+
+IDB_ChickenHouse_Floor04_04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_04.bmp"
+
+IDB_ChickenHouse_Floor04_05 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_05.bmp"
+
+IDB_ChickenHouse_Floor04_06 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor04\\ChickenHouse_Floor04_06.bmp"
+
+IDB_ChickenHouse_Floor05_01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_01.bmp"
+
+IDB_ChickenHouse_Floor05_02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_02.bmp"
+
+IDB_ChickenHouse_Floor05_03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_03.bmp"
+
+IDB_ChickenHouse_Floor05_04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_04.bmp"
+
+IDB_ChickenHouse_Floor05_05 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_05.bmp"
+
+IDB_ChickenHouse_Floor05_06 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor05\\ChickenHouse_Floor05_06.bmp"
+
+IDB_ChickenHouse_Floor06_01 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor06\\ChickenHouse_Floor06_01.bmp"
+
+IDB_ChickenHouse_Floor06_02 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor06\\ChickenHouse_Floor06_02.bmp"
+
+IDB_ChickenHouse_Floor06_03 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor06\\ChickenHouse_Floor06_03.bmp"
+
+IDB_ChickenHouse_Floor06_04 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor06\\ChickenHouse_Floor06_04.bmp"
+
+IDB_ChickenHouse_Floor06_05 BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\ChickenHouse\\Indoor\\Floor06\\ChickenHouse_Floor06_05.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

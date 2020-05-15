@@ -18,6 +18,7 @@ namespace game_framework
 		currentDirection = CAnimal::Direction::Down;
 		currentMove = &moveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
+		STEP_SIZE = 20;
 	}
 
 	CChicken::~CChicken()
@@ -67,10 +68,11 @@ namespace game_framework
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
 		int rnd = (rand() % 100);
-		isMovingLeft = rnd < 20;
-		isMovingRight = rnd >= 20 && rnd < 40;
-		isMovingUp = rnd >= 40 && rnd < 60;
-		isMovingDown = rnd >= 60 && rnd < 80;
+		isMovingLeft = rnd % 37 == 0;
+		isMovingRight = rnd % 47 == 0;
+		isMovingUp = rnd % 59 == 0;
+		isMovingDown = rnd % 71 == 0;
+		bool isStopping = rnd % 2 == 0;
 
 		// 每一步移動量
 		if (isMovingLeft)
@@ -137,6 +139,10 @@ namespace game_framework
 				by += STEP_SIZE;
 				ey += STEP_SIZE;
 			}
+		}
+		else if (isStopping)
+		{
+			// Do nothing
 		}
 		
 	}

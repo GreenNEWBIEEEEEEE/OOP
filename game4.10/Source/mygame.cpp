@@ -194,6 +194,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
+	mapManager.AddMap("Scripts/MapInfos/MapE03.txt", false);
 	backpackMenu.SetBackpack(p1.GetBackpack());
 }
 

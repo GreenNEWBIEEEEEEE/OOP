@@ -54,6 +54,20 @@ namespace game_framework {
 				gd->Enable();
 			}
 			break;
+			// «Ç¥~->ÂûªÙ
+		case 20003:
+			mm->ChangeMap(2);
+			mm->GetCurrentMap()->SetSXSY(50, 500);
+			p->SetX(5 * 64);
+			p->SetY(12 * 53);
+			break;
+			// ÂûªÙ->«Ç¥~
+		case 20004:
+			mm->ChangeMap(0);
+			mm->GetCurrentMap()->SetSXSY(1050, 200);
+			p->SetX(18 * 64);
+			p->SetY(5 * 53);
+			break;
 		default:
 			break;
 		}

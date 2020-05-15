@@ -142,6 +142,74 @@ namespace game_framework
 		CMovingBitmap PlantShop_019;
 		CMovingBitmap PlantShop_020;
 
+		// Chicken house(outdoor)
+		CMovingBitmap chickenHouse_01;
+		CMovingBitmap chickenHouse_02;
+		CMovingBitmap chickenHouse_03;
+		CMovingBitmap chickenHouse_04;
+		CMovingBitmap chickenHouse_05;
+		CMovingBitmap chickenHouse_06;
+		CMovingBitmap chickenHouse_07;
+		CMovingBitmap chickenHouse_08;
+		CMovingBitmap chickenHouse_09;
+		CMovingBitmap chickenHouse_10;
+		CMovingBitmap chickenHouse_11;
+		CMovingBitmap chickenHouse_12;
+		CMovingBitmap chickenHouse_13;
+		CMovingBitmap chickenHouse_14;
+		// Chicken house(indoor) Walls
+		CMovingBitmap chickenHouse_Wall01;
+		CMovingBitmap chickenHouse_Wall02;
+		CMovingBitmap chickenHouse_Wall03;
+		// Chicken house(indoor) NoticeBoard
+		CMovingBitmap chickenHouse_NoticeBoard;
+		// Chicken house(indoor) CropBox
+		CMovingBitmap chickenHouse_CropBox01;
+		CMovingBitmap chickenHouse_CropBox02;
+		CMovingBitmap chickenHouse_CropBox03;
+		CMovingBitmap chickenHouse_CropBox04;
+		// Chicken house(indoor) StoreBox
+		CMovingBitmap chickenHouse_StoreBox01;
+		CMovingBitmap chickenHouse_StoreBox02;
+		CMovingBitmap chickenHouse_StoreBox03;
+		CMovingBitmap chickenHouse_StoreBox04;
+		// Chicken house(indoor) FoodBox
+		CMovingBitmap chickenHouse_FoodBox01;
+		CMovingBitmap chickenHouse_FoodBox02;
+		CMovingBitmap chickenHouse_FoodBox03;
+		CMovingBitmap chickenHouse_FoodBox04;
+		CMovingBitmap chickenHouse_FoodBox05;
+		CMovingBitmap chickenHouse_FoodBox06;
+		CMovingBitmap chickenHouse_FoodBox07;
+		CMovingBitmap chickenHouse_FoodBox08;
+		CMovingBitmap chickenHouse_FoodBox09;
+		// Chicken house(indoor) Floors
+		CMovingBitmap chickenHouse_Floor01;
+		CMovingBitmap chickenHouse_Floor02_01;
+		CMovingBitmap chickenHouse_Floor02_02;
+		CMovingBitmap chickenHouse_Floor03_01;
+		CMovingBitmap chickenHouse_Floor03_02;
+		CMovingBitmap chickenHouse_Floor03_03;
+		CMovingBitmap chickenHouse_Floor03_04;
+		CMovingBitmap chickenHouse_Floor03_05;
+		CMovingBitmap chickenHouse_Floor04_01;
+		CMovingBitmap chickenHouse_Floor04_02;
+		CMovingBitmap chickenHouse_Floor04_03;
+		CMovingBitmap chickenHouse_Floor04_04;
+		CMovingBitmap chickenHouse_Floor04_05;
+		CMovingBitmap chickenHouse_Floor04_06;
+		CMovingBitmap chickenHouse_Floor05_01;
+		CMovingBitmap chickenHouse_Floor05_02;
+		CMovingBitmap chickenHouse_Floor05_03;
+		CMovingBitmap chickenHouse_Floor05_04;
+		CMovingBitmap chickenHouse_Floor05_05;
+		CMovingBitmap chickenHouse_Floor05_06;
+		CMovingBitmap chickenHouse_Floor06_01;
+		CMovingBitmap chickenHouse_Floor06_02;
+		CMovingBitmap chickenHouse_Floor06_03;
+		CMovingBitmap chickenHouse_Floor06_04;
+		CMovingBitmap chickenHouse_Floor06_05;
+		
 		// plant: Radish
 		CMovingBitmap radish_Seed_D;
 		CMovingBitmap radish_Seed_W;
