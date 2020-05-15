@@ -502,62 +502,66 @@ namespace game_framework {
 		//
 		else if (key == KEY_A)
 		{
-			// 使用工具動畫的旗標
-			isUsingTool = true;
-
-			// 看看現在玩家拿甚麼工具 顯示動畫
-			switch (toolSelector)
+			if (this->currentMoveState == MoveState::NormalMove)
 			{
-			case 0: // FIXME
-				isUsingTool = false;
-				break;
-			case 1:
-				lastFacingDirection = facingDirection;
-				// 根據方向來決定用哪一邊的動畫
-				if (direction == 1) facingDirection = &aniUseTool_1_back;
-				else if (direction == 2) facingDirection = &aniUseTool_1_front;
-				else if (direction == 3) facingDirection = &aniUseTool_1_left;
-				else facingDirection = &aniUseTool_1_right;
-				break;
-			case 2:
-				lastFacingDirection = facingDirection;
-				// 根據方向來決定用哪一邊的動畫
-				if (direction == 1) facingDirection = &aniUseTool_2_back;
-				else if (direction == 2) facingDirection = &aniUseTool_2_front;
-				else if (direction == 3) facingDirection = &aniUseTool_2_left;
-				else facingDirection = &aniUseTool_2_right;
-				break;
-			case 3:
-				lastFacingDirection = facingDirection;
-				// 根據方向來決定用哪一邊的動畫
-				if (direction == 1) facingDirection = &aniUseTool_3_back;
-				else if (direction == 2) facingDirection = &aniUseTool_3_front;
-				else if (direction == 3) facingDirection = &aniUseTool_3_left;
-				else facingDirection = &aniUseTool_3_right;
-				break;
-			case 4:
-				lastFacingDirection = facingDirection;
-				// 播撒種子動作只有一種面向
-				facingDirection = &aniUseTool_4;
-				break;
-			case 5:
-				lastFacingDirection = facingDirection;
-				// 根據方向來決定用哪一邊的動畫
-				if (direction == 1) facingDirection = &aniUseTool_5_back;
-				else if (direction == 2) facingDirection = &aniUseTool_5_front;
-				else if (direction == 3) facingDirection = &aniUseTool_5_left;
-				else facingDirection = &aniUseTool_5_right;
-				break;
-			case 6:
-				// 根據方向來決定用哪一邊的動畫
-				if (direction == 1) facingDirection = &aniUseTool_6_back;
-				else if (direction == 2) facingDirection = &aniUseTool_6_front;
-				else if (direction == 3) facingDirection = &aniUseTool_6_left;
-				else facingDirection = &aniUseTool_6_right;
 
-				break;
-			default:
-				break;
+				// 使用工具動畫的旗標
+				isUsingTool = true;
+
+				// 看看現在玩家拿甚麼工具 顯示動畫
+				switch (toolSelector)
+				{
+				case 0: // FIXME
+					isUsingTool = false;
+					break;
+				case 1:
+					lastFacingDirection = facingDirection;
+					// 根據方向來決定用哪一邊的動畫
+					if (direction == 1) facingDirection = &aniUseTool_1_back;
+					else if (direction == 2) facingDirection = &aniUseTool_1_front;
+					else if (direction == 3) facingDirection = &aniUseTool_1_left;
+					else facingDirection = &aniUseTool_1_right;
+					break;
+				case 2:
+					lastFacingDirection = facingDirection;
+					// 根據方向來決定用哪一邊的動畫
+					if (direction == 1) facingDirection = &aniUseTool_2_back;
+					else if (direction == 2) facingDirection = &aniUseTool_2_front;
+					else if (direction == 3) facingDirection = &aniUseTool_2_left;
+					else facingDirection = &aniUseTool_2_right;
+					break;
+				case 3:
+					lastFacingDirection = facingDirection;
+					// 根據方向來決定用哪一邊的動畫
+					if (direction == 1) facingDirection = &aniUseTool_3_back;
+					else if (direction == 2) facingDirection = &aniUseTool_3_front;
+					else if (direction == 3) facingDirection = &aniUseTool_3_left;
+					else facingDirection = &aniUseTool_3_right;
+					break;
+				case 4:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
+					break;
+				case 5:
+					lastFacingDirection = facingDirection;
+					// 根據方向來決定用哪一邊的動畫
+					if (direction == 1) facingDirection = &aniUseTool_5_back;
+					else if (direction == 2) facingDirection = &aniUseTool_5_front;
+					else if (direction == 3) facingDirection = &aniUseTool_5_left;
+					else facingDirection = &aniUseTool_5_right;
+					break;
+				case 6:
+					// 根據方向來決定用哪一邊的動畫
+					if (direction == 1) facingDirection = &aniUseTool_6_back;
+					else if (direction == 2) facingDirection = &aniUseTool_6_front;
+					else if (direction == 3) facingDirection = &aniUseTool_6_left;
+					else facingDirection = &aniUseTool_6_right;
+
+					break;
+				default:
+					break;
+				}
 			}
 			
 

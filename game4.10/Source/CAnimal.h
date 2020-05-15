@@ -33,6 +33,9 @@ namespace game_framework {
 		void SetMap(CGameMap* map);   // 設定雞舍or牛舍or羊舍地圖
 		void SetTimer(CTimer* timer);
 	protected:
+		int onMoveTimes = 3; // 為了讓移動更加順暢自然，在重新決定動物移動方向之前，要先走一定次數，才能重新決定方向
+		int counter = 0;     // 計數onMove次數
+
 		CTimer* timer;
 		CGameMap* map; // 雞舍 or 牛舍 or 羊舍
 
