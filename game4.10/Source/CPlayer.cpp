@@ -560,6 +560,8 @@ namespace game_framework {
 				break;
 			}
 			
+
+			// 偵測只用手
 			if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
 				(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
 				(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
@@ -567,7 +569,10 @@ namespace game_framework {
 			{
 				CAnimal* facingAnimal = GetFacingAnimal();
 				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+				{
+					TRACE("\nTRIGGER Animal\n");
 					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+				}
 			}
 
 			// 傳入農務事件觸發

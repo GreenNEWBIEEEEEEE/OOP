@@ -13,6 +13,8 @@ namespace game_framework
 		void OnMove(CGameMap* m, vector<CGameObject*>* obj);
 		void OnShow(CGameMap* m);
 	private:
+		int onMoveTimes = 3;
+		int counter = 0;
 	};
 
 }

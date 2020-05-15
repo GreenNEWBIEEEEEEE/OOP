@@ -12,13 +12,14 @@ namespace game_framework
 {
 	CChicken::CChicken()
 	{
-		width = 64; height = 53;
+		width = 64; height = 20;  // height不用53 是為了讓他更符合碰撞box
 		x = lastX = 200; y = lastY = 400;
 		bx = x; by = y;
 		currentDirection = CAnimal::Direction::Down;
+		currentStatus = CAnimal::Status::Produce;
 		currentMove = &moveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
-		STEP_SIZE = 20;
+		STEP_SIZE = 5;
 	}
 
 	CChicken::~CChicken()
@@ -67,12 +68,19 @@ namespace game_framework
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
-		int rnd = (rand() % 100);
-		isMovingLeft = rnd % 37 == 0;
-		isMovingRight = rnd % 47 == 0;
-		isMovingUp = rnd % 59 == 0;
-		isMovingDown = rnd % 71 == 0;
-		bool isStopping = rnd % 2 == 0;
+
+
+		if (counter >= onMoveTimes)
+		{
+			int rnd = (rand() % 100);
+			isMovingLeft = rnd < 10;
+			isMovingRight = rnd >= 10 && rnd < 20;
+			isMovingUp = rnd >= 20 && rnd < 30;
+			isMovingDown = rnd >= 30 && rnd < 40;
+			onMoveTimes = rand() % 6 + 5;
+			TRACE("\n TImes : %d\n", onMoveTimes);
+			counter = 0;
+		}
 
 		// 每一步移動量
 		if (isMovingLeft)
@@ -87,7 +95,7 @@ namespace game_framework
 			// 偵測障礙物 或 不可踩上去的地圖格子
 			// 目前設定為 玩家的圖片是64*80
 			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
-			if (m->IsEmpty(bx - STEP_SIZE, by) && m->IsEmpty(bx - STEP_SIZE, by + height) && !DetectCollision(obj, -STEP_SIZE, 0))
+			if (m->IsEmpty(bx - STEP_SIZE, by) && m->IsEmpty(bx - STEP_SIZE, by + height + 33) && !DetectCollision(obj, -STEP_SIZE, 0))
 			{
 				x -= STEP_SIZE;
 				bx -= STEP_SIZE;
@@ -102,7 +110,7 @@ namespace game_framework
 
 			currentMove->OnMove();
 			currentMove = &moveRight;
-			if (m->IsEmpty(bx + width + STEP_SIZE, by) && m->IsEmpty(bx + width + STEP_SIZE, by + height) && !DetectCollision(obj, STEP_SIZE, 0))
+			if (m->IsEmpty(bx + width + STEP_SIZE, by) && m->IsEmpty(bx + width + STEP_SIZE, by + height + 33) && !DetectCollision(obj, STEP_SIZE, 0))
 			{
 				x += STEP_SIZE;
 				bx += STEP_SIZE;
@@ -133,18 +141,16 @@ namespace game_framework
 			currentMove->OnMove();
 			currentMove = &moveDown;
 			// bx+/-5 寬度設小一點
-			if (m->IsEmpty(bx, by + height + STEP_SIZE) && m->IsEmpty(bx + width, by + height + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
+			if (m->IsEmpty(bx, by + height + 33 + STEP_SIZE) && m->IsEmpty(bx + width, by + height + 33 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
 			{
 				y += STEP_SIZE;
 				by += STEP_SIZE;
 				ey += STEP_SIZE;
 			}
 		}
-		else if (isStopping)
-		{
-			// Do nothing
-		}
-		
+
+		counter++;
+
 	}
 
 }

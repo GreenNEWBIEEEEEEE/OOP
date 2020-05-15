@@ -384,8 +384,8 @@ void CGameStateRun::OnShow()
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
 	mapManager.OnShow();
-	p1.OnShow(mapManager.GetCurrentMap());
 	c1.OnShow(mapManager.GetCurrentMap());
+	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();
 	backpackMenu.OnShow();
