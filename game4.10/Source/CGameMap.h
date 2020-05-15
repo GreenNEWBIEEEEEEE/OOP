@@ -183,6 +183,9 @@ namespace game_framework
 		CMovingBitmap chickenHouse_FoodBox07;
 		CMovingBitmap chickenHouse_FoodBox08;
 		CMovingBitmap chickenHouse_FoodBox09;
+		// Chicken house(indoor) EggBox
+		CMovingBitmap chickenHouse_EggBox01;
+		CMovingBitmap chickenHouse_EggBox02;
 		// Chicken house(indoor) Floors
 		CMovingBitmap chickenHouse_Floor01;
 		CMovingBitmap chickenHouse_Floor02_01;

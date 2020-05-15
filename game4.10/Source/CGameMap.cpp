@@ -241,6 +241,12 @@ namespace game_framework {
 			chickenHouse_FoodBox09.LoadBitmap(IDB_ChickenHouse_FoodBox09);
 		}
 
+		// Chicken house(indoor) EggBox
+		{
+			chickenHouse_EggBox01.LoadBitmap(IDB_ChickenHouse_EggBox01);
+			chickenHouse_EggBox02.LoadBitmap(IDB_ChickenHouse_EggBox02);
+		}
+
 		// Chicken house(indoor) Floors
 		{
 			chickenHouse_Floor01.LoadBitmap(IDB_ChickenHouse_Floor01);
@@ -906,6 +912,14 @@ namespace game_framework {
 				case -113:
 					chickenHouse_FoodBox09.SetTopLeft(x, y);
 					chickenHouse_FoodBox09.ShowBitmap();
+					break;
+				case -114:
+					chickenHouse_EggBox01.SetTopLeft(x, y);
+					chickenHouse_EggBox01.ShowBitmap();
+					break;
+				case -115:
+					chickenHouse_EggBox02.SetTopLeft(x, y);
+					chickenHouse_EggBox02.ShowBitmap();
 					break;
 				default:
 					break;

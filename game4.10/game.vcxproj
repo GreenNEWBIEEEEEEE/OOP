@@ -402,6 +402,8 @@
     <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox02.bmp" />
     <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox03.bmp" />
     <Image Include="RES\ChickenHouse\Indoor\CropBox\ChickenHouse_CropBox04.bmp" />
+    <Image Include="RES\ChickenHouse\Indoor\EggBox\ChickenHouse_EggBox01.bmp" />
+    <Image Include="RES\ChickenHouse\Indoor\EggBox\ChickenHouse_EggBox02.bmp" />
     <Image Include="RES\ChickenHouse\Indoor\Floor01\ChickenHouse_Floor01.bmp" />
     <Image Include="RES\ChickenHouse\Indoor\Floor02\ChickenHouse_Floor02_01.bmp" />
     <Image Include="RES\ChickenHouse\Indoor\Floor02\ChickenHouse_Floor02_02.bmp" />

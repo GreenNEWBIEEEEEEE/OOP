@@ -1190,5 +1190,11 @@
     <Image Include="RES\ChickenHouse\Indoor\Floor06\ChickenHouse_Floor06_05.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\ChickenHouse\Indoor\EggBox\ChickenHouse_EggBox01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\ChickenHouse\Indoor\EggBox\ChickenHouse_EggBox02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
