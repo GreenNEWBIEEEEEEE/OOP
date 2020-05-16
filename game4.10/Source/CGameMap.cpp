@@ -281,7 +281,10 @@ namespace game_framework {
 			chickenHouse_Floor06_05.LoadBitmap(IDB_ChickenHouse_Floor06_05);
 		}
 		
-
+		{
+			egg.LoadBitmap(IDB_Egg);
+			animalGrass.LoadBitmap(IDB_AnimalGrass);
+		}
 
 		if (weather != nullptr)
 		{
@@ -920,6 +923,14 @@ namespace game_framework {
 				case -115:
 					chickenHouse_EggBox02.SetTopLeft(x, y);
 					chickenHouse_EggBox02.ShowBitmap();
+					break;
+				case -116:
+					animalGrass.SetTopLeft(x, y);
+					animalGrass.ShowBitmap();
+					break;
+				case -117:
+					egg.SetTopLeft(x, y);
+					egg.ShowBitmap();
 					break;
 				default:
 					break;

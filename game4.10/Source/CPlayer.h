@@ -14,6 +14,8 @@ namespace game_framework {
 			RadishMove,					// 帶著白蘿蔔走路
 			NormalMove,					// 一般走路
 			EggMove,
+			ChickenMove,
+			GrassMove,
 			MilkMove
 		};
 		CPlayer();
@@ -30,6 +32,10 @@ namespace game_framework {
 		void ChangeMoveState(MoveState state);
 		void DecreaseMoney(int money);
 		MoveState GetCurrentMoveState();
+		bool DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
+		bool DetectRightCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
+		bool DetectUpCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
+		bool DetectDownCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 		void Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj);
 		///
 		/// 遊戲流程
@@ -37,7 +43,7 @@ namespace game_framework {
 		void LoadBitmap();
 		void OnMove(CGameMap* m, vector<CGameObject*>* obj);
 		void OnShow(CGameMap* m);
-		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, vector<CGameObject*>* obj);
+		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CGameMap* m, vector<CGameObject*>* obj);
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
 
 	private:
@@ -48,12 +54,16 @@ namespace game_framework {
 		int direction = 2;
 		int lastDirection;
 		
+		CAnimal* pickUpAnimal = nullptr;
 
 		// 移動的動畫
 		CAnimation *lastFacingDirection = nullptr;
 		CAnimation *facingDirection = nullptr; // 指向當前面向的方向之動畫
 		CAnimation aniMoveLeft, aniMoveRight, aniMoveUp, aniMoveDown;
 		CAnimation aniRadishMoveLeft, aniRadishMoveRight, aniRadishMoveUp, aniRadishMoveDown;
+		CAnimation aniEggMoveLeft, aniEggMoveRight, aniEggMoveUp, aniEggMoveDown;
+		CAnimation aniGrassMoveLeft, aniGrassMoveRight, aniGrassMoveUp, aniGrassMoveDown;
+		CAnimation aniChickenMoveLeft, aniChickenMoveRight, aniChickenMoveUp, aniChickenMoveDown;
 
 		// 更換工具的動畫
 		CAnimation aniChangeTool_0;

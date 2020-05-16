@@ -20,6 +20,16 @@ namespace game_framework
 	{
 	}
 
+	void CAnimal::UnableShowAndMove()
+	{
+		onShowAndMove = false;
+	}
+
+	void CAnimal::EnableShowAndMove()
+	{
+		onShowAndMove = true;
+	}
+
 	void CAnimal::SetMap(CGameMap* map)
 	{
 		this->map = map;

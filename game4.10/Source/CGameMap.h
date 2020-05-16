@@ -220,6 +220,12 @@ namespace game_framework
 		CMovingBitmap radish_Grow01_W;
 		CMovingBitmap radish_Mature;
 
+		
+		CMovingBitmap animalGrass;
+		CMovingBitmap egg;
+		
+
+
 		// ¤Gºû¸ê®Æ°}¦C
 		int row, col;
 		CMapInfo **map = nullptr;

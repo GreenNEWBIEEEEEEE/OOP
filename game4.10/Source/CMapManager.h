@@ -11,7 +11,8 @@ namespace game_framework {
 		~CMapManager();
 		void AddMap(string path, bool hasWeather);
 		void ChangeMap(unsigned mapID);
-		CWeather* CMapManager::GetOutsideWeather();
+		CWeather* GetOutsideWeather();
+		CGameMap* GetChickenCoop(); // ®³ÂûªÙªº¦a¹Ï
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
 		void OnMove();

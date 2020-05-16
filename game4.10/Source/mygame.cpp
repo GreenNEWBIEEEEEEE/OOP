@@ -258,8 +258,10 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//
 	//
+	c1.SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
 
-	// 記得Push 記得LoadBitMap小雞圖 記得新增小雞圖OnMove和OnShow
+
+	// 記得Push
 	obj.push_back(&p1);
 	obj.push_back(&c1);
 
@@ -288,7 +290,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else
 	{
 		CShopMenu *sm = &plantShopMenu;
-		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm, &obj);
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm, mapManager.GetCurrentMap(), &obj);
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭

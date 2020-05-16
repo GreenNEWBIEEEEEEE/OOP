@@ -128,6 +128,62 @@ namespace game_framework {
 			aniRadishMoveDown.AddBitmap(IDB_PeopleRadish_front03, RGB(255, 255, 255));
 		}
 
+
+		{
+			aniEggMoveLeft.AddBitmap(IDB_PeopleEgg_left01, RGB(255, 255, 255));
+			aniEggMoveLeft.AddBitmap(IDB_PeopleEgg_left02, RGB(255, 255, 255));
+			aniEggMoveLeft.AddBitmap(IDB_PeopleEgg_left03, RGB(255, 255, 255));
+
+			aniEggMoveRight.AddBitmap(IDB_PeopleEgg_right01, RGB(255, 255, 255));
+			aniEggMoveRight.AddBitmap(IDB_PeopleEgg_right02, RGB(255, 255, 255));
+			aniEggMoveRight.AddBitmap(IDB_PeopleEgg_right03, RGB(255, 255, 255));
+
+			aniEggMoveUp.AddBitmap(IDB_PeopleEgg_back01, RGB(255, 255, 255));
+			aniEggMoveUp.AddBitmap(IDB_PeopleEgg_back02, RGB(255, 255, 255));
+			aniEggMoveUp.AddBitmap(IDB_PeopleEgg_back03, RGB(255, 255, 255));
+
+			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front01, RGB(255, 255, 255));
+			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front02, RGB(255, 255, 255));
+			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front03, RGB(255, 255, 255));
+
+		}
+
+		{
+			aniChickenMoveLeft.AddBitmap(IDB_PeopleChicken_left01, RGB(255, 255, 255));
+			aniChickenMoveLeft.AddBitmap(IDB_PeopleChicken_left02, RGB(255, 255, 255));
+			aniChickenMoveLeft.AddBitmap(IDB_PeopleChicken_left03, RGB(255, 255, 255));
+
+			aniChickenMoveRight.AddBitmap(IDB_PeopleChicken_right01, RGB(255, 255, 255));
+			aniChickenMoveRight.AddBitmap(IDB_PeopleChicken_right02, RGB(255, 255, 255));
+			aniChickenMoveRight.AddBitmap(IDB_PeopleChicken_right03, RGB(255, 255, 255));
+
+			aniChickenMoveUp.AddBitmap(IDB_PeopleChicken_back01, RGB(255, 255, 255));
+			aniChickenMoveUp.AddBitmap(IDB_PeopleChicken_back02, RGB(255, 255, 255));
+			aniChickenMoveUp.AddBitmap(IDB_PeopleChicken_back03, RGB(255, 255, 255));
+
+			aniChickenMoveDown.AddBitmap(IDB_PeopleChicken_front01, RGB(255, 255, 255));
+			aniChickenMoveDown.AddBitmap(IDB_PeopleChicken_front02, RGB(255, 255, 255));
+			aniChickenMoveDown.AddBitmap(IDB_PeopleChicken_front03, RGB(255, 255, 255));
+
+		}
+
+		{
+			aniGrassMoveLeft.AddBitmap(IDB_PeopleGrass_left01, RGB(255, 255, 255));
+			aniGrassMoveLeft.AddBitmap(IDB_PeopleGrass_left02, RGB(255, 255, 255));
+			aniGrassMoveLeft.AddBitmap(IDB_PeopleGrass_left03, RGB(255, 255, 255));
+
+			aniGrassMoveRight.AddBitmap(IDB_PeopleGrass_right01, RGB(255, 255, 255));
+			aniGrassMoveRight.AddBitmap(IDB_PeopleGrass_right02, RGB(255, 255, 255));
+			aniGrassMoveRight.AddBitmap(IDB_PeopleGrass_right03, RGB(255, 255, 255));
+
+			aniGrassMoveUp.AddBitmap(IDB_PeopleGrass_back01, RGB(255, 255, 255));
+			aniGrassMoveUp.AddBitmap(IDB_PeopleGrass_back02, RGB(255, 255, 255));
+			aniGrassMoveUp.AddBitmap(IDB_PeopleGrass_back03, RGB(255, 255, 255));
+
+			aniGrassMoveDown.AddBitmap(IDB_PeopleGrass_front01, RGB(255, 255, 255));
+			aniGrassMoveDown.AddBitmap(IDB_PeopleGrass_front02, RGB(255, 255, 255));
+			aniGrassMoveDown.AddBitmap(IDB_PeopleGrass_front03, RGB(255, 255, 255));
+		}
 		///
 		/// 載入切換工具的動畫
 		/// 請參閱各個工具的編號
@@ -343,8 +399,41 @@ namespace game_framework {
 	{
 		if (currentMoveState == RadishMove)
 			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight, obj);
+		else if (currentMoveState == ChickenMove)
+		{
+			Move(m, &aniChickenMoveUp, &aniChickenMoveDown, &aniChickenMoveLeft, &aniChickenMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
 		else if (currentMoveState == NormalMove)
 			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
+	}
+
+	bool CPlayer::DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
+	{
+		if (!hasAnimal)
+			return m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0);
+		return m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 64) && m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 80) && !DetectCollision(obj, -STEP_SIZE - pickUpAnimal->GetWidth(), 0);
+	}
+
+	bool CPlayer::DetectRightCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
+	{
+		if (!hasAnimal)
+			return m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80) && !DetectCollision(obj, STEP_SIZE, 0);
+		return m->IsEmpty(bx + width + STEP_SIZE + pickUpAnimal->GetWidth(), by + 64) && m->IsEmpty(bx + width + STEP_SIZE + pickUpAnimal->GetWidth(), by + 80) && !DetectCollision(obj, STEP_SIZE + pickUpAnimal->GetWidth(), 0);
+	}
+
+	bool CPlayer::DetectUpCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
+	{
+		if (!hasAnimal)
+			return m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE);
+		return m->IsEmpty(bx + 10, by + 64 - STEP_SIZE - pickUpAnimal->GetHeight()) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE - pickUpAnimal->GetHeight()) && !DetectCollision(obj, 0, -STEP_SIZE - pickUpAnimal->GetHeight());
+	}
+
+	bool CPlayer::DetectDownCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
+	{
+		if (!hasAnimal)
+			return m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE);
+		return m->IsEmpty(bx + 10, by + 80 + STEP_SIZE + pickUpAnimal->GetHeight()) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE + pickUpAnimal->GetHeight()) && !DetectCollision(obj, 0, STEP_SIZE + pickUpAnimal->GetHeight());
 	}
 
 	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj)
@@ -362,7 +451,7 @@ namespace game_framework {
 			// 偵測障礙物 或 不可踩上去的地圖格子
 			// 目前設定為 玩家的圖片是64*80
 			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
-			if (m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0))
+			if (DetectLeftCollision(m, obj))
 			{
 				x -= STEP_SIZE;
 				bx -= STEP_SIZE;
@@ -379,7 +468,7 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveRight;
-			if (m->IsEmpty(bx + width + STEP_SIZE, by + 64) && m->IsEmpty(bx + width + STEP_SIZE, by + 80) && !DetectCollision(obj, STEP_SIZE, 0))
+			if (DetectRightCollision(m, obj))
 			{
 				x += STEP_SIZE;
 				bx += STEP_SIZE;
@@ -395,7 +484,7 @@ namespace game_framework {
 
 			facingDirection->OnMove();
 			facingDirection = moveUp;
-			if (m->IsEmpty(bx + 10, by + 64 - STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 64 - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
+			if (DetectUpCollision(m, obj))
 			{
 				y -= STEP_SIZE;
 				by -= STEP_SIZE;
@@ -412,7 +501,7 @@ namespace game_framework {
 			facingDirection->OnMove();
 			facingDirection = moveDown;
 			// bx+/-5 寬度設小一點
-			if (m->IsEmpty(bx + 10, by + 80 + STEP_SIZE) && m->IsEmpty(bx - 10 + width, by + 80 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
+			if (DetectDownCollision(m, obj))
 			{
 				y += STEP_SIZE;
 				by += STEP_SIZE;
@@ -446,7 +535,7 @@ namespace game_framework {
 	}
 
 
-	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, vector<CGameObject*>* obj)
+	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CGameMap* m, vector<CGameObject*>* obj)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
@@ -457,6 +546,9 @@ namespace game_framework {
 		//
 		if (key == KEY_W)
 		{
+			if (this->currentMoveState != MoveState::NormalMove)	// 如果舉著其他東西的時候 不能切換道具
+				return;
+
 			// 切換工具選擇器
 			toolSelector++;
 			if (toolSelector < 0) toolSelector = backpack.size() - 1;
@@ -564,27 +656,88 @@ namespace game_framework {
 				}
 			}
 			
-
-			// 偵測只用手
-			if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
-				(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
-				(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
-				(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) )
-			{
-				CAnimal* facingAnimal = GetFacingAnimal();
-				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
-				{
-					TRACE("\nTRIGGER Animal\n");
-					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
-				}
-			}
-
 			// 傳入農務事件觸發
 			// 
 			if (this->currentMoveState == MoveState::NormalMove)
 				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sm);
-			else
+			else if (this->currentMoveState == MoveState::ChickenMove)
+			{
+				if (m == mm->GetChickenCoop())// 如果現在的地圖是雞舍，才能放下小雞
+				{
+
+					if (direction == 1 && DetectUpCollision(m, obj, true))
+					{
+						this->currentMoveState = MoveState::NormalMove;
+						TRACE("\nTRIGGER Animal\n");
+						pickUpAnimal->SetX(bx);
+						pickUpAnimal->SetY(by - pickUpAnimal->GetHeight());
+						pickUpAnimal->SetBodyX(bx);
+						pickUpAnimal->SetBodyY(by - pickUpAnimal->GetHeight());
+						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->EnableShowAndMove();
+						pickUpAnimal = nullptr;
+					}
+					else if (direction == 2 && DetectDownCollision(m, obj, true))
+					{
+						this->currentMoveState = MoveState::NormalMove;
+						TRACE("\nTRIGGER Animal\n");
+						pickUpAnimal->SetX(bx);
+						pickUpAnimal->SetY(by + height);
+						pickUpAnimal->SetBodyX(bx);
+						pickUpAnimal->SetBodyY(by + height);
+						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->EnableShowAndMove();
+						pickUpAnimal = nullptr;
+					}
+					else if (direction == 3 && DetectLeftCollision(m, obj, true))
+					{
+						this->currentMoveState = MoveState::NormalMove;
+						TRACE("\nTRIGGER Animal\n");
+						pickUpAnimal->SetX(bx - pickUpAnimal->GetWidth());
+						pickUpAnimal->SetY(by);
+						pickUpAnimal->SetBodyX(bx - pickUpAnimal->GetWidth());
+						pickUpAnimal->SetBodyY(by);
+						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->EnableShowAndMove();
+						pickUpAnimal = nullptr;
+					}
+					else if (direction == 4 && DetectRightCollision(m, obj, true))
+					{
+						this->currentMoveState = MoveState::NormalMove;
+						TRACE("\nTRIGGER Animal\n");
+						pickUpAnimal->SetX(bx + width);
+						pickUpAnimal->SetY(by);
+						pickUpAnimal->SetBodyX(bx + width);
+						pickUpAnimal->SetBodyY(by);
+						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->EnableShowAndMove();
+						pickUpAnimal = nullptr;
+					}
+				}
+
+			}
+			else if (this->currentMoveState == MoveState::RadishMove)
 				this->currentMoveState = MoveState::NormalMove;
+
+			if (toolSelector == 0)
+			{
+
+				// 偵測只用手
+				if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
+					(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
+					(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
+					(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) )
+				{
+					TRACE("\nTRIGGER Animal\n");
+					CAnimal* facingAnimal = GetFacingAnimal();
+					facingAnimal->UnableShowAndMove();
+					facingAnimal->SetCollision(false);
+					this->ChangeMoveState(MoveState::ChickenMove);
+					pickUpAnimal = facingAnimal;
+
+				}
+			}
+
 		}
 		else if (key == KEY_B)
 		{

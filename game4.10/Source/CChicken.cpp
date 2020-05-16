@@ -27,20 +27,25 @@ namespace game_framework
 
 	}
 
+
 	void CChicken::OnShow(CGameMap* m)
 	{
-		//if (m == map)
-		//{
-			if (currentMove != nullptr)
+		if (map == m)
+		{
+			if (onShowAndMove)
 			{
-				// 畫出當前面向的方向的動畫
-				// 用m計算出玩家的地圖點座標(x,y) 在 screen上的座標 因為最終是要在screen上畫
-				currentMove->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
+				if (currentMove != nullptr)
+				{
+					// 畫出當前面向的方向的動畫
+					// 用m計算出玩家的地圖點座標(x,y) 在 screen上的座標 因為最終是要在screen上畫
+					currentMove->SetTopLeft(m->ScreenX(x), m->ScreenY(y));
 
 
-				currentMove->OnShow();
+					currentMove->OnShow();
+				}
 			}
-		//}
+		}
+		
 	}
 
 	void CChicken::LoadBitmap()
@@ -68,88 +73,94 @@ namespace game_framework
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
-
-
-		if (counter >= onMoveTimes)
+		if (map == m)
 		{
-			int rnd = (rand() % 100);
-			isMovingLeft = rnd < 10;
-			isMovingRight = rnd >= 10 && rnd < 20;
-			isMovingUp = rnd >= 20 && rnd < 30;
-			isMovingDown = rnd >= 30 && rnd < 40;
-			onMoveTimes = rand() % 6 + 5;
-			TRACE("\n TImes : %d\n", onMoveTimes);
-			counter = 0;
-		}
 
-		// 每一步移動量
-		if (isMovingLeft)
-		{
-			// 更改方向旗標
-			lastDirection = currentDirection;
-			currentDirection = CAnimal::Direction::Left;
-
-			// 當按下方向鍵時可先切換面向的方向, 不管之後是否有真的要移動
-			currentMove->OnMove();
-			currentMove = &moveLeft;
-			// 偵測障礙物 或 不可踩上去的地圖格子
-			// 目前設定為 玩家的圖片是64*80
-			// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
-			if (m->IsEmpty(bx - STEP_SIZE, by) && m->IsEmpty(bx - STEP_SIZE, by + height + 33) && !DetectCollision(obj, -STEP_SIZE, 0))
+			if (onShowAndMove)
 			{
-				x -= STEP_SIZE;
-				bx -= STEP_SIZE;
-				ex -= STEP_SIZE;
+
+				if (counter >= onMoveTimes)
+				{
+					int rnd = (rand() % 100);
+					isMovingLeft = rnd < 10;
+					isMovingRight = rnd >= 10 && rnd < 20;
+					isMovingUp = rnd >= 20 && rnd < 30;
+					isMovingDown = rnd >= 30 && rnd < 40;
+					onMoveTimes = rand() % 6 + 5;
+					//TRACE("\n TImes : %d\n", onMoveTimes);
+					counter = 0;
+				}
+
+				// 每一步移動量
+				if (isMovingLeft)
+				{
+					// 更改方向旗標
+					lastDirection = currentDirection;
+					currentDirection = CAnimal::Direction::Left;
+
+					// 當按下方向鍵時可先切換面向的方向, 不管之後是否有真的要移動
+					currentMove->OnMove();
+					currentMove = &moveLeft;
+					// 偵測障礙物 或 不可踩上去的地圖格子
+					// 目前設定為 玩家的圖片是64*80
+					// 要偵測的是玩家下半身, 如此視覺上看起來才不會突兀
+					if (m->IsEmpty(bx - STEP_SIZE, by) && m->IsEmpty(bx - STEP_SIZE, by + height + 33) && !DetectCollision(obj, -STEP_SIZE, 0))
+					{
+						x -= STEP_SIZE;
+						bx -= STEP_SIZE;
+						ex -= STEP_SIZE;
+					}
+				}
+				else if (isMovingRight)
+				{
+					// 更改方向旗標
+					lastDirection = currentDirection;
+					currentDirection = CAnimal::Direction::Right;
+
+					currentMove->OnMove();
+					currentMove = &moveRight;
+					if (m->IsEmpty(bx + width + STEP_SIZE, by) && m->IsEmpty(bx + width + STEP_SIZE, by + height + 33) && !DetectCollision(obj, STEP_SIZE, 0))
+					{
+						x += STEP_SIZE;
+						bx += STEP_SIZE;
+						ex += STEP_SIZE;
+					}
+				}
+				else if (isMovingUp)
+				{
+					// 更改方向旗標
+					lastDirection = currentDirection;
+					currentDirection = CAnimal::Direction::Up;
+
+					currentMove->OnMove();
+					currentMove = &moveUp;
+					if (m->IsEmpty(bx, by - STEP_SIZE) && m->IsEmpty(bx + width, by - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
+					{
+						y -= STEP_SIZE;
+						by -= STEP_SIZE;
+						ey -= STEP_SIZE;
+					}
+				}
+				else if (isMovingDown)
+				{
+					// 更改方向旗標
+					lastDirection = currentDirection;
+					currentDirection = CAnimal::Direction::Down;
+
+					currentMove->OnMove();
+					currentMove = &moveDown;
+					// bx+/-5 寬度設小一點
+					if (m->IsEmpty(bx, by + height + 33 + STEP_SIZE) && m->IsEmpty(bx + width, by + height + 33 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
+					{
+						y += STEP_SIZE;
+						by += STEP_SIZE;
+						ey += STEP_SIZE;
+					}
+				}
+
+				counter++;
 			}
 		}
-		else if (isMovingRight)
-		{
-			// 更改方向旗標
-			lastDirection = currentDirection;
-			currentDirection = CAnimal::Direction::Right;
-
-			currentMove->OnMove();
-			currentMove = &moveRight;
-			if (m->IsEmpty(bx + width + STEP_SIZE, by) && m->IsEmpty(bx + width + STEP_SIZE, by + height + 33) && !DetectCollision(obj, STEP_SIZE, 0))
-			{
-				x += STEP_SIZE;
-				bx += STEP_SIZE;
-				ex += STEP_SIZE;
-			}
-		}
-		else if (isMovingUp)
-		{
-			// 更改方向旗標
-			lastDirection = currentDirection;
-			currentDirection = CAnimal::Direction::Up;
-
-			currentMove->OnMove();
-			currentMove = &moveUp;
-			if (m->IsEmpty(bx, by - STEP_SIZE) && m->IsEmpty(bx + width, by - STEP_SIZE) && !DetectCollision(obj, 0, -STEP_SIZE))
-			{
-				y -= STEP_SIZE;
-				by -= STEP_SIZE;
-				ey -= STEP_SIZE;
-			}
-		}
-		else if (isMovingDown)
-		{
-			// 更改方向旗標
-			lastDirection = currentDirection;
-			currentDirection = CAnimal::Direction::Down;
-
-			currentMove->OnMove();
-			currentMove = &moveDown;
-			// bx+/-5 寬度設小一點
-			if (m->IsEmpty(bx, by + height + 33 + STEP_SIZE) && m->IsEmpty(bx + width, by + height + 33 + STEP_SIZE) && !DetectCollision(obj, 0, STEP_SIZE))
-			{
-				y += STEP_SIZE;
-				by += STEP_SIZE;
-				ey += STEP_SIZE;
-			}
-		}
-
-		counter++;
 
 	}
 

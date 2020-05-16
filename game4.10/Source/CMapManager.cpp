@@ -39,6 +39,11 @@ namespace game_framework {
 	///
 	///
 	///
+	CGameMap* CMapManager::GetChickenCoop()
+	{
+		return maps[2];
+	}
+
 	CGameMap* CMapManager::GetCurrentMap() const
 	{
 		return maps[selector];

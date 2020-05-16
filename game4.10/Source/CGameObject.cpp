@@ -79,9 +79,24 @@ namespace game_framework {
 		return y;
 	}
 
+	void CGameObject::SetBodyX(int bx)
+	{
+		this->bx = bx;
+	}
+
+	void CGameObject::SetBodyY(int by)
+	{
+		this->by = by;
+	}
+
 	int CGameObject::GetBodyX() const
 	{
 		return bx;
+	}
+
+	void CGameObject::SetCollision(bool flag)
+	{
+		collision = flag;
 	}
 
 	int CGameObject::GetBodyY() const
@@ -127,6 +142,9 @@ namespace game_framework {
 
 		for (unsigned int i = 0; i < obj->size(); i++) {
 			if (this == (*obj)[i])
+				continue;
+
+			if (!(*obj)[i]->collision)
 				continue;
 
 			if (x < (*obj)[i]->bx + (*obj)[i]->width &&   //¥ª¸I¼²

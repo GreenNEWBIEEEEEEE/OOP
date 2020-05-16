@@ -1196,5 +1196,122 @@
     <Image Include="RES\ChickenHouse\Indoor\EggBox\ChickenHouse_EggBox02.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\back\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\back\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\back\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\front\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\front\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\front\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\left\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\left\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\left\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\right\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\right\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\eggMove\right\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\back\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\back\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\back\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\front\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\front\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\front\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\left\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\left\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\left\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\right\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\right\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\grassMove\right\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\back\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\back\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\back\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\left\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\left\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\left\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\newmaterial\house\images_bmp\bitmap64.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\right\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\right\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\right\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\front\01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\front\02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\chickenMove\front\03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\AnimalGrass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\Egg.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -14,6 +14,9 @@ namespace game_framework {
 		void SetMovingDown(bool flag);
 		void SetX(int x);
 		void SetY(int y);
+		void SetBodyX(int bx);
+		void SetBodyY(int by);
+		void SetCollision(bool flag);
 		int GetWidth() const;
 		int GetHeight() const;
 		int GetX() const;
@@ -44,6 +47,8 @@ namespace game_framework {
 
 		// 上一次保存的位置(可用於場景的位置還原)
 		int lastX, lastY;
+
+		bool collision = true;
 
 		CAnimal* facingAnimal = nullptr;
 
