@@ -47,6 +47,11 @@ namespace game_framework {
 		}
 	}
 
+	int CGameMap::GetSpecifiedElementID(int gx, int gy)
+	{
+		return map[gy][gx].GetElemID();
+	}
+
 	CWeather* CGameMap::GetWeather()
 	{
 		return weather;

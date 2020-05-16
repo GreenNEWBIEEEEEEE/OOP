@@ -404,12 +404,77 @@ namespace game_framework {
 			Move(m, &aniChickenMoveUp, &aniChickenMoveDown, &aniChickenMoveLeft, &aniChickenMoveRight, obj);
 			TRACE("\nChickenMOve\n");
 		}
+		else if (currentMoveState == EggMove)
+		{
+			Move(m, &aniEggMoveUp, &aniEggMoveDown, &aniEggMoveLeft, &aniEggMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == GrassMove)
+		{
+			Move(m, &aniGrassMoveUp, &aniGrassMoveDown, &aniGrassMoveLeft, &aniGrassMoveRight, obj);
+		}
 		else if (currentMoveState == NormalMove)
 			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
 	}
 
+	bool CPlayer::DetectLeftElementID(CGameMap* m, vector<int> elemID)
+	{
+		int gndW = 64, gndH = 53;
+		int gx = bx / gndW, gy = by / gndH;
+		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
+		for (unsigned int i = 0; i < elemID.size(); i++)
+		{
+			if (m->GetSpecifiedElementID(gx - 1, gy) == elemID[i])
+				return true;
+		}
+		return false;
+	}
+
+	bool CPlayer::DetectRightElementID(CGameMap* m, vector<int> elemID)
+	{
+		int gndW = 64, gndH = 53;
+		int gx = bx / gndW, gy = by / gndH;
+		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
+		for (unsigned int i = 0; i < elemID.size(); i++)
+		{
+			TRACE("\n%d\n", m->GetSpecifiedElementID(gx + 1, gy));
+			if (m->GetSpecifiedElementID(gx + 1 , gy) == elemID[i])
+				return true;
+		}
+		return false;
+	}
+
+	bool CPlayer::DetectUpElementID(CGameMap* m, vector<int> elemID)
+	{
+		int gndW = 64, gndH = 53;
+		int gx = bx / gndW, gy = by / gndH;
+		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
+		for (unsigned int i = 0; i < elemID.size(); i++)
+		{
+			if (m->GetSpecifiedElementID(gx, gy - 1) == elemID[i])
+				return true;
+		}
+		return false;
+	}
+
+	bool CPlayer::DetectDownElementID(CGameMap* m, vector<int> elemID)
+	{
+		int gndW = 64, gndH = 53;
+		int gx = bx / gndW, gy = by / gndH;
+		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
+		for (unsigned int i = 0; i < elemID.size(); i++)
+		{
+			if (m->GetSpecifiedElementID(gx, gy + 1) == elemID[i])
+				return true;
+		}
+		return false;
+	}
+
 	bool CPlayer::DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
 	{
+		int gndW = 64, gndH = 53;
+		int gx = bx / gndW, gy = by / gndH;
+		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		if (!hasAnimal)
 			return m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0);
 		return m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 64) && m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 80) && !DetectCollision(obj, -STEP_SIZE - pickUpAnimal->GetWidth(), 0);
@@ -716,12 +781,18 @@ namespace game_framework {
 				}
 
 			}
-			else if (this->currentMoveState == MoveState::RadishMove)
+			else
 				this->currentMoveState = MoveState::NormalMove;
+			//else if (this->currentMoveState == MoveState::RadishMove)
+				//this->currentMoveState = MoveState::NormalMove;
 
 			if (toolSelector == 0)
 			{
-
+				vector<int> grassBox;
+				grassBox.push_back(-101);
+				grassBox.push_back(-102);
+				grassBox.push_back(-103);
+				grassBox.push_back(-104);
 				// °»´ú¥u¥Î¤â
 				if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
 					(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
@@ -730,14 +801,30 @@ namespace game_framework {
 				{
 					TRACE("\nTRIGGER Animal\n");
 					CAnimal* facingAnimal = GetFacingAnimal();
-					facingAnimal->UnableShowAndMove();
-					facingAnimal->SetCollision(false);
-					this->ChangeMoveState(MoveState::ChickenMove);
-					pickUpAnimal = facingAnimal;
+					if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+					{
+						facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+						this->ChangeMoveState(MoveState::EggMove);
+					}
+					else
+					{
+
+						facingAnimal->UnableShowAndMove();
+						facingAnimal->SetCollision(false);
+						this->ChangeMoveState(MoveState::ChickenMove);
+						pickUpAnimal = facingAnimal;
+					}
 
 				}
+				else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
+					(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
+					(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
+					(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))
+				{
+					this->ChangeMoveState(MoveState::GrassMove);
+					TRACE("\nTRIGGER GRASS MOVE\n");
+				}
 			}
-
 		}
 		else if (key == KEY_B)
 		{

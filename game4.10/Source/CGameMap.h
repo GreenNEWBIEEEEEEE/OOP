@@ -49,6 +49,7 @@ namespace game_framework
 		// 如若gx,gy超過邊界 則回傳nullptr
 		// **取得值後必須檢查是否為nullptr!**
 		CMapInfo * GetMapInfo(int gx, int gy) const;
+		int GetSpecifiedElementID(int gx, int gy);
 
 	private:
 		// 地圖格元素

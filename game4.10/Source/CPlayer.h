@@ -32,10 +32,16 @@ namespace game_framework {
 		void ChangeMoveState(MoveState state);
 		void DecreaseMoney(int money);
 		MoveState GetCurrentMoveState();
-		bool DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
+		bool DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal); // 偵測物件碰撞和地圖碰撞，如果hasAnimal是True，代表人物身上有抱動物
 		bool DetectRightCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 		bool DetectUpCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 		bool DetectDownCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
+
+		bool DetectLeftElementID(CGameMap* m, vector<int> elemID);
+		bool DetectRightElementID(CGameMap* m, vector<int> elemID);
+		bool DetectUpElementID(CGameMap* m, vector<int> elemID);
+		bool DetectDownElementID(CGameMap* m, vector<int> elemID);
+
 		void Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj);
 		///
 		/// 遊戲流程
