@@ -126,6 +126,12 @@ namespace game_framework{
 		case 10008:
 			events.push_back(new CMapShowDialogEvent(10008));
 			break;
+		case 10009:
+			events.push_back(new CMapShowDialogEvent(10009));
+			break;
+		case 10010:
+			events.push_back(new CMapShowDialogEvent(10010));
+			break;
 		case 20001:
 			events.push_back(new CMapTransitionEvent(20001));
 			break;

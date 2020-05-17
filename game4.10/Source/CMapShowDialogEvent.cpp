@@ -77,6 +77,20 @@ namespace game_framework
 			gd->AddMessage(tomorrow);
 			gd->Enable();
 			break;
+		case 10008:
+			gd->AddMessage("This is chicken coop.");
+			gd->Enable();
+			break;
+		case 10009:
+			gd->AddMessage("This is chicken feed store box.");
+			gd->AddMessage("Press A to take chicken	feed.");
+			gd->Enable();
+			break;
+		case 10010:
+			gd->AddMessage("This is chicken feed box.");
+			gd->AddMessage("Press A to put chicken feed.");
+			gd->Enable();
+			break;
 		default:
 			break;
 		}
