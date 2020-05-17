@@ -29,6 +29,77 @@ namespace game_framework
 	}
 
 
+	void CChicken::Produce()
+	{
+		if (timer->IsNewDay())
+		{
+			TRACE("\nTRIGGER EGG\n");
+			bool groove01 = map->GetSpecifiedElementID(2, 4) == -116;
+			bool groove02 = map->GetSpecifiedElementID(3, 4) == -116;
+			bool groove03 = map->GetSpecifiedElementID(4, 4) == -116;
+			bool groove04 = map->GetSpecifiedElementID(5, 4) == -116;
+			if (currentStatus == Status::NoProduce)
+			{
+				if (groove01)
+				{
+					map->SetSpecifiedElementID(2, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(3, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(5, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else
+				{
+					DecreaseHP(-34);
+					currentStatus = Status::Hungry;
+				}
+			}
+			else if (currentStatus == Status::Hungry)
+			{
+				if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 2, -109);
+					IncreaseHP(15);
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 3, -109);
+					IncreaseHP(15);
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 4, -109);
+					IncreaseHP(15);
+				}
+				else if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 5, -109);
+					IncreaseHP(15);
+				}
+				else
+					DecreaseHP(-34);
+
+				if (healthPoint == 100)
+				{
+					currentStatus = Status::Produce;
+				}
+			}
+
+		}
+	}
+
 	void CChicken::OnShow(CGameMap* m)
 	{
 		if (map == m)
@@ -75,6 +146,7 @@ namespace game_framework
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
+		Produce();
 		if (map == m)
 		{
 			if (!isPickedUp)

@@ -10,10 +10,11 @@ namespace game_framework
 		CChicken::CChicken(int positionX, int positionY);
 		~CChicken();
 		void LoadBitmap();
+		void Produce();
 		void OnMove(CGameMap* m, vector<CGameObject*>* obj);
 		void OnShow(CGameMap* m);
 	private:
-
+		
 	};
 
 }

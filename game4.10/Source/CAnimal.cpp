@@ -58,32 +58,6 @@ namespace game_framework
 		isPickedUp = flag;
 	}
 
-	void CAnimal::OnMove(CGameMap* m, vector<CGameObject*>* obj){
-		if (timer->IsNewDay())
-		{
-
-			if (currentStatus == Status::NoProduce)     
-			{
-				//if(地圖有草堆)
-				currentStatus = Status::Produce;
-				//else if(地圖沒草堆)
-				//HP -= 34;
-				//currentStatus = Status::Hungry;
-			}
-			else if (currentStatus == Status::Hungry)  
-			{
-				//if(地圖有草堆)
-				//HP += 15;                        // 這邊的+= -=都要改用function，因為有邊界判斷
-				//else if (地圖沒草堆)
-				//HP -= 34;
-				if (healthPoint == 100)
-				{
-					currentStatus = Status::Produce;
-				}
-			}
-
-		}
-	}
 
 	void CAnimal::ChangeStatus(Status status)
 	{

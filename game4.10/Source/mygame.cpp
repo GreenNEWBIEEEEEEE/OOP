@@ -261,7 +261,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//
 	c1->SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
-
+	c1->SetTimer(&timer);
 
 	// 記得Push
 	obj.push_back(&p1);
