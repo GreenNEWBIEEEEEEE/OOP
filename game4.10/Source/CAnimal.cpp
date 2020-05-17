@@ -20,6 +20,14 @@ namespace game_framework
 	{
 	}
 
+	void CAnimal::Reset()
+	{
+		x = bx = resetX;
+		y = by = resetY;
+		EnableShowAndMove();
+		SetCollision(true);
+	}
+
 	void CAnimal::UnableShowAndMove()
 	{
 		onShowAndMove = false;
@@ -38,6 +46,16 @@ namespace game_framework
 	void CAnimal::SetTimer(CTimer* timer)
 	{
 		this->timer = timer;
+	}
+
+	CGameMap* CAnimal::GetMap()
+	{
+		return map;
+	}
+
+	void CAnimal::SetPickUp(bool flag)
+	{
+		isPickedUp = flag;
 	}
 
 	void CAnimal::OnMove(CGameMap* m, vector<CGameObject*>* obj){

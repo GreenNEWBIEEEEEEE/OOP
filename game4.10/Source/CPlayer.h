@@ -37,11 +37,12 @@ namespace game_framework {
 		bool DetectUpCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 		bool DetectDownCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 
-		bool DetectLeftElementID(CGameMap* m, vector<int> elemID);
-		bool DetectRightElementID(CGameMap* m, vector<int> elemID);
-		bool DetectUpElementID(CGameMap* m, vector<int> elemID);
-		bool DetectDownElementID(CGameMap* m, vector<int> elemID);
+		bool DetectLeftElementID(CGameMap* m, vector<int> elemID, int distance = 1); 
+		bool DetectRightElementID(CGameMap* m, vector<int> elemID, int distance = 1);
+		bool DetectUpElementID(CGameMap* m, vector<int> elemID, int distance = 1);
+		bool DetectDownElementID(CGameMap* m, vector<int> elemID, int distance = 1);
 
+		CAnimal* GetPickUpAnimal();
 		void Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj);
 		///
 		/// ¹CÀ¸¬yµ{

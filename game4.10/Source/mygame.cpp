@@ -200,6 +200,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 
 CGameStateRun::~CGameStateRun()
 {
+	delete c1;
 }
 
 void CGameStateRun::OnBeginState()
@@ -220,7 +221,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap(), &obj);
-	c1.OnMove(mapManager.GetCurrentMap(), &obj);
+	c1->OnMove(mapManager.GetCurrentMap(), &obj);
 
 }
 
@@ -245,8 +246,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	// 繼續載入其他資料
 	//
+	c1 = new CChicken(200, 400);
 	p1.LoadBitmap();
-	c1.LoadBitmap();
+	c1->LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
 	mapManager.SetTimer(&timer);
@@ -258,12 +260,12 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	//
 	//
-	c1.SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
+	c1->SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
 
 
 	// 記得Push
 	obj.push_back(&p1);
-	obj.push_back(&c1);
+	obj.push_back(c1);
 
 
 	//
@@ -386,7 +388,7 @@ void CGameStateRun::OnShow()
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
 	mapManager.OnShow();
-	c1.OnShow(mapManager.GetCurrentMap());
+	c1->OnShow(mapManager.GetCurrentMap());
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();

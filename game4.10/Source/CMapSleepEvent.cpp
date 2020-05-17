@@ -6,6 +6,7 @@
 #include "CMapSleepEvent.h"
 #include "CGameDialog.h"
 #include "CMapManager.h"
+#include "CAnimal.h"
 #include "CPlayer.h"
 
 
@@ -39,6 +40,7 @@ namespace game_framework
 
 	void CMapSleepEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
 	{
+		CAnimal* pickUpAnimal = p->GetPickUpAnimal();
 		switch (eventCode)
 		{
 		case 30000:
@@ -51,6 +53,16 @@ namespace game_framework
 			gd->SetCallback(&ChangeToNewDay, mm->GetTimer(), mm->GetOutsideWeather());
 			gd->AddMessage("Now it's 12:00 a.m.");
 			gd->AddMessage("We have to force you to go home.");
+			if (p->GetCurrentMoveState() != CPlayer::MoveState::NormalMove)
+			{
+				if (pickUpAnimal != nullptr)
+				{
+					pickUpAnimal->SetPickUp(false);
+					pickUpAnimal->Reset();
+					pickUpAnimal = nullptr;
+				}
+				p->ChangeMoveState(CPlayer::MoveState::NormalMove);
+			}
 			gd->Enable();
 			break;
 		default:

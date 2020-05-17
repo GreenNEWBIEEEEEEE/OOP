@@ -106,7 +106,7 @@ namespace game_framework {
 		// 
 		CTimer timer;
 		CPlayer p1; // ª±®a1
-		CChicken c1;
+		CChicken* c1 = nullptr;
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;

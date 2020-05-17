@@ -47,7 +47,12 @@ namespace game_framework {
 		}
 	}
 
-	int CGameMap::GetSpecifiedElementID(int gx, int gy)
+	void CGameMap::SetSpecifiedElementID(int gx, int gy, int elemID)
+	{
+		map[gy][gx].SetElemID(elemID);
+	}
+
+	int CGameMap::GetSpecifiedElementID(int gx, int gy) // ®æ®y¼Ð
 	{
 		return map[gy][gx].GetElemID();
 	}

@@ -10,10 +10,11 @@
 #include "CPlayer.h"
 namespace game_framework
 {
-	CChicken::CChicken()
+	CChicken::CChicken(int positionX, int positionY)
 	{
 		width = 64; height = 20;  // height不用53 是為了讓他更符合碰撞box
-		x = lastX = 200; y = lastY = 400;
+		x = lastX = resetX = positionX;
+		y = lastY = resetY = positionY;
 		bx = x; by = y;
 		currentDirection = CAnimal::Direction::Down;
 		currentStatus = CAnimal::Status::Produce;
@@ -70,11 +71,17 @@ namespace game_framework
 			moveDown.AddBitmap(IDB_Chicken_front02, RGB(255, 255, 255));
 		}
 	}
+	
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
 		if (map == m)
 		{
+			if (!isPickedUp)
+			{
+				onShowAndMove = true;
+				collision = true;
+			}
 
 			if (onShowAndMove)
 			{
@@ -160,6 +167,11 @@ namespace game_framework
 
 				counter++;
 			}
+		}
+		else
+		{
+			onShowAndMove = false;
+			collision = false;
 		}
 
 	}

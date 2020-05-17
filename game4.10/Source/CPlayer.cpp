@@ -417,54 +417,54 @@ namespace game_framework {
 			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
 	}
 
-	bool CPlayer::DetectLeftElementID(CGameMap* m, vector<int> elemID)
+	bool CPlayer::DetectLeftElementID(CGameMap* m, vector<int> elemID, int distance)
 	{
 		int gndW = 64, gndH = 53;
-		int gx = bx / gndW, gy = by / gndH;
+		int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
 		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		for (unsigned int i = 0; i < elemID.size(); i++)
 		{
-			if (m->GetSpecifiedElementID(gx - 1, gy) == elemID[i])
+			if (m->GetSpecifiedElementID(gx - distance, gy) == elemID[i])
 				return true;
 		}
 		return false;
 	}
 
-	bool CPlayer::DetectRightElementID(CGameMap* m, vector<int> elemID)
+	bool CPlayer::DetectRightElementID(CGameMap* m, vector<int> elemID, int distance)
 	{
 		int gndW = 64, gndH = 53;
-		int gx = bx / gndW, gy = by / gndH;
+		int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
 		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		for (unsigned int i = 0; i < elemID.size(); i++)
 		{
 			TRACE("\n%d\n", m->GetSpecifiedElementID(gx + 1, gy));
-			if (m->GetSpecifiedElementID(gx + 1 , gy) == elemID[i])
+			if (m->GetSpecifiedElementID(gx + distance , gy) == elemID[i])
 				return true;
 		}
 		return false;
 	}
 
-	bool CPlayer::DetectUpElementID(CGameMap* m, vector<int> elemID)
+	bool CPlayer::DetectUpElementID(CGameMap* m, vector<int> elemID, int distance)
 	{
 		int gndW = 64, gndH = 53;
-		int gx = bx / gndW, gy = by / gndH;
+		int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
 		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		for (unsigned int i = 0; i < elemID.size(); i++)
 		{
-			if (m->GetSpecifiedElementID(gx, gy - 1) == elemID[i])
+			if (m->GetSpecifiedElementID(gx, gy - distance) == elemID[i])
 				return true;
 		}
 		return false;
 	}
 
-	bool CPlayer::DetectDownElementID(CGameMap* m, vector<int> elemID)
+	bool CPlayer::DetectDownElementID(CGameMap* m, vector<int> elemID, int distance)
 	{
 		int gndW = 64, gndH = 53;
-		int gx = bx / gndW, gy = by / gndH;
+		int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
 		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		for (unsigned int i = 0; i < elemID.size(); i++)
 		{
-			if (m->GetSpecifiedElementID(gx, gy + 1) == elemID[i])
+			if (m->GetSpecifiedElementID(gx, gy + distance) == elemID[i])
 				return true;
 		}
 		return false;
@@ -472,9 +472,6 @@ namespace game_framework {
 
 	bool CPlayer::DetectLeftCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal = false)
 	{
-		int gndW = 64, gndH = 53;
-		int gx = bx / gndW, gy = by / gndH;
-		TRACE("\n gx = %d   gy = %d  \n", gx, gy);
 		if (!hasAnimal)
 			return m->IsEmpty(bx - STEP_SIZE, by + 64) && m->IsEmpty(bx - STEP_SIZE, by + 80) && !DetectCollision(obj, -STEP_SIZE, 0);
 		return m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 64) && m->IsEmpty(bx - STEP_SIZE - pickUpAnimal->GetWidth(), by + 80) && !DetectCollision(obj, -STEP_SIZE - pickUpAnimal->GetWidth(), 0);
@@ -781,6 +778,25 @@ namespace game_framework {
 				}
 
 			}
+			else if (this->currentMoveState == MoveState::GrassMove) //如果現在人物拿著飼料在走，而且附近有飼料槽
+			{
+				if (m == mm->GetChickenCoop())
+				{
+					vector<int> groove;    // 飼料槽
+					groove.push_back(-109);
+					if (((facingDirection == &aniGrassMoveUp && DetectUpElementID(m, groove)) ||
+						(facingDirection == &aniGrassMoveDown && DetectDownElementID(m, groove)) ||
+							(facingDirection == &aniGrassMoveLeft && DetectLeftElementID(m, groove)) ||
+							(facingDirection == &aniGrassMoveRight && DetectRightElementID(m, groove)))) // 偵測人物面向是否有飼料槽
+					{
+						int gndW = 64, gndH = 53;
+						int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
+						m->SetSpecifiedElementID(gx, gy - 1, -116);  // 目前只坐上半部的
+						TRACE("\nSET ELEMENT\n");
+					}
+				}
+				this->currentMoveState = MoveState::NormalMove;
+			}
 			else
 				this->currentMoveState = MoveState::NormalMove;
 			//else if (this->currentMoveState == MoveState::RadishMove)
@@ -788,41 +804,59 @@ namespace game_framework {
 
 			if (toolSelector == 0)
 			{
-				vector<int> grassBox;
-				grassBox.push_back(-101);
-				grassBox.push_back(-102);
-				grassBox.push_back(-103);
-				grassBox.push_back(-104);
-				// 偵測只用手
-				if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
-					(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
-					(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
-					(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) )
+				if (m == mm->GetChickenCoop())
 				{
-					TRACE("\nTRIGGER Animal\n");
-					CAnimal* facingAnimal = GetFacingAnimal();
-					if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+					vector<int> grassBox;  // 拿飼料的箱子
+					grassBox.push_back(-101);
+					grassBox.push_back(-102);
+					grassBox.push_back(-103);
+					grassBox.push_back(-104);
+					
+					// 偵測只用手
+					if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
+						(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
+						(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
+						(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) ) // 偵測人物面向的最近動物
 					{
-						facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
-						this->ChangeMoveState(MoveState::EggMove);
+						TRACE("\nTRIGGER Animal\n");
+						CAnimal* facingAnimal = GetFacingAnimal();
+						if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+						{
+							facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+							this->ChangeMoveState(MoveState::EggMove);
+						}
+						else
+						{
+
+							facingAnimal->UnableShowAndMove();
+							facingAnimal->SetCollision(false);
+							facingAnimal->SetPickUp(true);
+							this->ChangeMoveState(MoveState::ChickenMove);
+							pickUpAnimal = facingAnimal;
+						}
+
 					}
-					else
+					else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
+						(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
+						(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
+						(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))  // 偵測人物面向是否有飼料箱
 					{
-
-						facingAnimal->UnableShowAndMove();
-						facingAnimal->SetCollision(false);
-						this->ChangeMoveState(MoveState::ChickenMove);
-						pickUpAnimal = facingAnimal;
+						this->ChangeMoveState(MoveState::GrassMove);
+						TRACE("\nTRIGGER GRASS MOVE\n");
 					}
-
-				}
-				else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
-					(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
-					(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
-					(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))
-				{
-					this->ChangeMoveState(MoveState::GrassMove);
-					TRACE("\nTRIGGER GRASS MOVE\n");
+					/*
+					else if (this->currentMoveState == MoveState::GrassMove &&  //如果現在人物拿著飼料在走，而且附近有飼料槽
+						((facingDirection == &aniMoveUp && DetectUpElementID(m, groove, 2)) ||
+						(facingDirection == &aniMoveDown && DetectDownElementID(m, groove, 2)) ||
+						(facingDirection == &aniMoveLeft && DetectLeftElementID(m, groove, 2)) ||
+						(facingDirection == &aniMoveRight && DetectRightElementID(m, groove, 2)))) // 偵測人物面向是否有飼料槽
+					{
+						int gndW = 64, gndH = 53;
+						int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
+						m->SetSpecifiedElementID(gx, gy - 2 , -116);
+						TRACE("\nSET ELEMENT\n");
+					}
+					*/
 				}
 			}
 		}
@@ -840,6 +874,11 @@ namespace game_framework {
 	CPlayer::MoveState CPlayer::GetCurrentMoveState()
 	{
 		return currentMoveState;
+	}
+
+	CAnimal* CPlayer::GetPickUpAnimal()
+	{
+		return pickUpAnimal;
 	}
 
 	void CPlayer::OnKeyUp(UINT key, CMapManager * mm, CGameDialog * gd)

@@ -147,6 +147,7 @@ namespace game_framework {
 			if (!(*obj)[i]->collision)
 				continue;
 
+
 			if (x < (*obj)[i]->bx + (*obj)[i]->width &&   //¥ª¸I¼²
 				x + this->width >(*obj)[i]->bx &&         //¥k¸I¼²
 				y < (*obj)[i]->by + (*obj)[i]->height &&  //¤W¸I¼²
