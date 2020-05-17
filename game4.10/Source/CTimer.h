@@ -52,7 +52,7 @@ namespace game_framework {
 	private:
 		CTimer::Brightness state = CTimer::Brightness::Morning;
 		CTimer::Season currentSeason = CTimer::Season::Spring;
-		const int HOUR_COUNTER_MAX = 200; // onMove執行2000次等於一小時
+		const int HOUR_COUNTER_MAX = 500; // onMove執行2000次等於一小時
 		int hourCounter = 0;
 		int TIME_SPEED = 1;
 		CMovingBitmap dusk;

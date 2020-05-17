@@ -67,9 +67,9 @@ namespace game_framework
 
 		if (currentSeason == CTimer::Season::Spring)
 		{
-			nextSunny = rnd < 95;             // 95%
-			nextRainy = rnd >= 95;			  // 5%
-			nextTyphoon = false;
+			nextSunny = rnd < 50;             // 95%
+			nextRainy = rnd >= 50 && rnd < 90 ;			  // 5%
+			nextTyphoon = rnd >= 90;
 		}
 		else if (currentSeason == CTimer::Season::Summer)
 		{
