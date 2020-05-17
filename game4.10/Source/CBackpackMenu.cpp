@@ -67,7 +67,7 @@ namespace game_framework {
 	void CBackpackMenu::OnKeyDown(UINT key, CPlayer* player)
 	{
 		int COL = 4;
-		int ROW = 3;
+		int ROW = 2;  // 原版為3
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
@@ -75,6 +75,7 @@ namespace game_framework {
 		const char KEY_D = 0x44; // keyboard D
 		const char KEY_A = 0x41;
 
+		/*  原版
 		if (key == KEY_LEFT)
 		{
 			if (selectCol - 1 >= 0)
@@ -87,6 +88,33 @@ namespace game_framework {
 		}
 		else if (key == KEY_DOWN)
 		{
+			if (selectRow + 1 < ROW)
+				selectRow += 1;
+		}
+		else if (key == KEY_UP)
+		{
+			if (selectRow - 1 >= 0)
+				selectRow -= 1;
+		}
+		*/
+		if (key == KEY_LEFT)
+		{
+			if (selectCol - 1 >= 0)
+				selectCol -= 1;
+		}
+		else if (key == KEY_RIGHT)
+		{
+			if (selectRow == 1 && selectCol == 2)
+				return;
+
+			if (selectCol + 1 < COL)
+				selectCol += 1;
+		}
+		else if (key == KEY_DOWN)
+		{
+			if (selectRow == 0 && selectCol == 3)
+				return;
+
 			if (selectRow + 1 < ROW)
 				selectRow += 1;
 		}
