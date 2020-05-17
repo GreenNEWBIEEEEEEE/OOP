@@ -45,17 +45,17 @@ namespace game_framework
 					map->SetSpecifiedElementID(2, 4, -109);
 					currentStatus = Status::Produce;
 				}
-				else if (groove01)
+				else if (groove02)
 				{
 					map->SetSpecifiedElementID(3, 4, -109);
 					currentStatus = Status::Produce;
 				}
-				else if (groove01)
+				else if (groove03)
 				{
 					map->SetSpecifiedElementID(4, 4, -109);
 					currentStatus = Status::Produce;
 				}
-				else if (groove01)
+				else if (groove04)
 				{
 					map->SetSpecifiedElementID(5, 4, -109);
 					currentStatus = Status::Produce;
@@ -73,17 +73,17 @@ namespace game_framework
 					map->SetSpecifiedElementID(4, 2, -109);
 					IncreaseHP(15);
 				}
-				else if (groove01)
+				else if (groove02)
 				{
 					map->SetSpecifiedElementID(4, 3, -109);
 					IncreaseHP(15);
 				}
-				else if (groove01)
+				else if (groove03)
 				{
 					map->SetSpecifiedElementID(4, 4, -109);
 					IncreaseHP(15);
 				}
-				else if (groove01)
+				else if (groove04)
 				{
 					map->SetSpecifiedElementID(4, 5, -109);
 					IncreaseHP(15);
