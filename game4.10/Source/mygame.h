@@ -108,6 +108,8 @@ namespace game_framework {
 		CPlayer p1; // ª±®a1
 		CChicken* c1 = nullptr;
 		CChicken* c2 = nullptr;
+		CChicken* c3 = nullptr;
+		CChicken* c4 = nullptr;
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;

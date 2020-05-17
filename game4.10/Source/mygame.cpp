@@ -202,6 +202,8 @@ CGameStateRun::~CGameStateRun()
 {
 	delete c1;
 	delete c2;
+	delete c3;
+	delete c4;
 }
 
 void CGameStateRun::OnBeginState()
@@ -224,6 +226,8 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	p1.OnMove(mapManager.GetCurrentMap(), &obj);
 	c1->OnMove(mapManager.GetCurrentMap(), &obj);
 	c2->OnMove(mapManager.GetCurrentMap(), &obj);
+	c3->OnMove(mapManager.GetCurrentMap(), &obj);
+	c4->OnMove(mapManager.GetCurrentMap(), &obj);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -249,9 +253,13 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	c1 = new CChicken(200, 400);
 	c2 = new CChicken(200, 600);
+	c3 = new CChicken(300, 600);
+	c4 = new CChicken(350, 500);
 	p1.LoadBitmap();
 	c1->LoadBitmap();
 	c2->LoadBitmap();
+	c3->LoadBitmap();
+	c4->LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
 	mapManager.SetTimer(&timer);
@@ -267,11 +275,17 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	c1->SetTimer(&timer);
 	c2->SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
 	c2->SetTimer(&timer);
+	c3->SetMap(mapManager.GetChickenCoop());
+	c3->SetTimer(&timer);
+	c4->SetMap(mapManager.GetChickenCoop());
+	c4->SetTimer(&timer);
 
 	// 記得Push
 	obj.push_back(&p1);
 	obj.push_back(c1);
 	obj.push_back(c2);
+	obj.push_back(c3);
+	obj.push_back(c4);
 
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
@@ -395,6 +409,8 @@ void CGameStateRun::OnShow()
 	mapManager.OnShow();
 	c1->OnShow(mapManager.GetCurrentMap());
 	c2->OnShow(mapManager.GetCurrentMap());
+	c3->OnShow(mapManager.GetCurrentMap());
+	c4->OnShow(mapManager.GetCurrentMap());
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();
