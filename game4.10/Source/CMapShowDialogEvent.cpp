@@ -83,7 +83,7 @@ namespace game_framework
 			break;
 		case 10009:
 			gd->AddMessage("This is chicken feed store box.");
-			gd->AddMessage("Press A to take chicken	feed.");
+			gd->AddMessage("Press A to take chicken feed.");
 			gd->Enable();
 			break;
 		case 10010:
