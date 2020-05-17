@@ -736,6 +736,7 @@ namespace game_framework {
 						pickUpAnimal->SetBodyX(bx);
 						pickUpAnimal->SetBodyY(by - pickUpAnimal->GetHeight());
 						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->SetPickUp(false);
 						pickUpAnimal->EnableShowAndMove();
 						pickUpAnimal = nullptr;
 					}
@@ -748,6 +749,7 @@ namespace game_framework {
 						pickUpAnimal->SetBodyX(bx);
 						pickUpAnimal->SetBodyY(by + height);
 						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->SetPickUp(false);
 						pickUpAnimal->EnableShowAndMove();
 						pickUpAnimal = nullptr;
 					}
@@ -760,6 +762,7 @@ namespace game_framework {
 						pickUpAnimal->SetBodyX(bx - pickUpAnimal->GetWidth());
 						pickUpAnimal->SetBodyY(by);
 						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->SetPickUp(false);
 						pickUpAnimal->EnableShowAndMove();
 						pickUpAnimal = nullptr;
 					}
@@ -772,6 +775,7 @@ namespace game_framework {
 						pickUpAnimal->SetBodyX(bx + width);
 						pickUpAnimal->SetBodyY(by);
 						pickUpAnimal->SetCollision(true);
+						pickUpAnimal->SetPickUp(false);
 						pickUpAnimal->EnableShowAndMove();
 						pickUpAnimal = nullptr;
 					}
