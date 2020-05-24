@@ -26,7 +26,13 @@ namespace game_framework
 		bool IsEmpty(int x, int y) const;
 
 		// 觸發事件
-		void triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
+		void triggerMapEvents(
+			UINT key, 
+			CPlayer *p, 
+			CMapManager *mm, 
+			CGameDialog *gd, 
+			vector<CShopMenu*> sms
+		);
 		
 		// 取得與設定CGameMap在screen的(left, top)點座標
 		int GetSX() const;

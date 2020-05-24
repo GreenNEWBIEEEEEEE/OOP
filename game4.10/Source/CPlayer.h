@@ -50,7 +50,12 @@ namespace game_framework {
 		void LoadBitmap();
 		void OnMove(CGameMap* m, vector<CGameObject*>* obj);
 		void OnShow(CGameMap* m);
-		void OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CGameMap* m, vector<CGameObject*>* obj);
+		void OnKeyDown(UINT key, 
+			CMapManager *mm, 
+			CGameDialog *gd, 
+			vector<CShopMenu*> sms, 
+			CGameMap* m, 
+			vector<CGameObject*>* obj);
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
 
 	private:

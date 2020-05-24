@@ -784,7 +784,11 @@ IDB_AnimalShop19        BITMAP                  "..\\RES\\Shops\\AnimalShop\\Sho
 
 IDB_AnimalShop20        BITMAP                  "..\\RES\\Shops\\AnimalShop\\ShopHouse_Morning\\AnimalShop20.bmp"
 
-IDB_AnimalShop_ShowDialogBackground BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\AnimalShop\\ShopDialogBackground.bmp"
+IDB_AnimalShopBg        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\AnimalShop\\ShopDialogBackground.bmp"
+
+IDB_Good_Chicken        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\AnimalShop\\Goods\\Good_Chicken.bmp"
+
+IDB_Good_Cow            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\AnimalShop\\Goods\\Good_Cow.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -5,6 +5,6 @@ namespace game_framework {
 	public:
 		CMapTransitionEvent(int eventCode);
 		~CMapTransitionEvent() {};
-		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
+		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms);
 	};
 }

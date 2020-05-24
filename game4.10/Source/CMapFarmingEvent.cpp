@@ -17,7 +17,7 @@ namespace game_framework
 
 	CMapFarmingEvent::~CMapFarmingEvent() {}
 
-	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		// 看player手上拿的工具來決定要幹嘛
 		switch (p->GetCurrentTool())

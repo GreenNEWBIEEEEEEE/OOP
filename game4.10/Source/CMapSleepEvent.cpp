@@ -38,7 +38,7 @@ namespace game_framework
 		p->SetY(7 * 53);
 	}
 
-	void CMapSleepEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CMapSleepEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CAnimal* pickUpAnimal = p->GetPickUpAnimal();
 		switch (eventCode)

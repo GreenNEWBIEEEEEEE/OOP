@@ -99,8 +99,13 @@ namespace game_framework{
 		case 5:
 			events.push_back(new CMapFarmingEvent());
 			break;
+			// Plant Shop
 		case 6:
 			events.push_back(new CMapShopEvent(6));
+			break;
+			// Animal Shop
+		case 7:
+			events.push_back(new CMapShopEvent(7));
 			break;
 		case 10001:
 			events.push_back(new CMapShowDialogEvent(10001));
@@ -175,7 +180,12 @@ namespace game_framework{
 		return events.size() > 0;
 	}
 
-	void CMapInfo::triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd, CShopMenu *sm)
+	void CMapInfo::triggerEventByKeyCode(
+		UINT keyCode, 
+		CPlayer *p, 
+		CMapManager * mm, 
+		CGameDialog *gd, 
+		vector<CShopMenu*> sms)
 	{
 		for (unsigned i = 0; i < events.size(); ++i)
 		{	
@@ -183,7 +193,7 @@ namespace game_framework{
 
 			if (events[i]->getKeyCode() == keyCode) {
 				TRACE("\nAn event triggered.\n");
-				events[i]->Execute(p, mm, gd, sm);
+				events[i]->Execute(p, mm, gd, sms);
 
 				///
 				/// FOR DEBUGGING

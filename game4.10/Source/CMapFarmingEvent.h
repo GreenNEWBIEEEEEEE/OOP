@@ -10,7 +10,12 @@ namespace game_framework
 		CMapFarmingEvent();
 		~CMapFarmingEvent();
 
-		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
+		void Execute(
+			CPlayer *p, 
+			CMapManager *mm, 
+			CGameDialog *gd, 
+			vector<CShopMenu*> sms
+		);
 
 		int getEventID() const;
 

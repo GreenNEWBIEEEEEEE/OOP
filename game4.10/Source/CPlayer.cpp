@@ -597,7 +597,13 @@ namespace game_framework {
 	}
 
 
-	void CPlayer::OnKeyDown(UINT key, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CGameMap* m, vector<CGameObject*>* obj)
+	void CPlayer::OnKeyDown(
+		UINT key, 
+		CMapManager *mm, 
+		CGameDialog *gd, 
+		vector<CShopMenu*> sms,
+		CGameMap* m, 
+		vector<CGameObject*>* obj)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
@@ -721,7 +727,7 @@ namespace game_framework {
 			// 傳入農務事件觸發
 			// 
 			if (this->currentMoveState == MoveState::NormalMove)
-				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sm);
+				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sms);
 			else if (this->currentMoveState == MoveState::ChickenMove)
 			{
 				if (m == mm->GetChickenCoop())// 如果現在的地圖是雞舍，才能放下小雞
@@ -871,7 +877,7 @@ namespace game_framework {
 		else
 		{
 			// 傳入其他事件觸發
-			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sm);
+			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sms);
 		}
 	}
 

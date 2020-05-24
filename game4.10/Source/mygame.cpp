@@ -190,7 +190,8 @@ void CGameStateOver::OnShow()
 
 CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g),
-	plantShopMenu(&gameDialog, &timer)
+	plantShopMenu(&p1, &gameDialog, &timer),
+	animalShopMenu(&p1, &gameDialog, &timer)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
@@ -220,10 +221,11 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 
 	CShopMenu *sm = &plantShopMenu;
-	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sm, &backpackMenu);
+	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sms, &backpackMenu);
 	mapManager.OnMove();
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
+	animalShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap(), &obj);
 	c1->OnMove(mapManager.GetCurrentMap(), &obj);
 	c2->OnMove(mapManager.GetCurrentMap(), &obj);
@@ -268,6 +270,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	backpackMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
 	plantShopMenu.LoadBitmap();
+	animalShopMenu.LoadBitmap();
 	mapManager.LoadBitmapAll();
 	//
 	//
@@ -287,6 +290,12 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	obj.push_back(c2);
 	obj.push_back(c3);
 	obj.push_back(c4);
+
+
+	// push所有商店至商店陣列
+	sms.push_back(&plantShopMenu);
+	sms.push_back(&animalShopMenu);
+
 
 	//
 	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
@@ -309,10 +318,13 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		plantShopMenu.OnKeyDown(nChar);
 	}
+	else if (animalShopMenu.IsEnable())
+	{
+		animalShopMenu.OnKeyDown(nChar);
+	}
 	else
 	{
-		CShopMenu *sm = &plantShopMenu;
-		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sm, mapManager.GetCurrentMap(), &obj);
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sms, mapManager.GetCurrentMap(), &obj);
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
@@ -417,6 +429,7 @@ void CGameStateRun::OnShow()
 	mapManager.OnShow_Timer();
 	backpackMenu.OnShow();
 	plantShopMenu.OnShow();
+	animalShopMenu.OnShow();
 	gameDialog.OnShow();
 	
 }

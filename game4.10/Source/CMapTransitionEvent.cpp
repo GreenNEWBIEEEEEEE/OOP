@@ -19,7 +19,7 @@ namespace game_framework {
 		
 	}
 
-	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CMapTransitionEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CWeather* weather = mm->GetOutsideWeather();
 		string today = weather->ForecastWeather();

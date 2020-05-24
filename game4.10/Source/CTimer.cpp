@@ -20,21 +20,21 @@ namespace game_framework {
 	CTimer::CTimer(){}
 	CTimer::~CTimer(){}
 
-	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm, CBackpackMenu *bpm)
+	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms, CBackpackMenu *bpm)
 	{
 		CountTime();
 		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)
 		{
 			// 先把目前的所有dialog 商店都disable
 			gd->Disable();
-			((CPlantShopMenu*)sm)->Disable();
+			((CPlantShopMenu*)sms.at(0))->Disable();
 			bpm->Disable();
 			
 
 			SetTimerSpeed(0);
 			hour = 23;
 			hourCounter = HOUR_COUNTER_MAX - 5;
-			ForceToRepatriate(weather, timer, p, mm, gd, sm);
+			ForceToRepatriate(weather, timer, p, mm, gd, sms);
 		}
 	}
 
@@ -48,10 +48,10 @@ namespace game_framework {
 		}
 	}
 
-	void CTimer::ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CTimer::ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CMapSleepEvent* toHome = new CMapSleepEvent(30001);
-		toHome->Execute(p, mm, gd, sm);
+		toHome->Execute(p, mm, gd, sms);
 		delete toHome;
 	}
 

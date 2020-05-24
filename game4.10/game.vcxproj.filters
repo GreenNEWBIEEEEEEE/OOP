@@ -187,6 +187,9 @@
     <ClCompile Include="Source\CGameObject.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CAnimalShopMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -295,6 +298,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameObject.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CAnimalShopMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1374,6 +1380,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Shops\AnimalShop\ShopDialogBackground.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\Goods\Good_Chicken.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\Goods\Good_Cow.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -21,7 +21,12 @@ namespace game_framework{
 		CMapEvent(int eventCode, UINT keyCode);
 		virtual ~CMapEvent() {};
 		
-		virtual void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm) = 0;
+		virtual void Execute(
+			CPlayer *p, 
+			CMapManager *mm, 
+			CGameDialog *gd, 
+			vector<CShopMenu*> sms
+		) = 0;
 		int getEventID() const;
 		UINT getKeyCode() const;
 

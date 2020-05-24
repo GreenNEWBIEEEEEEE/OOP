@@ -8,7 +8,7 @@ namespace game_framework
 	{
 	public:
 		CMapSleepEvent(int eventCode);
-		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm);
+		void Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms);
 	private:
 	};
 }

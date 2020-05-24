@@ -47,6 +47,7 @@
 #include "CBackpackMenu.h"
 #include "CWeather.h"
 #include "CPlantShopMenu.h"
+#include "CAnimalShopMenu.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -114,6 +115,8 @@ namespace game_framework {
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;
 		CPlantShopMenu plantShopMenu;
+		CAnimalShopMenu animalShopMenu;
+		vector<CShopMenu*> sms;
 		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人
 	};
 

@@ -257,6 +257,7 @@
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\CAnimal.cpp" />
+    <ClCompile Include="Source\CAnimalShopMenu.cpp" />
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CChicken.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
@@ -327,6 +328,7 @@
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\CAnimal.h" />
+    <ClInclude Include="Source\CAnimalShopMenu.h" />
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CChicken.h" />
     <ClInclude Include="Source\CGameDialog.h" />
@@ -686,6 +688,8 @@
     <Image Include="RES\recs1.bmp" />
     <Image Include="RES\ShopMenus\PlantShopSelector.bmp" />
     <Image Include="RES\ShopMenus\ShopMenuBlackBG.bmp" />
+    <Image Include="RES\Shops\AnimalShop\Goods\Good_Chicken.bmp" />
+    <Image Include="RES\Shops\AnimalShop\Goods\Good_Cow.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopDialogBackground.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop01.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop02.bmp" />

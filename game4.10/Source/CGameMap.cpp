@@ -1075,11 +1075,17 @@ namespace game_framework {
 	// key
 	// x, y : 傳入player的位置
 	// 地圖管理器
-	void CGameMap::triggerMapEvents(UINT key, CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CGameMap::triggerMapEvents(
+		UINT key, 
+		CPlayer *p, 
+		CMapManager *mm, 
+		CGameDialog *gd, 
+		vector<CShopMenu*> sms
+	)
 	{
 		int px = p->GetBodyX() + 30, py = p->GetBodyY() + 60; // MAYBE FIXME
 		int gx = px / gndW, gy = py / gndH; // 求出格座標
-		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd, sm);
+		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd, sms);
 	}
 	
 

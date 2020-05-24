@@ -3,12 +3,6 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
-#include "CPlayer.h"
-#include "CGameMap.h"
-#include "CMapInfo.h"
-#include "CMapTransitionEvent.h"
-#include "CMapFarmingEvent.h"
-#include "CMapShowDialogEvent.h"
 #include "CMapManager.h"
 #include "CMapShopEvent.h"
 #include "CPlantShopMenu.h"
@@ -16,43 +10,26 @@
 
 namespace game_framework
 {
-	CPlantShopMenu::CPlantShopMenu()
-	{
-	}
 
-	CPlantShopMenu::CPlantShopMenu(CGameDialog * gd, CTimer *timer)
+	CPlantShopMenu::CPlantShopMenu(CPlayer *p, CGameDialog * gd, CTimer *timer)
+		:CShopMenu(p, gd, timer)
 	{
-		this->gd = gd;
-		this->timer = timer;
+
 	}
 
 	void CPlantShopMenu::LoadBitmap()
 	{
-		blackBG.LoadBitmap(IDB_ShopMenuBlackBG);
-		background.LoadBitmap(IDB_PlantShopBG, RGB(255, 255, 255));
-		infoBoardBG.LoadBitmap(IDB_DIALOG_BG_01);
+		// base
+		CShopMenu::LoadBitmap();
+
+		background.LoadBitmap(IDB_PlantShopBG);
 		good_RadishSeed.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
 		good_Seed02.LoadBitmap(IDB_Seed02, RGB(255, 255, 255));
 		good_Seed03.LoadBitmap(IDB_Seed03, RGB(255, 255, 255));
-		selector.LoadBitmap(IDB_PlantShopSelector, RGB(255, 255, 255));
-
-		blackBG.SetTopLeft(0, 0);
 		background.SetTopLeft(0, 0);
-		infoBoardBG.SetTopLeft(20, 360);
-		selector.SetTopLeft(120, 230);
 		good_RadishSeed.SetTopLeft(120, 230);
 		good_Seed02.SetTopLeft(240, 230);
 		good_Seed03.SetTopLeft(360, 230);
-	}
-
-	void CPlantShopMenu::SetPlayerDataOnce(CPlayer * player)
-	{
-		this->player = player;
-	}
-
-	void CPlantShopMenu::SetGameDialogOnce(CGameDialog * gd)
-	{
-		this->gd = gd;
 	}
 
 	int CPlantShopMenu::GetCurrentSelection() const
@@ -65,46 +42,7 @@ namespace game_framework
 		return this->timer;
 	}
 
-	void CPlantShopMenu::Enable()
-	{
-		GAME_ASSERT(
-			((player != nullptr) && (gd != nullptr)),
-			"呼叫Enable前應該先呼叫SetPlayerDataOnce以及SetGameDialogOnce");
-		enable = true;
-	}
-
-	void CPlantShopMenu::Enable(CPlayer * p, CGameDialog * gd)
-	{
-		this->player = p;
-		this->gd = gd;
-		enable = true;
-	}
-
-	void CPlantShopMenu::Enable_InfoBoard()
-	{
-		this->enable_infoboard = true;
-	}
-
-	void CPlantShopMenu::Disable()
-	{
-		enable = false;
-		this->enable_infoboard = false;
-		// player/gd不再使用 因此回復成nullptr
-		player = nullptr;
-		//gd = nullptr;
-	}
-
-	void CPlantShopMenu::Disable_InfoBoard()
-	{
-		this->enable_infoboard = false;
-	}
-
-	bool CPlantShopMenu::IsEnable()
-	{
-		return enable;
-	}
-
-	// Callback function
+	// Callback functions
 	void ReEnableInfoBoard_InGD(CGameDialog::DialogOptionsResult r, CShopMenu *sm)
 	{
 		CPlantShopMenu *psm = (CPlantShopMenu*)sm;
@@ -172,7 +110,6 @@ namespace game_framework
 				case 0:
 					if (player->GetMoney() >= 10)
 					{
-						// FIXME: 尚未增加種子
 						this->enable_infoboard = false;
 						player->DecreaseMoney(10);
 						player->GetBackpack()->at(4)->IncreaseNumber(1);
@@ -200,7 +137,6 @@ namespace game_framework
 		}
 	}
 	
-
 	void CPlantShopMenu::OnMove()
 	{
 		switch (goodSelector)
@@ -253,18 +189,5 @@ namespace game_framework
 			}
 			
 		}
-	}
-
-	void CPlantShopMenu::DrawTexts(CString text, int posX, int posY, int fontSize)
-	{
-		CDC *pDC = CDDraw::GetBackCDC();
-		CFont f, *fp = nullptr;
-		f.CreatePointFont(fontSize, "Consolas");
-		fp = pDC->SelectObject(&f);
-		pDC->SetBkMode(TRANSPARENT);
-		pDC->SetTextColor(RGB(255, 255, 255));
-		pDC->TextOut(posX, posY, text);
-		pDC->SelectObject(fp);
-		CDDraw::ReleaseBackCDC();
 	}
 }

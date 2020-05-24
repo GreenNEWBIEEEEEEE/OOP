@@ -23,7 +23,7 @@ namespace game_framework
 	{
 	}
 
-	void CMapShowDialogEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, CShopMenu *sm)
+	void CMapShowDialogEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		//
 		// ³W½d¡G
@@ -93,6 +93,8 @@ namespace game_framework
 			break;
 		case 10011:
 			gd->AddMessage("¡ô Area 2");
+			gd->AddMessage("In Area 2, ");
+			gd->AddMessage("There is an animal shop.");
 			gd->Enable();
 			break;
 		case 10012:

@@ -34,7 +34,13 @@ namespace game_framework {
 
 		bool hasEvents() const;
 
-		void triggerEventByKeyCode(UINT keyCode, CPlayer *p, CMapManager * mm, CGameDialog *gd, CShopMenu *sm);
+		void triggerEventByKeyCode(
+			UINT keyCode, 
+			CPlayer *p, 
+			CMapManager * mm, 
+			CGameDialog *gd, 
+			vector<CShopMenu*> sms
+		);
 
 		bool IsEmpty() const;
 
