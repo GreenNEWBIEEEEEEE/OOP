@@ -161,7 +161,6 @@
       <WarningLevel>Level3</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalOptions>**/utf-8** %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -687,6 +686,27 @@
     <Image Include="RES\recs1.bmp" />
     <Image Include="RES\ShopMenus\PlantShopSelector.bmp" />
     <Image Include="RES\ShopMenus\ShopMenuBlackBG.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopDialogBackground.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop01.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop02.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop03.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop04.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop05.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop06.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop07.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop08.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop09.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop10.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop11.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop12.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop13.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop14.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop15.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop16.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop17.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop18.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop19.bmp" />
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop20.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s02.bmp" />

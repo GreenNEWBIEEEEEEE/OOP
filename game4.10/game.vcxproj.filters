@@ -1313,5 +1313,68 @@
     <Image Include="RES\NewMaterial\Terrain\Egg.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\AnimalShop\ShopDialogBackground.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

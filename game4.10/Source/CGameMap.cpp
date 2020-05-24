@@ -289,6 +289,27 @@ namespace game_framework {
 			chickenHouse_Floor06_03.LoadBitmap(IDB_ChickenHouse_Floor06_03);
 			chickenHouse_Floor06_04.LoadBitmap(IDB_ChickenHouse_Floor06_04);
 			chickenHouse_Floor06_05.LoadBitmap(IDB_ChickenHouse_Floor06_05);
+
+			animalShop_01.LoadBitmap(IDB_AnimalShop01);
+			animalShop_02.LoadBitmap(IDB_AnimalShop02);
+			animalShop_03.LoadBitmap(IDB_AnimalShop03);
+			animalShop_04.LoadBitmap(IDB_AnimalShop04);
+			animalShop_05.LoadBitmap(IDB_AnimalShop05);
+			animalShop_06.LoadBitmap(IDB_AnimalShop06);
+			animalShop_07.LoadBitmap(IDB_AnimalShop07);
+			animalShop_08.LoadBitmap(IDB_AnimalShop08);
+			animalShop_09.LoadBitmap(IDB_AnimalShop09);
+			animalShop_10.LoadBitmap(IDB_AnimalShop10);
+			animalShop_11.LoadBitmap(IDB_AnimalShop11);
+			animalShop_12.LoadBitmap(IDB_AnimalShop12);
+			animalShop_13.LoadBitmap(IDB_AnimalShop13);
+			animalShop_14.LoadBitmap(IDB_AnimalShop14);
+			animalShop_15.LoadBitmap(IDB_AnimalShop15);
+			animalShop_16.LoadBitmap(IDB_AnimalShop16);
+			animalShop_17.LoadBitmap(IDB_AnimalShop17);
+			animalShop_18.LoadBitmap(IDB_AnimalShop18);
+			animalShop_19.LoadBitmap(IDB_AnimalShop19);
+			animalShop_20.LoadBitmap(IDB_AnimalShop20);
 		}
 		
 		{
@@ -941,6 +962,86 @@ namespace game_framework {
 				case -117:
 					egg.SetTopLeft(x, y);
 					egg.ShowBitmap();
+					break;
+				case -118:
+					animalShop_01.SetTopLeft(x, y);
+					animalShop_01.ShowBitmap();
+					break;
+				case -119:
+					animalShop_02.SetTopLeft(x, y);
+					animalShop_02.ShowBitmap();
+					break;
+				case -120:
+					animalShop_03.SetTopLeft(x, y);
+					animalShop_03.ShowBitmap();
+					break;
+				case -121:
+					animalShop_04.SetTopLeft(x, y);
+					animalShop_04.ShowBitmap();
+					break;
+				case -122:
+					animalShop_05.SetTopLeft(x, y);
+					animalShop_05.ShowBitmap();
+					break;
+				case -123:
+					animalShop_06.SetTopLeft(x, y);
+					animalShop_06.ShowBitmap();
+					break;
+				case -124:
+					animalShop_07.SetTopLeft(x, y);
+					animalShop_07.ShowBitmap();
+					break;
+				case -125:
+					animalShop_08.SetTopLeft(x, y);
+					animalShop_08.ShowBitmap();
+					break;
+				case -126:
+					animalShop_09.SetTopLeft(x, y);
+					animalShop_09.ShowBitmap();
+					break;
+				case -127:
+					animalShop_10.SetTopLeft(x, y);
+					animalShop_10.ShowBitmap();
+					break;
+				case -128:
+					animalShop_11.SetTopLeft(x, y);
+					animalShop_11.ShowBitmap();
+					break;
+				case -129:
+					animalShop_12.SetTopLeft(x, y);
+					animalShop_12.ShowBitmap();
+					break;
+				case -130:
+					animalShop_13.SetTopLeft(x, y);
+					animalShop_13.ShowBitmap();
+					break;
+				case -131:
+					animalShop_14.SetTopLeft(x, y);
+					animalShop_14.ShowBitmap();
+					break;
+				case -132:
+					animalShop_15.SetTopLeft(x, y);
+					animalShop_15.ShowBitmap();
+					break;
+				case -133:
+					animalShop_16.SetTopLeft(x, y);
+					animalShop_16.ShowBitmap();
+					break;
+				case -134:
+					animalShop_17.SetTopLeft(x, y);
+					animalShop_17.ShowBitmap();
+					break;
+				case -135:
+					animalShop_18.SetTopLeft(x, y);
+					animalShop_18.ShowBitmap();
+					break;
+				case -136:
+					animalShop_19.SetTopLeft(x, y);
+					animalShop_19.ShowBitmap();
+					break;
+				case -137:
+					animalShop_20.SetTopLeft(x, y);
+					animalShop_20.ShowBitmap();
 					break;
 				default:
 					break;

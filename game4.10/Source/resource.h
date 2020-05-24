@@ -415,6 +415,29 @@
 #define IDB_AnimalGrass                 573
 #define IDB_BITMAP30                    574
 #define IDB_Egg                         574
+#define IDB_AnimalShop01                576
+#define IDB_AnimalShop02                577
+#define IDB_AnimalShop03                578
+#define IDB_AnimalShop04                579
+#define IDB_AnimalShop05                580
+#define IDB_AnimalShop06                581
+#define IDB_AnimalShop07                582
+#define IDB_AnimalShop08                583
+#define IDB_AnimalShop09                584
+#define IDB_AnimalShop10                585
+#define IDB_AnimalShop11                586
+#define IDB_AnimalShop12                587
+#define IDB_AnimalShop13                588
+#define IDB_AnimalShop14                589
+#define IDB_AnimalShop15                590
+#define IDB_AnimalShop16                591
+#define IDB_AnimalShop17                592
+#define IDB_AnimalShop18                593
+#define IDB_AnimalShop19                594
+#define IDB_BITMAP54                    595
+#define IDB_AnimalShop20                595
+#define IDB_BITMAP28                    596
+#define IDB_AnimalShop_ShowDialogBackground 596
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -427,7 +450,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        575
+#define _APS_NEXT_RESOURCE_VALUE        597
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

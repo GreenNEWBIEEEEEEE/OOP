@@ -64,9 +64,27 @@ namespace game_framework {
 			// 雞舍->室外
 		case 20004:
 			mm->ChangeMap(0);
-			mm->GetCurrentMap()->SetSXSY(1050, 200);
+			mm->GetCurrentMap()->SetSXSY(950, 100);
 			p->SetX(18 * 64);
 			p->SetY(5 * 53);
+			break;
+			// 室外1->室外2
+		case 20005: 
+			mm->ChangeMap(3);
+			mm->GetCurrentMap()->SetSXSY(880, 500);
+			p->SetX(17 * 64);
+			p->SetY(12 * 53);
+			gd->AddMessage("Area 2");
+			gd->Enable();
+			break;
+			// 室外2->室外1
+		case 20006:
+			mm->ChangeMap(0);
+			mm->GetCurrentMap()->SetSXSY(750, -100);
+			p->SetX(15 * 64);
+			p->SetY(0 * 53);
+			gd->AddMessage("Area 1");
+			gd->Enable();
 			break;
 		default:
 			break;

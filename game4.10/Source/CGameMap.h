@@ -227,6 +227,28 @@ namespace game_framework
 		CMovingBitmap egg;
 		
 
+		// Animal Shop
+		CMovingBitmap animalShop_01;
+		CMovingBitmap animalShop_02;
+		CMovingBitmap animalShop_03;
+		CMovingBitmap animalShop_04;
+		CMovingBitmap animalShop_05;
+		CMovingBitmap animalShop_06;
+		CMovingBitmap animalShop_07;
+		CMovingBitmap animalShop_08;
+		CMovingBitmap animalShop_09;
+		CMovingBitmap animalShop_10;
+		CMovingBitmap animalShop_11;
+		CMovingBitmap animalShop_12;
+		CMovingBitmap animalShop_13;
+		CMovingBitmap animalShop_14;
+		CMovingBitmap animalShop_15;
+		CMovingBitmap animalShop_16;
+		CMovingBitmap animalShop_17;
+		CMovingBitmap animalShop_18;
+		CMovingBitmap animalShop_19;
+		CMovingBitmap animalShop_20;
+
 
 		// ¤Gºû¸ê®Æ°}¦C
 		int row, col;

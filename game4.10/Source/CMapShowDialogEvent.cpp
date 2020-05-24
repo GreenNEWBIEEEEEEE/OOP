@@ -91,6 +91,20 @@ namespace game_framework
 			gd->AddMessage("Press A to put chicken feed.");
 			gd->Enable();
 			break;
+		case 10011:
+			gd->AddMessage("¡ô Area 2");
+			gd->Enable();
+			break;
+		case 10012:
+			gd->AddMessage("¡õ Area 1");
+			gd->Enable();
+			break;
+		case 10013:
+			gd->AddMessage("Here is animal shop.");
+			gd->AddMessage("You can buy animals in this shop.");
+			gd->AddMessage("Press H at the door to enter shop.");
+			gd->Enable();
+			break;
 		default:
 			break;
 		}
