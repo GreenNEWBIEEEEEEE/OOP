@@ -197,6 +197,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
 	mapManager.AddMap("Scripts/MapInfos/MapE03.txt", false);
 	mapManager.AddMap("Scripts/MapInfos/MapE04.txt", true);
+	mapManager.AddMap("Scripts/MapInfos/MapE05.txt", false);
 	backpackMenu.SetBackpack(p1.GetBackpack());
 }
 
@@ -206,6 +207,10 @@ CGameStateRun::~CGameStateRun()
 	delete c2;
 	delete c3;
 	delete c4;
+	delete cow1;
+	delete cow2;
+	delete cow3;
+	delete cow4;
 }
 
 void CGameStateRun::OnBeginState()
@@ -231,6 +236,10 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	c2->OnMove(mapManager.GetCurrentMap(), &obj);
 	c3->OnMove(mapManager.GetCurrentMap(), &obj);
 	c4->OnMove(mapManager.GetCurrentMap(), &obj);
+	cow1->OnMove(mapManager.GetCurrentMap(), &obj);
+	cow2->OnMove(mapManager.GetCurrentMap(), &obj);
+	cow3->OnMove(mapManager.GetCurrentMap(), &obj);
+	cow4->OnMove(mapManager.GetCurrentMap(), &obj);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -258,11 +267,19 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	c2 = new CChicken(200, 600);
 	c3 = new CChicken(300, 600);
 	c4 = new CChicken(350, 500);
+	cow1 = new CCow(300, 500);
+	cow2 = new CCow(512, 500);
+	cow3 = new CCow(421, 600);
+	cow4 = new CCow(324, 600);
 	p1.LoadBitmap();
 	c1->LoadBitmap();
 	c2->LoadBitmap();
 	c3->LoadBitmap();
 	c4->LoadBitmap();
+	cow1->LoadBitmap();
+	cow2->LoadBitmap();
+	cow3->LoadBitmap();
+	cow4->LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
 	mapManager.SetTimer(&timer);
@@ -283,14 +300,28 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	c3->SetTimer(&timer);
 	c4->SetMap(mapManager.GetChickenCoop());
 	c4->SetTimer(&timer);
+	cow1->SetMap(mapManager.GetCowCoop());
+	cow1->SetTimer(&timer);
+	cow2->SetMap(mapManager.GetCowCoop());
+	cow2->SetTimer(&timer);
+	cow3->SetMap(mapManager.GetCowCoop());
+	cow3->SetTimer(&timer);
+	cow4->SetMap(mapManager.GetCowCoop());
+	cow4->SetTimer(&timer);
 
-	// 記得Push
+	// 記得Push動物&人到活動物件的陣列
+	// obj[0] is player
 	obj.push_back(&p1);
+	// obj[1:4] is chickens
 	obj.push_back(c1);
 	obj.push_back(c2);
 	obj.push_back(c3);
 	obj.push_back(c4);
-
+	// obj[5:8] is cows
+	obj.push_back(cow1);
+	obj.push_back(cow2);
+	obj.push_back(cow3);
+	obj.push_back(cow4);
 
 	// push所有商店至商店陣列
 	sms.push_back(&plantShopMenu);
@@ -424,6 +455,10 @@ void CGameStateRun::OnShow()
 	c2->OnShow(mapManager.GetCurrentMap());
 	c3->OnShow(mapManager.GetCurrentMap());
 	c4->OnShow(mapManager.GetCurrentMap());
+	cow1->OnShow(mapManager.GetCurrentMap());
+	cow2->OnShow(mapManager.GetCurrentMap());
+	cow3->OnShow(mapManager.GetCurrentMap());
+	cow4->OnShow(mapManager.GetCurrentMap());
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();

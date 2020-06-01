@@ -42,6 +42,7 @@
 #include "CPlayer.h"
 #include "CAnimal.h"
 #include "CChicken.h"
+#include "CCow.h"
 #include "CMapManager.h"
 #include "CGameDialog.h"
 #include "CBackpackMenu.h"
@@ -111,6 +112,11 @@ namespace game_framework {
 		CChicken* c2 = nullptr;
 		CChicken* c3 = nullptr;
 		CChicken* c4 = nullptr;
+		CCow* cow1 = nullptr;
+		CCow* cow2 = nullptr;
+		CCow* cow3 = nullptr;
+		CCow* cow4 = nullptr;
+		
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;

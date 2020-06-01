@@ -164,6 +164,12 @@ namespace game_framework{
 		case 20006:
 			events.push_back(new CMapTransitionEvent(20006));
 			break;
+		case 20007:
+			events.push_back(new CMapTransitionEvent(20007));
+			break;
+		case 20008:
+			events.push_back(new CMapTransitionEvent(20008));
+			break;
 		case 30000:
 			events.push_back(new CMapSleepEvent(30000));
 			break;

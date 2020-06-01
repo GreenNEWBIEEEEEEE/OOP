@@ -146,7 +146,7 @@ namespace game_framework
 
 	void CChicken::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
-		Produce();
+		//Produce();
 		if (map == m)
 		{
 			if (!isPickedUp)

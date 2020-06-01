@@ -190,6 +190,9 @@
     <ClCompile Include="Source\CAnimalShopMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CCow.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -301,6 +304,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CAnimalShopMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CCow.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1386,6 +1392,45 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Shops\AnimalShop\Goods\Good_Cow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Up\Cow_Up01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Up\Cow_Up02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Up\Cow_Up03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Up\Cow_Up04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Down\Cow_Down01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Down\Cow_Down02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Down\Cow_Down03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Left\Cow_Left01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Left\Cow_Left02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Left\Cow_Left03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Right\Cow_Right01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Right\Cow_Right02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Animal\Cow\Right\Cow_Right03.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

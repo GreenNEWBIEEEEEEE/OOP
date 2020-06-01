@@ -260,6 +260,7 @@
     <ClCompile Include="Source\CAnimalShopMenu.cpp" />
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CChicken.cpp" />
+    <ClCompile Include="Source\CCow.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CGameObject.cpp" />
@@ -331,6 +332,7 @@
     <ClInclude Include="Source\CAnimalShopMenu.h" />
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CChicken.h" />
+    <ClInclude Include="Source\CCow.h" />
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CGameObject.h" />
@@ -380,6 +382,19 @@
     <Image Include="RES\Animal\Chicken\Animation\Right\Chicken_Right02.bmp" />
     <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up01.bmp" />
     <Image Include="RES\Animal\Chicken\Animation\Up\Chicken_Up02.bmp" />
+    <Image Include="RES\Animal\Cow\Down\Cow_Down01.bmp" />
+    <Image Include="RES\Animal\Cow\Down\Cow_Down02.bmp" />
+    <Image Include="RES\Animal\Cow\Down\Cow_Down03.bmp" />
+    <Image Include="RES\Animal\Cow\Left\Cow_Left01.bmp" />
+    <Image Include="RES\Animal\Cow\Left\Cow_Left02.bmp" />
+    <Image Include="RES\Animal\Cow\Left\Cow_Left03.bmp" />
+    <Image Include="RES\Animal\Cow\Right\Cow_Right01.bmp" />
+    <Image Include="RES\Animal\Cow\Right\Cow_Right02.bmp" />
+    <Image Include="RES\Animal\Cow\Right\Cow_Right03.bmp" />
+    <Image Include="RES\Animal\Cow\Up\Cow_Up01.bmp" />
+    <Image Include="RES\Animal\Cow\Up\Cow_Up02.bmp" />
+    <Image Include="RES\Animal\Cow\Up\Cow_Up03.bmp" />
+    <Image Include="RES\Animal\Cow\Up\Cow_Up04.bmp" />
     <Image Include="RES\BackpackMenu.bmp" />
     <Image Include="RES\Backpack\Axe.bmp" />
     <Image Include="RES\Backpack\BackpackMenu.bmp" />

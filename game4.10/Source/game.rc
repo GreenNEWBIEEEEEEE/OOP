@@ -790,6 +790,32 @@ IDB_Good_Chicken        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\10
 
 IDB_Good_Cow            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\AnimalShop\\Goods\\Good_Cow.bmp"
 
+IDB_Cow_Up01            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Up\\Cow_Up01.bmp"
+
+IDB_Cow_Up02            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Up\\Cow_Up02.bmp"
+
+IDB_Cow_Up03            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Up\\Cow_Up03.bmp"
+
+IDB_Cow_Up04            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Up\\Cow_Up04.bmp"
+
+IDB_Cow_Down01          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Down\\Cow_Down01.bmp"
+
+IDB_Cow_Down02          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Down\\Cow_Down02.bmp"
+
+IDB_Cow_Down03          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Down\\Cow_Down03.bmp"
+
+IDB_Cow_Left01          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Left\\Cow_Left01.bmp"
+
+IDB_Cow_Left02          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Left\\Cow_Left02.bmp"
+
+IDB_Cow_Left03          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Left\\Cow_Left03.bmp"
+
+IDB_Cow_Right01         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Right\\Cow_Right01.bmp"
+
+IDB_Cow_Right02         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Right\\Cow_Right02.bmp"
+
+IDB_Cow_Right03         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Animal\\Cow\\Right\\Cow_Right03.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
