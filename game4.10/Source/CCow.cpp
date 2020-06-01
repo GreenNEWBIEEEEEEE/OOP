@@ -38,9 +38,9 @@ namespace game_framework {
 		}
 
 		{
-			moveLeft.AddBitmap(IDB_Cow_Right01, RGB(255, 255, 255));
-			moveLeft.AddBitmap(IDB_Cow_Right02, RGB(255, 255, 255));
-			moveLeft.AddBitmap(IDB_Cow_Right03, RGB(255, 255, 255));
+			moveRight.AddBitmap(IDB_Cow_Right01, RGB(255, 255, 255));
+			moveRight.AddBitmap(IDB_Cow_Right02, RGB(255, 255, 255));
+			moveRight.AddBitmap(IDB_Cow_Right03, RGB(255, 255, 255));
 		}
 
 		{
