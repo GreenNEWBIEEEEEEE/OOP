@@ -27,16 +27,6 @@ namespace game_framework
 		selector.SetTopLeft(170, 230);
 	}
 
-	int CAnimalShopMenu::GetCurrentSelection() const
-	{
-		return goodSelector;
-	}
-
-	CTimer * CAnimalShopMenu::GetTimer() const
-	{
-		return timer;
-	}
-
 	void ANSM_ReEnableInfoBoard_InGD(CGameDialog::DialogOptionsResult r, CShopMenu *sm)
 	{
 		CAnimalShopMenu *ansm = (CAnimalShopMenu*)sm;

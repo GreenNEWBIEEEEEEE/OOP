@@ -193,6 +193,9 @@
     <ClCompile Include="Source\CCow.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CToolsMachinesShopMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -307,6 +310,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CCow.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CToolsMachinesShopMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1431,6 +1437,81 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Animal\Cow\Right\Cow_Right03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shops\animalshop\shophouse_morning\bitmap33.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop23.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\ToolsMachinesShop\ShopDialogBackground.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

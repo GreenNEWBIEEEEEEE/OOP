@@ -107,6 +107,10 @@ namespace game_framework{
 		case 7:
 			events.push_back(new CMapShopEvent(7));
 			break;
+			// ToolsMachines Shop
+		case 8:
+			events.push_back(new CMapShopEvent(8));
+			break;
 		case 10001:
 			events.push_back(new CMapShowDialogEvent(10001));
 			break;

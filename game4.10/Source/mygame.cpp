@@ -191,7 +191,8 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g),
 	plantShopMenu(&p1, &gameDialog, &timer),
-	animalShopMenu(&p1, &gameDialog, &timer)
+	animalShopMenu(&p1, &gameDialog, &timer),
+	toolsMachinesShopMenu(&p1, &gameDialog, &timer)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
@@ -231,6 +232,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	gameDialog.OnMove();
 	plantShopMenu.OnMove();
 	animalShopMenu.OnMove();
+	toolsMachinesShopMenu.OnMove();
 	p1.OnMove(mapManager.GetCurrentMap(), &obj);
 	c1->OnMove(mapManager.GetCurrentMap(), &obj);
 	c2->OnMove(mapManager.GetCurrentMap(), &obj);
@@ -288,6 +290,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	gameDialog.LoadBitmap();
 	plantShopMenu.LoadBitmap();
 	animalShopMenu.LoadBitmap();
+	toolsMachinesShopMenu.LoadBitmap();
 	mapManager.LoadBitmapAll();
 	//
 	//
@@ -326,6 +329,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	// push所有商店至商店陣列
 	sms.push_back(&plantShopMenu);
 	sms.push_back(&animalShopMenu);
+	sms.push_back(&toolsMachinesShopMenu);
 
 
 	//
@@ -352,6 +356,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (animalShopMenu.IsEnable())
 	{
 		animalShopMenu.OnKeyDown(nChar);
+	}
+	else if (toolsMachinesShopMenu.IsEnable())
+	{
+		toolsMachinesShopMenu.OnKeyDown(nChar);
 	}
 	else
 	{
@@ -465,6 +473,7 @@ void CGameStateRun::OnShow()
 	backpackMenu.OnShow();
 	plantShopMenu.OnShow();
 	animalShopMenu.OnShow();
+	toolsMachinesShopMenu.OnShow();
 	gameDialog.OnShow();
 	
 }

@@ -32,16 +32,6 @@ namespace game_framework
 		good_Seed03.SetTopLeft(360, 230);
 	}
 
-	int CPlantShopMenu::GetCurrentSelection() const
-	{
-		return goodSelector;
-	}
-
-	CTimer * CPlantShopMenu::GetTimer() const
-	{
-		return this->timer;
-	}
-
 	// Callback functions
 	void ReEnableInfoBoard_InGD(CGameDialog::DialogOptionsResult r, CShopMenu *sm)
 	{

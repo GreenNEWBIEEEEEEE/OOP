@@ -49,6 +49,7 @@
 #include "CWeather.h"
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
+#include "CToolsMachinesShopMenu.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -122,7 +123,8 @@ namespace game_framework {
 		CBackpackMenu backpackMenu;
 		CPlantShopMenu plantShopMenu;
 		CAnimalShopMenu animalShopMenu;
-		vector<CShopMenu*> sms;
+		CToolsMachinesShopMenu toolsMachinesShopMenu;
+		vector<CShopMenu*> sms; // 商店陣列
 		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人
 	};
 

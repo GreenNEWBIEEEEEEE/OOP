@@ -47,6 +47,16 @@ namespace game_framework
 		return enable;
 	}
 
+	int CShopMenu::GetCurrentSelection() const
+	{
+		return goodSelector;
+	}
+
+	CTimer * CShopMenu::GetTimer() const
+	{
+		return timer;
+	}
+
 	void CShopMenu::LoadBitmap()
 	{
 		blackBG.LoadBitmap(IDB_ShopMenuBlackBG);

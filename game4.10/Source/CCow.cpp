@@ -75,7 +75,6 @@ namespace game_framework {
 
 			if (onShowAndMove)
 			{
-
 				if (counter >= onMoveTimes)
 				{
 					int rnd = (rand() % 100);

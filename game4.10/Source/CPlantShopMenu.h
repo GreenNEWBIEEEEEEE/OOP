@@ -9,10 +9,6 @@ namespace game_framework
 	{
 	public:
 		CPlantShopMenu(CPlayer *p, CGameDialog *gd, CTimer *timer);
-
-		int GetCurrentSelection() const;
-		CTimer* GetTimer() const;
-
 		void OnKeyDown(UINT key);
 		void LoadBitmap();
 		void OnMove();

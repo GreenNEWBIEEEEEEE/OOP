@@ -254,6 +254,31 @@ namespace game_framework
 		CMovingBitmap animalShop_18;
 		CMovingBitmap animalShop_19;
 		CMovingBitmap animalShop_20;
+		
+		// ToolsMachinesShop
+		CMovingBitmap toolsMachinesShop_01;
+		CMovingBitmap toolsMachinesShop_02;
+		CMovingBitmap toolsMachinesShop_03;
+		CMovingBitmap toolsMachinesShop_04;
+		CMovingBitmap toolsMachinesShop_05;
+		CMovingBitmap toolsMachinesShop_06;
+		CMovingBitmap toolsMachinesShop_07;
+		CMovingBitmap toolsMachinesShop_08;
+		CMovingBitmap toolsMachinesShop_09;
+		CMovingBitmap toolsMachinesShop_10;
+		CMovingBitmap toolsMachinesShop_11;
+		CMovingBitmap toolsMachinesShop_12;
+		CMovingBitmap toolsMachinesShop_13;
+		CMovingBitmap toolsMachinesShop_14;
+		CMovingBitmap toolsMachinesShop_15;
+		CMovingBitmap toolsMachinesShop_16;
+		CMovingBitmap toolsMachinesShop_17;
+		CMovingBitmap toolsMachinesShop_18;
+		CMovingBitmap toolsMachinesShop_19;
+		CMovingBitmap toolsMachinesShop_20;
+		CMovingBitmap toolsMachinesShop_21;
+		CMovingBitmap toolsMachinesShop_22;
+		CMovingBitmap toolsMachinesShop_23;
 
 
 		// ¤Gºû¸ê®Æ°}¦C

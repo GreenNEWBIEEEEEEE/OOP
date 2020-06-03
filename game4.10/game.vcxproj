@@ -281,6 +281,7 @@
     <ClCompile Include="Source\CToolHoe.cpp" />
     <ClCompile Include="Source\CToolSeed.cpp" />
     <ClCompile Include="Source\CToolSickle.cpp" />
+    <ClCompile Include="Source\CToolsMachinesShopMenu.cpp" />
     <ClCompile Include="Source\CToolWaterer.cpp" />
     <ClCompile Include="Source\CWeather.cpp" />
     <ClCompile Include="Source\game.cpp">
@@ -353,6 +354,7 @@
     <ClInclude Include="Source\CToolHoe.h" />
     <ClInclude Include="Source\CToolSeed.h" />
     <ClInclude Include="Source\CToolSickle.h" />
+    <ClInclude Include="Source\CToolsMachinesShopMenu.h" />
     <ClInclude Include="Source\CToolWaterer.h" />
     <ClInclude Include="Source\CWeather.h" />
     <ClInclude Include="Source\game.h" />
@@ -726,6 +728,7 @@
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop18.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop19.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop20.bmp" />
+    <Image Include="res\shops\animalshop\shophouse_morning\bitmap33.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s02.bmp" />
@@ -747,6 +750,30 @@
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s18.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s19.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s20.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop01.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop02.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop03.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop04.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop05.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop06.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop07.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop08.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop09.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop10.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop11.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop12.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop13.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop14.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop15.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop16.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop17.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop18.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop19.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop20.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop21.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop22.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop23.bmp" />
+    <Image Include="RES\Shops\ToolsMachinesShop\ShopDialogBackground.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -311,6 +311,32 @@ namespace game_framework {
 			animalShop_19.LoadBitmap(IDB_AnimalShop19);
 			animalShop_20.LoadBitmap(IDB_AnimalShop20);
 		}
+
+		{
+			toolsMachinesShop_01.LoadBitmap(IDB_ToolsMachinesShop01);
+			toolsMachinesShop_02.LoadBitmap(IDB_ToolsMachinesShop02);
+			toolsMachinesShop_03.LoadBitmap(IDB_ToolsMachinesShop03);
+			toolsMachinesShop_04.LoadBitmap(IDB_ToolsMachinesShop04);
+			toolsMachinesShop_05.LoadBitmap(IDB_ToolsMachinesShop05);
+			toolsMachinesShop_06.LoadBitmap(IDB_ToolsMachinesShop06);
+			toolsMachinesShop_07.LoadBitmap(IDB_ToolsMachinesShop07);
+			toolsMachinesShop_08.LoadBitmap(IDB_ToolsMachinesShop08);
+			toolsMachinesShop_09.LoadBitmap(IDB_ToolsMachinesShop09);
+			toolsMachinesShop_10.LoadBitmap(IDB_ToolsMachinesShop10);
+			toolsMachinesShop_11.LoadBitmap(IDB_ToolsMachinesShop11);
+			toolsMachinesShop_12.LoadBitmap(IDB_ToolsMachinesShop12);
+			toolsMachinesShop_13.LoadBitmap(IDB_ToolsMachinesShop13);
+			toolsMachinesShop_14.LoadBitmap(IDB_ToolsMachinesShop14);
+			toolsMachinesShop_15.LoadBitmap(IDB_ToolsMachinesShop15);
+			toolsMachinesShop_16.LoadBitmap(IDB_ToolsMachinesShop16);
+			toolsMachinesShop_17.LoadBitmap(IDB_ToolsMachinesShop17);
+			toolsMachinesShop_18.LoadBitmap(IDB_ToolsMachinesShop18);
+			toolsMachinesShop_19.LoadBitmap(IDB_ToolsMachinesShop19);
+			toolsMachinesShop_20.LoadBitmap(IDB_ToolsMachinesShop20);
+			toolsMachinesShop_21.LoadBitmap(IDB_ToolsMachinesShop21);
+			toolsMachinesShop_22.LoadBitmap(IDB_ToolsMachinesShop22);
+			toolsMachinesShop_23.LoadBitmap(IDB_ToolsMachinesShop23);
+		}
 		
 		{
 			egg.LoadBitmap(IDB_Egg);
@@ -1043,6 +1069,99 @@ namespace game_framework {
 					animalShop_20.SetTopLeft(x, y);
 					animalShop_20.ShowBitmap();
 					break;
+				case -138:
+					toolsMachinesShop_01.SetTopLeft(x, y);
+					toolsMachinesShop_01.ShowBitmap();
+					break;
+				case -139:
+					toolsMachinesShop_02.SetTopLeft(x, y);
+					toolsMachinesShop_02.ShowBitmap();
+					break;
+				case -140:
+					toolsMachinesShop_03.SetTopLeft(x, y);
+					toolsMachinesShop_03.ShowBitmap();
+					break;
+				case -141:
+					toolsMachinesShop_04.SetTopLeft(x, y);
+					toolsMachinesShop_04.ShowBitmap();
+					break;
+				case -142:
+					toolsMachinesShop_05.SetTopLeft(x, y);
+					toolsMachinesShop_05.ShowBitmap();
+					break;
+				case -143:
+					toolsMachinesShop_06.SetTopLeft(x, y);
+					toolsMachinesShop_06.ShowBitmap();
+					break;
+				case -144:
+					toolsMachinesShop_07.SetTopLeft(x, y);
+					toolsMachinesShop_07.ShowBitmap();
+					break;
+				case -145:
+					toolsMachinesShop_08.SetTopLeft(x, y);
+					toolsMachinesShop_08.ShowBitmap();
+					break;
+				case -146:
+					toolsMachinesShop_09.SetTopLeft(x, y);
+					toolsMachinesShop_09.ShowBitmap();
+					break;
+				case -147:
+					toolsMachinesShop_10.SetTopLeft(x, y);
+					toolsMachinesShop_10.ShowBitmap();
+					break;
+				case -148:
+					toolsMachinesShop_11.SetTopLeft(x, y);
+					toolsMachinesShop_11.ShowBitmap();
+					break;
+				case -149:
+					toolsMachinesShop_12.SetTopLeft(x, y);
+					toolsMachinesShop_12.ShowBitmap();
+					break;
+				case -150:
+					toolsMachinesShop_13.SetTopLeft(x, y);
+					toolsMachinesShop_13.ShowBitmap();
+					break;
+				case -151:
+					toolsMachinesShop_14.SetTopLeft(x, y);
+					toolsMachinesShop_14.ShowBitmap();
+					break;
+				case -152:
+					toolsMachinesShop_15.SetTopLeft(x, y);
+					toolsMachinesShop_15.ShowBitmap();
+					break;
+				case -153:
+					toolsMachinesShop_16.SetTopLeft(x, y);
+					toolsMachinesShop_16.ShowBitmap();
+					break;
+				case -154:
+					toolsMachinesShop_17.SetTopLeft(x, y);
+					toolsMachinesShop_17.ShowBitmap();
+					break;
+				case -155:
+					toolsMachinesShop_18.SetTopLeft(x, y);
+					toolsMachinesShop_18.ShowBitmap();
+					break;
+				case -156:
+					toolsMachinesShop_19.SetTopLeft(x, y);
+					toolsMachinesShop_19.ShowBitmap();
+					break;
+				case -157:
+					toolsMachinesShop_20.SetTopLeft(x, y);
+					toolsMachinesShop_20.ShowBitmap();
+					break;
+				case -158:
+					toolsMachinesShop_21.SetTopLeft(x, y);
+					toolsMachinesShop_21.ShowBitmap();
+					break;
+				case -159:
+					toolsMachinesShop_22.SetTopLeft(x, y);
+					toolsMachinesShop_22.ShowBitmap();
+					break;
+				case -160:
+					toolsMachinesShop_23.SetTopLeft(x, y);
+					toolsMachinesShop_23.ShowBitmap();
+					break;
+
 				default:
 					break;
 				}

@@ -456,6 +456,31 @@
 #define IDB_Cow_Right02                 611
 #define IDB_BITMAP37                    612
 #define IDB_Cow_Right03                 612
+#define IDB_ToolsMachinesShop01         614
+#define IDB_ToolsMachinesShop02         615
+#define IDB_ToolsMachinesShop03         616
+#define IDB_ToolsMachinesShop04         617
+#define IDB_ToolsMachinesShop05         618
+#define IDB_ToolsMachinesShop06         619
+#define IDB_ToolsMachinesShop07         620
+#define IDB_ToolsMachinesShop08         621
+#define IDB_ToolsMachinesShop09         622
+#define IDB_ToolsMachinesShop10         623
+#define IDB_ToolsMachinesShop11         624
+#define IDB_ToolsMachinesShop12         625
+#define IDB_ToolsMachinesShop13         626
+#define IDB_ToolsMachinesShop14         627
+#define IDB_ToolsMachinesShop15         628
+#define IDB_ToolsMachinesShop16         629
+#define IDB_ToolsMachinesShop17         630
+#define IDB_ToolsMachinesShop18         631
+#define IDB_ToolsMachinesShop19         632
+#define IDB_ToolsMachinesShop20         633
+#define IDB_ToolsMachinesShop21         634
+#define IDB_ToolsMachinesShop22         635
+#define IDB_ToolsMachinesShop23         636
+#define IDB_BITMAP33                    637
+#define IDB_ToolsMachinesShopBG         637
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -468,7 +493,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        613
+#define _APS_NEXT_RESOURCE_VALUE        638
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

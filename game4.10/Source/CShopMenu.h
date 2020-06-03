@@ -16,6 +16,8 @@ namespace game_framework
 		void Disable_InfoBoard();
 		void Disable();
 		bool IsEnable() const;
+		int GetCurrentSelection() const;
+		CTimer* GetTimer() const;
 		void LoadBitmap();
 
 	protected:
