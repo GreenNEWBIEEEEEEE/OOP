@@ -800,6 +800,8 @@ namespace game_framework {
 		{
 			if (this->currentMoveState == MoveState::NormalMove)
 			{
+				if (healthPoint <= 0)
+					return;
 
 				// 使用工具動畫的旗標
 				isUsingTool = true;
