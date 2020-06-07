@@ -281,6 +281,12 @@ namespace game_framework
 		CMovingBitmap toolsMachinesShop_23;
 
 
+		// Machine
+		CMovingBitmap cowMachine1;
+		CMovingBitmap cowMachine2;
+		CMovingBitmap sheepMachine1;
+		CMovingBitmap sheepMachine2;
+
 		// ¤Gºû¸ê®Æ°}¦C
 		int row, col;
 		CMapInfo **map = nullptr;

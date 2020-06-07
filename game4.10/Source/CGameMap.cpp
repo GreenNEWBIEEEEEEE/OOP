@@ -343,6 +343,13 @@ namespace game_framework {
 			animalGrass.LoadBitmap(IDB_AnimalGrass);
 		}
 
+		{
+			cowMachine1.LoadBitmap(IDB_CowHouse_Floor_Machine01);
+			cowMachine2.LoadBitmap(IDB_CowHouse_Floor_Machine02);
+			sheepMachine1.LoadBitmap(IDB_SheepHouse_Floor_Machine03);
+			sheepMachine2.LoadBitmap(IDB_SheepHouse_Floor_Machine04);
+		}
+
 		if (weather != nullptr)
 		{
 			weather->LoadBitmap();
@@ -1158,6 +1165,22 @@ namespace game_framework {
 					toolsMachinesShop_22.ShowBitmap();
 					break;
 				case -160:
+					toolsMachinesShop_23.SetTopLeft(x, y);
+					toolsMachinesShop_23.ShowBitmap();
+					break;
+				case -161:
+					toolsMachinesShop_23.SetTopLeft(x, y);
+					toolsMachinesShop_23.ShowBitmap();
+					break;
+				case -162:
+					toolsMachinesShop_23.SetTopLeft(x, y);
+					toolsMachinesShop_23.ShowBitmap();
+					break;
+				case -163:
+					toolsMachinesShop_23.SetTopLeft(x, y);
+					toolsMachinesShop_23.ShowBitmap();
+					break;
+				case -164:
 					toolsMachinesShop_23.SetTopLeft(x, y);
 					toolsMachinesShop_23.ShowBitmap();
 					break;

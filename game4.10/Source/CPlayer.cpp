@@ -148,6 +148,107 @@ namespace game_framework {
 
 		}
 
+		///
+		{
+			aniGoldenEggMoveLeft.AddBitmap(IDB_PeopleGoldenEgg_left01, RGB(255, 255, 255));
+			aniGoldenEggMoveLeft.AddBitmap(IDB_PeopleGoldenEgg_left02, RGB(255, 255, 255));
+			aniGoldenEggMoveLeft.AddBitmap(IDB_PeopleGoldenEgg_left03, RGB(255, 255, 255));
+
+			aniGoldenEggMoveRight.AddBitmap(IDB_PeopleGoldenEgg_right01, RGB(255, 255, 255));
+			aniGoldenEggMoveRight.AddBitmap(IDB_PeopleGoldenEgg_right02, RGB(255, 255, 255));
+			aniGoldenEggMoveRight.AddBitmap(IDB_PeopleGoldenEgg_right03, RGB(255, 255, 255));
+
+			aniGoldenEggMoveUp.AddBitmap(IDB_PeopleGoldenEgg_back01, RGB(255, 255, 255));
+			aniGoldenEggMoveUp.AddBitmap(IDB_PeopleGoldenEgg_back02, RGB(255, 255, 255));
+			aniGoldenEggMoveUp.AddBitmap(IDB_PeopleGoldenEgg_back03, RGB(255, 255, 255));
+
+			aniGoldenEggMoveDown.AddBitmap(IDB_PeopleGoldenEgg_front01, RGB(255, 255, 255));
+			aniGoldenEggMoveDown.AddBitmap(IDB_PeopleGoldenEgg_front02, RGB(255, 255, 255));
+			aniGoldenEggMoveDown.AddBitmap(IDB_PeopleGoldenEgg_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniMilkMoveLeft.AddBitmap(IDB_PeopleMilk_left01, RGB(255, 255, 255));
+			aniMilkMoveLeft.AddBitmap(IDB_PeopleMilk_left02, RGB(255, 255, 255));
+			aniMilkMoveLeft.AddBitmap(IDB_PeopleMilk_left03, RGB(255, 255, 255));
+
+			aniMilkMoveRight.AddBitmap(IDB_PeopleMilk_right01, RGB(255, 255, 255));
+			aniMilkMoveRight.AddBitmap(IDB_PeopleMilk_right02, RGB(255, 255, 255));
+			aniMilkMoveRight.AddBitmap(IDB_PeopleMilk_right03, RGB(255, 255, 255));
+
+			aniMilkMoveUp.AddBitmap(IDB_PeopleMilk_back01, RGB(255, 255, 255));
+			aniMilkMoveUp.AddBitmap(IDB_PeopleMilk_back02, RGB(255, 255, 255));
+			aniMilkMoveUp.AddBitmap(IDB_PeopleMilk_back03, RGB(255, 255, 255));
+
+			aniMilkMoveDown.AddBitmap(IDB_PeopleMilk_front01, RGB(255, 255, 255));
+			aniMilkMoveDown.AddBitmap(IDB_PeopleMilk_front02, RGB(255, 255, 255));
+			aniMilkMoveDown.AddBitmap(IDB_PeopleMilk_front03, RGB(255, 255, 255));
+
+		}
+
+		{
+			aniSmallMilkMoveLeft.AddBitmap(IDB_PeopleSmallMilk_left01, RGB(255, 255, 255));
+			aniSmallMilkMoveLeft.AddBitmap(IDB_PeopleSmallMilk_left02, RGB(255, 255, 255));
+			aniSmallMilkMoveLeft.AddBitmap(IDB_PeopleSmallMilk_left03, RGB(255, 255, 255));
+
+			aniSmallMilkMoveRight.AddBitmap(IDB_PeopleSmallMilk_right01, RGB(255, 255, 255));
+			aniSmallMilkMoveRight.AddBitmap(IDB_PeopleSmallMilk_right02, RGB(255, 255, 255));
+			aniSmallMilkMoveRight.AddBitmap(IDB_PeopleSmallMilk_right03, RGB(255, 255, 255));
+
+			aniSmallMilkMoveUp.AddBitmap(IDB_PeopleSmallMilk_back01, RGB(255, 255, 255));
+			aniSmallMilkMoveUp.AddBitmap(IDB_PeopleSmallMilk_back02, RGB(255, 255, 255));
+			aniSmallMilkMoveUp.AddBitmap(IDB_PeopleSmallMilk_back03, RGB(255, 255, 255));
+
+			aniSmallMilkMoveDown.AddBitmap(IDB_PeopleSmallMilk_front01, RGB(255, 255, 255));
+			aniSmallMilkMoveDown.AddBitmap(IDB_PeopleSmallMilk_front02, RGB(255, 255, 255));
+			aniSmallMilkMoveDown.AddBitmap(IDB_PeopleSmallMilk_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniCheeseMoveLeft.AddBitmap(IDB_PeopleCheese_left01, RGB(255, 255, 255));
+			aniCheeseMoveLeft.AddBitmap(IDB_PeopleCheese_left02, RGB(255, 255, 255));
+			aniCheeseMoveLeft.AddBitmap(IDB_PeopleCheese_left03, RGB(255, 255, 255));
+
+			aniCheeseMoveRight.AddBitmap(IDB_PeopleCheese_right01, RGB(255, 255, 255));
+			aniCheeseMoveRight.AddBitmap(IDB_PeopleCheese_right02, RGB(255, 255, 255));
+			aniCheeseMoveRight.AddBitmap(IDB_PeopleCheese_right03, RGB(255, 255, 255));
+
+			aniCheeseMoveUp.AddBitmap(IDB_PeopleCheese_back01, RGB(255, 255, 255));
+			aniCheeseMoveUp.AddBitmap(IDB_PeopleCheese_back02, RGB(255, 255, 255));
+			aniCheeseMoveUp.AddBitmap(IDB_PeopleCheese_back03, RGB(255, 255, 255));
+
+			aniCheeseMoveDown.AddBitmap(IDB_PeopleCheese_front01, RGB(255, 255, 255));
+			aniCheeseMoveDown.AddBitmap(IDB_PeopleCheese_front02, RGB(255, 255, 255));
+			aniCheeseMoveDown.AddBitmap(IDB_PeopleCheese_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniButterMoveLeft.AddBitmap(IDB_PeopleButter_left01, RGB(255, 255, 255));
+			aniButterMoveLeft.AddBitmap(IDB_PeopleButter_left02, RGB(255, 255, 255));
+			aniButterMoveLeft.AddBitmap(IDB_PeopleButter_left03, RGB(255, 255, 255));
+
+			aniButterMoveRight.AddBitmap(IDB_PeopleButter_right01, RGB(255, 255, 255));
+			aniButterMoveRight.AddBitmap(IDB_PeopleButter_right02, RGB(255, 255, 255));
+			aniButterMoveRight.AddBitmap(IDB_PeopleButter_right03, RGB(255, 255, 255));
+
+			aniButterMoveUp.AddBitmap(IDB_PeopleButter_back01, RGB(255, 255, 255));
+			aniButterMoveUp.AddBitmap(IDB_PeopleButter_back02, RGB(255, 255, 255));
+			aniButterMoveUp.AddBitmap(IDB_PeopleButter_back03, RGB(255, 255, 255));
+
+			aniButterMoveDown.AddBitmap(IDB_PeopleButter_front01, RGB(255, 255, 255));
+			aniButterMoveDown.AddBitmap(IDB_PeopleButter_front02, RGB(255, 255, 255));
+			aniButterMoveDown.AddBitmap(IDB_PeopleButter_front03, RGB(255, 255, 255));
+
+		}
+
+		///
+
 		{
 			aniChickenMoveLeft.AddBitmap(IDB_PeopleChicken_left01, RGB(255, 255, 255));
 			aniChickenMoveLeft.AddBitmap(IDB_PeopleChicken_left02, RGB(255, 255, 255));

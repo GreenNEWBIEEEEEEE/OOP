@@ -77,6 +77,13 @@ namespace game_framework {
 		CAnimation aniGrassMoveLeft, aniGrassMoveRight, aniGrassMoveUp, aniGrassMoveDown;
 		CAnimation aniChickenMoveLeft, aniChickenMoveRight, aniChickenMoveUp, aniChickenMoveDown;
 
+		CAnimation aniMilkMoveLeft, aniMilkMoveRight, aniMilkMoveUp, aniMilkMoveDown;
+		CAnimation aniSmallMilkMoveLeft, aniSmallMilkMoveRight, aniSmallMilkMoveUp, aniSmallMilkMoveDown;
+		CAnimation aniGoldenEggMoveLeft, aniGoldenEggMoveRight, aniGoldenEggMoveUp, aniGoldenEggMoveDown;
+		CAnimation aniCheeseMoveLeft, aniCheeseMoveRight, aniCheeseMoveUp, aniCheeseMoveDown;
+		CAnimation aniButterMoveLeft, aniButterMoveRight, aniButterMoveUp, aniButterMoveDown;
+
+
 		// 更換工具的動畫
 		CAnimation aniChangeTool_0;
 		CAnimation aniChangeTool_1;
