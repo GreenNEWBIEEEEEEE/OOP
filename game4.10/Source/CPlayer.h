@@ -16,8 +16,13 @@ namespace game_framework {
 			EggMove,
 			ChickenMove,
 			GrassMove,
-			MilkMove
+			MilkMove,
+			BigMilkMove,
+			GoldenEggMove,
+			CheeseMove,
+			ButterMove
 		};
+
 		CPlayer();
 		~CPlayer();
 
@@ -57,6 +62,10 @@ namespace game_framework {
 			CGameMap* m, 
 			vector<CGameObject*>* obj);
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
+
+		void DoSomethingInChickenCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj);
+		void DoSomethingInCowCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj);
+		void SellThing(CGameMap* m);
 
 	private:
 		MoveState currentMoveState = NormalMove;

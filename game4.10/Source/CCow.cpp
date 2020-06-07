@@ -18,7 +18,7 @@ namespace game_framework {
 		y = lastY = resetY = positionY;
 		bx = x; by = y;
 		currentDirection = CAnimal::Direction::Down;
-		currentStatus = CAnimal::Status::NoProduce;
+		currentStatus = CAnimal::Status::Produce;
 		currentMove = &moveDown;
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 		STEP_SIZE = 5;
@@ -59,7 +59,73 @@ namespace game_framework {
 
 	void CCow::Produce()
 	{
-		// TODO: Production of Cows
+		if (timer->IsNewDay())
+		{
+			TRACE("\nTRIGGER Milk\n");
+			bool groove01 = map->GetSpecifiedElementID(2, 4) == -116;
+			bool groove02 = map->GetSpecifiedElementID(3, 4) == -116;
+			bool groove03 = map->GetSpecifiedElementID(4, 4) == -116;
+			bool groove04 = map->GetSpecifiedElementID(5, 4) == -116;
+			if (currentStatus == Status::NoProduce)
+			{
+				if (groove01)
+				{
+					map->SetSpecifiedElementID(2, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove02)
+				{
+					map->SetSpecifiedElementID(3, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove03)
+				{
+					map->SetSpecifiedElementID(4, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else if (groove04)
+				{
+					map->SetSpecifiedElementID(5, 4, -109);
+					currentStatus = Status::Produce;
+				}
+				else
+				{
+					DecreaseHP(-34);
+					currentStatus = Status::Hungry;
+				}
+			}
+			else if (currentStatus == Status::Hungry)
+			{
+				if (groove01)
+				{
+					map->SetSpecifiedElementID(4, 2, -109);
+					IncreaseHP(15);
+				}
+				else if (groove02)
+				{
+					map->SetSpecifiedElementID(4, 3, -109);
+					IncreaseHP(15);
+				}
+				else if (groove03)
+				{
+					map->SetSpecifiedElementID(4, 4, -109);
+					IncreaseHP(15);
+				}
+				else if (groove04)
+				{
+					map->SetSpecifiedElementID(4, 5, -109);
+					IncreaseHP(15);
+				}
+				else
+					DecreaseHP(-34);
+
+				if (healthPoint == 100)
+				{
+					currentStatus = Status::Produce;
+				}
+			}
+
+		}
 	}
 
 	void CCow::OnMove(CGameMap * m, vector<CGameObject*>* obj)

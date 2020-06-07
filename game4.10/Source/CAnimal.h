@@ -29,6 +29,7 @@ namespace game_framework {
 		virtual void OnMove(CGameMap* m, vector<CGameObject*>* obj) = 0;
 		virtual void OnShow(CGameMap* m) = 0;
 		Status GetCurrentStatus();
+		int GetClosePoint();
 		void UnableShowAndMove();
 		void EnableShowAndMove();
 		void ChangeStatus(Status status);
@@ -40,6 +41,7 @@ namespace game_framework {
 	protected:
 		int onMoveTimes = 3; // 為了讓移動更加順暢自然，在重新決定動物移動方向之前，要先走一定次數，才能重新決定方向
 		int counter = 0;     // 計數onMove次數
+		int closePoint = 0;  // 主人與動物的親密度
 		int resetX, resetY;
 		bool onShowAndMove = true;  // 如果雞被人類抱起來的話，就必須unable
 		bool isPickedUp = false;
@@ -48,7 +50,7 @@ namespace game_framework {
 
 		Direction currentDirection;
 		Direction lastDirection;
-		Status currentStatus;
+		Status currentStatus = Status::Produce;
 
 		CAnimation moveLeft;
 		CAnimation moveRight;

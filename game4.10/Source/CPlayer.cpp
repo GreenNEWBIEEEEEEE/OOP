@@ -510,6 +510,31 @@ namespace game_framework {
 			Move(m, &aniEggMoveUp, &aniEggMoveDown, &aniEggMoveLeft, &aniEggMoveRight, obj);
 			TRACE("\nChickenMOve\n");
 		}
+		else if (currentMoveState == GoldenEggMove)
+		{
+			Move(m, &aniGoldenEggMoveUp, &aniGoldenEggMoveDown, &aniGoldenEggMoveLeft, &aniGoldenEggMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == MilkMove)
+		{
+			Move(m, &aniSmallMilkMoveUp, &aniSmallMilkMoveDown, &aniSmallMilkMoveLeft, &aniSmallMilkMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == BigMilkMove)
+		{
+			Move(m, &aniMilkMoveUp, &aniMilkMoveDown, &aniMilkMoveLeft, &aniMilkMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == CheeseMove)
+		{
+			Move(m, &aniCheeseMoveUp, &aniCheeseMoveDown, &aniCheeseMoveLeft, &aniCheeseMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == ButterMove)
+		{
+			Move(m, &aniButterMoveUp, &aniButterMoveDown, &aniButterMoveLeft, &aniButterMoveRight, obj);
+			TRACE("\nChickenMOve\n");
+		}
 		else if (currentMoveState == GrassMove)
 		{
 			Move(m, &aniGrassMoveUp, &aniGrassMoveDown, &aniGrassMoveLeft, &aniGrassMoveRight, obj);
@@ -891,7 +916,7 @@ namespace game_framework {
 			}
 			else if (this->currentMoveState == MoveState::GrassMove) //如果現在人物拿著飼料在走，而且附近有飼料槽
 			{
-				if (m == mm->GetChickenCoop())
+				if (m == mm->GetChickenCoop() || m == mm->GetCowCoop())
 				{
 					vector<int> groove;    // 飼料槽
 					groove.push_back(-109);
@@ -909,66 +934,17 @@ namespace game_framework {
 				this->currentMoveState = MoveState::NormalMove;
 			}
 			else
+			{
+				SellThing(m);
 				this->currentMoveState = MoveState::NormalMove;
+			}
 			//else if (this->currentMoveState == MoveState::RadishMove)
 				//this->currentMoveState = MoveState::NormalMove;
 
 			if (toolSelector == 0)
 			{
-				if (m == mm->GetChickenCoop())
-				{
-					vector<int> grassBox;  // 拿飼料的箱子
-					grassBox.push_back(-101);
-					grassBox.push_back(-102);
-					grassBox.push_back(-103);
-					grassBox.push_back(-104);
-					
-					// 偵測只用手
-					if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
-						(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) || 
-						(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) || 
-						(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0)) ) // 偵測人物面向的最近動物
-					{
-						TRACE("\nTRIGGER Animal\n");
-						CAnimal* facingAnimal = GetFacingAnimal();
-						if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
-						{
-							facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
-							this->ChangeMoveState(MoveState::EggMove);
-						}
-						else
-						{
-
-							facingAnimal->UnableShowAndMove();
-							facingAnimal->SetCollision(false);
-							facingAnimal->SetPickUp(true);
-							this->ChangeMoveState(MoveState::ChickenMove);
-							pickUpAnimal = facingAnimal;
-						}
-
-					}
-					else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
-						(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
-						(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
-						(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))  // 偵測人物面向是否有飼料箱
-					{
-						this->ChangeMoveState(MoveState::GrassMove);
-						TRACE("\nTRIGGER GRASS MOVE\n");
-					}
-					/*
-					else if (this->currentMoveState == MoveState::GrassMove &&  //如果現在人物拿著飼料在走，而且附近有飼料槽
-						((facingDirection == &aniMoveUp && DetectUpElementID(m, groove, 2)) ||
-						(facingDirection == &aniMoveDown && DetectDownElementID(m, groove, 2)) ||
-						(facingDirection == &aniMoveLeft && DetectLeftElementID(m, groove, 2)) ||
-						(facingDirection == &aniMoveRight && DetectRightElementID(m, groove, 2)))) // 偵測人物面向是否有飼料槽
-					{
-						int gndW = 64, gndH = 53;
-						int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
-						m->SetSpecifiedElementID(gx, gy - 2 , -116);
-						TRACE("\nSET ELEMENT\n");
-					}
-					*/
-				}
+				DoSomethingInChickenCoop(mm, m, obj);
+				DoSomethingInCowCoop(mm, m, obj);
 			}
 		}
 		else if (key == KEY_B)
@@ -979,6 +955,148 @@ namespace game_framework {
 		{
 			// 傳入其他事件觸發
 			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sms);
+		}
+	}
+
+	void CPlayer::SellThing(CGameMap* m)
+	{
+		vector<int> sellBox;
+		sellBox.push_back(-97);
+		sellBox.push_back(-98);
+		sellBox.push_back(-99);
+		sellBox.push_back(-100);
+		if ((direction == 1 && DetectUpElementID(m, sellBox)) ||
+			(direction == 2 && DetectDownElementID(m, sellBox)) ||
+			(direction == 3 && DetectLeftElementID(m, sellBox)) ||
+			(direction == 4 && DetectRightElementID(m, sellBox)))
+		{
+			if (currentMoveState == MoveState::MilkMove)
+				money += 100;
+			else if (currentMoveState == MoveState::RadishMove)
+				money += 10;
+			else if (currentMoveState == MoveState::ButterMove)
+				money += 150;
+			else if (currentMoveState == MoveState::CheeseMove)
+				money += 300;
+		}
+	}
+
+	void CPlayer::DoSomethingInCowCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj)
+	{
+		if (m == mm->GetCowCoop())
+		{
+			
+			vector<int> grassBox;  // 拿飼料的箱子
+			vector<int> cheeseMachine;
+			vector<int> butterMachine;
+			butterMachine.push_back(-161);
+			cheeseMachine.push_back(-162);
+			grassBox.push_back(-101);
+			grassBox.push_back(-102);
+			grassBox.push_back(-103);
+			grassBox.push_back(-104);
+
+			// 偵測只用手
+			if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
+				(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) ||
+				(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) ||
+				(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0))) // 偵測人物面向的最近動物
+			{
+				TRACE("\nTRIGGER Cow\n");
+				CAnimal* facingAnimal = GetFacingAnimal();
+				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+				{
+					TRACE("\nTEST FOR COW MILK\n");
+					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+					if (facingAnimal->GetClosePoint() >= 2)
+						this->ChangeMoveState(MoveState::BigMilkMove);
+					else
+						this->ChangeMoveState(MoveState::MilkMove);
+				}
+
+			}
+			else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::GrassMove);
+				TRACE("\nTRIGGER GRASS MOVE\n");
+			}
+			else if ((facingDirection == &aniSmallMilkMoveUp && DetectUpElementID(m, butterMachine)) ||
+				(facingDirection == &aniSmallMilkMoveDown && DetectDownElementID(m, butterMachine)) ||
+				(facingDirection == &aniSmallMilkMoveLeft && DetectLeftElementID(m, butterMachine)) ||
+				(facingDirection == &aniSmallMilkMoveRight && DetectRightElementID(m, butterMachine)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::ButterMove);
+				TRACE("\nTRIGGER Butter MOVE\n");
+			}
+			else if ((facingDirection == &aniSmallMilkMoveUp && DetectUpElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniSmallMilkMoveDown && DetectDownElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniSmallMilkMoveLeft && DetectLeftElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniSmallMilkMoveRight && DetectRightElementID(m, cheeseMachine)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::CheeseMove);
+				TRACE("\nTRIGGER Butter MOVE\n");
+			}
+		}
+	}
+
+	void CPlayer::DoSomethingInChickenCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj)
+	{
+		if (m == mm->GetChickenCoop())
+		{
+			vector<int> grassBox;  // 拿飼料的箱子
+			grassBox.push_back(-101);
+			grassBox.push_back(-102);
+			grassBox.push_back(-103);
+			grassBox.push_back(-104);
+
+			// 偵測只用手
+			if ((facingDirection == &aniMoveUp && DetectCollision(obj, 0, -STEP_SIZE)) ||
+				(facingDirection == &aniMoveDown && DetectCollision(obj, 0, STEP_SIZE)) ||
+				(facingDirection == &aniMoveLeft && DetectCollision(obj, -STEP_SIZE, 0)) ||
+				(facingDirection == &aniMoveRight && DetectCollision(obj, STEP_SIZE, 0))) // 偵測人物面向的最近動物
+			{
+				TRACE("\nTRIGGER Animal\n");
+				CAnimal* facingAnimal = GetFacingAnimal();
+				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+				{
+					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+					this->ChangeMoveState(MoveState::EggMove);
+				}
+				else
+				{
+
+					facingAnimal->UnableShowAndMove();
+					facingAnimal->SetCollision(false);
+					facingAnimal->SetPickUp(true);
+					this->ChangeMoveState(MoveState::ChickenMove);
+					pickUpAnimal = facingAnimal;
+				}
+
+			}
+			else if ((facingDirection == &aniMoveUp && DetectUpElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveDown && DetectDownElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveLeft && DetectLeftElementID(m, grassBox)) ||
+				(facingDirection == &aniMoveRight && DetectRightElementID(m, grassBox)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::GrassMove);
+				TRACE("\nTRIGGER GRASS MOVE\n");
+			}
+			/*
+			else if (this->currentMoveState == MoveState::GrassMove &&  //如果現在人物拿著飼料在走，而且附近有飼料槽
+				((facingDirection == &aniMoveUp && DetectUpElementID(m, groove, 2)) ||
+				(facingDirection == &aniMoveDown && DetectDownElementID(m, groove, 2)) ||
+				(facingDirection == &aniMoveLeft && DetectLeftElementID(m, groove, 2)) ||
+				(facingDirection == &aniMoveRight && DetectRightElementID(m, groove, 2)))) // 偵測人物面向是否有飼料槽
+			{
+				int gndW = 64, gndH = 53;
+				int gx = (bx + width / 2) / gndW, gy = (by + height / 2) / gndH;
+				m->SetSpecifiedElementID(gx, gy - 2 , -116);
+				TRACE("\nSET ELEMENT\n");
+			}
+			*/
 		}
 	}
 

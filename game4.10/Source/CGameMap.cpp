@@ -1169,20 +1169,20 @@ namespace game_framework {
 					toolsMachinesShop_23.ShowBitmap();
 					break;
 				case -161:
-					toolsMachinesShop_23.SetTopLeft(x, y);
-					toolsMachinesShop_23.ShowBitmap();
+					cowMachine1.SetTopLeft(x, y);
+					cowMachine1.ShowBitmap();
 					break;
 				case -162:
-					toolsMachinesShop_23.SetTopLeft(x, y);
-					toolsMachinesShop_23.ShowBitmap();
+					cowMachine2.SetTopLeft(x, y);
+					cowMachine2.ShowBitmap();
 					break;
 				case -163:
-					toolsMachinesShop_23.SetTopLeft(x, y);
-					toolsMachinesShop_23.ShowBitmap();
+					sheepMachine1.SetTopLeft(x, y);
+					sheepMachine1.ShowBitmap();
 					break;
 				case -164:
-					toolsMachinesShop_23.SetTopLeft(x, y);
-					toolsMachinesShop_23.ShowBitmap();
+					sheepMachine2.SetTopLeft(x, y);
+					sheepMachine2.ShowBitmap();
 					break;
 
 				default:

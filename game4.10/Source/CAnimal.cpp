@@ -69,6 +69,9 @@ namespace game_framework
 		return currentStatus;
 	}
 
-
+	int CAnimal::GetClosePoint()
+	{
+		return closePoint;
+	}
 }
 
