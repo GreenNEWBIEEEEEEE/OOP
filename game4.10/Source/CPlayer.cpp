@@ -16,6 +16,7 @@
 #include "CToolWaterer.h"
 #include "CShopMenu.h"
 #include "CAnimal.h"
+#include "CWeather.h"
 #include "CGameObject.h"
 namespace game_framework {
 	CPlayer::CPlayer() :
@@ -72,6 +73,7 @@ namespace game_framework {
 		// 設定金錢、體力值
 		money = 100;
 		healthPoint = 100;
+		sickPoint = 0;
 	}
 
 	CPlayer::~CPlayer() {
@@ -541,6 +543,14 @@ namespace game_framework {
 		}
 		else if (currentMoveState == NormalMove)
 			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
+
+		if (m->GetWeather() != nullptr)
+		{
+			CWeather* currentWeather = m->GetWeather();
+			bool isRainy = currentWeather->ForecastWeather() == "Rainy";
+			if (isRainy)
+				sickPoint += 1;
+		}
 	}
 
 	bool CPlayer::DetectLeftElementID(CGameMap* m, vector<int> elemID, int distance)
@@ -807,6 +817,7 @@ namespace game_framework {
 					else if (direction == 2) facingDirection = &aniUseTool_1_front;
 					else if (direction == 3) facingDirection = &aniUseTool_1_left;
 					else facingDirection = &aniUseTool_1_right;
+					DecreaseHP(1);
 					break;
 				case 2:
 					lastFacingDirection = facingDirection;
@@ -815,6 +826,7 @@ namespace game_framework {
 					else if (direction == 2) facingDirection = &aniUseTool_2_front;
 					else if (direction == 3) facingDirection = &aniUseTool_2_left;
 					else facingDirection = &aniUseTool_2_right;
+					DecreaseHP(1);
 					break;
 				case 3:
 					lastFacingDirection = facingDirection;
@@ -823,6 +835,7 @@ namespace game_framework {
 					else if (direction == 2) facingDirection = &aniUseTool_3_front;
 					else if (direction == 3) facingDirection = &aniUseTool_3_left;
 					else facingDirection = &aniUseTool_3_right;
+					DecreaseHP(1);
 					break;
 				case 4:
 					lastFacingDirection = facingDirection;
@@ -836,6 +849,7 @@ namespace game_framework {
 					else if (direction == 2) facingDirection = &aniUseTool_5_front;
 					else if (direction == 3) facingDirection = &aniUseTool_5_left;
 					else facingDirection = &aniUseTool_5_right;
+					DecreaseHP(1);
 					break;
 				case 6:
 					// 根據方向來決定用哪一邊的動畫
@@ -843,7 +857,7 @@ namespace game_framework {
 					else if (direction == 2) facingDirection = &aniUseTool_6_front;
 					else if (direction == 3) facingDirection = &aniUseTool_6_left;
 					else facingDirection = &aniUseTool_6_right;
-
+					DecreaseHP(1);
 					break;
 				default:
 					break;
@@ -978,6 +992,10 @@ namespace game_framework {
 				money += 150;
 			else if (currentMoveState == MoveState::CheeseMove)
 				money += 300;
+			else if (currentMoveState == MoveState::EggMove)
+				money += 10;
+			else if (currentMoveState == MoveState::GoldenEggMove)
+				money += 1000;
 		}
 	}
 
@@ -1004,14 +1022,18 @@ namespace game_framework {
 			{
 				TRACE("\nTRIGGER Cow\n");
 				CAnimal* facingAnimal = GetFacingAnimal();
-				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+				if (facingAnimal->GetCurrentStatus() == CAnimal::Status::HighProduce)
 				{
 					TRACE("\nTEST FOR COW MILK\n");
 					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
-					if (facingAnimal->GetClosePoint() >= 2)
-						this->ChangeMoveState(MoveState::BigMilkMove);
-					else
-						this->ChangeMoveState(MoveState::MilkMove);
+					this->ChangeMoveState(MoveState::BigMilkMove);
+					
+				}
+				else if (facingAnimal->GetCurrentStatus() == CAnimal::Status::Produce)
+				{
+					TRACE("\nTEST FOR COW MILK\n");
+					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+					this->ChangeMoveState(MoveState::MilkMove);
 				}
 
 			}
@@ -1064,6 +1086,11 @@ namespace game_framework {
 				{
 					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
 					this->ChangeMoveState(MoveState::EggMove);
+				}
+				else if (facingAnimal->GetCurrentStatus() == CAnimal::Status::HighProduce)
+				{
+					facingAnimal->ChangeStatus(CAnimal::Status::NoProduce);
+					this->ChangeMoveState(MoveState::GoldenEggMove);
 				}
 				else
 				{

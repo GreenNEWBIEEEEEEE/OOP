@@ -59,6 +59,15 @@ namespace game_framework {
 			CMapManager *mm, 
 			CGameDialog *gd, 
 			vector<CShopMenu*> sms); // 半夜12點強制遣返回家
+
+		void ForceToRest(
+			CWeather* weather,
+			CTimer* timer,
+			CPlayer *p,
+			CMapManager *mm,
+			CGameDialog *gd,
+			vector<CShopMenu*> sms); // 淋雨太多，強制多睡一天
+
 		int GetNumberOfDays();
 		void OnKeyDown(UINT key);
 		void OnKeyUp(UINT key);

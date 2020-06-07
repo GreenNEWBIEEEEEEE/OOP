@@ -65,6 +65,23 @@ namespace game_framework
 			}
 			gd->Enable();
 			break;
+		case 30002:
+			gd->SetCallback(&ChangeToNewDay, mm->GetTimer(), mm->GetOutsideWeather());
+			p->SetSickPoint(0);
+			gd->AddMessage("I'm not feeling well today. ");
+			gd->AddMessage("I decided to sleep.");
+			if (p->GetCurrentMoveState() != CPlayer::MoveState::NormalMove)
+			{
+				if (pickUpAnimal != nullptr)
+				{
+					pickUpAnimal->SetPickUp(false);
+					pickUpAnimal->Reset();
+					pickUpAnimal = nullptr;
+				}
+				p->ChangeMoveState(CPlayer::MoveState::NormalMove);
+			}
+			gd->Enable();
+			break;
 		default:
 			break;
 		}

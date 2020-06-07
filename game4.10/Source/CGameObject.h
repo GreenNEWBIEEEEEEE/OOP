@@ -22,6 +22,8 @@ namespace game_framework {
 		int GetX() const;
 		int GetY() const;
 		int GetHealthPoint() const;
+		int GetSickPoint() const;
+		void SetSickPoint(int sp);
 		int GetBodyX() const;
 		int GetBodyY() const;
 		int GetLastX() const;
@@ -57,6 +59,7 @@ namespace game_framework {
 
 		int healthPoint;
 
+		int sickPoint = 0;
 	};
 
 

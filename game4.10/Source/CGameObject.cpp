@@ -59,6 +59,11 @@ namespace game_framework {
 		return this->healthPoint;
 	}
 
+	int CGameObject::GetSickPoint() const
+	{
+		return this->sickPoint;
+	}
+
 	int CGameObject::GetWidth() const
 	{
 		return width;
@@ -97,6 +102,11 @@ namespace game_framework {
 	void CGameObject::SetCollision(bool flag)
 	{
 		collision = flag;
+	}
+
+	void CGameObject::SetSickPoint(int sp)
+	{
+		this->sickPoint = sp;
 	}
 
 	int CGameObject::GetBodyY() const

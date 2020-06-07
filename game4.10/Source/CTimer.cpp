@@ -23,18 +23,28 @@ namespace game_framework {
 	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms, CBackpackMenu *bpm)
 	{
 		CountTime();
-		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)
+		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)	// 太晚，強制遣返
 		{
 			// 先把目前的所有dialog 商店都disable
 			gd->Disable();
 			((CPlantShopMenu*)sms.at(0))->Disable();
 			bpm->Disable();
-			
-
+	
 			SetTimerSpeed(0);
-			hour = 23;
-			hourCounter = HOUR_COUNTER_MAX - 5;
 			ForceToRepatriate(weather, timer, p, mm, gd, sms);
+		}
+		if (IsNewDay())				// 生病，強制睡眠
+		{
+			if (p->GetSickPoint() > 200)
+			{
+				gd->Disable();
+				((CPlantShopMenu*)sms.at(0))->Disable();
+				bpm->Disable();
+
+				SetTimerSpeed(0);
+				ForceToRest(weather, timer, p, mm, gd, sms);
+			}
+			
 		}
 	}
 
@@ -50,7 +60,14 @@ namespace game_framework {
 
 	void CTimer::ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
-		CMapSleepEvent* toHome = new CMapSleepEvent(30001);
+		CMapSleepEvent* toHome = new CMapSleepEvent(30001); // 時間太晚，強制睡眠
+		toHome->Execute(p, mm, gd, sms);
+		delete toHome;
+	}
+
+	void CTimer::ForceToRest(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
+	{
+		CMapSleepEvent* toHome = new CMapSleepEvent(30002); // 淋太多雨，強制睡眠
 		toHome->Execute(p, mm, gd, sms);
 		delete toHome;
 	}

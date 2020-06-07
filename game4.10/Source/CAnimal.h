@@ -17,6 +17,7 @@ namespace game_framework {
 		};
 
 		enum class Status {			// 健康狀態
+			HighProduce,				// 更高生產
 			Produce,				// 可生產
 			Hungry,					// 如果以WaitingForFeed到了明天(NewDay)，就會切換到Hungry
 			NoProduce    			// 無法生產
