@@ -33,8 +33,8 @@ namespace game_framework {
 			SetTimerSpeed(0);
 			ForceToRepatriate(weather, timer, p, mm, gd, sms);
 		}
-		if (IsNewDay())				// 生病，強制睡眠
-		{
+		if (hour == 8 && hourCounter == 3)				// 生病，強制睡眠
+		{												// 觸發時間和颱風觸發時間不同，如果相同會有bug
 			if (p->GetSickPoint() > 200)
 			{
 				gd->Disable();
