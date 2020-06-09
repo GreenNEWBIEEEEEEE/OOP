@@ -74,7 +74,7 @@ namespace game_framework {
 		// 1=上, 2=下, 3=左, 4=右
 		int direction = 2;
 		int lastDirection;
-		
+		bool fixAnimation = false;
 		CAnimal* pickUpAnimal = nullptr;
 
 		// 移動的動畫

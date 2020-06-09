@@ -261,6 +261,13 @@
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CChicken.cpp" />
     <ClCompile Include="Source\CCow.cpp" />
+    <ClCompile Include="Source\CFood.cpp" />
+    <ClCompile Include="Source\CFoodAppleJuice.cpp" />
+    <ClCompile Include="Source\CFoodDrinkBox.cpp" />
+    <ClCompile Include="Source\CFoodLunchBox.cpp" />
+    <ClCompile Include="Source\CFoodMeal.cpp" />
+    <ClCompile Include="Source\CFoodMenu.cpp" />
+    <ClCompile Include="Source\CFoodOrangeJuice.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CGameObject.cpp" />
@@ -334,6 +341,13 @@
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CChicken.h" />
     <ClInclude Include="Source\CCow.h" />
+    <ClInclude Include="Source\CFood.h" />
+    <ClInclude Include="Source\CFoodAppleJuice.h" />
+    <ClInclude Include="Source\CFoodDrinkBox.h" />
+    <ClInclude Include="Source\CFoodLunchBox.h" />
+    <ClInclude Include="Source\CFoodMeal.h" />
+    <ClInclude Include="Source\CFoodMenu.h" />
+    <ClInclude Include="Source\CFoodOrangeJuice.h" />
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CGameObject.h" />

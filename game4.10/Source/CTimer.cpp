@@ -54,7 +54,7 @@ namespace game_framework {
 
 		if (key == KEY_B)
 		{
-			TIME_SPEED = 50;
+			//TIME_SPEED = 50;
 		}
 	}
 

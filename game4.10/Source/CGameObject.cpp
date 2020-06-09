@@ -134,10 +134,15 @@ namespace game_framework {
 
 	void CGameObject::IncreaseHP(int hp)
 	{
-		if (healthPoint + hp > 100)
-			healthPoint = 100;
+		if (healthPoint + hp > MAX_HP)
+			healthPoint = MAX_HP;
 		else
 			healthPoint += hp;
+	}
+
+	void CGameObject::IncreaseMaxHP(int hp)
+	{
+		MAX_HP += hp;
 	}
 
 	CAnimal* CGameObject::GetFacingAnimal() // 取得你面前最近的物件

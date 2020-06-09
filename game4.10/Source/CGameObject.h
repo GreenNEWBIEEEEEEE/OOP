@@ -30,6 +30,7 @@ namespace game_framework {
 		int GetLastY() const;
 		void DecreaseHP(int hp);
 		void IncreaseHP(int hp);
+		void IncreaseMaxHP(int hp);
 		CAnimal* GetFacingAnimal();
 		bool DetectCollision(vector<CGameObject*>* obj, int nextX, int nextY);
 		virtual void OnMove(CGameMap* m, vector<CGameObject*>* obj) = 0;
@@ -42,6 +43,7 @@ namespace game_framework {
 		// 玩家角色圖片寬高
 		int width, height;
 		int STEP_SIZE = 5;
+		int MAX_HP = 100;
 		// 玩家在地圖上的座標(點座標)
 		int x, y;   // 整張圖的點座標
 		int bx, by; // 玩家真正身體(body)的點座標

@@ -501,7 +501,10 @@ namespace game_framework {
 	void CPlayer::OnMove(CGameMap* m, vector<CGameObject*>* obj)
 	{
 		if (currentMoveState == RadishMove)
+		{
+
 			Move(m, &aniRadishMoveUp, &aniRadishMoveDown, &aniRadishMoveLeft, &aniRadishMoveRight, obj);
+		}
 		else if (currentMoveState == ChickenMove)
 		{
 			Move(m, &aniChickenMoveUp, &aniChickenMoveDown, &aniChickenMoveLeft, &aniChickenMoveRight, obj);
@@ -542,7 +545,9 @@ namespace game_framework {
 			Move(m, &aniGrassMoveUp, &aniGrassMoveDown, &aniGrassMoveLeft, &aniGrassMoveRight, obj);
 		}
 		else if (currentMoveState == NormalMove)
+		{
 			Move(m, &aniMoveUp, &aniMoveDown, &aniMoveLeft, &aniMoveRight, obj);
+		}
 
 		if (m->GetWeather() != nullptr)
 		{
@@ -637,6 +642,21 @@ namespace game_framework {
 	void CPlayer::Move(CGameMap* m, CAnimation* moveUp, CAnimation* moveDown, CAnimation* moveLeft, CAnimation* moveRight, vector<CGameObject*>* obj)
 	{
 		// 每一步移動量
+		if (fixAnimation)
+		{
+			if (lastDirection == 1)
+				facingDirection = moveUp;
+			else if (lastDirection == 2)
+				facingDirection = moveDown;
+			else if (lastDirection == 3)
+				facingDirection = moveLeft;
+			else
+				facingDirection = moveRight;
+
+			facingDirection->OnMove();
+			fixAnimation = false;
+		}
+
 		if (isMovingLeft)
 		{
 			// 更改方向旗標
@@ -798,6 +818,7 @@ namespace game_framework {
 		//
 		else if (key == KEY_A)
 		{
+			fixAnimation = true;
 			if (this->currentMoveState == MoveState::NormalMove)
 			{
 				if (healthPoint <= 0)
@@ -864,6 +885,8 @@ namespace game_framework {
 				default:
 					break;
 				}
+				if (isUsingTool)
+					fixAnimation = false;
 			}
 			
 			// 傳入農務事件觸發
