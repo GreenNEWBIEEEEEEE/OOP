@@ -1225,7 +1225,7 @@ namespace game_framework {
 		vector<CShopMenu*> sms
 	)
 	{
-		int px = p->GetBodyX() + 30, py = p->GetBodyY() + 60; // MAYBE FIXME
+		int px = p->GetBodyX() + 30, py = p->GetBodyY() + 55; // MAYBE FIXME
 		int gx = px / gndW, gy = py / gndH; // 求出格座標
 		map[gy][gx].triggerEventByKeyCode(key, p, mm, gd, sms);
 	}

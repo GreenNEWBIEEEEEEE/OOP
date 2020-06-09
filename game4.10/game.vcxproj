@@ -263,6 +263,7 @@
     <ClCompile Include="Source\CCow.cpp" />
     <ClCompile Include="Source\CFood.cpp" />
     <ClCompile Include="Source\CFoodAppleJuice.cpp" />
+    <ClCompile Include="Source\CFoodCake.cpp" />
     <ClCompile Include="Source\CFoodDrinkBox.cpp" />
     <ClCompile Include="Source\CFoodLunchBox.cpp" />
     <ClCompile Include="Source\CFoodMeal.cpp" />
@@ -343,6 +344,7 @@
     <ClInclude Include="Source\CCow.h" />
     <ClInclude Include="Source\CFood.h" />
     <ClInclude Include="Source\CFoodAppleJuice.h" />
+    <ClInclude Include="Source\CFoodCake.h" />
     <ClInclude Include="Source\CFoodDrinkBox.h" />
     <ClInclude Include="Source\CFoodLunchBox.h" />
     <ClInclude Include="Source\CFoodMeal.h" />
@@ -502,6 +504,12 @@
     <Image Include="RES\FogMask01.bmp" />
     <Image Include="RES\FogMask02.bmp" />
     <Image Include="RES\FogMask03.bmp" />
+    <Image Include="RES\Food\foodIcons\AppleJuice.bmp" />
+    <Image Include="RES\Food\foodIcons\Cake.bmp" />
+    <Image Include="RES\Food\foodIcons\Drinkbox.bmp" />
+    <Image Include="RES\Food\foodIcons\Lunchbox.bmp" />
+    <Image Include="RES\Food\foodIcons\Meal.bmp" />
+    <Image Include="RES\Food\foodIcons\OrangeJuice.bmp" />
     <Image Include="RES\GrayMask640x480_01.bmp" />
     <Image Include="RES\NewMaterial\Character\bigMilkMove\back\01.bmp" />
     <Image Include="RES\NewMaterial\Character\bigMilkMove\back\02.bmp" />

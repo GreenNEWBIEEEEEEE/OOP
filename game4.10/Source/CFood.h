@@ -13,7 +13,7 @@ namespace game_framework
 		string GetInfo() const;
 		int GetFoodID() const;
 		int GetNumber() const;
-		virtual void Execute() = 0;
+		virtual void Execute(CPlayer* p) = 0;
 		// ¼W´î¼Æ¶q
 		void IncreaseNumber(int number);
 		void DecreaseNumber(int number);
@@ -23,13 +23,12 @@ namespace game_framework
 		int foodID;
 		string foodName;
 		int number;
-		CMovingBitmap hoe;
-		CMovingBitmap hand;
-		CMovingBitmap axe;
-		CMovingBitmap seed01;
-		CMovingBitmap waterer;
-		CMovingBitmap sickle;
-		CMovingBitmap hammer;
+		CMovingBitmap appleJuice;
+		CMovingBitmap orangeJuice;
+		CMovingBitmap lunchBox;
+		CMovingBitmap drinkBox;
+		CMovingBitmap meal;
+		CMovingBitmap cake;
 
 		CMovingBitmap *icon = nullptr;
 	};

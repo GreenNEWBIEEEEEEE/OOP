@@ -2,6 +2,7 @@
 #include "CGameObject.h"
 namespace game_framework {
 	class CTool;
+	class CFood;
 	class CGameMap;
 	class CMapManager;
 	class CGameDialog;
@@ -33,7 +34,9 @@ namespace game_framework {
 		int GetCurrentTool() const;
 		int GetMoney() const;
 		vector<CTool*>* GetBackpack();
+		vector<CFood*>* GetFood();
 		void SetToolSelector(unsigned int select);
+		CFood* GetSelectedFood(int number);
 		void ChangeMoveState(MoveState state);
 		void DecreaseMoney(int money);
 		MoveState GetCurrentMoveState();
@@ -134,6 +137,7 @@ namespace game_framework {
 
 		// 工/道具的背包
 		vector<CTool*> backpack;
+		vector<CFood*> food;
 		unsigned int toolSelector;
 
 		// 玩家屬性

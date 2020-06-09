@@ -5,6 +5,7 @@
 #include "gamelib.h"
 #include "CPlayer.h"
 #include "CFoodMenu.h"
+#include "CFood.h"
 #include <iostream>
 
 namespace game_framework {
@@ -12,12 +13,12 @@ namespace game_framework {
 	{
 		enable = false;
 	}
-	/*
-	void CFoodMenu::SetFood(vector<CTool*>* playerFood)
+	
+	void CFoodMenu::SetFood(vector<CFood*>* playerFood)
 	{
 		this->playerFood = playerFood;
 	}
-	*/
+	
 	CFoodMenu::~CFoodMenu() {}
 
 
@@ -90,7 +91,7 @@ namespace game_framework {
 		}
 		else if (key == KEY_RIGHT)
 		{
-			if (selectRow == 1 && selectCol == 2)
+			if (selectRow == 1 && selectCol == 1)
 				return;
 
 			if (selectCol + 1 < COL)
@@ -111,7 +112,8 @@ namespace game_framework {
 		}
 		else if (key == KEY_A)
 		{
-			player->SetToolSelector(selectRow * column + selectCol);
+			CFood* selectedFood = player->GetSelectedFood(selectRow * column + selectCol);
+			selectedFood->Execute(player);
 		}
 		else if (key == KEY_D)
 		{
@@ -123,7 +125,7 @@ namespace game_framework {
 
 	void CFoodMenu::OnShow()
 	{
-		unsigned int tool = 0;
+		unsigned int food = 0;
 		if (enable)
 		{
 			// Draw background
@@ -137,16 +139,19 @@ namespace game_framework {
 			HPIcon.ShowBitmap();
 			HPStr.Format("%d", HPField);
 			DrawTexts(HPStr, 100, 20, 150);
+
 			/*
 			moneyIcon.SetTopLeft(200, 15);
 			moneyIcon.ShowBitmap();
 			moneyStr.Format("%d", moneyField);
 			DrawTexts(moneyStr, 250, 20, 150);
+			*/
 
-
+			/*
 			timeStr.Format("%d/%d/%d  %d o'clock", timer->GetYear(), timer->GetMonth(), timer->GetDay(), timer->GetHour());
 			DrawTexts(timeStr, 400, 20, 150);
 			*/
+
 			// Second block:
 			// Draw Selector(cursor)
 			int x = selectCol * width + fixWidth, y = selectRow * height + fixHeight;
@@ -154,31 +159,26 @@ namespace game_framework {
 			selector.ShowBitmap();
 
 			// Draw Logos
-			/*
 			for (int i = 0; i < row; ++i)
 			{
 				for (int j = 0; j < column; ++j)
 				{
 					int x = j * width + fixWidth, y = i * height + fixHeight;
-					if (tool >= playerFood->size())
+					if (food >= playerFood->size())
 					{
-						question.SetTopLeft(x, y);
-						question.ShowBitmap();
+						continue;
 					}
 					else
-						(*playerFood)[tool++]->ShowIcon(x, y);
+						(*playerFood)[food++]->ShowIcon(x, y);
 
 
 				}
 			}
-			*/
 
 			// Third block:
 			// Draw tool information text
-			/*
 			CString info = (*playerFood)[selectRow * column + selectCol]->GetInfo().c_str();
 			DrawTexts(info, 50, 380, 160);
-			*/
 
 		}
 

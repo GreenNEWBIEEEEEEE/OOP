@@ -217,6 +217,9 @@
     <ClCompile Include="Source\CFoodOrangeJuice.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CFoodCake.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -355,6 +358,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CFoodOrangeJuice.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CFoodCake.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1749,6 +1755,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\NewMaterial\MachineOnFloor\SheepHouse_Floor_Machine04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\AppleJuice.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\Cake.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\Drinkbox.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\Lunchbox.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\Meal.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Food\foodIcons\OrangeJuice.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

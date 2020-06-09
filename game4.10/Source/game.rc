@@ -992,6 +992,18 @@ IDB_SheepHouse_Floor_Machine03 BITMAP                  "C:\\Users\\boss.chu\\Des
 
 IDB_SheepHouse_Floor_Machine04 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\MachineOnFloor\\SheepHouse_Floor_Machine04.bmp"
 
+IDB_AppleJuice          BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\AppleJuice.bmp"
+
+IDB_DrinkBox            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Drinkbox.bmp"
+
+IDB_LunchBox            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Lunchbox.bmp"
+
+IDB_Meal                BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Meal.bmp"
+
+IDB_OrangeJuice         BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\OrangeJuice.bmp"
+
+IDB_Cake                BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Cake.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

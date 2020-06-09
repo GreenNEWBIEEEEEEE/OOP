@@ -5,21 +5,23 @@
 #include "gamelib.h"
 #include "CPlayer.h"
 #include "CFood.h"
-#include "CFoodMeal.h"
+#include "CFoodCake.h"
+
+
 namespace game_framework
 {
-	CFoodMeal::CFoodMeal(int foodID, int number) : CFood(foodID, number)
+	CFoodCake::CFoodCake(int foodID, int number) : CFood(foodID, number)
 	{
 
 	}
 
-	CFoodMeal::~CFoodMeal() {
+	CFoodCake::~CFoodCake() {
 
 	}
 
-	void CFoodMeal::Execute(CPlayer* p)
+	void CFoodCake::Execute(CPlayer* p)
 	{
-		p->GetFood()->at(4)->DecreaseNumber(1);
+		p->GetFood()->at(1)->DecreaseNumber(1);
 		p->IncreaseHP(15);
 	}
 }

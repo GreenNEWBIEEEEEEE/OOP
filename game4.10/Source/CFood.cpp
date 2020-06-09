@@ -4,7 +4,7 @@
 #include <ddraw.h>
 #include "gamelib.h"
 #include <string>
-#include "CFood.h"
+#include "CPlayer.h"
 #include "CFood.h"
 
 namespace game_framework {
@@ -15,26 +15,29 @@ namespace game_framework {
 
 		switch (foodID)
 		{
-		case 0:			// 手
-			icon = &hand;
+		case 0:			// appleJuice
+			icon = &appleJuice;
+			foodName = "AppleJuice";
 			break;
-		case 1:			// 斧頭
-			icon = &axe;
+		case 1:			// cake
+			icon = &cake;
+			foodName = "Cake";
 			break;
-		case 2:			// 槌子
-			icon = &hammer;
+		case 2:			// drinkBox
+			icon = &drinkBox;
+			foodName = "DrinkBox";
 			break;
-		case 3:			// 鋤頭
-			icon = &hoe;
+		case 3:			// lunchBox
+			icon = &lunchBox;
+			foodName = "LunchBox";
 			break;
-		case 4:			// 種子袋
-			icon = &seed01;
+		case 4:			// meal
+			icon = &meal;
+			foodName = "Meal";
 			break;
-		case 5:			// 鐮刀
-			icon = &sickle;
-			break;
-		case 6:			// 澆水器
-			icon = &waterer;
+		case 5:			// orangeJuice
+			icon = &orangeJuice;
+			foodName = "OrangeJuice";
 			break;
 		default:
 			break;
@@ -48,13 +51,12 @@ namespace game_framework {
 
 	void CFood::LoadBitmap()
 	{
-		hand.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
-		axe.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
-		hammer.LoadBitmap(IDB_Hammer, RGB(255, 255, 255));
-		hoe.LoadBitmap(IDB_Hoe, RGB(255, 255, 255));
-		seed01.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
-		sickle.LoadBitmap(IDB_Sickle, RGB(255, 255, 255));
-		waterer.LoadBitmap(IDB_WateringCan, RGB(255, 255, 255));
+		appleJuice.LoadBitmap(IDB_AppleJuice, RGB(255, 255, 255));
+		orangeJuice.LoadBitmap(IDB_OrangeJuice, RGB(255, 255, 255));
+		meal.LoadBitmap(IDB_Meal, RGB(255, 255, 255));
+		lunchBox.LoadBitmap(IDB_LunchBox, RGB(255, 255, 255));
+		drinkBox.LoadBitmap(IDB_DrinkBox, RGB(255, 255, 255));
+		cake.LoadBitmap(IDB_Cake, RGB(255, 255, 255));
 	}
 
 	bool CFood::IsEnable() const

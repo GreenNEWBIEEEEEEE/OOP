@@ -200,6 +200,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 	mapManager.AddMap("Scripts/MapInfos/MapE04.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE05.txt", false);
 	backpackMenu.SetBackpack(p1.GetBackpack());
+	foodMenu.SetFood(p1.GetFood());
 }
 
 CGameStateRun::~CGameStateRun()
@@ -287,6 +288,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	mapManager.SetTimer(&timer);
 	timer.LoadBitmap();
 	backpackMenu.LoadBitmap();
+	foodMenu.SetFood(p1.GetFood());
+	foodMenu.LoadBitmap();
 	gameDialog.LoadBitmap();
 	plantShopMenu.LoadBitmap();
 	animalShopMenu.LoadBitmap();
@@ -349,6 +352,9 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (backpackMenu.IsEnable()) {
 		backpackMenu.OnKeyDown(nChar, &p1);
 	}
+	else if (foodMenu.IsEnable()) {
+		foodMenu.OnKeyDown(nChar, &p1);
+	}
 	else if (plantShopMenu.IsEnable())
 	{
 		plantShopMenu.OnKeyDown(nChar);
@@ -369,6 +375,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
 		const char KEY_S = 0x53; // keyboard S
+		const char KEY_J = 'J'; // keyboard S
 
 		timer.OnKeyDown(nChar);
 
@@ -394,6 +401,12 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 			// 在此傳入player現在的money以及HP值 以便再menu顯示
 			backpackMenu.SetMoneyField(p1.GetMoney());
 			backpackMenu.SetHPField(p1.GetHealthPoint());
+		}
+		if (nChar == KEY_J)
+		{
+			foodMenu.Enable();
+			// 在此傳入player現在的money以及HP值 以便再menu顯示
+			foodMenu.SetHPField(p1.GetHealthPoint());
 		}
 	}
 }
@@ -471,6 +484,7 @@ void CGameStateRun::OnShow()
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();
 	backpackMenu.OnShow();
+	foodMenu.OnShow();
 	plantShopMenu.OnShow();
 	animalShopMenu.OnShow();
 	toolsMachinesShopMenu.OnShow();

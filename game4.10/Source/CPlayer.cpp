@@ -16,6 +16,13 @@
 #include "CToolWaterer.h"
 #include "CShopMenu.h"
 #include "CAnimal.h"
+#include "CFood.h"
+#include "CFoodAppleJuice.h"
+#include "CFoodDrinkBox.h"
+#include "CFoodLunchBox.h"
+#include "CFoodMeal.h"
+#include "CFoodCake.h"
+#include "CFoodOrangeJuice.h"
 #include "CWeather.h"
 #include "CGameObject.h"
 namespace game_framework {
@@ -38,6 +45,14 @@ namespace game_framework {
 		backpack.push_back(new CToolSeed(4, 6)); // 種子袋
 		backpack.push_back(new CToolSickle(5, 1)); // 鐮刀
 		backpack.push_back(new CToolWaterer(6, 1)); // 澆水器
+
+		food.push_back(new CFoodAppleJuice(0, 1)); // 
+		food.push_back(new CFoodCake(1, 1)); // 
+		food.push_back(new CFoodDrinkBox(2, 1)); // 
+		food.push_back(new CFoodLunchBox(3, 1)); // 
+		food.push_back(new CFoodMeal(4, 6)); // 
+		food.push_back(new CFoodOrangeJuice(5, 1)); // 
+
 		toolSelector = 0;  // 一開始是手
 
 		// 設定 使用工具動作 的動畫每幀切換時間間隔
@@ -80,6 +95,14 @@ namespace game_framework {
 		facingDirection = nullptr;
 		for (vector<CTool*>::iterator i = backpack.begin(); i != backpack.end(); i++)
 			delete *i;
+
+		for (vector<CFood*>::iterator i = food.begin(); i != food.end(); i++)
+			delete *i;
+	}
+
+	CFood* CPlayer::GetSelectedFood(int number)
+	{
+		return food[number];
 	}
 
 	void CPlayer::LoadBitmap()
@@ -90,6 +113,10 @@ namespace game_framework {
 		for (unsigned int i = 0; i < backpack.size(); i++)
 		{
 			backpack[i]->LoadBitmap();
+		}
+		for (unsigned int i = 0; i < food.size(); i++)
+		{
+			food[i]->LoadBitmap();
 		}
 		{
 			aniMoveLeft.AddBitmap(IDB_People_left01, RGB(255, 255, 255));
@@ -489,6 +516,11 @@ namespace game_framework {
 	vector<CTool*>* CPlayer::GetBackpack()
 	{
 		return &backpack;
+	}
+
+	vector<CFood*>* CPlayer::GetFood()
+	{
+		return &food;
 	}
 
 	void CPlayer::ChangeMoveState(MoveState state)

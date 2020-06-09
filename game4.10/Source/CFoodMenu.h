@@ -1,11 +1,10 @@
 #pragma once
 namespace game_framework {
-	
+	class CFood;
 	class CFoodMenu
 	{
 	public:
 		CFoodMenu();
-		void SetBackpack(vector<CTool*>* playerBackpack);
 		~CFoodMenu();
 
 
@@ -15,6 +14,7 @@ namespace game_framework {
 		bool IsEnable() const;
 
 		void SetHPField(int hp);
+		void SetFood(vector<CFood*>* playerFood);
 
 		void LoadBitmap();
 		void OnKeyDown(UINT key, CPlayer* player);
@@ -29,7 +29,7 @@ namespace game_framework {
 		int height = 100;
 		int fixWidth = 60;
 		int fixHeight = 70;
-		vector<CTool*>* playerBackpack;
+		vector<CFood*>* playerFood;
 		CMovingBitmap foodMenu;
 
 		// HP field
