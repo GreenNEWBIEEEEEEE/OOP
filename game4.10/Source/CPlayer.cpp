@@ -16,6 +16,7 @@
 #include "CToolWaterer.h"
 #include "CShopMenu.h"
 #include "CAnimal.h"
+#include "CFoodMenu.h"
 #include "CFood.h"
 #include "CFoodAppleJuice.h"
 #include "CFoodDrinkBox.h"
@@ -174,6 +175,105 @@ namespace game_framework {
 			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front01, RGB(255, 255, 255));
 			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front02, RGB(255, 255, 255));
 			aniEggMoveDown.AddBitmap(IDB_PeopleEgg_front03, RGB(255, 255, 255));
+
+		}
+		{
+			aniPeanutMoveLeft.AddBitmap(IDB_PeoplePeanut_left01, RGB(255, 255, 255));
+			aniPeanutMoveLeft.AddBitmap(IDB_PeoplePeanut_left02, RGB(255, 255, 255));
+			aniPeanutMoveLeft.AddBitmap(IDB_PeoplePeanut_left03, RGB(255, 255, 255));
+
+			aniPeanutMoveRight.AddBitmap(IDB_PeoplePeanut_right01, RGB(255, 255, 255));
+			aniPeanutMoveRight.AddBitmap(IDB_PeoplePeanut_right02, RGB(255, 255, 255));
+			aniPeanutMoveRight.AddBitmap(IDB_PeoplePeanut_right03, RGB(255, 255, 255));
+
+			aniPeanutMoveUp.AddBitmap(IDB_PeoplePeanut_back01, RGB(255, 255, 255));
+			aniPeanutMoveUp.AddBitmap(IDB_PeoplePeanut_back02, RGB(255, 255, 255));
+			aniPeanutMoveUp.AddBitmap(IDB_PeoplePeanut_back03, RGB(255, 255, 255));
+
+			aniPeanutMoveDown.AddBitmap(IDB_PeoplePeanut_front01, RGB(255, 255, 255));
+			aniPeanutMoveDown.AddBitmap(IDB_PeoplePeanut_front02, RGB(255, 255, 255));
+			aniPeanutMoveDown.AddBitmap(IDB_PeoplePeanut_front03, RGB(255, 255, 255));
+
+		}
+
+
+
+		{
+			aniTomatoMoveLeft.AddBitmap(IDB_PeopleTomato_left01, RGB(255, 255, 255));
+			aniTomatoMoveLeft.AddBitmap(IDB_PeopleTomato_left02, RGB(255, 255, 255));
+			aniTomatoMoveLeft.AddBitmap(IDB_PeopleTomato_left03, RGB(255, 255, 255));
+
+			aniTomatoMoveRight.AddBitmap(IDB_PeopleTomato_right01, RGB(255, 255, 255));
+			aniTomatoMoveRight.AddBitmap(IDB_PeopleTomato_right02, RGB(255, 255, 255));
+			aniTomatoMoveRight.AddBitmap(IDB_PeopleTomato_right03, RGB(255, 255, 255));
+
+			aniTomatoMoveUp.AddBitmap(IDB_PeopleTomato_back01, RGB(255, 255, 255));
+			aniTomatoMoveUp.AddBitmap(IDB_PeopleTomato_back02, RGB(255, 255, 255));
+			aniTomatoMoveUp.AddBitmap(IDB_PeopleTomato_back03, RGB(255, 255, 255));
+
+			aniTomatoMoveDown.AddBitmap(IDB_PeopleTomato_front01, RGB(255, 255, 255));
+			aniTomatoMoveDown.AddBitmap(IDB_PeopleTomato_front02, RGB(255, 255, 255));
+			aniTomatoMoveDown.AddBitmap(IDB_PeopleTomato_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniPotatoMoveLeft.AddBitmap(IDB_PeoplePotato_left01, RGB(255, 255, 255));
+			aniPotatoMoveLeft.AddBitmap(IDB_PeoplePotato_left02, RGB(255, 255, 255));
+			aniPotatoMoveLeft.AddBitmap(IDB_PeoplePotato_left03, RGB(255, 255, 255));
+
+			aniPotatoMoveRight.AddBitmap(IDB_PeoplePotato_right01, RGB(255, 255, 255));
+			aniPotatoMoveRight.AddBitmap(IDB_PeoplePotato_right02, RGB(255, 255, 255));
+			aniPotatoMoveRight.AddBitmap(IDB_PeoplePotato_right03, RGB(255, 255, 255));
+
+			aniPotatoMoveUp.AddBitmap(IDB_PeoplePotato_back01, RGB(255, 255, 255));
+			aniPotatoMoveUp.AddBitmap(IDB_PeoplePotato_back02, RGB(255, 255, 255));
+			aniPotatoMoveUp.AddBitmap(IDB_PeoplePotato_back03, RGB(255, 255, 255));
+
+			aniPotatoMoveDown.AddBitmap(IDB_PeoplePotato_front01, RGB(255, 255, 255));
+			aniPotatoMoveDown.AddBitmap(IDB_PeoplePotato_front02, RGB(255, 255, 255));
+			aniPotatoMoveDown.AddBitmap(IDB_PeoplePotato_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniCornMoveLeft.AddBitmap(IDB_PeopleCorn_left01, RGB(255, 255, 255));
+			aniCornMoveLeft.AddBitmap(IDB_PeopleCorn_left02, RGB(255, 255, 255));
+			aniCornMoveLeft.AddBitmap(IDB_PeopleCorn_left03, RGB(255, 255, 255));
+
+			aniCornMoveRight.AddBitmap(IDB_PeopleCorn_right01, RGB(255, 255, 255));
+			aniCornMoveRight.AddBitmap(IDB_PeopleCorn_right02, RGB(255, 255, 255));
+			aniCornMoveRight.AddBitmap(IDB_PeopleCorn_right03, RGB(255, 255, 255));
+
+			aniCornMoveUp.AddBitmap(IDB_PeopleCorn_back01, RGB(255, 255, 255));
+			aniCornMoveUp.AddBitmap(IDB_PeopleCorn_back02, RGB(255, 255, 255));
+			aniCornMoveUp.AddBitmap(IDB_PeopleCorn_back03, RGB(255, 255, 255));
+
+			aniCornMoveDown.AddBitmap(IDB_PeopleCorn_front01, RGB(255, 255, 255));
+			aniCornMoveDown.AddBitmap(IDB_PeopleCorn_front02, RGB(255, 255, 255));
+			aniCornMoveDown.AddBitmap(IDB_PeopleCorn_front03, RGB(255, 255, 255));
+
+		}
+
+
+		{
+			aniEggPlantMoveLeft.AddBitmap(IDB_PeopleEggPlant_left01, RGB(255, 255, 255));
+			aniEggPlantMoveLeft.AddBitmap(IDB_PeopleEggPlant_left02, RGB(255, 255, 255));
+			aniEggPlantMoveLeft.AddBitmap(IDB_PeopleEggPlant_left03, RGB(255, 255, 255));
+
+			aniEggPlantMoveRight.AddBitmap(IDB_PeopleEggPlant_right01, RGB(255, 255, 255));
+			aniEggPlantMoveRight.AddBitmap(IDB_PeopleEggPlant_right02, RGB(255, 255, 255));
+			aniEggPlantMoveRight.AddBitmap(IDB_PeopleEggPlant_right03, RGB(255, 255, 255));
+
+			aniEggPlantMoveUp.AddBitmap(IDB_PeopleEggPlant_back01, RGB(255, 255, 255));
+			aniEggPlantMoveUp.AddBitmap(IDB_PeopleEggPlant_back02, RGB(255, 255, 255));
+			aniEggPlantMoveUp.AddBitmap(IDB_PeopleEggPlant_back03, RGB(255, 255, 255));
+
+			aniEggPlantMoveDown.AddBitmap(IDB_PeopleEggPlant_front01, RGB(255, 255, 255));
+			aniEggPlantMoveDown.AddBitmap(IDB_PeopleEggPlant_front02, RGB(255, 255, 255));
+			aniEggPlantMoveDown.AddBitmap(IDB_PeopleEggPlant_front03, RGB(255, 255, 255));
 
 		}
 
@@ -791,7 +891,7 @@ namespace game_framework {
 		CGameDialog *gd, 
 		vector<CShopMenu*> sms,
 		CGameMap* m, 
-		vector<CGameObject*>* obj)
+		vector<CGameObject*>* obj, CFoodMenu* fm)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
 		const char KEY_W = 'W'; // keyboard Q鍵
@@ -848,11 +948,13 @@ namespace game_framework {
 		//
 		// 按A使用工具動作的動畫與執行農務事件
 		//
+
 		else if (key == KEY_A)
 		{
 			fixAnimation = true;
 			if (this->currentMoveState == MoveState::NormalMove)
 			{
+
 				if (healthPoint <= 0)
 					return;
 
@@ -1026,6 +1128,22 @@ namespace game_framework {
 		{
 			// 傳入其他事件觸發
 			mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sms);
+		}
+
+		if (key == ' ')
+		{
+			vector<int> table;
+			table.push_back(-70);
+			table.push_back(-71);
+			table.push_back(-72);
+			if (((facingDirection == &aniMoveUp && DetectUpElementID(m, table)) ||
+				(facingDirection == &aniMoveDown && DetectDownElementID(m, table)) ||
+				(facingDirection == &aniMoveLeft && DetectLeftElementID(m, table)) ||
+				(facingDirection == &aniMoveRight && DetectRightElementID(m, table))))
+			{
+				fm->Enable();
+				fm->SetHPField(healthPoint);
+			}
 		}
 	}
 

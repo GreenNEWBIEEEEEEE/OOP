@@ -1,6 +1,7 @@
 #pragma once
 #include "CGameObject.h"
 namespace game_framework {
+	class CFoodMenu;
 	class CTool;
 	class CFood;
 	class CGameMap;
@@ -13,6 +14,11 @@ namespace game_framework {
 		enum MoveState
 		{
 			RadishMove,					// 帶著白蘿蔔走路
+			CornMove,
+			PotatoMove,
+			TomatoMove,
+			EggPlantMove,
+			PeanutMove,
 			NormalMove,					// 一般走路
 			EggMove,
 			ChickenMove,
@@ -63,7 +69,7 @@ namespace game_framework {
 			CGameDialog *gd, 
 			vector<CShopMenu*> sms, 
 			CGameMap* m, 
-			vector<CGameObject*>* obj);
+			vector<CGameObject*>* obj, CFoodMenu* fm);
 		void OnKeyUp(UINT key, CMapManager *mm, CGameDialog *gd);
 
 		void DoSomethingInChickenCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj);
@@ -94,6 +100,11 @@ namespace game_framework {
 		CAnimation aniGoldenEggMoveLeft, aniGoldenEggMoveRight, aniGoldenEggMoveUp, aniGoldenEggMoveDown;
 		CAnimation aniCheeseMoveLeft, aniCheeseMoveRight, aniCheeseMoveUp, aniCheeseMoveDown;
 		CAnimation aniButterMoveLeft, aniButterMoveRight, aniButterMoveUp, aniButterMoveDown;
+		CAnimation aniPotatoMoveLeft, aniPotatoMoveRight, aniPotatoMoveUp, aniPotatoMoveDown;
+		CAnimation aniTomatoMoveLeft, aniTomatoMoveRight, aniTomatoMoveUp, aniTomatoMoveDown;
+		CAnimation aniCornMoveLeft, aniCornMoveRight, aniCornMoveUp, aniCornMoveDown;
+		CAnimation aniEggPlantMoveLeft, aniEggPlantMoveRight, aniEggPlantMoveUp, aniEggPlantMoveDown;
+		CAnimation aniPeanutMoveLeft, aniPeanutMoveRight, aniPeanutMoveUp, aniPeanutMoveDown;
 
 
 		// 更換工具的動畫

@@ -369,13 +369,12 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	}
 	else
 	{
-		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sms, mapManager.GetCurrentMap(), &obj);
+		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sms, mapManager.GetCurrentMap(), &obj, &foodMenu);
 		const char KEY_LEFT = 0x25; // keyboard左箭頭
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
 		const char KEY_S = 0x53; // keyboard S
-		const char KEY_J = 'J'; // keyboard S
 
 		timer.OnKeyDown(nChar);
 
@@ -401,12 +400,6 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 			// 在此傳入player現在的money以及HP值 以便再menu顯示
 			backpackMenu.SetMoneyField(p1.GetMoney());
 			backpackMenu.SetHPField(p1.GetHealthPoint());
-		}
-		if (nChar == KEY_J)
-		{
-			foodMenu.Enable();
-			// 在此傳入player現在的money以及HP值 以便再menu顯示
-			foodMenu.SetHPField(p1.GetHealthPoint());
 		}
 	}
 }
