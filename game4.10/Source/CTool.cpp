@@ -26,8 +26,8 @@ namespace game_framework {
 		case 3:			// 鋤頭
 			icon = &hoe;
 				break;
-		case 4:			// 種子袋
-			icon = &seed01;
+		case 4:			// 白蘿蔔種子
+			icon = &radishSeed;
 				break;
 		case 5:			// 鐮刀
 			icon = &sickle;
@@ -35,6 +35,21 @@ namespace game_framework {
 		case 6:			// 澆水器
 			icon = &waterer;
 				break;
+		case 7:			// 馬鈴薯種子袋
+			icon = &potatoSeed;
+			break;
+		case 8:			// 番茄種子袋
+			icon = &tomatoSeed;
+			break;
+		case 9:			// 茄子種子袋
+			icon = &eggPlantSeed;
+			break;
+		case 10:			// 玉米種子袋
+			icon = &cornSeed;
+			break;
+		case 11:			// 花生種子袋
+			icon = &peanutSeed;
+			break;
 		default:
 			break;
 		}

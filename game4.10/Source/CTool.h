@@ -24,7 +24,12 @@ namespace game_framework{
 			CMovingBitmap hoe;
 			CMovingBitmap hand;
 			CMovingBitmap axe;
-			CMovingBitmap seed01;
+			CMovingBitmap radishSeed;
+			CMovingBitmap tomatoSeed;
+			CMovingBitmap potatoSeed;
+			CMovingBitmap peanutSeed;
+			CMovingBitmap eggPlantSeed;
+			CMovingBitmap cornSeed;
 			CMovingBitmap waterer;
 			CMovingBitmap sickle;
 			CMovingBitmap hammer;
