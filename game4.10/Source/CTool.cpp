@@ -65,7 +65,7 @@ namespace game_framework {
 		axe.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
 		hammer.LoadBitmap(IDB_Hammer, RGB(255, 255, 255));
 		hoe.LoadBitmap(IDB_Hoe, RGB(255, 255, 255));
-		seed01.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
+		radishSeed.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
 		sickle.LoadBitmap(IDB_Sickle, RGB(255, 255, 255));
 		waterer.LoadBitmap(IDB_WateringCan, RGB(255, 255, 255));
 	}

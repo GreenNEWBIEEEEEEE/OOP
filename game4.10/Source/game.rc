@@ -864,265 +864,269 @@ IDB_ToolsMachinesShop23 BITMAP                  "..\\RES\\Shops\\ToolsMachinesSh
 
 IDB_ToolsMachinesShopBG BITMAP                  "..\\RES\\Shops\\ToolsMachinesShop\\ShopDialogBackground.bmp"
 
-IDB_PeopleButter_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\back\\01.bmp"
+IDB_PeopleButter_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\back\\01.bmp"
 
-IDB_PeopleButter_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\back\\02.bmp"
+IDB_PeopleButter_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\back\\02.bmp"
 
-IDB_PeopleButter_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\back\\03.bmp"
+IDB_PeopleButter_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\back\\03.bmp"
 
-IDB_PeopleButter_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\front\\01.bmp"
+IDB_PeopleButter_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\front\\01.bmp"
 
-IDB_PeopleButter_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\front\\02.bmp"
+IDB_PeopleButter_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\front\\02.bmp"
 
-IDB_PeopleButter_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\front\\03.bmp"
+IDB_PeopleButter_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\front\\03.bmp"
 
-IDB_PeopleButter_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\left\\01.bmp"
+IDB_PeopleButter_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\left\\01.bmp"
 
-IDB_PeopleButter_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\left\\02.bmp"
+IDB_PeopleButter_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\left\\02.bmp"
 
-IDB_PeopleButter_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\left\\03.bmp"
+IDB_PeopleButter_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\left\\03.bmp"
 
-IDB_PeopleButter_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\right\\01.bmp"
+IDB_PeopleButter_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\right\\01.bmp"
 
-IDB_PeopleButter_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\right\\02.bmp"
+IDB_PeopleButter_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\right\\02.bmp"
 
-IDB_PeopleButter_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\butterMove\\right\\03.bmp"
+IDB_PeopleButter_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\butterMove\\right\\03.bmp"
 
-IDB_PeopleMilk_back01   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\01.bmp"
+IDB_PeopleMilk_back01   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\01.bmp"
 
-IDB_PeopleMilk_back02   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\02.bmp"
+IDB_PeopleMilk_back02   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\02.bmp"
 
-IDB_PeopleMilk_back03   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\03.bmp"
+IDB_PeopleMilk_back03   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\back\\03.bmp"
 
-IDB_PeopleMilk_front01  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\01.bmp"
+IDB_PeopleMilk_front01  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\01.bmp"
 
-IDB_PeopleMilk_front02  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\02.bmp"
+IDB_PeopleMilk_front02  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\02.bmp"
 
-IDB_PeopleMilk_front03  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\03.bmp"
+IDB_PeopleMilk_front03  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\front\\03.bmp"
 
-IDB_PeopleMilk_left01   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\01.bmp"
+IDB_PeopleMilk_left01   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\01.bmp"
 
-IDB_PeopleMilk_left02   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\02.bmp"
+IDB_PeopleMilk_left02   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\02.bmp"
 
-IDB_PeopleMilk_left03   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\03.bmp"
+IDB_PeopleMilk_left03   BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\left\\03.bmp"
 
-IDB_PeopleMilk_right01  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\01.bmp"
+IDB_PeopleMilk_right01  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\01.bmp"
 
-IDB_PeopleMilk_right02  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\02.bmp"
+IDB_PeopleMilk_right02  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\02.bmp"
 
-IDB_PeopleMilk_right03  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\03.bmp"
+IDB_PeopleMilk_right03  BITMAP                  "..\\RES\\NewMaterial\\Character\\bigMilkMove\\right\\03.bmp"
 
-IDB_PeopleCheese_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\back\\01.bmp"
+IDB_PeopleCheese_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\back\\01.bmp"
 
-IDB_PeopleCheese_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\back\\02.bmp"
+IDB_PeopleCheese_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\back\\02.bmp"
 
-IDB_PeopleCheese_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\back\\03.bmp"
+IDB_PeopleCheese_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\back\\03.bmp"
 
-IDB_PeopleCheese_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\front\\01.bmp"
+IDB_PeopleCheese_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\front\\01.bmp"
 
-IDB_PeopleCheese_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\front\\02.bmp"
+IDB_PeopleCheese_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\front\\02.bmp"
 
-IDB_PeopleCheese_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\front\\03.bmp"
+IDB_PeopleCheese_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\front\\03.bmp"
 
-IDB_PeopleCheese_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\left\\01.bmp"
+IDB_PeopleCheese_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\left\\01.bmp"
 
-IDB_PeopleCheese_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\left\\02.bmp"
+IDB_PeopleCheese_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\left\\02.bmp"
 
-IDB_PeopleCheese_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\left\\03.bmp"
+IDB_PeopleCheese_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\left\\03.bmp"
 
-IDB_PeopleCheese_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\right\\01.bmp"
+IDB_PeopleCheese_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\right\\01.bmp"
 
-IDB_PeopleCheese_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\right\\02.bmp"
+IDB_PeopleCheese_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\right\\02.bmp"
 
-IDB_PeopleCheese_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cheeseMove\\right\\03.bmp"
+IDB_PeopleCheese_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\cheeseMove\\right\\03.bmp"
 
-IDB_PeopleGoldenEgg_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\01.bmp"
+IDB_PeopleGoldenEgg_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\01.bmp"
 
-IDB_PeopleGoldenEgg_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\02.bmp"
+IDB_PeopleGoldenEgg_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\02.bmp"
 
-IDB_PeopleGoldenEgg_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\03.bmp"
+IDB_PeopleGoldenEgg_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\back\\03.bmp"
 
-IDB_PeopleGoldenEgg_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\01.bmp"
+IDB_PeopleGoldenEgg_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\01.bmp"
 
-IDB_PeopleGoldenEgg_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\02.bmp"
+IDB_PeopleGoldenEgg_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\02.bmp"
 
-IDB_PeopleGoldenEgg_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\03.bmp"
+IDB_PeopleGoldenEgg_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\front\\03.bmp"
 
-IDB_PeopleGoldenEgg_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\01.bmp"
+IDB_PeopleGoldenEgg_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\01.bmp"
 
-IDB_PeopleGoldenEgg_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\02.bmp"
+IDB_PeopleGoldenEgg_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\02.bmp"
 
-IDB_PeopleGoldenEgg_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\03.bmp"
+IDB_PeopleGoldenEgg_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\left\\03.bmp"
 
-IDB_PeopleGoldenEgg_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\01.bmp"
+IDB_PeopleGoldenEgg_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\01.bmp"
 
-IDB_PeopleGoldenEgg_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\02.bmp"
+IDB_PeopleGoldenEgg_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\02.bmp"
 
-IDB_PeopleGoldenEgg_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\03.bmp"
+IDB_PeopleGoldenEgg_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\goldenEggMove\\right\\03.bmp"
 
-IDB_PeopleSmallMilk_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\back\\01.bmp"
+IDB_PeopleSmallMilk_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\back\\01.bmp"
 
-IDB_PeopleSmallMilk_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\back\\02.bmp"
+IDB_PeopleSmallMilk_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\back\\02.bmp"
 
-IDB_PeopleSmallMilk_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\back\\03.bmp"
+IDB_PeopleSmallMilk_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\back\\03.bmp"
 
-IDB_PeopleSmallMilk_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\front\\01.bmp"
+IDB_PeopleSmallMilk_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\front\\01.bmp"
 
-IDB_PeopleSmallMilk_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\front\\02.bmp"
+IDB_PeopleSmallMilk_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\front\\02.bmp"
 
-IDB_PeopleSmallMilk_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\front\\03.bmp"
+IDB_PeopleSmallMilk_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\front\\03.bmp"
 
-IDB_PeopleSmallMilk_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\left\\01.bmp"
+IDB_PeopleSmallMilk_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\left\\01.bmp"
 
-IDB_PeopleSmallMilk_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\left\\02.bmp"
+IDB_PeopleSmallMilk_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\left\\02.bmp"
 
-IDB_PeopleSmallMilk_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\left\\03.bmp"
+IDB_PeopleSmallMilk_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\left\\03.bmp"
 
-IDB_PeopleSmallMilk_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\right\\01.bmp"
+IDB_PeopleSmallMilk_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\right\\01.bmp"
 
-IDB_PeopleSmallMilk_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\right\\02.bmp"
+IDB_PeopleSmallMilk_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\right\\02.bmp"
 
-IDB_PeopleSmallMilk_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\milkMove\\right\\03.bmp"
+IDB_PeopleSmallMilk_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\milkMove\\right\\03.bmp"
 
-IDB_CowHouse_Floor_Machine01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\MachineOnFloor\\CowHouse_Floor_Machine01.bmp"
+IDB_CowHouse_Floor_Machine01 BITMAP                  "..\\RES\\NewMaterial\\MachineOnFloor\\CowHouse_Floor_Machine01.bmp"
 
-IDB_CowHouse_Floor_Machine02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\MachineOnFloor\\CowHouse_Floor_Machine02.bmp"
+IDB_CowHouse_Floor_Machine02 BITMAP                  "..\\RES\\NewMaterial\\MachineOnFloor\\CowHouse_Floor_Machine02.bmp"
 
-IDB_SheepHouse_Floor_Machine03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\MachineOnFloor\\SheepHouse_Floor_Machine03.bmp"
+IDB_SheepHouse_Floor_Machine03 BITMAP                  "..\\RES\\NewMaterial\\MachineOnFloor\\SheepHouse_Floor_Machine03.bmp"
 
-IDB_SheepHouse_Floor_Machine04 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\MachineOnFloor\\SheepHouse_Floor_Machine04.bmp"
+IDB_SheepHouse_Floor_Machine04 BITMAP                  "..\\RES\\NewMaterial\\MachineOnFloor\\SheepHouse_Floor_Machine04.bmp"
 
-IDB_AppleJuice          BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\AppleJuice.bmp"
+IDB_AppleJuice          BITMAP                  "..\\RES\\Food\\foodIcons\\AppleJuice.bmp"
 
-IDB_DrinkBox            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Drinkbox.bmp"
+IDB_DrinkBox            BITMAP                  "..\\RES\\Food\\foodIcons\\Drinkbox.bmp"
 
-IDB_LunchBox            BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Lunchbox.bmp"
+IDB_LunchBox            BITMAP                  "..\\RES\\Food\\foodIcons\\Lunchbox.bmp"
 
-IDB_Meal                BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Meal.bmp"
+IDB_Meal                BITMAP                  "..\\RES\\Food\\foodIcons\\Meal.bmp"
 
-IDB_OrangeJuice         BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\OrangeJuice.bmp"
+IDB_OrangeJuice         BITMAP                  "..\\RES\\Food\\foodIcons\\OrangeJuice.bmp"
 
-IDB_Cake                BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\Food\\foodIcons\\Cake.bmp"
+IDB_Cake                BITMAP                  "..\\RES\\Food\\foodIcons\\Cake.bmp"
 
-IDB_PeoplePotato_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\back\\01.bmp"
+IDB_PeoplePotato_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\back\\01.bmp"
 
-IDB_PeoplePotato_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\back\\02.bmp"
+IDB_PeoplePotato_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\back\\02.bmp"
 
-IDB_PeoplePotato_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\back\\03.bmp"
+IDB_PeoplePotato_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\back\\03.bmp"
 
-IDB_PeoplePotato_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\front\\01.bmp"
+IDB_PeoplePotato_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\front\\01.bmp"
 
-IDB_PeoplePotato_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\front\\02.bmp"
+IDB_PeoplePotato_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\front\\02.bmp"
 
-IDB_PeoplePotato_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\front\\03.bmp"
+IDB_PeoplePotato_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\front\\03.bmp"
 
-IDB_PeoplePotato_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\left\\01.bmp"
+IDB_PeoplePotato_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\left\\01.bmp"
 
-IDB_PeoplePotato_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\left\\02.bmp"
+IDB_PeoplePotato_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\left\\02.bmp"
 
-IDB_PeoplePotato_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\left\\03.bmp"
+IDB_PeoplePotato_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\left\\03.bmp"
 
-IDB_PeoplePotato_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\right\\01.bmp"
+IDB_PeoplePotato_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\right\\01.bmp"
 
-IDB_PeoplePotato_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\right\\02.bmp"
+IDB_PeoplePotato_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\right\\02.bmp"
 
-IDB_PeoplePotato_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\potatoMove\\right\\03.bmp"
+IDB_PeoplePotato_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\potatoMove\\right\\03.bmp"
 
-IDB_PeopleTomato_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\back\\01.bmp"
+IDB_PeopleTomato_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\back\\01.bmp"
 
-IDB_PeopleTomato_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\back\\02.bmp"
+IDB_PeopleTomato_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\back\\02.bmp"
 
-IDB_PeopleTomato_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\back\\03.bmp"
+IDB_PeopleTomato_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\back\\03.bmp"
 
-IDB_PeopleTomato_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\front\\01.bmp"
+IDB_PeopleTomato_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\front\\01.bmp"
 
-IDB_PeopleTomato_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\front\\02.bmp"
+IDB_PeopleTomato_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\front\\02.bmp"
 
-IDB_PeopleTomato_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\front\\03.bmp"
+IDB_PeopleTomato_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\front\\03.bmp"
 
-IDB_PeopleTomato_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\left\\01.bmp"
+IDB_PeopleTomato_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\left\\01.bmp"
 
-IDB_PeopleTomato_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\left\\02.bmp"
+IDB_PeopleTomato_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\left\\02.bmp"
 
-IDB_PeopleTomato_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\left\\03.bmp"
+IDB_PeopleTomato_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\left\\03.bmp"
 
-IDB_PeopleTomato_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\right\\01.bmp"
+IDB_PeopleTomato_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\right\\01.bmp"
 
-IDB_PeopleTomato_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\right\\02.bmp"
+IDB_PeopleTomato_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\right\\02.bmp"
 
-IDB_PeopleTomato_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\tomatoMove\\right\\03.bmp"
+IDB_PeopleTomato_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\tomatoMove\\right\\03.bmp"
 
-IDB_PeoplePeanut_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\back\\01.bmp"
+IDB_PeoplePeanut_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\back\\01.bmp"
 
-IDB_PeoplePeanut_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\back\\02.bmp"
+IDB_PeoplePeanut_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\back\\02.bmp"
 
-IDB_PeoplePeanut_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\back\\03.bmp"
+IDB_PeoplePeanut_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\back\\03.bmp"
 
-IDB_PeoplePeanut_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\front\\01.bmp"
+IDB_PeoplePeanut_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\front\\01.bmp"
 
-IDB_PeoplePeanut_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\front\\02.bmp"
+IDB_PeoplePeanut_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\front\\02.bmp"
 
-IDB_PeoplePeanut_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\front\\03.bmp"
+IDB_PeoplePeanut_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\front\\03.bmp"
 
-IDB_PeoplePeanut_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\left\\01.bmp"
+IDB_PeoplePeanut_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\left\\01.bmp"
 
-IDB_PeoplePeanut_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\left\\02.bmp"
+IDB_PeoplePeanut_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\left\\02.bmp"
 
-IDB_PeoplePeanut_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\left\\03.bmp"
+IDB_PeoplePeanut_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\left\\03.bmp"
 
-IDB_PeoplePeanut_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\right\\01.bmp"
+IDB_PeoplePeanut_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\right\\01.bmp"
 
-IDB_PeoplePeanut_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\right\\02.bmp"
+IDB_PeoplePeanut_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\right\\02.bmp"
 
-IDB_PeoplePeanut_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\peanutMove\\right\\03.bmp"
+IDB_PeoplePeanut_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\peanutMove\\right\\03.bmp"
 
-IDB_PeopleCorn_back01   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\back\\01.bmp"
+IDB_PeopleCorn_back01   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\back\\01.bmp"
 
-IDB_PeopleCorn_back02   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\back\\02.bmp"
+IDB_PeopleCorn_back02   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\back\\02.bmp"
 
-IDB_PeopleCorn_back03   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\back\\03.bmp"
+IDB_PeopleCorn_back03   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\back\\03.bmp"
 
-IDB_PeopleCorn_front01  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\front\\01.bmp"
+IDB_PeopleCorn_front01  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\front\\01.bmp"
 
-IDB_PeopleCorn_front02  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\front\\02.bmp"
+IDB_PeopleCorn_front02  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\front\\02.bmp"
 
-IDB_PeopleCorn_front03  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\front\\03.bmp"
+IDB_PeopleCorn_front03  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\front\\03.bmp"
 
-IDB_PeopleCorn_left01   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\left\\01.bmp"
+IDB_PeopleCorn_left01   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\left\\01.bmp"
 
-IDB_PeopleCorn_left02   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\left\\02.bmp"
+IDB_PeopleCorn_left02   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\left\\02.bmp"
 
-IDB_PeopleCorn_left03   BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\left\\03.bmp"
+IDB_PeopleCorn_left03   BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\left\\03.bmp"
 
-IDB_PeopleCorn_right01  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\right\\01.bmp"
+IDB_PeopleCorn_right01  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\right\\01.bmp"
 
-IDB_PeopleCorn_right02  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\right\\02.bmp"
+IDB_PeopleCorn_right02  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\right\\02.bmp"
 
-IDB_PeopleCorn_right03  BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\cornMove\\right\\03.bmp"
+IDB_PeopleCorn_right03  BITMAP                  "..\\RES\\NewMaterial\\Character\\cornMove\\right\\03.bmp"
 
-IDB_PeopleEggPlant_back01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\back\\01.bmp"
+IDB_PeopleEggPlant_back01 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\back\\01.bmp"
 
-IDB_PeopleEggPlant_back02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\back\\02.bmp"
+IDB_PeopleEggPlant_back02 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\back\\02.bmp"
 
-IDB_PeopleEggPlant_back03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\back\\03.bmp"
+IDB_PeopleEggPlant_back03 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\back\\03.bmp"
 
-IDB_PeopleEggPlant_front01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\front\\01.bmp"
+IDB_PeopleEggPlant_front01 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\front\\01.bmp"
 
-IDB_PeopleEggPlant_front02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\front\\02.bmp"
+IDB_PeopleEggPlant_front02 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\front\\02.bmp"
 
-IDB_PeopleEggPlant_front03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\front\\03.bmp"
+IDB_PeopleEggPlant_front03 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\front\\03.bmp"
 
-IDB_PeopleEggPlant_left01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\left\\01.bmp"
+IDB_PeopleEggPlant_left01 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\left\\01.bmp"
 
-IDB_PeopleEggPlant_left02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\left\\02.bmp"
+IDB_PeopleEggPlant_left02 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\left\\02.bmp"
 
-IDB_PeopleEggPlant_left03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\left\\03.bmp"
+IDB_PeopleEggPlant_left03 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\left\\03.bmp"
 
-IDB_PeopleEggPlant_right01 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\right\\01.bmp"
+IDB_PeopleEggPlant_right01 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\right\\01.bmp"
 
-IDB_PeopleEggPlant_right02 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\right\\03.bmp"
+IDB_PeopleEggPlant_right02 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\right\\03.bmp"
 
-IDB_PeopleEggPlant_right03 BITMAP                  "C:\\Users\\boss.chu\\Desktop\\Homework\\fourth\\oop-project8\\oopcourse822\\game4.10\\RES\\NewMaterial\\Character\\eggplantMove\\right\\02.bmp"
+IDB_PeopleEggPlant_right03 BITMAP                  "..\\RES\\NewMaterial\\Character\\eggplantMove\\right\\02.bmp"
+
+IDB_UI_Cover01          BITMAP                  "..\\RES\\GameUI\\Cover\\Cover01.bmp"
+
+IDB_UI_Cover02          BITMAP                  "..\\RES\\GameUI\\Cover\\Cover02.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1239,7 +1243,7 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOGEX 0, 0, 218, 79
+IDD_ABOUTBOX DIALOGEX 0, 0, 218, 200
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About game"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
@@ -1252,6 +1256,9 @@ BEGIN
     PUSHBUTTON      "ReadMe",IDC_README,172,24,39,13,WS_GROUP
     LTEXT           "Author: Woei-Kae Chen, CSIE Department, NTUT",IDC_STATIC,39,47,159,8
     LTEXT           "http://www.ntut.edu.tw/~wkchen/game",IDC_STATIC,39,60,159,8
+	LTEXT			"--------------------------------------------------------------", IDC_STATIC, 39, 70, 159, 8
+	LTEXT			"Story of Seasons", IDC_STATIC, 39, 80, 159, 8
+	LTEXT			"Group 18 : 107590016, 107590020", IDC_STATIC, 39, 90, 159, 8
 END
 
 
@@ -1324,7 +1331,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDR_MAINFRAME           "game\n\nGame\n\n\nGame.Document\nGame Document"
+    IDR_MAINFRAME           "Story of Seasons\n\nGame\n\n\nGame.Document\nGame Document"
 END
 
 STRINGTABLE

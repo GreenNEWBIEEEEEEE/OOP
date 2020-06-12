@@ -1958,5 +1958,14 @@
     <Image Include="RES\NewMaterial\Character\eggplantMove\right\03.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\shops\toolsmachinesshop\parts\bitmap38.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Cover\Cover01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Cover\Cover02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -510,6 +510,8 @@
     <Image Include="RES\Food\foodIcons\Lunchbox.bmp" />
     <Image Include="RES\Food\foodIcons\Meal.bmp" />
     <Image Include="RES\Food\foodIcons\OrangeJuice.bmp" />
+    <Image Include="RES\GameUI\Cover\Cover01.bmp" />
+    <Image Include="RES\GameUI\Cover\Cover02.bmp" />
     <Image Include="RES\GrayMask640x480_01.bmp" />
     <Image Include="RES\NewMaterial\Character\bigMilkMove\back\01.bmp" />
     <Image Include="RES\NewMaterial\Character\bigMilkMove\back\02.bmp" />
@@ -896,6 +898,7 @@
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s18.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s19.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s20.bmp" />
+    <Image Include="res\shops\toolsmachinesshop\parts\bitmap38.bmp" />
     <Image Include="res\shops\toolsmachinesshop\parts\bitmap41.bmp" />
     <Image Include="res\shops\toolsmachinesshop\parts\bitmap79.bmp" />
     <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop01.bmp" />

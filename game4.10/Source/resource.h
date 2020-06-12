@@ -614,6 +614,9 @@
 #define IDB_PeopleEggPlant_right02      770
 #define IDB_BITMAP35                    772
 #define IDB_PeopleEggPlant_right03      772
+#define IDB_UI_Cover01                  774
+#define IDB_BITMAP40                    775
+#define IDB_UI_Cover02                  775
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -626,7 +629,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        773
+#define _APS_NEXT_RESOURCE_VALUE        776
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
