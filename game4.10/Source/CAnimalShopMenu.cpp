@@ -157,6 +157,7 @@ namespace game_framework
 				default:
 					break;
 				}
+				DrawTexts("[A] Buy [D] Quit", 400, 430, 140);
 			}
 
 		}

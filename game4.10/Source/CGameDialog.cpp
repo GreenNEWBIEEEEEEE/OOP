@@ -254,7 +254,7 @@ namespace game_framework {
 				pDC->SelectObject(fp);
 				CDDraw::ReleaseBackCDC();
 
-				// 如果現在的message是question, 顯示出狀態
+				// 如果現在的message是question, 顯示出yes/no狀態
 				if (isOnQuestion)
 				{
 					if (currentOptionResult == DialogOptionsResult::Yes)
@@ -265,6 +265,11 @@ namespace game_framework {
 					{
 						DrawTexts(" Yes   →No", 430, 420, 160);
 					}
+				}
+				// 一般的提示
+				else
+				{
+					DrawTexts("→continue", 460, 420, 160);
 				}
 
 			}

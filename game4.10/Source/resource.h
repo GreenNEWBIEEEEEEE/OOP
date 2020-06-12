@@ -208,8 +208,11 @@
 #define IDB_Hoe                         372
 #define IDB_Question                    373
 #define IDB_Seed01                      374
+#define IDB_RadishSeed                  374
 #define IDB_Seed02                      375
+#define IDB_EggplantSeed                375
 #define IDB_Seed03                      376
+#define IDB_PeanutSeed                  376
 #define IDB_Sickle                      377
 #define IDB_Axe                         379
 #define IDB_WateringCan                 380
@@ -617,6 +620,12 @@
 #define IDB_UI_Cover01                  774
 #define IDB_BITMAP40                    775
 #define IDB_UI_Cover02                  775
+#define IDB_OtherIcons_Talking          776
+#define IDB_PotatoSeed                  777
+#define IDB_TomatoSeed                  778
+#define IDB_CornSeed                    779
+#define IDB_BITMAP38                    780
+#define IDB_Hand                        780
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -629,7 +638,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        776
+#define _APS_NEXT_RESOURCE_VALUE        781
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

@@ -8,9 +8,11 @@ namespace game_framework{
 			bool IsEnable() const;
 			void LoadBitmap();
 			void ShowIcon(int x, int y);
+			string GetName() const;
 			string GetInfo() const;
 			int GetToolID() const;
 			int GetNumber() const;
+			
 
 			// ¼W´î¼Æ¶q
 			void IncreaseNumber(int number);

@@ -14,7 +14,21 @@ namespace game_framework
 	CPlantShopMenu::CPlantShopMenu(CPlayer *p, CGameDialog * gd, CTimer *timer)
 		:CShopMenu(p, gd, timer)
 	{
+		spring_goods.push_back(&good_RadishSeed);
+		spring_goods.push_back(&good_CornSeed);
+		spring_goods.push_back(&icon_talking);
+		
+		summer_goods.push_back(&good_TomatoSeed);
+		summer_goods.push_back(&good_TomatoSeed);
+		summer_goods.push_back(&icon_talking);
 
+		fall_goods.push_back(&good_EggplantSeed);
+		fall_goods.push_back(&good_PotatoSeed);
+		fall_goods.push_back(&icon_talking);
+
+		winter_goods.push_back(&good_EggplantSeed);
+		winter_goods.push_back(&good_PeanutSeed);
+		winter_goods.push_back(&icon_talking);
 	}
 
 	void CPlantShopMenu::LoadBitmap()
@@ -22,14 +36,25 @@ namespace game_framework
 		// base
 		CShopMenu::LoadBitmap();
 
+		// taking icon
+		icon_talking.LoadBitmap(IDB_OtherIcons_Talking, RGB(255, 255, 255));
+		icon_talking.SetTopLeft(360, 230);
+
+		// Shop Backgound: 角色人像櫃台
 		background.LoadBitmap(IDB_PlantShopBG);
-		good_RadishSeed.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
-		good_Seed02.LoadBitmap(IDB_Seed02, RGB(255, 255, 255));
-		good_Seed03.LoadBitmap(IDB_Seed03, RGB(255, 255, 255));
 		background.SetTopLeft(0, 0);
-		good_RadishSeed.SetTopLeft(120, 230);
-		good_Seed02.SetTopLeft(240, 230);
-		good_Seed03.SetTopLeft(360, 230);
+
+		// goods
+		good_RadishSeed.LoadBitmap(IDB_RadishSeed, RGB(255, 255, 255));
+		good_CornSeed.LoadBitmap(IDB_CornSeed, RGB(255, 255, 255));
+		good_TomatoSeed.LoadBitmap(IDB_TomatoSeed, RGB(255, 255, 255));
+		good_PotatoSeed.LoadBitmap(IDB_PotatoSeed, RGB(255, 255, 255));
+		good_EggplantSeed.LoadBitmap(IDB_EggplantSeed, RGB(255, 255, 255));
+		good_PeanutSeed.LoadBitmap(IDB_PeanutSeed, RGB(255, 255, 255));
+		
+		//good_RadishSeed.SetTopLeft(120, 230);
+		//good_Seed02.SetTopLeft(240, 230);
+		//good_Seed03.SetTopLeft(360, 230);
 	}
 
 	// Callback functions
@@ -61,10 +86,7 @@ namespace game_framework
 		const char KEY_D = 0x44; // keyboard D 取消
 		const char KEY_A = 0x41; // keyboard A 購買
 
-		// Callback func pointers
-		CGameDialog::CallbackWithResultForShopMenu reenable_infoBoard_inGD = &ReEnableInfoBoard_InGD;
-		CGameDialog::CallbackWithResultForShopMenu disable_inGD = &Disable_InGD;
-
+		// Select
 		if (key == KEY_LEFT)
 		{
 			if (goodSelector == 0) goodSelector = 2;
@@ -84,40 +106,75 @@ namespace game_framework
 			{
 				gd->AddQuestion("Do you want to leave?");
 				gd->AddOptionResultMessage("Thank you. Please come again.", "Ok.");
-				gd->SetCallback(disable_inGD, (CShopMenu*)this);
+				gd->SetCallback(&Disable_InGD, (CShopMenu*)this);
 				gd->Enable();
 			}
 		}
-
 
 		// Purchase
 		else if (key == KEY_A)
 		{
 			if (player != nullptr)
 			{
-				switch (goodSelector)
+				// Spring
+				if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
 				{
-				case 0:
-					if (player->GetMoney() >= 10)
+					switch (goodSelector)
 					{
-						this->enable_infoboard = false;
-						player->DecreaseMoney(10);
-						player->GetBackpack()->at(4)->IncreaseNumber(1);
-						gd->AddMessage("You bought a bag of Seed 01.");
-						CString nowMoney_str = "";
-						nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
-						gd->AddMessage((LPCTSTR)nowMoney_str);
-						gd->SetCallback(reenable_infoBoard_inGD, (CShopMenu*)this);
-						gd->Enable();
+					case 0:
+						processBuyingSeed(10, 4);
+						break;
+					case 1:
+						processBuyingSeed(15, 10);
+						break;
+					default:
+						break;
 					}
-					else
+				}
+				// Summer
+				else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+				{
+					switch (goodSelector)
 					{
-						gd->AddMessage("You don't have enough money.");
-						gd->Enable();
+					case 0:
+						processBuyingSeed(15, 8);
+						break;
+					case 1:
+						processBuyingSeed(20, 10);
+						break;
+					default:
+						break;
 					}
-					break;
-				default:
-					break;
+				}
+				// Fall
+				else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						processBuyingSeed(15, 9); // Eggplant
+						break;
+					case 1:
+						processBuyingSeed(20, 7); // Potato
+						break;
+					default:
+						break;
+					}
+				}
+				// Winter
+				else
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						processBuyingSeed(23, 9); // Eggplant
+						break;
+					case 1:
+						processBuyingSeed(20, 11); // Peanut
+						break;
+					default:
+						break;
+					}
 				}
 			}
 		}
@@ -129,6 +186,10 @@ namespace game_framework
 	
 	void CPlantShopMenu::OnMove()
 	{
+		// Update season 
+		updateSeasonOfGoods();
+
+		// Move selector position
 		switch (goodSelector)
 		{
 		case 0:
@@ -154,30 +215,153 @@ namespace game_framework
 			
 			if (this->enable_infoboard == true)
 			{
+				// Show selector
 				selector.ShowBitmap();
-				good_RadishSeed.ShowBitmap();
-				good_Seed02.ShowBitmap();
-				good_Seed03.ShowBitmap();
+
+				// information board
 				infoBoardBG.ShowBitmap();
-				switch (goodSelector)
+				
+				// According to seasons, sell different seeds.
+				// Display different seed information on the information board.
+				for (unsigned i = 0; i < season_goods->size(); ++i)
 				{
-				case 0:
-					DrawTexts("Seed 01", 40, 370, 160);
-					DrawTexts("Price : $ 10", 40, 400, 160);
-					break;
-				case 1:
-					DrawTexts("Seed 02", 40, 370, 160);
-					DrawTexts("Price : $ 15", 40, 400, 160);
-					break;
-				case 2:
-					DrawTexts("Seed 03", 40, 370, 160);
-					DrawTexts("Price : $ 20", 40, 400, 160);
-					break;
-				default:
-					break;
+					season_goods->at(i)->SetTopLeft(120 * (i + 1), 230);
+					season_goods->at(i)->ShowBitmap();
 				}
+				// Spring
+				if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						DrawTexts("Seed of Radish", 40, 370, 160);
+						DrawTexts("Price : $ 10", 40, 400, 160);
+						break;
+					case 1:
+						DrawTexts("Seed of Corn", 40, 370, 160);
+						DrawTexts("Price : $ 15", 40, 400, 160);
+						break;
+					default:
+						DrawTexts("Press A to Talk.", 40, 370, 160);
+						break;
+					}
+				}
+				// Summer
+				else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						DrawTexts("Seed of Corn", 40, 370, 160);
+						DrawTexts("Price : $ 15", 40, 400, 160);
+						break;
+					case 1:
+						DrawTexts("Seed of Tomato", 40, 370, 160);
+						DrawTexts("Price : $ 20", 40, 400, 160);
+						break;
+					default:
+						DrawTexts("Press A to Talk.", 40, 370, 160);
+						break;
+					}
+				}
+				// Fall
+				else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						DrawTexts("Seed of Eggplant", 40, 370, 160);
+						DrawTexts("Price : $ 15", 40, 400, 160);
+						break;
+					case 1:
+						DrawTexts("Seed of Potato", 40, 370, 160);
+						DrawTexts("Price : $ 20", 40, 400, 160);
+						break;
+					default:
+						DrawTexts("Press A to Talk.", 40, 370, 160);
+						break;
+					}
+				}
+				// Winter
+				else
+				{
+					switch (goodSelector)
+					{
+					case 0:
+						DrawTexts("Seed of Eggplant", 40, 370, 160);
+						DrawTexts("Price : $ 23", 40, 400, 160);
+						break;
+					case 1:
+						DrawTexts("Seed of Peanut", 40, 370, 160);
+						DrawTexts("Price : $ 20", 40, 400, 160);
+						break;
+					default:
+						DrawTexts("Press A to Talk.", 40, 370, 160);
+						break;
+					}
+				}
+
+				// 
+				DrawTexts("[A] Buy [D] Quit", 400, 430, 140);
 			}
 			
+		}
+	}
+	
+	
+	void CPlantShopMenu::updateSeasonOfGoods()
+	{
+		// Spring
+		if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
+		{
+			season_goods = &spring_goods;
+		}
+		// Summer
+		else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+		{
+			season_goods = &summer_goods;
+		}
+		// Fall
+		else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+		{
+			season_goods = &fall_goods;
+		}
+		// Winter
+		else
+		{
+			season_goods = &winter_goods;
+		}
+	}
+
+	void CPlantShopMenu::processBuyingSeed(int price, int toolSeedPosition)
+	{
+		if (player->GetMoney() >= price)
+		{
+			// turn off the info board
+			this->enable_infoboard = false;
+			// 交錢&交貨
+			player->DecreaseMoney(price);
+			player->GetBackpack()->at(toolSeedPosition)->IncreaseNumber(1);
+			
+			// show information after buying
+			CString seed_name;
+			seed_name.Format("You bought a bag of %s.", 
+				player->GetBackpack()->at(toolSeedPosition)->GetName().c_str());
+			gd->AddMessage((LPCTSTR)seed_name);
+			
+			// show the current money of player
+			CString nowMoney_str = "";
+			nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
+			gd->AddMessage((LPCTSTR)nowMoney_str);
+			
+			// Re-enable the information board
+			gd->SetCallback(&ReEnableInfoBoard_InGD, (CShopMenu*)this);
+			gd->Enable();
+		}
+		else
+		{
+			gd->AddMessage("You don't have enough money.");
+			gd->Enable();
 		}
 	}
 }

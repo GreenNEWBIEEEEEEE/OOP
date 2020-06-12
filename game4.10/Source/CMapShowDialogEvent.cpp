@@ -94,7 +94,9 @@ namespace game_framework
 		case 10011:
 			gd->AddMessage("¡ô Area 2");
 			gd->AddMessage("In Area 2, ");
-			gd->AddMessage("There is an animal shop.");
+			gd->AddMessage("There is an animal shop, ...");
+			gd->AddMessage("and a tool & machine shop.");
+			gd->AddMessage("Your cow coop is at Area 2.");
 			gd->Enable();
 			break;
 		case 10012:
@@ -104,9 +106,17 @@ namespace game_framework
 		case 10013:
 			gd->AddMessage("Here is animal shop.");
 			gd->AddMessage("You can buy animals in this shop.");
-			gd->AddMessage("Press H at the door to enter shop.");
+			gd->AddMessage("Press Enter at the door to enter shop.");
 			gd->Enable();
 			break;
+		case 10014:
+		{
+			CString now_time_str = "";
+			now_time_str.Format("The time now is %0d:00.", mm->GetTimer()->GetHour());
+			gd->AddMessage((LPCTSTR)now_time_str);
+			gd->Enable();
+			break;
+		}
 		default:
 			break;
 		}

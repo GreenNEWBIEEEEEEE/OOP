@@ -417,15 +417,19 @@
     <Image Include="RES\Backpack\Axe.bmp" />
     <Image Include="RES\Backpack\BackpackMenu.bmp" />
     <Image Include="RES\Backpack\Coin.bmp" />
+    <Image Include="RES\Backpack\CornSeed.bmp" />
     <Image Include="RES\Backpack\Hammer.bmp" />
+    <Image Include="RES\Backpack\Hand.bmp" />
     <Image Include="RES\Backpack\Heart.bmp" />
     <Image Include="RES\Backpack\Hoe.bmp" />
+    <Image Include="RES\Backpack\PotatoSeed.bmp" />
     <Image Include="RES\Backpack\Question.bmp" />
     <Image Include="RES\Backpack\Seed01.bmp" />
     <Image Include="RES\Backpack\Seed02.bmp" />
     <Image Include="RES\Backpack\Seed03.bmp" />
     <Image Include="RES\Backpack\Selector.bmp" />
     <Image Include="RES\Backpack\Sickle.bmp" />
+    <Image Include="RES\Backpack\TomatoSeed.bmp" />
     <Image Include="RES\Backpack\WateringCan.bmp" />
     <Image Include="res\bitmap17.bmp" />
     <Image Include="res\bitmap4.bmp" />
@@ -877,6 +881,7 @@
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop19.bmp" />
     <Image Include="RES\Shops\AnimalShop\ShopHouse_Morning\AnimalShop20.bmp" />
     <Image Include="res\shops\animalshop\shophouse_morning\bitmap33.bmp" />
+    <Image Include="RES\Shops\OtherIconsForShops\Shops_Icons_Talking.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s02.bmp" />

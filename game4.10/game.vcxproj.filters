@@ -1967,5 +1967,20 @@
     <Image Include="RES\GameUI\Cover\Cover02.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\Shops\OtherIconsForShops\Shops_Icons_Talking.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\PotatoSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\TomatoSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\CornSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\Hand.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

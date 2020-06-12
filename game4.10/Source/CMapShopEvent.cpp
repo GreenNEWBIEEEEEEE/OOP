@@ -18,7 +18,7 @@
 namespace game_framework
 {
 	CMapShopEvent::CMapShopEvent(int eventCode)
-		:CMapEvent(eventCode, 'H')
+		:CMapEvent(eventCode, 0x0D)
 	{
 
 	}

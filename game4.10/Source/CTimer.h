@@ -10,7 +10,7 @@ namespace game_framework {
 	class CTimer
 	{
 	public:
-		int year = 2000;
+		int year = 2020;	
 		int month = 1;
 		int day = 1;
 		int hour = 8;

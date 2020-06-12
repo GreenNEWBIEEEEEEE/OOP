@@ -368,11 +368,11 @@ IDB_Hoe                 BITMAP                  "..\\RES\\Backpack\\Hoe.bmp"
 
 IDB_Question            BITMAP                  "..\\RES\\Backpack\\Question.bmp"
 
-IDB_Seed01              BITMAP                  "..\\RES\\Backpack\\Seed01.bmp"
+IDB_RadishSeed          BITMAP                  "..\\RES\\Backpack\\Seed01.bmp"
 
-IDB_Seed02              BITMAP                  "..\\RES\\Backpack\\Seed02.bmp"
+IDB_EggplantSeed        BITMAP                  "..\\RES\\Backpack\\Seed02.bmp"
 
-IDB_Seed03              BITMAP                  "..\\RES\\Backpack\\Seed03.bmp"
+IDB_PeanutSeed          BITMAP                  "..\\RES\\Backpack\\Seed03.bmp"
 
 IDB_Sickle              BITMAP                  "..\\RES\\Backpack\\Sickle.bmp"
 
@@ -1128,6 +1128,16 @@ IDB_UI_Cover01          BITMAP                  "..\\RES\\GameUI\\Cover\\Cover01
 
 IDB_UI_Cover02          BITMAP                  "..\\RES\\GameUI\\Cover\\Cover02.bmp"
 
+IDB_OtherIcons_Talking  BITMAP                  "..\\RES\\Shops\\OtherIconsForShops\\Shops_Icons_Talking.bmp"
+
+IDB_PotatoSeed          BITMAP                  "..\\RES\\Backpack\\PotatoSeed.bmp"
+
+IDB_TomatoSeed          BITMAP                  "..\\RES\\Backpack\\TomatoSeed.bmp"
+
+IDB_CornSeed            BITMAP                  "..\\RES\\Backpack\\CornSeed.bmp"
+
+IDB_Hand                BITMAP                  "..\\RES\\Backpack\\Hand.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1243,7 +1253,7 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOGEX 0, 0, 218, 200
+IDD_ABOUTBOX DIALOGEX 0, 0, 218, 79
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About game"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
@@ -1256,9 +1266,6 @@ BEGIN
     PUSHBUTTON      "ReadMe",IDC_README,172,24,39,13,WS_GROUP
     LTEXT           "Author: Woei-Kae Chen, CSIE Department, NTUT",IDC_STATIC,39,47,159,8
     LTEXT           "http://www.ntut.edu.tw/~wkchen/game",IDC_STATIC,39,60,159,8
-	LTEXT			"--------------------------------------------------------------", IDC_STATIC, 39, 70, 159, 8
-	LTEXT			"Story of Seasons", IDC_STATIC, 39, 80, 159, 8
-	LTEXT			"Group 18 : 107590016, 107590020", IDC_STATIC, 39, 90, 159, 8
 END
 
 

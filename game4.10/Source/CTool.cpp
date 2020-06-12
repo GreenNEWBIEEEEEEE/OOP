@@ -61,11 +61,16 @@ namespace game_framework {
 
 	void CTool::LoadBitmap()
 	{
-		hand.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
+		hand.LoadBitmap(IDB_Hand, RGB(255, 255, 255));
 		axe.LoadBitmap(IDB_Axe, RGB(255, 255, 255));
 		hammer.LoadBitmap(IDB_Hammer, RGB(255, 255, 255));
 		hoe.LoadBitmap(IDB_Hoe, RGB(255, 255, 255));
-		radishSeed.LoadBitmap(IDB_Seed01, RGB(255, 255, 255));
+		radishSeed.LoadBitmap(IDB_RadishSeed, RGB(255, 255, 255));
+		tomatoSeed.LoadBitmap(IDB_TomatoSeed, RGB(255, 255, 255));
+		potatoSeed.LoadBitmap(IDB_PotatoSeed, RGB(255, 255, 255));
+		eggPlantSeed.LoadBitmap(IDB_EggplantSeed, RGB(255, 255, 255));
+		peanutSeed.LoadBitmap(IDB_PeanutSeed, RGB(255, 255, 255));
+		cornSeed.LoadBitmap(IDB_CornSeed, RGB(255, 255, 255));
 		sickle.LoadBitmap(IDB_Sickle, RGB(255, 255, 255));
 		waterer.LoadBitmap(IDB_WateringCan, RGB(255, 255, 255));
 	}
@@ -90,6 +95,11 @@ namespace game_framework {
 	{
 		icon->SetTopLeft(x, y);
 		icon->ShowBitmap();
+	}
+
+	string CTool::GetName() const
+	{
+		return toolName;
 	}
 
 	string CTool::GetInfo() const

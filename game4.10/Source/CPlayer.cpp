@@ -43,9 +43,15 @@ namespace game_framework {
 		backpack.push_back(new CToolAxe(1, 1)); // 斧頭
 		backpack.push_back(new CToolHammer(2, 1)); // 槌子
 		backpack.push_back(new CToolHoe(3, 1)); // 鋤頭
-		backpack.push_back(new CToolSeed(4, 6)); // 種子袋
+		backpack.push_back(new CToolSeed(4, 6)); // Radish種子
 		backpack.push_back(new CToolSickle(5, 1)); // 鐮刀
 		backpack.push_back(new CToolWaterer(6, 1)); // 澆水器
+		backpack.push_back(new CToolSeed(7, 3)); //Potato種子
+		backpack.push_back(new CToolSeed(8, 3)); //Tomato種子
+		backpack.push_back(new CToolSeed(9, 3)); // Eggplant種子
+		backpack.push_back(new CToolSeed(10, 3)); // Corn種子
+		backpack.push_back(new CToolSeed(11, 3)); // Peanut種子
+		
 
 		food.push_back(new CFoodAppleJuice(0, 1)); // 
 		food.push_back(new CFoodCake(1, 1)); // 

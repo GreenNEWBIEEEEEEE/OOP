@@ -12,22 +12,22 @@ namespace game_framework {
 		switch (toolID)
 		{
 		case 4:
-			toolName = "Radish";
+			toolName = "Seed of Radish";
 			break;
 		case 7:
-			toolName = "Potato";
+			toolName = "Seed of Potato";
 			break;
 		case 8:
-			toolName = "Tomato";
+			toolName = "Seed of Tomato";
 			break;
 		case 9:
-			toolName = "EggPlant";
+			toolName = "Seed of EggPlant";
 			break;
 		case 10:
-			toolName = "Corn";
+			toolName = "Seed of Corn";
 			break;
 		case 11:
-			toolName = "Peanut";
+			toolName = "Seed of Peanut";
 			break;
 		default:
 			toolName = "";
