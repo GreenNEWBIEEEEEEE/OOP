@@ -116,8 +116,7 @@ namespace game_framework
 		{
 			if (player != nullptr)
 			{
-				// Spring
-				if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
+				if (timer->GetSeason() == CTimer::Season::Spring)
 				{
 					switch (goodSelector)
 					{
@@ -128,11 +127,11 @@ namespace game_framework
 						processBuyingSeed(15, 10);
 						break;
 					default:
+						talking();
 						break;
 					}
 				}
-				// Summer
-				else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+				else if (timer->GetSeason() == CTimer::Season::Summer)
 				{
 					switch (goodSelector)
 					{
@@ -143,11 +142,11 @@ namespace game_framework
 						processBuyingSeed(20, 10);
 						break;
 					default:
+						talking();
 						break;
 					}
 				}
-				// Fall
-				else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+				else if (timer->GetSeason() == CTimer::Season::Autumn)
 				{
 					switch (goodSelector)
 					{
@@ -158,10 +157,10 @@ namespace game_framework
 						processBuyingSeed(20, 7); // Potato
 						break;
 					default:
+						talking();
 						break;
 					}
 				}
-				// Winter
 				else
 				{
 					switch (goodSelector)
@@ -173,6 +172,7 @@ namespace game_framework
 						processBuyingSeed(20, 11); // Peanut
 						break;
 					default:
+						talking();
 						break;
 					}
 				}
@@ -228,8 +228,7 @@ namespace game_framework
 					season_goods->at(i)->SetTopLeft(120 * (i + 1), 230);
 					season_goods->at(i)->ShowBitmap();
 				}
-				// Spring
-				if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
+				if (timer->GetSeason() == CTimer::Season::Spring)
 				{
 					switch (goodSelector)
 					{
@@ -246,8 +245,7 @@ namespace game_framework
 						break;
 					}
 				}
-				// Summer
-				else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+				else if (timer->GetSeason() == CTimer::Season::Summer)
 				{
 					switch (goodSelector)
 					{
@@ -264,8 +262,7 @@ namespace game_framework
 						break;
 					}
 				}
-				// Fall
-				else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+				else if (timer->GetSeason() == CTimer::Season::Autumn)
 				{
 					switch (goodSelector)
 					{
@@ -282,7 +279,6 @@ namespace game_framework
 						break;
 					}
 				}
-				// Winter
 				else
 				{
 					switch (goodSelector)
@@ -311,22 +307,18 @@ namespace game_framework
 	
 	void CPlantShopMenu::updateSeasonOfGoods()
 	{
-		// Spring
-		if (timer->GetMonth() >= 1 && timer->GetMonth() <= 3)
+		if (timer->GetSeason() == CTimer::Season::Spring)
 		{
 			season_goods = &spring_goods;
 		}
-		// Summer
-		else if (timer->GetMonth() >= 4 && timer->GetMonth() <= 6)
+		else if (timer->GetSeason() == CTimer::Season::Summer)
 		{
 			season_goods = &summer_goods;
 		}
-		// Fall
-		else if (timer->GetMonth() >= 7 && timer->GetMonth() <= 9)
+		else if (timer->GetSeason() == CTimer::Season::Autumn)
 		{
 			season_goods = &fall_goods;
 		}
-		// Winter
 		else
 		{
 			season_goods = &winter_goods;
@@ -337,12 +329,13 @@ namespace game_framework
 	{
 		if (player->GetMoney() >= price)
 		{
-			// turn off the info board
-			this->enable_infoboard = false;
 			// ¥æ¿ú&¥æ³f
 			player->DecreaseMoney(price);
 			player->GetBackpack()->at(toolSeedPosition)->IncreaseNumber(1);
 			
+			// turn off the info board
+			this->enable_infoboard = false;
+
 			// show information after buying
 			CString seed_name;
 			seed_name.Format("You bought a bag of %s.", 
@@ -363,5 +356,34 @@ namespace game_framework
 			gd->AddMessage("You don't have enough money.");
 			gd->Enable();
 		}
+	}
+	
+	void CPlantShopMenu::talking() 
+	{
+		// turn off the info board
+		this->enable_infoboard = false;
+
+		// talking
+		gd->AddMessage("We sell different seeds . . .");
+		gd->AddMessage("in different seasons.");
+		gd->AddMessage("In spring,");
+		gd->AddMessage("you can buy seeds of Radish & Corn.");
+		gd->AddMessage("In summer,");
+		gd->AddMessage("you can buy seeds of Corn & Tomato.");
+		gd->AddMessage("In autumn,");
+		gd->AddMessage("you can buy seeds of Eggplant & Potato.");
+		gd->AddMessage("In winter,");
+		gd->AddMessage("you can buy seeds of Eggplant & Peanut.");
+
+		CString season_info;
+		string season_str[] = {"spring", "summer", "autumn", "winter"};
+		season_info.Format("The season now is %s.", 
+			season_str[(int)timer->GetSeason()].c_str());
+		gd->AddMessage((LPCTSTR)season_info);
+		gd->Enable();
+
+		// Re-enable the information board
+		gd->SetCallback(&ReEnableInfoBoard_InGD, (CShopMenu*)this);
+		gd->Enable();
 	}
 }

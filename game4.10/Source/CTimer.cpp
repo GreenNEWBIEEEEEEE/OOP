@@ -227,4 +227,12 @@ namespace game_framework {
 	{
 		return hourCounter;
 	}
+
+	CTimer::Season CTimer::GetSeason() const
+	{
+		if (month >= 1 && month <= 3) return CTimer::Season::Spring;
+		else if (month >= 1 && month <= 3) return CTimer::Season::Summer;
+		else if (month >= 1 && month <= 3) return CTimer::Season::Autumn;
+		else return CTimer::Season::Winter;
+	}
 }

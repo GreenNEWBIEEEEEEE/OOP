@@ -44,6 +44,7 @@ namespace game_framework {
 		int GetDay();
 		int GetHour();
 		int GetHourCounter();
+		CTimer::Season GetSeason() const;
 		void SetTimerSpeed(int speed);
 		void ChangeToNewDay(CWeather* weather, CTimer* timer);
 		bool IsNewDay();

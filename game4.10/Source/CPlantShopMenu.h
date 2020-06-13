@@ -55,5 +55,8 @@ namespace game_framework
 		// toolSeedPosition: 購買後應該放在player背包的何處
 		void processBuyingSeed(int price, int toolSeedPosition);
 
+		void talking();
+		
+
 	};
 }
