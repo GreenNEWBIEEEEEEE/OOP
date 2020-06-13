@@ -89,7 +89,9 @@ namespace game_framework
 			{
 				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
-				if (landState == CMapInfo::ArableLandState::hasWeeds)
+				// 有雜草 or 有任何的種植狀態
+				if (landState == CMapInfo::ArableLandState::hasWeeds || 
+					landState >= 5)
 				{
 					eMapInfo->SetElemID(3); // 變成空地
 					// **重要: 要改變狀態**
