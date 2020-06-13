@@ -373,7 +373,6 @@
     <Image Include="RES\recs1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="RES\Dialog_BG01.png" />
     <Image Include="RES\Dialog_BG01.bmp">
       <Filter>Resource Files</Filter>
     </Image>

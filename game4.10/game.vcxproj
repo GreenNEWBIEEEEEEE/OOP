@@ -504,7 +504,6 @@
     <Image Include="RES\DialogBackgrounds\Dialog_BG01_Yes.bmp" />
     <Image Include="RES\DialogBackgrounds\Dialog_BG02.bmp" />
     <Image Include="RES\Dialog_BG01.bmp" />
-    <Image Include="RES\Dialog_BG01.png" />
     <Image Include="res\Dialog_BG01_F4.bmp" />
     <Image Include="RES\Dialog_BG01_No.bmp" />
     <Image Include="RES\Dialog_BG01_Yes.bmp" />
