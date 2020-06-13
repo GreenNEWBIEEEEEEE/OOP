@@ -64,15 +64,9 @@ END
 
 IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
-IDB_CORNER              BITMAP                  "..\\res\\corner.bmp"
-
 IDB_CONTINUE            BITMAP                  "..\\res\\continue.bmp"
 
-IDB_CENTER              BITMAP                  "..\\res\\center.bmp"
-
-IDB_BACKGROUND          BITMAP                  "..\\res\\ntutcsie.bmp"
-
-IDB_DIALOG_BG_01        BITMAP                  "..\\res\\Dialog_BG01_F4.bmp"
+IDB_DIALOG_BG_01        BITMAP                  "..\\res\\DialogBackgrounds\\Dialog_BG01_F4.bmp"
 
 IDB_People_back01       BITMAP                  "..\\RES\\NewMaterial\\Character\\move\\back\\People_back01.bmp"
 
@@ -360,21 +354,21 @@ IDB_WateringCan         BITMAP                  "..\\RES\\Backpack\\WateringCan.
 
 IDB_Selector            BITMAP                  "..\\RES\\Backpack\\Selector.bmp"
 
-IDB_DIALOG_BG_02        BITMAP                  "..\\RES\\Dialog_BG02.bmp"
+IDB_DIALOG_BG_02        BITMAP                  "..\\RES\\DialogBackgrounds\\Dialog_BG02.bmp"
 
 IDB_Coin                BITMAP                  "..\\RES\\Backpack\\Coin.bmp"
 
 IDB_HeartPoint          BITMAP                  "..\\RES\\Backpack\\Heart.bmp"
 
-IDB_DIALOG_BG_01_No     BITMAP                  "..\\RES\\Dialog_BG01_No.bmp"
+IDB_DIALOG_BG_01_No     BITMAP                  "..\\RES\\DialogBackgrounds\\Dialog_BG01_No.bmp"
 
-IDB_DIALOG_BG_01_Yes    BITMAP                  "..\\RES\\Dialog_BG01_Yes.bmp"
+IDB_DIALOG_BG_01_Yes    BITMAP                  "..\\RES\\DialogBackgrounds\\Dialog_BG01_Yes.bmp"
 
-IDB_Test_RainMask_01    BITMAP                  "..\\RES\\RainMask01.bmp"
+IDB_Test_RainMask_01    BITMAP                  "..\\RES\\Masks\\RainMask01.bmp"
 
-IDB_Test_RainMask_02    BITMAP                  "..\\RES\\RainMask02.bmp"
+IDB_Test_RainMask_02    BITMAP                  "..\\RES\\Masks\\RainMask02.bmp"
 
-IDB_Test_RainMask_03    BITMAP                  "..\\RES\\RainMask03.bmp"
+IDB_Test_RainMask_03    BITMAP                  "..\\RES\\Masks\\RainMask03.bmp"
 
 IDB_PlantShopHouse_Morning_s01 BITMAP                  "..\\RES\\Shops\\PlantShop\\ShopHouse_Morning\\Split\\ShopHouse_Morning_s01.bmp"
 
@@ -418,17 +412,17 @@ IDB_PlantShopHouse_Morning_s020 BITMAP                  "..\\RES\\Shops\\PlantSh
 
 IDB_PlantShopBG         BITMAP                  "..\\RES\\Shops\\PlantShop\\ShopDialogBackground2.bmp"
 
-IDB_ShopMenuBlackBG     BITMAP                  "..\\RES\\ShopMenus\\ShopMenuBlackBG.bmp"
+IDB_ShopMenuBlackBG     BITMAP                  "..\\RES\\Shops\\Backgrounds\\ShopMenuBlackBG.bmp"
 
-IDB_PlantShopSelector   BITMAP                  "..\\RES\\ShopMenus\\PlantShopSelector.bmp"
+IDB_PlantShopSelector   BITMAP                  "..\\RES\\Shops\\Backgrounds\\PlantShopSelector.bmp"
 
-IDB_GrayMask640x480_01  BITMAP                  "..\\RES\\GrayMask640x480_01.bmp"
+IDB_GrayMask640x480_01  BITMAP                  "..\\RES\\Masks\\GrayMask640x480_01.bmp"
 
 IDB_TileFloor01         BITMAP                  "..\\RES\\NewMaterial\\Terrain\\TileFloor01.bmp"
 
-IDB_OrangeMask          BITMAP                  "..\\RES\\O1Mask640x480_01.bmp"
+IDB_OrangeMask          BITMAP                  "..\\RES\\Masks\\O1Mask640x480_01.bmp"
 
-IDB_BlackMask           BITMAP                  "..\\RES\\BlackMask640x480_01.bmp"
+IDB_BlackMask           BITMAP                  "..\\RES\\Masks\\BlackMask640x480_01.bmp"
 
 IDB_RedFlower           BITMAP                  "..\\RES\\NewMaterial\\Terrain\\RedFlower.bmp"
 
@@ -498,7 +492,7 @@ IDB_TV05                BITMAP                  "..\\RES\\NewMaterial\\House\\Ho
 
 IDB_TV06                BITMAP                  "..\\RES\\NewMaterial\\House\\HouseIndoor\\TV\\TV06.bmp"
 
-IDB_DuskMask            BITMAP                  "..\\RES\\DuskMask.bmp"
+IDB_DuskMask            BITMAP                  "..\\RES\\Masks\\DuskMask.bmp"
 
 IDB_Chicken_front01     BITMAP                  "..\\RES\\Animal\\Chicken\\Animation\\Down\\Chicken_Down01.bmp"
 
@@ -1174,13 +1168,6 @@ IDB_Tomato_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\To
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// PNG
-//
-
-IDB_PNG1                PNG                     "..\\res\\Dialog_BG01.png"
 
 #endif    // 中文 (繁體，台灣) resources
 /////////////////////////////////////////////////////////////////////////////
