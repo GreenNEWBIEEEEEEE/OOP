@@ -45,7 +45,7 @@ BEGIN
     "\r\n"
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
     "#ifdef _WIN32\r\n"
-    "LANGUAGE 9, 1\r\n"
+    "LANGUAGE 9, 1\r\n"C:
     "#pragma code_page(1252)\r\n"
     "#endif\r\n"
     "#include ""res\\game.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
@@ -1147,6 +1147,52 @@ IDB_ChangeToolPeanutSeed BITMAP                  "..\\RES\\NewMaterial\\Characte
 IDB_ChangeToolPotatoSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolPotatoSeed.bmp"
 
 IDB_ChangeToolTomatoSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolTomatoSeed.bmp"
+
+IDB_Corn_Grow01_D       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow01_D.bmp"
+
+IDB_Corn_Grow01_W       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow01_W.bmp"
+
+IDB_Corn_Grow02_D       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow02_D.bmp"
+
+IDB_Corn_Grow02_W       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow02_W.bmp"
+
+IDB_Corn_Grow03_D       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow03_D.bmp"
+
+IDB_Corn_Grow03_W       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Grow03_W.bmp"
+
+IDB_Corn_Mature         BITMAP                  "..\\RES\\NewMaterial\\Crops\\Corn\\Corn_Mature.bmp"
+
+IDB_Eggplant_Grow01_D   BITMAP                  "..\\RES\\NewMaterial\\Crops\\Eggplant\\Eggplant_Grow01_D.bmp"
+
+IDB_Eggplant_Grow01_W   BITMAP                  "..\\RES\\NewMaterial\\Crops\\Eggplant\\Eggplant_Grow01_W.bmp"
+
+IDB_Eggplant_Mature     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Eggplant\\Eggplant_Mature.bmp"
+
+IDB_Peanut_Grow01_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Peanut\\Peanut_Grow01_D.bmp"
+
+IDB_Peanut_Grow01_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Peanut\\Peanut_Grow01_W.bmp"
+
+IDB_Peanut_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Peanut\\Peanut_Mature.bmp"
+
+IDB_Potato_Grow01_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Potato\\Potato_Grow01_D.bmp"
+
+IDB_Potato_Grow01_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Potato\\Potato_Grow01_W.bmp"
+
+IDB_Potato_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Potato\\Potato_Mature.bmp"
+
+IDB_Tomato_Grow01_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow01_D.bmp"
+
+IDB_Tomato_Grow01_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow01_W.bmp"
+
+IDB_Tomato_Grow02_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow02_D.bmp"
+
+IDB_Tomato_Grow02_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow02_W.bmp"
+
+IDB_Tomato_Grow03_D     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow03_D.bmp"
+
+IDB_Tomato_Grow03_W     BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Grow03_W.bmp"
+
+IDB_Tomato_Mature       BITMAP                  "..\\RES\\NewMaterial\\Crops\\Tomato\\Tomato_Mature.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

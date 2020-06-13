@@ -70,7 +70,6 @@ namespace game_framework {
 		soil.LoadBitmap(IDB_Soil);
 		tileFloor.LoadBitmap(IDB_TileFloor01);
 		redFlower.LoadBitmap(IDB_RedFlower);
-
 		fence.LoadBitmap(IDB_Fence);
 		bush.LoadBitmap(IDB_Bush);
 		stone.LoadBitmap(IDB_Stone);
@@ -162,12 +161,44 @@ namespace game_framework {
 			TV_06.LoadBitmap(IDB_TV06);
 		}
 
-		radish_Seed_D.LoadBitmap(IDB_Radish_Seed_D);
-		radish_Seed_W.LoadBitmap(IDB_Radish_Seed_W);
-		radish_Grow01_D.LoadBitmap(IDB_Radish_Grow01_D);
-		radish_Grow01_W.LoadBitmap(IDB_Radish_Grow01_W);
-		radish_Mature.LoadBitmap(IDB_Radish_Mature);
-
+		// Plants growing 
+		{
+			// radish growing
+			radish_Seed_D.LoadBitmap(IDB_Radish_Seed_D);
+			radish_Seed_W.LoadBitmap(IDB_Radish_Seed_W);
+			radish_Grow01_D.LoadBitmap(IDB_Radish_Grow01_D);
+			radish_Grow01_W.LoadBitmap(IDB_Radish_Grow01_W);
+			radish_Mature.LoadBitmap(IDB_Radish_Mature);
+			// corn growing
+			corn_Grow01_D.LoadBitmap(IDB_Corn_Grow01_D);
+			corn_Grow01_W.LoadBitmap(IDB_Corn_Grow01_W);
+			corn_Grow02_D.LoadBitmap(IDB_Corn_Grow02_D);
+			corn_Grow02_W.LoadBitmap(IDB_Corn_Grow02_W);
+			corn_Grow03_D.LoadBitmap(IDB_Corn_Grow03_D);
+			corn_Grow03_W.LoadBitmap(IDB_Corn_Grow03_W);
+			corn_Mature.LoadBitmap(IDB_Corn_Mature);
+			// eggplant growing
+			eggplant_Grow01_D.LoadBitmap(IDB_Eggplant_Grow01_D);
+			eggplant_Grow01_W.LoadBitmap(IDB_Eggplant_Grow01_W);
+			eggplant_Mature.LoadBitmap(IDB_Eggplant_Mature);
+			// peanut growing
+			peanut_Grow01_D.LoadBitmap(IDB_Peanut_Grow01_D);
+			peanut_Grow01_W.LoadBitmap(IDB_Peanut_Grow01_W);
+			peanut_Mature.LoadBitmap(IDB_Peanut_Mature);
+			// potato growing
+			potato_Grow01_D.LoadBitmap(IDB_Potato_Grow01_D);
+			potato_Grow01_W.LoadBitmap(IDB_Potato_Grow01_W);
+			potato_Mature.LoadBitmap(IDB_Potato_Mature);
+			// tomato growing
+			tomato_Grow01_D.LoadBitmap(IDB_Tomato_Grow01_D);
+			tomato_Grow01_W.LoadBitmap(IDB_Tomato_Grow01_W);
+			tomato_Grow02_D.LoadBitmap(IDB_Tomato_Grow02_D);
+			tomato_Grow02_W.LoadBitmap(IDB_Tomato_Grow02_W);
+			tomato_Grow03_D.LoadBitmap(IDB_Tomato_Grow03_D);
+			tomato_Grow03_W.LoadBitmap(IDB_Tomato_Grow03_W);
+			tomato_Mature.LoadBitmap(IDB_Tomato_Mature);
+		}
+		
 		// PlantShop	
 		{
 			PlantShop_01.LoadBitmap(IDB_PlantShopHouse_Morning_s01);
@@ -312,6 +343,7 @@ namespace game_framework {
 			animalShop_20.LoadBitmap(IDB_AnimalShop20);
 		}
 
+		// tool&machine shop
 		{
 			toolsMachinesShop_01.LoadBitmap(IDB_ToolsMachinesShop01);
 			toolsMachinesShop_02.LoadBitmap(IDB_ToolsMachinesShop02);
@@ -523,6 +555,99 @@ namespace game_framework {
 					chickenHouse_Floor06_05.SetTopLeft(x, y);
 					chickenHouse_Floor06_05.ShowBitmap();
 					break;
+				case 36:
+					corn_Grow01_D.SetTopLeft(x, y);
+					corn_Grow01_D.ShowBitmap();
+					break;
+				case 37:
+					corn_Grow01_W.SetTopLeft(x, y);
+					corn_Grow01_W.ShowBitmap();
+					break;
+				case 38:
+					corn_Grow02_D.SetTopLeft(x, y);
+					corn_Grow02_D.ShowBitmap();
+					break;
+				case 39:
+					corn_Grow02_W.SetTopLeft(x, y);
+					corn_Grow02_W.ShowBitmap();
+					break;
+				case 40:
+					corn_Grow03_D.SetTopLeft(x, y);
+					corn_Grow03_D.ShowBitmap();
+					break;
+				case 41:
+					corn_Grow03_W.SetTopLeft(x, y);
+					corn_Grow03_W.ShowBitmap();
+					break;
+				case 42:
+					corn_Mature.SetTopLeft(x, y);
+					corn_Mature.ShowBitmap();
+					break;
+				case 43:
+					eggplant_Grow01_D.SetTopLeft(x, y);
+					eggplant_Grow01_D.ShowBitmap();
+					break;
+				case 44:
+					eggplant_Grow01_W.SetTopLeft(x, y);
+					eggplant_Grow01_W.ShowBitmap();
+					break;
+				case 45:
+					eggplant_Mature.SetTopLeft(x, y);
+					eggplant_Mature.ShowBitmap();
+					break;
+				case 46:
+					peanut_Grow01_D.SetTopLeft(x, y);
+					peanut_Grow01_D.ShowBitmap();
+					break;
+				case 47:
+					peanut_Grow01_W.SetTopLeft(x, y);
+					peanut_Grow01_W.ShowBitmap();
+					break;
+				case 48:
+					peanut_Mature.SetTopLeft(x, y);
+					peanut_Mature.ShowBitmap();
+					break;
+				case 49:
+					potato_Grow01_D.SetTopLeft(x, y);
+					potato_Grow01_D.ShowBitmap();
+					break;
+				case 50:
+					potato_Grow01_W.SetTopLeft(x, y);
+					potato_Grow01_W.ShowBitmap();
+					break;
+				case 51:
+					potato_Mature.SetTopLeft(x, y);
+					potato_Mature.ShowBitmap();
+					break;
+				case 52:
+					tomato_Grow01_D.SetTopLeft(x, y);
+					tomato_Grow01_D.ShowBitmap();
+					break;
+				case 53:
+					tomato_Grow01_W.SetTopLeft(x, y);
+					tomato_Grow01_W.ShowBitmap();
+					break;
+				case 54:
+					tomato_Grow02_D.SetTopLeft(x, y);
+					tomato_Grow02_D.ShowBitmap();
+					break;
+				case 55:
+					tomato_Grow02_W.SetTopLeft(x, y);
+					tomato_Grow02_W.ShowBitmap();
+					break;
+				case 56:
+					tomato_Grow03_D.SetTopLeft(x, y);
+					tomato_Grow03_D.ShowBitmap();
+					break;
+				case 57:
+					tomato_Grow03_W.SetTopLeft(x, y);
+					tomato_Grow03_W.ShowBitmap();
+					break;
+				case 58:
+					tomato_Mature.SetTopLeft(x, y);
+					tomato_Mature.ShowBitmap();
+					break;
+
 
 				////////////////////////////////////////////
 				////////////////////////////////////////////
@@ -1250,11 +1375,6 @@ namespace game_framework {
 	void CGameMap::SetSXSY(int nx, int ny)
 	{
 		sx = nx; sy = ny;
-	}
-	void CGameMap::SmoothMoveViewTo(int sx, int sy)
-	{
-		this->sx = sx;
-		this->sy = sy;
 	}
 	int CGameMap::ScreenX(int x) const
 	{

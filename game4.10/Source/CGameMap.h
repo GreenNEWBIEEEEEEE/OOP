@@ -41,10 +41,6 @@ namespace game_framework
 		void SetSY(int ny);
 		void SetSXSY(int nx, int ny);
 
-		// 平滑移動指定的視角處
-		// 主要用於事件
-		void SmoothMoveViewTo(int sx, int sy);
-
 		// 為玩家或角色計算轉換在screen上的點座標
 		// 此工作應當由CGameMap完成
 		// 因此, 玩家或角色的Class中需要做繪圖(OnShow)的，請將CGameMap當作參數傳入(詳見老師的講義MapIntroduction)
@@ -227,8 +223,35 @@ namespace game_framework
 		CMovingBitmap radish_Grow01_D;
 		CMovingBitmap radish_Grow01_W;
 		CMovingBitmap radish_Mature;
+		// plant: Corn
+		CMovingBitmap corn_Grow01_D;
+		CMovingBitmap corn_Grow01_W;
+		CMovingBitmap corn_Grow02_D;
+		CMovingBitmap corn_Grow02_W;
+		CMovingBitmap corn_Grow03_D;
+		CMovingBitmap corn_Grow03_W;
+		CMovingBitmap corn_Mature;
+		// plant: Eggplant
+		CMovingBitmap eggplant_Grow01_D;
+		CMovingBitmap eggplant_Grow01_W;
+		CMovingBitmap eggplant_Mature;
+		// plant: Peanut
+		CMovingBitmap peanut_Grow01_D;
+		CMovingBitmap peanut_Grow01_W;
+		CMovingBitmap peanut_Mature;
+		// plant: Potato
+		CMovingBitmap potato_Grow01_D;
+		CMovingBitmap potato_Grow01_W;
+		CMovingBitmap potato_Mature;
+		// plant: Tomato
+		CMovingBitmap tomato_Grow01_D;
+		CMovingBitmap tomato_Grow01_W;
+		CMovingBitmap tomato_Grow02_D;
+		CMovingBitmap tomato_Grow02_W;
+		CMovingBitmap tomato_Grow03_D;
+		CMovingBitmap tomato_Grow03_W;
+		CMovingBitmap tomato_Mature;
 
-		
 		CMovingBitmap animalGrass;
 		CMovingBitmap egg;
 		

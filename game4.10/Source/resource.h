@@ -632,6 +632,30 @@
 #define IDB_ChangeToolPotatoSeed        784
 #define IDB_BITMAP46                    785
 #define IDB_ChangeToolTomatoSeed        785
+#define IDB_Corn_Grow01_D               786
+#define IDB_Corn_Grow01_W               787
+#define IDB_Corn_Grow02_D               788
+#define IDB_Corn_Grow02_W               789
+#define IDB_Corn_Grow03_D               790
+#define IDB_Corn_Grow03_W               791
+#define IDB_Corn_Mature                 792
+#define IDB_Eggplant_Grow01_D           793
+#define IDB_Eggplant_Grow01_W           794
+#define IDB_Eggplant_Mature             795
+#define IDB_Peanut_Grow01_D             796
+#define IDB_Peanut_Grow01_W             797
+#define IDB_Peanut_Mature               798
+#define IDB_Potato_Grow01_D             799
+#define IDB_Potato_Grow01_W             800
+#define IDB_Potato_Mature               801
+#define IDB_Tomato_Grow01_D             802
+#define IDB_Tomato_Grow01_W             803
+#define IDB_Tomato_Grow02_D             804
+#define IDB_Tomato_Grow02_W             805
+#define IDB_Tomato_Grow03_D             806
+#define IDB_Tomato_Grow03_W             807
+#define IDB_BITMAP49                    808
+#define IDB_Tomato_Mature               808
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -644,7 +668,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        786
+#define _APS_NEXT_RESOURCE_VALUE        809
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101
