@@ -43,9 +43,9 @@ namespace game_framework
 		case 6:
 			Water(p, mm, gd);
 			break;
-			// 播種
+			// 其餘的為各種子袋子，用以播種
 		default:
-			Plant(p, mm, gd); // 呼叫播種子事件函數，並且傳入現在的toolID 表示何種種子
+			Plant(p, mm, gd); // 呼叫播種子事件函數
 			break;
 		}
 	}
