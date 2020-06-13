@@ -185,6 +185,7 @@ CGameStateRun::CGameStateRun(CGame *g)
 	mapManager.AddMap("Scripts/MapInfos/MapE03.txt", false);
 	mapManager.AddMap("Scripts/MapInfos/MapE04.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE05.txt", false);
+	mapManager.AddMap("Scripts/MapInfos/MapE06.txt", true);
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	foodMenu.SetFood(p1.GetFood());
 }
