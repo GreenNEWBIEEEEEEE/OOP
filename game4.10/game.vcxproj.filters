@@ -2066,5 +2066,158 @@
     <Image Include="RES\NewMaterial\Crops\Tomato\Tomato_Mature.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\GameUI\Texts\Loading_01_ani01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Texts\Loading_01_ani02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Texts\Loading_01_ani03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GameUI\Texts\Loading_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DialogBackgrounds\Dialog_BG01_F4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\DialogBackgrounds\Dialog_BG02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\DialogBackgrounds\Dialog_BG01_No.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\DialogBackgrounds\Dialog_BG01_Yes.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\RainMask01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\RainMask02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\RainMask03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Backgrounds\ShopMenuBlackBG.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Backgrounds\PlantShopSelector.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\GrayMask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\O1Mask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\BlackMask640x480_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Masks\DuskMask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Backpack\NowTaking.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\part\Clinic23.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\Part\FoodShop17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

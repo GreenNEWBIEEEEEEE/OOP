@@ -30,6 +30,7 @@ namespace game_framework {
 			int height = 100;
 			int fixWidth = 60;
 			int fixHeight = 70;
+			int nowTakingID = 0;
 			vector<CTool*>* playerBackpack;
 			CTimer* timer;
 			CMovingBitmap backpackMenu;
@@ -45,6 +46,7 @@ namespace game_framework {
 
 			// Icon
 			CMovingBitmap selector;
+			CMovingBitmap nowTaking;
 			CMovingBitmap question;
 
 		// Private tool functions:

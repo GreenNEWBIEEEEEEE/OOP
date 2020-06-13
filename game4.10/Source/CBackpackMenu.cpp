@@ -59,6 +59,7 @@ namespace game_framework {
 	{
 		backpackMenu.LoadBitmap(IDB_BackpackMenu, RGB(0,0,0));
 		selector.LoadBitmap(IDB_Selector);
+		nowTaking.LoadBitmap(IDB_NowTaking);
 		question.LoadBitmap(IDB_Question, RGB(255, 255, 255));
 		moneyIcon.LoadBitmap(IDB_Coin, RGB(255, 0, 255));
 		HPIcon.LoadBitmap(IDB_HeartPoint, RGB(255, 0, 255));
@@ -98,6 +99,8 @@ namespace game_framework {
 		else if (key == KEY_A)
 		{
 			player->SetToolSelector(selectRow * column + selectCol);
+			// Update now taking id
+			nowTakingID = player->GetCurrentTool()->GetToolID();
 		}
 		else if (key == KEY_D)
 		{
@@ -139,6 +142,14 @@ namespace game_framework {
 			selector.SetTopLeft(x, y);
 			selector.ShowBitmap();
 
+			// Draw now taking selector
+			int tcol = nowTakingID % 4, trow = 0;
+			if (4 <= nowTakingID && nowTakingID <= 7) trow = 1;
+			else if (8 <= nowTakingID && nowTakingID <= 11) trow = 2;
+			int tx = tcol * width + fixWidth, ty = trow * height + fixHeight;
+			nowTaking.SetTopLeft(tx, ty);
+			nowTaking.ShowBitmap();
+
 			// Draw Logos
 			for (int i = 0; i < row; ++i)
 			{
@@ -161,6 +172,8 @@ namespace game_framework {
 			// Draw tool information text
 			CString info = (*playerBackpack)[selectRow * column  + selectCol]->GetInfo().c_str();
 			DrawTexts(info, 50, 380, 160);
+			
+			// ¾Þ§@»¡©ú
 			DrawTexts("[A] Use [D] Quit", 400, 430, 140);
 		}
 	

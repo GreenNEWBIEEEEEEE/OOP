@@ -370,16 +370,59 @@ namespace game_framework {
 			toolsMachinesShop_23.LoadBitmap(IDB_ToolsMachinesShop23);
 		}
 		
+		// Egg & chicken food on the map
 		{
 			egg.LoadBitmap(IDB_Egg);
 			animalGrass.LoadBitmap(IDB_AnimalGrass);
 		}
 
+		// Machines on the map
 		{
 			cowMachine1.LoadBitmap(IDB_CowHouse_Floor_Machine01);
 			cowMachine2.LoadBitmap(IDB_CowHouse_Floor_Machine02);
 			sheepMachine1.LoadBitmap(IDB_SheepHouse_Floor_Machine03);
 			sheepMachine2.LoadBitmap(IDB_SheepHouse_Floor_Machine04);
+		}
+
+		// food shop
+		{
+			foodShop_01.LoadBitmap(IDB_FoodShop01);
+			foodShop_02.LoadBitmap(IDB_FoodShop02);
+			foodShop_03.LoadBitmap(IDB_FoodShop03);
+			foodShop_04.LoadBitmap(IDB_FoodShop04);
+			foodShop_05.LoadBitmap(IDB_FoodShop05);
+			foodShop_06.LoadBitmap(IDB_FoodShop06);
+			foodShop_10.LoadBitmap(IDB_FoodShop10);
+			foodShop_11.LoadBitmap(IDB_FoodShop11);
+			foodShop_16.LoadBitmap(IDB_FoodShop16);
+			foodShop_17.LoadBitmap(IDB_FoodShop17);
+		}
+
+		// clinic
+		{
+			clinic_01.LoadBitmap(IDB_Clinic01);
+			clinic_02.LoadBitmap(IDB_Clinic02);
+			clinic_03.LoadBitmap(IDB_Clinic03);
+			clinic_04.LoadBitmap(IDB_Clinic04);
+			clinic_05.LoadBitmap(IDB_Clinic05);
+			clinic_06.LoadBitmap(IDB_Clinic06);
+			clinic_07.LoadBitmap(IDB_Clinic07);
+			clinic_08.LoadBitmap(IDB_Clinic08);
+			clinic_09.LoadBitmap(IDB_Clinic09);
+			clinic_10.LoadBitmap(IDB_Clinic10);
+			clinic_11.LoadBitmap(IDB_Clinic11);
+			clinic_12.LoadBitmap(IDB_Clinic12);
+			clinic_13.LoadBitmap(IDB_Clinic13);
+			clinic_14.LoadBitmap(IDB_Clinic14);
+			clinic_15.LoadBitmap(IDB_Clinic15);
+			clinic_16.LoadBitmap(IDB_Clinic16);
+			clinic_17.LoadBitmap(IDB_Clinic17);
+			clinic_18.LoadBitmap(IDB_Clinic18);
+			clinic_19.LoadBitmap(IDB_Clinic19);
+			clinic_20.LoadBitmap(IDB_Clinic20);
+			clinic_21.LoadBitmap(IDB_Clinic21);
+			clinic_22.LoadBitmap(IDB_Clinic22);
+			clinic_23.LoadBitmap(IDB_Clinic23);
 		}
 
 		if (weather != nullptr)
@@ -1309,6 +1352,139 @@ namespace game_framework {
 					sheepMachine2.SetTopLeft(x, y);
 					sheepMachine2.ShowBitmap();
 					break;
+				case -165:
+					foodShop_01.SetTopLeft(x, y);
+					foodShop_01.ShowBitmap();
+					break;
+				case -166:
+					foodShop_02.SetTopLeft(x, y);
+					foodShop_02.ShowBitmap();
+					break;
+				case -167:
+					foodShop_03.SetTopLeft(x, y);
+					foodShop_03.ShowBitmap();
+					break;
+				case -168:
+					foodShop_04.SetTopLeft(x, y);
+					foodShop_04.ShowBitmap();
+					break;
+				case -169:
+					foodShop_05.SetTopLeft(x, y);
+					foodShop_05.ShowBitmap();
+					break;
+				case -170:
+					foodShop_06.SetTopLeft(x, y);
+					foodShop_06.ShowBitmap();
+					break;
+				case -171:
+					foodShop_10.SetTopLeft(x, y);
+					foodShop_10.ShowBitmap();
+					break;
+				case -172:
+					foodShop_11.SetTopLeft(x, y);
+					foodShop_11.ShowBitmap();
+					break;
+				case -173:
+					foodShop_16.SetTopLeft(x, y);
+					foodShop_16.ShowBitmap();
+					break;
+				case -174:
+					foodShop_17.SetTopLeft(x, y);
+					foodShop_17.ShowBitmap();
+					break;
+				case -175:
+					clinic_01.SetTopLeft(x, y);
+					clinic_01.ShowBitmap();
+					break;
+				case -176:
+					clinic_02.SetTopLeft(x, y);
+					clinic_02.ShowBitmap();
+					break;
+				case -177:
+					clinic_03.SetTopLeft(x, y);
+					clinic_03.ShowBitmap();
+					break;
+				case -178:
+					clinic_04.SetTopLeft(x, y);
+					clinic_04.ShowBitmap();
+					break;
+				case -179:
+					clinic_05.SetTopLeft(x, y);
+					clinic_05.ShowBitmap();
+					break;
+				case -180:
+					clinic_06.SetTopLeft(x, y);
+					clinic_06.ShowBitmap();
+					break;
+				case -181:
+					clinic_07.SetTopLeft(x, y);
+					clinic_07.ShowBitmap();
+					break;
+				case -182:
+					clinic_08.SetTopLeft(x, y);
+					clinic_08.ShowBitmap();
+					break;
+				case -183:
+					clinic_09.SetTopLeft(x, y);
+					clinic_09.ShowBitmap();
+					break;
+				case -184:
+					clinic_10.SetTopLeft(x, y);
+					clinic_10.ShowBitmap();
+					break;
+				case -185:
+					clinic_11.SetTopLeft(x, y);
+					clinic_11.ShowBitmap();
+					break;
+				case -186:
+					clinic_12.SetTopLeft(x, y);
+					clinic_12.ShowBitmap();
+					break;
+				case -187:
+					clinic_13.SetTopLeft(x, y);
+					clinic_13.ShowBitmap();
+					break;
+				case -188:
+					clinic_14.SetTopLeft(x, y);
+					clinic_14.ShowBitmap();
+					break;
+				case -189:
+					clinic_15.SetTopLeft(x, y);
+					clinic_15.ShowBitmap();
+					break;
+				case -190:
+					clinic_16.SetTopLeft(x, y);
+					clinic_16.ShowBitmap();
+					break;
+				case -191:
+					clinic_17.SetTopLeft(x, y);
+					clinic_17.ShowBitmap();
+					break;
+				case -192:
+					clinic_18.SetTopLeft(x, y);
+					clinic_18.ShowBitmap();
+					break;
+				case -193:
+					clinic_19.SetTopLeft(x, y);
+					clinic_19.ShowBitmap();
+					break;
+				case -194:
+					clinic_20.SetTopLeft(x, y);
+					clinic_20.ShowBitmap();
+					break;
+				case -195:
+					clinic_21.SetTopLeft(x, y);
+					clinic_21.ShowBitmap();
+					break;
+				case -196:
+					clinic_22.SetTopLeft(x, y);
+					clinic_22.ShowBitmap();
+					break;
+				case -197:
+					clinic_23.SetTopLeft(x, y);
+					clinic_23.ShowBitmap();
+					break;
+
 
 				default:
 					break;

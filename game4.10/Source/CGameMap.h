@@ -303,6 +303,43 @@ namespace game_framework
 		CMovingBitmap toolsMachinesShop_22;
 		CMovingBitmap toolsMachinesShop_23;
 
+		// Food Shop
+		CMovingBitmap foodShop_01;
+		CMovingBitmap foodShop_02;
+		CMovingBitmap foodShop_03;
+		CMovingBitmap foodShop_04;
+		CMovingBitmap foodShop_05;
+		CMovingBitmap foodShop_06;
+		CMovingBitmap foodShop_10;
+		CMovingBitmap foodShop_11;
+		CMovingBitmap foodShop_16;
+		CMovingBitmap foodShop_17;
+
+		// Clinic
+		CMovingBitmap clinic_01;
+		CMovingBitmap clinic_02;
+		CMovingBitmap clinic_03;
+		CMovingBitmap clinic_04;
+		CMovingBitmap clinic_05;
+		CMovingBitmap clinic_06;
+		CMovingBitmap clinic_07;
+		CMovingBitmap clinic_08;
+		CMovingBitmap clinic_09;
+		CMovingBitmap clinic_10;
+		CMovingBitmap clinic_11;
+		CMovingBitmap clinic_12;
+		CMovingBitmap clinic_13;
+		CMovingBitmap clinic_14;
+		CMovingBitmap clinic_15;
+		CMovingBitmap clinic_16;
+		CMovingBitmap clinic_17;
+		CMovingBitmap clinic_18;
+		CMovingBitmap clinic_19;
+		CMovingBitmap clinic_20;
+		CMovingBitmap clinic_21;
+		CMovingBitmap clinic_22;
+		CMovingBitmap clinic_23;
+
 
 		// Machine
 		CMovingBitmap cowMachine1;
