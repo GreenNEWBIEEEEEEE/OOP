@@ -35,37 +35,17 @@ namespace game_framework
 		case 3:
 			Hoeing(p, mm, gd); // 呼叫鋤地子事件函數
 			break;
-			// 種子袋: 用於播種
-		case 4:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-
 			// 鐮刀: 用於除草
 		case 5:
 			Weed(p, mm, gd); // 呼叫除草的子事件函數
 			break;
-
 			// 澆水器: 用於澆水
 		case 6:
 			Water(p, mm, gd);
 			break;
-		case 7:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-		case 8:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-		case 9:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-		case 10:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-		case 11:
-			Plant(p, mm, gd); // 呼叫播種子事件函數
-			break;
-			// 不動作
+			// 播種
 		default:
+			Plant(p, mm, gd); // 呼叫播種子事件函數，並且傳入現在的toolID 表示何種種子
 			break;
 		}
 	}
@@ -161,8 +141,11 @@ namespace game_framework
 	// 播種
 	void CMapFarmingEvent::Plant(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
+		// 種子在背包的位置，表示種子的種類
+		unsigned seedIndex = p->GetCurrentTool()->GetToolID();
+
 		// 先檢查玩家的種子袋數量至少要有1以上
-		if (p->GetBackpack()->at(4)->GetNumber() < 1)
+		if (p->GetBackpack()->at(seedIndex)->GetNumber() < 1)
 		{
 			// 顯示提示並結束
 			gd->AddMessage("You don't have enough seed!");
@@ -212,18 +195,15 @@ namespace game_framework
 					// 更換圖片
 					eMapInfo->SetElemID(5);
 					// 更換狀態
-					CTool* currentTool = p->GetCurrentTool();
-					switch (currentTool->GetToolID())
+					switch (seedIndex)
 					{
 					case 4:
 						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
 						eMapInfo->SetLandCrop(CMapInfo::Crop::Radish);
-						TRACE("\nPLANT\n");
 						break;
 					case 7:
 						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
 						eMapInfo->SetLandCrop(CMapInfo::Crop::Potato);
-						TRACE("\nPLANT2\n");
 						break;
 					case 8:
 						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
@@ -251,7 +231,7 @@ namespace game_framework
 		// 若有播種，扣種子袋數量
 		if (planted)
 		{
-			p->GetBackpack()->at(4)->DecreaseNumber(1);
+			p->GetBackpack()->at(seedIndex)->DecreaseNumber(1);
 		}
 	}
 
@@ -462,44 +442,4 @@ namespace game_framework
 		// 結束事件內容
 		eMapInfo = nullptr;
 	}
-
-	/*
-	// 賣農作物
-	void CMapFarmingEvent::SellCrop(CPlayer *p, CMapManager *mm, CGameDialog *gd)
-	{
-		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
-
-		// 取得player面向的事件作用格的格座標
-		int ex = pgx, ey = pgy;
-		if (p->GetDirection() == 1) ey--;
-		else if (p->GetDirection() == 2) ey++;
-		else if (p->GetDirection() == 3) ex--;
-		else ex++;
-
-		// 以剛才取得的事件作用格的格座標 先取得MapInfo方便後續操作, 避免一直呼叫函數造成程式碼冗長
-		CMapInfo *eMapInfo = mm->GetCurrentMap()->GetMapInfo(ex, ey);
-
-		// 開始執行內容
-		// 先檢查MapInfo有沒有正確取到
-		if (eMapInfo != nullptr)
-		{
-			// 先檢查可耕
-			if (eMapInfo->IsArable())
-			{
-				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
-				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
-				if (landState == CMapInfo::ArableLandState::hasTrunk)
-				{
-					eMapInfo->SetElemID(3); // 變成空地
-					// **重要: 要改變狀態**
-					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
-				}
-			}
-		}
-
-		// 結束事件內容
-		eMapInfo = nullptr;
-	}
-	*/
 }
