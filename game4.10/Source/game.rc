@@ -1138,6 +1138,16 @@ IDB_CornSeed            BITMAP                  "..\\RES\\Backpack\\CornSeed.bmp
 
 IDB_Hand                BITMAP                  "..\\RES\\Backpack\\Hand.bmp"
 
+IDB_ChangeToolCornSeed  BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolCornSeed.bmp"
+
+IDB_ChangeToolEggplantSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolEggplantSeed.bmp"
+
+IDB_ChangeToolPeanutSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolPeanutSeed.bmp"
+
+IDB_ChangeToolPotatoSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolPotatoSeed.bmp"
+
+IDB_ChangeToolTomatoSeed BITMAP                  "..\\RES\\NewMaterial\\Character\\changeTool\\ChangeToolTomatoSeed.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

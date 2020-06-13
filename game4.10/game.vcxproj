@@ -542,11 +542,16 @@
     <Image Include="RES\NewMaterial\Character\butterMove\right\02.bmp" />
     <Image Include="RES\NewMaterial\Character\butterMove\right\03.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolAxe.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolCornSeed.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolEggplantSeed.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHammer.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHand.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolHoe.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolPeanutSeed.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolPotatoSeed.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSeed.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolSickle.bmp" />
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolTomatoSeed.bmp" />
     <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolWateringCan.bmp" />
     <Image Include="RES\NewMaterial\Character\cheeseMove\back\01.bmp" />
     <Image Include="RES\NewMaterial\Character\cheeseMove\back\02.bmp" />

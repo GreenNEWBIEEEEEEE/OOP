@@ -115,6 +115,11 @@ namespace game_framework {
 		CAnimation aniChangeTool_4;
 		CAnimation aniChangeTool_5;
 		CAnimation aniChangeTool_6;
+		CAnimation aniChangeTool_7;
+		CAnimation aniChangeTool_8;
+		CAnimation aniChangeTool_9;
+		CAnimation aniChangeTool_10;
+		CAnimation aniChangeTool_11;
 
 		// 使用工具的動畫
 		bool isUsingTool = false;

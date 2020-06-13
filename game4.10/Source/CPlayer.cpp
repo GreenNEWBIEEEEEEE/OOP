@@ -480,6 +480,44 @@ namespace game_framework {
 			aniChangeTool_6.AddBitmap(IDB_ChangeToolWateringCan, RGB(255, 255, 255));
 			aniChangeTool_6.AddBitmap(IDB_ChangeToolWateringCan, RGB(255, 255, 255));
 		}
+		// 
+		{
+			aniChangeTool_7.AddBitmap(IDB_ChangeToolPotatoSeed, RGB(255, 255, 255));
+			aniChangeTool_7.AddBitmap(IDB_ChangeToolPotatoSeed, RGB(255, 255, 255));
+			aniChangeTool_7.AddBitmap(IDB_ChangeToolPotatoSeed, RGB(255, 255, 255));
+			aniChangeTool_7.AddBitmap(IDB_ChangeToolPotatoSeed, RGB(255, 255, 255));
+			aniChangeTool_7.AddBitmap(IDB_ChangeToolPotatoSeed, RGB(255, 255, 255));
+		}
+		{
+			aniChangeTool_8.AddBitmap(IDB_ChangeToolTomatoSeed, RGB(255, 255, 255));
+			aniChangeTool_8.AddBitmap(IDB_ChangeToolTomatoSeed, RGB(255, 255, 255));
+			aniChangeTool_8.AddBitmap(IDB_ChangeToolTomatoSeed, RGB(255, 255, 255));
+			aniChangeTool_8.AddBitmap(IDB_ChangeToolTomatoSeed, RGB(255, 255, 255));
+			aniChangeTool_8.AddBitmap(IDB_ChangeToolTomatoSeed, RGB(255, 255, 255));
+		}
+		{
+			aniChangeTool_9.AddBitmap(IDB_ChangeToolEggplantSeed, RGB(255, 255, 255));
+			aniChangeTool_9.AddBitmap(IDB_ChangeToolEggplantSeed, RGB(255, 255, 255));
+			aniChangeTool_9.AddBitmap(IDB_ChangeToolEggplantSeed, RGB(255, 255, 255));
+			aniChangeTool_9.AddBitmap(IDB_ChangeToolEggplantSeed, RGB(255, 255, 255));
+			aniChangeTool_9.AddBitmap(IDB_ChangeToolEggplantSeed, RGB(255, 255, 255));
+		}
+		{
+			aniChangeTool_10.AddBitmap(IDB_ChangeToolCornSeed, RGB(255, 255, 255));
+			aniChangeTool_10.AddBitmap(IDB_ChangeToolCornSeed, RGB(255, 255, 255));
+			aniChangeTool_10.AddBitmap(IDB_ChangeToolCornSeed, RGB(255, 255, 255));
+			aniChangeTool_10.AddBitmap(IDB_ChangeToolCornSeed, RGB(255, 255, 255));
+			aniChangeTool_10.AddBitmap(IDB_ChangeToolCornSeed, RGB(255, 255, 255));
+		}
+		{
+			aniChangeTool_11.AddBitmap(IDB_ChangeToolPeanutSeed, RGB(255, 255, 255));
+			aniChangeTool_11.AddBitmap(IDB_ChangeToolPeanutSeed, RGB(255, 255, 255));
+			aniChangeTool_11.AddBitmap(IDB_ChangeToolPeanutSeed, RGB(255, 255, 255));
+			aniChangeTool_11.AddBitmap(IDB_ChangeToolPeanutSeed, RGB(255, 255, 255));
+			aniChangeTool_11.AddBitmap(IDB_ChangeToolPeanutSeed, RGB(255, 255, 255));
+		}
+
+
 
 		///
 		/// 載入使用工具的動畫
@@ -946,6 +984,26 @@ namespace game_framework {
 			case 6:
 				lastFacingDirection = facingDirection;
 				facingDirection = &aniChangeTool_6;
+				break;
+			case 7:
+				lastFacingDirection = facingDirection;
+				facingDirection = &aniChangeTool_7;
+				break;
+			case 8:
+				lastFacingDirection = facingDirection;
+				facingDirection = &aniChangeTool_8;
+				break;
+			case 9:
+				lastFacingDirection = facingDirection;
+				facingDirection = &aniChangeTool_9;
+				break;
+			case 10:
+				lastFacingDirection = facingDirection;
+				facingDirection = &aniChangeTool_10;
+				break;
+			case 11:
+				lastFacingDirection = facingDirection;
+				facingDirection = &aniChangeTool_11;
 				break;
 			default:
 				break;

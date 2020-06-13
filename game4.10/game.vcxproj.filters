@@ -1982,5 +1982,20 @@
     <Image Include="RES\Backpack\Hand.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolCornSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolEggplantSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolPeanutSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolPotatoSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Character\changeTool\ChangeToolTomatoSeed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
