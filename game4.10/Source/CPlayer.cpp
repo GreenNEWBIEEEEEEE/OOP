@@ -647,9 +647,14 @@ namespace game_framework {
 		return direction;
 	}
 
-	int CPlayer::GetCurrentTool() const
+	int CPlayer::GetCurrentToolNumber() const
 	{
 		return toolSelector;
+	}
+
+	CTool* CPlayer::GetCurrentTool() const
+	{
+		return backpack[toolSelector];
 	}
 
 	int CPlayer::GetMoney() const
@@ -685,6 +690,31 @@ namespace game_framework {
 		{
 			Move(m, &aniChickenMoveUp, &aniChickenMoveDown, &aniChickenMoveLeft, &aniChickenMoveRight, obj);
 			TRACE("\nChickenMOve\n");
+		}
+		else if (currentMoveState == CornMove)
+		{
+			Move(m, &aniCornMoveUp, &aniCornMoveDown, &aniCornMoveLeft, &aniCornMoveRight, obj);
+			TRACE("\nCornMove\n");
+		}
+		else if (currentMoveState == PeanutMove)
+		{
+			Move(m, &aniPeanutMoveUp, &aniPeanutMoveDown, &aniPeanutMoveLeft, &aniPeanutMoveRight, obj);
+			TRACE("\nPeanutMove\n");
+		}
+		else if (currentMoveState == PotatoMove)
+		{
+			Move(m, &aniPotatoMoveUp, &aniPotatoMoveDown, &aniPotatoMoveLeft, &aniPotatoMoveRight, obj);
+			TRACE("\nPotatoMove\n");
+		}
+		else if (currentMoveState == TomatoMove)
+		{
+			Move(m, &aniTomatoMoveUp, &aniTomatoMoveDown, &aniTomatoMoveLeft, &aniTomatoMoveRight, obj);
+			TRACE("\nTomatoMove\n");
+		}
+		else if (currentMoveState == EggPlantMove)
+		{
+			Move(m, &aniEggPlantMoveUp, &aniEggPlantMoveDown, &aniEggPlantMoveLeft, &aniEggPlantMoveRight, obj);
+			TRACE("\nEggPlantMove\n");
 		}
 		else if (currentMoveState == EggMove)
 		{
@@ -1079,6 +1109,31 @@ namespace game_framework {
 					else if (direction == 3) facingDirection = &aniUseTool_6_left;
 					else facingDirection = &aniUseTool_6_right;
 					DecreaseHP(1);
+					break;
+				case 7:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
+					break;
+				case 8:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
+					break;
+				case 9:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
+					break;
+				case 10:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
+					break;
+				case 11:
+					lastFacingDirection = facingDirection;
+					// 播撒種子動作只有一種面向
+					facingDirection = &aniUseTool_4;
 					break;
 				default:
 					break;

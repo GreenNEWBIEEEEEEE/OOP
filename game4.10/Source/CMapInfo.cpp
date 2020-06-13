@@ -251,6 +251,104 @@ namespace game_framework{
 		return isGrowingCounterEnable;
 		
 	}
+
+	CMapInfo::Crop CMapInfo::GetCurrentCrop() const
+	{
+		return landCrop;
+	}
+
+	void CMapInfo::StateMachine_Radish()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isGrowing1;
+			elemID = 7;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing1) {
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 9;
+		}
+	}
+
+	void CMapInfo::StateMachine_Potato()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 51;
+		}
+
+	}
+
+	void CMapInfo::StateMachine_Tomato()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isGrowing1;
+			elemID = 52;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing1)
+		{
+			landState = CMapInfo::ArableLandState::isGrowing2;
+			elemID = 54;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing2) {
+			landState = CMapInfo::ArableLandState::isGrowing3;
+			elemID = 56;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing3) {
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 58;
+		}
+
+	}
+
+	void CMapInfo::StateMachine_EggPlant()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 45;
+		}
+	}
+
+	void CMapInfo::StateMachine_Corn()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isGrowing1;
+			elemID = 36;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing1)
+		{
+			landState = CMapInfo::ArableLandState::isGrowing2;
+			elemID = 38;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing2) {
+			landState = CMapInfo::ArableLandState::isGrowing3;
+			elemID = 40;
+		}
+		else if (landState == CMapInfo::ArableLandState::wateredIsGrowing3) {
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 42;
+		}
+
+	}
+
+	void CMapInfo::StateMachine_Peanut()
+	{
+		if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
+		{
+			landState = CMapInfo::ArableLandState::isMature;
+			elemID = 48;
+		}
+	}
+
+	void CMapInfo::SetLandCrop(CMapInfo::Crop crop)
+	{
+		landCrop = crop;
+	}
+
 	void CMapInfo::CountForGrowing(CTimer* timer)
 	{
 		TRACE("\n NewDay = %d  Hour = %d   Counter = %d\n", timer->IsNewDay(), timer->GetHour(), timer->GetHourCounter());
@@ -258,15 +356,18 @@ namespace game_framework{
 		{
 			if (isArable)
 			{
-				if (landState == CMapInfo::ArableLandState::wateredSeedPlanted)
-				{
-					landState = CMapInfo::ArableLandState::isGrowing;
-					elemID = 7;
-				}
-				else if (landState == CMapInfo::ArableLandState::wateredIsGrowing) {
-					landState = CMapInfo::ArableLandState::isMature;
-					elemID = 9;
-				}
+				if (landCrop == Crop::Radish)
+					StateMachine_Radish();
+				else if (landCrop == Crop::Peanut)
+					StateMachine_Peanut();
+				else if (landCrop == Crop::Potato)
+					StateMachine_Potato();
+				else if (landCrop == Crop::Tomato)
+					StateMachine_Tomato();
+				else if (landCrop == Crop::Corn)
+					StateMachine_Corn();
+				else if (landCrop == Crop::EggPlant)
+					StateMachine_EggPlant();
 			}
 			isGrowingCounterEnable = false;
 		}
@@ -287,14 +388,59 @@ namespace game_framework{
 				if (isArable)
 				{
 					switch (elemID) {
-					case 5:
+					case 5:				// 白蘿蔔
 						SetElemID(6);
 						landState = wateredSeedPlanted;
 						EnableGrowingCounter();
 						break;
 					case 7:
 						SetElemID(8);
-						landState = wateredIsGrowing;
+						landState = wateredIsGrowing1;
+						EnableGrowingCounter();
+						break;
+					case 36:			//玉米
+						SetElemID(37);
+						landState = wateredIsGrowing1;
+						EnableGrowingCounter();
+						break;
+					case 38:
+						SetElemID(39);
+						landState = wateredIsGrowing2;
+						EnableGrowingCounter();
+						break;
+					case 40:
+						SetElemID(41);
+						landState = wateredIsGrowing3;
+						EnableGrowingCounter();
+						break;
+					case 52:			//番茄
+						SetElemID(53);
+						landState = wateredIsGrowing1;
+						EnableGrowingCounter();
+						break;
+					case 54:
+						SetElemID(55);
+						landState = wateredIsGrowing2;
+						EnableGrowingCounter();
+						break;
+					case 56:
+						SetElemID(57);
+						landState = wateredIsGrowing3;
+						EnableGrowingCounter();
+						break;
+					case 43:			// 茄子
+						SetElemID(44);
+						landState = wateredIsGrowing1;
+						EnableGrowingCounter();
+						break;
+					case 46:			// 花生
+						SetElemID(47);
+						landState = wateredIsGrowing1;
+						EnableGrowingCounter();
+						break;
+					case 49:			// 馬鈴薯
+						SetElemID(50);
+						landState = wateredIsGrowing1;
 						EnableGrowingCounter();
 						break;
 					default:
@@ -314,6 +460,7 @@ namespace game_framework{
 					{
 						SetElemID(3);
 						landState = Soil;
+						landCrop = None;
 					}
 				}
 			}

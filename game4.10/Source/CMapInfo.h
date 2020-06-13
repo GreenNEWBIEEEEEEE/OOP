@@ -14,11 +14,27 @@ namespace game_framework {
 			hasWeeds,                     // 有雜草
 			hasStone,					  // 有石頭
 			hasTrunk,                     // 有樹幹
-			seedPlanted,                  // 已播撒種子
+
+			seedPlanted,                  // 已播撒種子                
 			wateredSeedPlanted,           // 已播撒種子並且已澆水
-			isGrowing,                    // 有作物正在成長中
-			wateredIsGrowing,             // 有作物正在成長中並且已澆水
+			isGrowing1,                    // 有作物正在成長中
+			wateredIsGrowing1,             // 有作物正在成長中並且已澆水
+			isGrowing2,                    // 有作物正在成長中
+			wateredIsGrowing2,             // 有作物正在成長中並且已澆水
+			isGrowing3,                    // 有作物正在成長中
+			wateredIsGrowing3,             // 有作物正在成長中並且已澆水
 			isMature,                     // 作物已成熟待採收
+
+		};
+
+		enum Crop {
+			None,
+			Radish,
+			Corn,
+			Potato,
+			Tomato,
+			EggPlant,
+			Peanut
 		};
 
 		CMapInfo();
@@ -48,6 +64,10 @@ namespace game_framework {
 
 		CMapInfo::ArableLandState GetArableLandState() const;
 
+		CMapInfo::Crop GetCurrentCrop() const;
+
+		void SetLandCrop(CMapInfo::Crop crop);
+
 		void SetArableLandState(CMapInfo::ArableLandState state);
 
 		void EnableGrowingCounter();
@@ -66,9 +86,16 @@ namespace game_framework {
 
 		bool isArable; // 可耕種與否
 		CMapInfo::ArableLandState landState;
-
+		CMapInfo::Crop landCrop = Crop::None;
 		
 		bool isGrowingCounterEnable = false;
 		
+	private:
+		void StateMachine_Radish();
+		void StateMachine_Potato();
+		void StateMachine_Tomato();
+		void StateMachine_EggPlant();
+		void StateMachine_Corn();
+		void StateMachine_Peanut();
 	};
 }

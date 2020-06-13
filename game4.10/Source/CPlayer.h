@@ -37,7 +37,8 @@ namespace game_framework {
 		/// 存取Player的屬性、旗標
 		///
 		int GetDirection() const;
-		int GetCurrentTool() const;
+		int GetCurrentToolNumber() const;
+		CTool* GetCurrentTool() const;
 		int GetMoney() const;
 		vector<CTool*>* GetBackpack();
 		vector<CFood*>* GetFood();

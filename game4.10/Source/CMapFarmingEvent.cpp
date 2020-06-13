@@ -20,7 +20,7 @@ namespace game_framework
 	void CMapFarmingEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		// 看player手上拿的工具來決定要幹嘛
-		switch (p->GetCurrentTool())
+		switch (p->GetCurrentToolNumber())
 		{
 		case 0:
 			Harvest(p, mm, gd); // 呼叫收成子事件函數
@@ -49,7 +49,21 @@ namespace game_framework
 		case 6:
 			Water(p, mm, gd);
 			break;
-
+		case 7:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
+		case 8:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
+		case 9:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
+		case 10:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
+		case 11:
+			Plant(p, mm, gd); // 呼叫播種子事件函數
+			break;
 			// 不動作
 		default:
 			break;
@@ -95,7 +109,7 @@ namespace game_framework
 			{
 				// 檢查可耕地狀態 若是hasWeeds 就可以除草; 否則不動作
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
-				if (landState == CMapInfo::ArableLandState::hasWeeds || landState == CMapInfo::ArableLandState::isGrowing || landState == CMapInfo::ArableLandState::wateredIsGrowing || landState == CMapInfo::ArableLandState::isMature)
+				if (landState == CMapInfo::ArableLandState::hasWeeds)
 				{
 					eMapInfo->SetElemID(3); // 變成空地
 					// **重要: 要改變狀態**
@@ -198,7 +212,38 @@ namespace game_framework
 					// 更換圖片
 					eMapInfo->SetElemID(5);
 					// 更換狀態
-					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+					CTool* currentTool = p->GetCurrentTool();
+					switch (currentTool->GetToolID())
+					{
+					case 4:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::Radish);
+						TRACE("\nPLANT\n");
+						break;
+					case 7:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::Potato);
+						TRACE("\nPLANT2\n");
+						break;
+					case 8:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::Tomato);
+						break;
+					case 9:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::EggPlant);
+						break;
+					case 10:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::Corn);
+						break;
+					case 11:
+						eMapInfo->SetArableLandState(CMapInfo::ArableLandState::seedPlanted);
+						eMapInfo->SetLandCrop(CMapInfo::Crop::Peanut);
+						break;
+					default:
+						break;
+					}
 				}
 			}
 		}
@@ -242,11 +287,47 @@ namespace game_framework
 				eMapInfo->EnableGrowingCounter();
 			}
 			// 達到一個成長階段但是尚未澆水
-			if (landState == CMapInfo::ArableLandState::isGrowing)
+			else if (landState == CMapInfo::ArableLandState::isGrowing1)
 			{
 				// 更換圖及狀態
-				eMapInfo->SetElemID(8);
-				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredIsGrowing);
+				if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Radish)
+					eMapInfo->SetElemID(8);
+				else if(eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Corn)
+					eMapInfo->SetElemID(37);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Tomato)
+					eMapInfo->SetElemID(53);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Potato)
+					eMapInfo->SetElemID(50);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Peanut)
+					eMapInfo->SetElemID(47);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::EggPlant)
+					eMapInfo->SetElemID(44);
+
+				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredIsGrowing1);
+				// ***啟動計時器***
+				eMapInfo->EnableGrowingCounter();
+			}
+			else if (landState == CMapInfo::ArableLandState::isGrowing2)
+			{
+				// 更換圖及狀態
+				if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Corn)
+					eMapInfo->SetElemID(39);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Tomato)
+					eMapInfo->SetElemID(55);
+
+				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredIsGrowing2);
+				// ***啟動計時器***
+				eMapInfo->EnableGrowingCounter();
+			}
+			else if (landState == CMapInfo::ArableLandState::isGrowing3)
+			{
+				// 更換圖及狀態
+				if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Corn)
+					eMapInfo->SetElemID(41);
+				else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Tomato)
+					eMapInfo->SetElemID(57);
+
+				eMapInfo->SetArableLandState(CMapInfo::ArableLandState::wateredIsGrowing3);
 				// ***啟動計時器***
 				eMapInfo->EnableGrowingCounter();
 			}
@@ -283,10 +364,23 @@ namespace game_framework
 				CMapInfo::ArableLandState landState = eMapInfo->GetArableLandState();
 				if (landState == CMapInfo::ArableLandState::isMature)
 				{
-					p->ChangeMoveState(CPlayer::MoveState::RadishMove);
+					if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Radish)
+						p->ChangeMoveState(CPlayer::MoveState::RadishMove);
+					else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Corn)
+						p->ChangeMoveState(CPlayer::MoveState::CornMove);
+					else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::EggPlant)
+						p->ChangeMoveState(CPlayer::MoveState::EggPlantMove);
+					else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Tomato)
+						p->ChangeMoveState(CPlayer::MoveState::TomatoMove);
+					else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Potato)
+						p->ChangeMoveState(CPlayer::MoveState::PotatoMove);
+					else if (eMapInfo->GetCurrentCrop() == CMapInfo::Crop::Peanut)
+						p->ChangeMoveState(CPlayer::MoveState::PeanutMove);
+
 					eMapInfo->SetElemID(3); // 變成泥土
 					// **重要: 要改變狀態**
 					eMapInfo->SetArableLandState(CMapInfo::ArableLandState::Soil);
+					eMapInfo->SetLandCrop(CMapInfo::Crop::None);
 				}
 			}
 		}
