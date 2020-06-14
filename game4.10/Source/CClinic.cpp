@@ -11,17 +11,25 @@ namespace game_framework
 		: CShopMenu(p, gd, timer)
 	{
 	}
-	void CClinic::OnKeyDown(UINT key)
-	{
-	}
+	
 	void CClinic::LoadBitmap()
 	{
+		CShopMenu::LoadBitmap();
+		background.LoadBitmap(IDB_ToolsMachinesShopBG);
+		background.SetTopLeft(0, 0);
 	}
-	void CClinic::OnShow()
+
+	void CClinic::OnKeyDown(UINT key)
 	{
 
 	}
+	
 	void CClinic::OnMove()
+	{
+
+	}
+
+	void CClinic::OnShow()
 	{
 
 	}
