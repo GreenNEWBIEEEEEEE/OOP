@@ -220,6 +220,12 @@
     <ClCompile Include="Source\CFoodCake.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CFoodShopMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CClinic.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -361,6 +367,12 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CFoodCake.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CFoodShopMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CClinic.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2216,6 +2228,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Shops\FoodShop\Part\FoodShop17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\Clinic\ShopDialogBackground.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\Shops\FoodShop\ShopDialogBackground.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

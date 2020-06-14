@@ -1228,6 +1228,10 @@ IDB_FoodShop16          BITMAP                  "..\\RES\\Shops\\FoodShop\\Part\
 
 IDB_FoodShop17          BITMAP                  "..\\RES\\Shops\\FoodShop\\Part\\FoodShop17.bmp"
 
+IDB_ClinicBG            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\Clinic\\ShopDialogBackground.bmp"
+
+IDB_FoodShopBG          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\FoodShop\\ShopDialogBackground.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

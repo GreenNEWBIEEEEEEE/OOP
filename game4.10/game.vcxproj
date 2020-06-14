@@ -269,9 +269,11 @@
     <ClCompile Include="Source\CFoodMeal.cpp" />
     <ClCompile Include="Source\CFoodMenu.cpp" />
     <ClCompile Include="Source\CFoodOrangeJuice.cpp" />
+    <ClCompile Include="Source\CFoodShopMenu.cpp" />
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CGameObject.cpp" />
+    <ClCompile Include="Source\CClinic.cpp" />
     <ClCompile Include="Source\CMapEvent.cpp" />
     <ClCompile Include="Source\CMapFarmingEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
@@ -350,9 +352,11 @@
     <ClInclude Include="Source\CFoodMeal.h" />
     <ClInclude Include="Source\CFoodMenu.h" />
     <ClInclude Include="Source\CFoodOrangeJuice.h" />
+    <ClInclude Include="Source\CFoodShopMenu.h" />
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CGameObject.h" />
+    <ClInclude Include="Source\CClinic.h" />
     <ClInclude Include="Source\CMapEvent.h" />
     <ClInclude Include="Source\CMapFarmingEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />
@@ -949,6 +953,7 @@
     <Image Include="RES\Shops\Clinic\part\Clinic21.bmp" />
     <Image Include="RES\Shops\Clinic\part\Clinic22.bmp" />
     <Image Include="RES\Shops\Clinic\part\Clinic23.bmp" />
+    <Image Include="RES\Shops\Clinic\ShopDialogBackground.bmp" />
     <Image Include="RES\Shops\FoodShop\Part\FoodShop01.bmp" />
     <Image Include="RES\Shops\FoodShop\Part\FoodShop02.bmp" />
     <Image Include="RES\Shops\FoodShop\Part\FoodShop03.bmp" />
@@ -959,6 +964,7 @@
     <Image Include="RES\Shops\FoodShop\Part\FoodShop11.bmp" />
     <Image Include="RES\Shops\FoodShop\Part\FoodShop16.bmp" />
     <Image Include="RES\Shops\FoodShop\Part\FoodShop17.bmp" />
+    <Image Include="RES\Shops\FoodShop\ShopDialogBackground.bmp" />
     <Image Include="RES\Shops\OtherIconsForShops\Shops_Icons_Talking.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopDialogBackground2.bmp" />
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s01.bmp" />
