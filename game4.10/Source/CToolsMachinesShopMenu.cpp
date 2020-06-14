@@ -30,6 +30,13 @@ namespace game_framework
 		}
 	}
 
+	void CToolsMachinesShopMenu::LoadBitmap()
+	{
+		CShopMenu::LoadBitmap();
+		background.LoadBitmap(IDB_ToolsMachinesShopBG);
+		background.SetTopLeft(0, 0);
+	}
+
 	void CToolsMachinesShopMenu::OnKeyDown(UINT key)
 	{
 		const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
@@ -79,13 +86,6 @@ namespace game_framework
 		{
 			// Do nothing
 		}
-	}
-
-	void CToolsMachinesShopMenu::LoadBitmap()
-	{
-		CShopMenu::LoadBitmap();
-		background.LoadBitmap(IDB_ToolsMachinesShopBG);
-		background.SetTopLeft(0, 0);
 	}
 
 	void CToolsMachinesShopMenu::OnMove()
