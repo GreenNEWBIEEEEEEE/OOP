@@ -41,6 +41,13 @@ namespace game_framework
 		CShopMenu::LoadBitmap();
 		background.LoadBitmap(IDB_FoodShopBG);
 		background.SetTopLeft(0, 0);
+
+		good_AppleJuice.LoadBitmap(IDB_AppleJuice);
+		good_Cake.LoadBitmap(IDB_Cake);
+		good_DrinkBox.LoadBitmap(IDB_DrinkBox);
+		good_LunchBox.LoadBitmap(IDB_LunchBox);
+		good_Meal.LoadBitmap(IDB_Meal);
+		good_OrangeJuice.LoadBitmap(IDB_OrangeJuice);
 	}
 
 	void CFoodShopMenu::OnKeyDown(UINT key)
