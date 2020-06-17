@@ -289,9 +289,10 @@ namespace game_framework {
 
 	void CGameDialog::DrawTexts(CString text, int posX, int posY, int fontSize)
 	{
+		
 		CDC *pDC = CDDraw::GetBackCDC();
 		CFont f, *fp = nullptr;
-		f.CreatePointFont(fontSize, "Consolas");
+		f.CreatePointFont(fontSize, "consolas");
 		fp = pDC->SelectObject(&f);
 		pDC->SetBkMode(TRANSPARENT);
 		pDC->SetTextColor(RGB(255, 255, 255));

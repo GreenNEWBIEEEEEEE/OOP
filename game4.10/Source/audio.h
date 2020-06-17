@@ -90,6 +90,10 @@ public:
 	void		   Resume();					// 復原暫停播放的音效
 	void           SetPowerResume();			// 電源恢復
 	void           Stop(unsigned);				// 停止撥放編號i的聲音
+	void           SetVolume(int volume);       // 全體音量設定，統一
+	void           IncreaseVolume();            // 全體音量增加，統一
+	void           DecreaseVolume();            // 全體音量增加，統一
+	int            GetVolume() const;
 private:
 	class Info {
 	public:
@@ -109,6 +113,7 @@ private:
     HANDLE				hThread;	// MCI command thread
 	HANDLE				hWriteEnd;	// Pipe write handle for thread
 	const static int	MAX_MCI_COMMAND_SIZE = 400;
+	static int          volume;      // 統一音量
 };
 
 }

@@ -53,6 +53,14 @@
 #include "CToolsMachinesShopMenu.h"
 
 namespace game_framework {
+////
+//// Audio IDs
+////
+	enum BGM
+	{
+		BGM_GameStateInit,
+		BGM_GameStateRun
+	};
 	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	// 每個Member function的Implementation都要弄懂
@@ -107,6 +115,9 @@ namespace game_framework {
 		CMovingBitmap *audioPage = nullptr;
 		AudioPageSelectionState audioPageState = AudioPageSelectionState::OnSwitch;
 		bool audioOn;
+	// tool functions
+	private:
+		void DrawTexts(CString text, int posX, int posY, int fontSize);
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

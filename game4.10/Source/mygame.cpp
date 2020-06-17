@@ -60,13 +60,18 @@
 #include "mygame.h"
 
 namespace game_framework {
+
+
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的遊戲開頭畫面物件
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g)
+
 : CGameState(g)
 {
+	
+	
 	gameUI_cover.SetDelayCount(15);
 	mainPages.push_back(&mainPage_OnStart);
 	mainPages.push_back(&mainPage_OnAudio);
@@ -76,6 +81,11 @@ CGameStateInit::CGameStateInit(CGame *g)
 
 void CGameStateInit::OnInit()
 {
+	// 外部載入字型
+	int res = AddFontResourceEx("./RES/Fonts/pricedown_bl.ttf", FR_PRIVATE, nullptr);
+	CAudio::Instance()->Load(BGM_GameStateInit, "./Sounds/BGM/BGM_GameStateInit.mp3");
+	CAudio::Instance()->Load(BGM_GameStateRun, "./Sounds/BGM/BGM_GameStateRun.mp3");
+	CAudio::Instance()->Play(BGM_GameStateInit, true);
 	ShowInitProgress(0);
 	gameUI_cover.AddBitmap(IDB_UI_Cover01);
 	gameUI_cover.AddBitmap(IDB_UI_Cover02);
@@ -111,6 +121,8 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	const char KEY_ENTER = 0x0D;
 	const char KEY_UP = 0x26;
 	const char KEY_DOWN = 0x28;
+	const char KEY_LEFT = 0x25;
+	const char KEY_RIGHT = 0x27;
 
 	if (initScreenState == InitScreenState::OnCover)
 	{
@@ -128,7 +140,13 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 		if (nChar == KEY_ENTER || nChar == KEY_SPACE)
 		{
 			if (mainMenuState == MainMenuSelectionState::OnStart)
+			{
+				CAudio::Instance()->Stop(BGM_GameStateInit);
+				if (audioOn)
+					CAudio::Instance()->Play(BGM_GameStateRun, true);
 				GotoGameState(GAME_STATE_RUN);
+			}
+				
 			else if (mainMenuState == MainMenuSelectionState::OnAudio)
 			{
 				initScreenState = InitScreenState::OnAudioSettingPage;
@@ -165,6 +183,8 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			else if (audioPageState == AudioPageSelectionState::OnSwitch)
 			{
 				audioOn = !audioOn; // 開關反向
+				if (!audioOn) CAudio::Instance()->Stop(BGM_GameStateInit);
+				else CAudio::Instance()->Play(BGM_GameStateInit, true);
 			}
 		}
 		else if (nChar == KEY_DOWN || nChar == KEY_UP)
@@ -173,6 +193,14 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 				audioPageState = OnSwitch;
 			else
 				audioPageState = OnBack;
+		}
+		else if (nChar == KEY_LEFT)
+		{
+			CAudio::Instance()->DecreaseVolume();
+		}
+		else if (nChar == KEY_RIGHT)
+		{
+			CAudio::Instance()->IncreaseVolume();
 		}
 	}
 }
@@ -219,8 +247,32 @@ void CGameStateInit::OnShow()
 	else if (initScreenState == InitScreenState::OnAudioSettingPage)
 	{
 		audioPage->ShowBitmap();
+		if (audioOn)
+		{
+			int volume = CAudio::Instance()->GetVolume() / 10;
+			CString volume_str = "";
+			volume_str.Format("%d%%", volume);
+			DrawTexts(volume_str, 192, 140, 320);
+		}
+		else
+			DrawTexts("0%", 192, 140, 320);
+		
+
 	}
-}								
+}
+
+void CGameStateInit::DrawTexts(CString text, int posX, int posY, int fontSize)
+{
+	CDC *pDC = CDDraw::GetBackCDC();
+	CFont f, *fp = nullptr;
+	f.CreatePointFont(fontSize, "pricedown bl");
+	fp = pDC->SelectObject(&f);
+	pDC->SetBkMode(TRANSPARENT);
+	pDC->SetTextColor(RGB(255, 255, 255));
+	pDC->TextOut(posX, posY, text);
+	pDC->SelectObject(fp);
+	CDDraw::ReleaseBackCDC();
+}
 
 /////////////////////////////////////////////////////////////////////////////
 // 這個class為遊戲的結束狀態(Game Over)

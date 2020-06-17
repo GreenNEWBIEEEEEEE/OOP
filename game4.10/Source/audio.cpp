@@ -72,6 +72,8 @@ namespace game_framework {
 
 CAudio CAudio::audio;
 
+int CAudio::volume = 1000;
+
 CAudio::CAudio()
 {
 	const int PIPE_SIZE = 400;
@@ -256,6 +258,9 @@ bool CAudio::Load(unsigned id, char *lpzFileName)
 	//
 	SendMciCommand(command);
 	info[id].isGood = true;
+
+	// 全部設定相同音量
+	SetVolume(volume);
 	return true;
 }
 
@@ -333,6 +338,62 @@ void CAudio::Stop(unsigned id)
 		sprintf(command, "stop device%d", id);
 		SendMciCommand(command);
 	}
+}
+
+void CAudio::SetVolume(int volume)
+{
+	if (!isOpened)
+		return;
+	this->volume = volume;
+	for (unsigned id = 0; id < info.size(); ++id)
+	{
+		if (info[id].isGood)
+		{
+			char command[MAX_MCI_COMMAND_SIZE];
+			sprintf(command, "setaudio device%d volume to %d", id, volume);
+			SendMciCommand(command);
+		}
+	}
+	
+}
+
+void CAudio::IncreaseVolume()
+{
+	if (!isOpened)
+		return;
+	if (volume < 1000) volume += 100;
+	for (unsigned id = 0; id < info.size(); ++id)
+	{
+		if (info[id].isGood)
+		{
+			char command[MAX_MCI_COMMAND_SIZE];
+			sprintf(command, "setaudio device%d volume to %d", id, volume);
+			SendMciCommand(command);
+		}
+	}
+}
+
+void CAudio::DecreaseVolume()
+{
+	if (!isOpened)
+		return;
+	if (volume > 0) volume -= 100;
+	for (unsigned id = 0; id < info.size(); ++id)
+	{
+		if (info[id].isGood)
+		{
+			char command[MAX_MCI_COMMAND_SIZE];
+			sprintf(command, "setaudio device%d volume to %d", id, volume);
+			SendMciCommand(command);
+		}
+	}
+}
+
+
+
+int CAudio::GetVolume() const
+{
+	return volume;
 }
 
 }
