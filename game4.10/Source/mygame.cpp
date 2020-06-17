@@ -68,23 +68,36 @@ CGameStateInit::CGameStateInit(CGame *g)
 : CGameState(g)
 {
 	gameUI_cover.SetDelayCount(15);
+	mainPages.push_back(&mainPage_OnStart);
+	mainPages.push_back(&mainPage_OnAudio);
+	mainPages.push_back(&mainPage_OnAbout);
+	audioOn = true;
 }
 
 void CGameStateInit::OnInit()
 {
-	
-	//
-	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
-	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
-	//
-	ShowInitProgress(0);	// 一開始的loading進度為0%
-	//
-	// 開始載入資料
-	// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
-	//
+	ShowInitProgress(0);
 	gameUI_cover.AddBitmap(IDB_UI_Cover01);
 	gameUI_cover.AddBitmap(IDB_UI_Cover02);
 	gameUI_cover.SetTopLeft(0, 0);
+	mainPage_OnStart.LoadBitmap(IDB_MainPage_OnStart);
+	mainPage_OnStart.SetTopLeft(0, 0);
+	mainPage_OnAudio.LoadBitmap(IDB_MainPage_OnAudio);
+	mainPage_OnAudio.SetTopLeft(0, 0);
+	mainPage_OnAbout.LoadBitmap(IDB_MainPage_OnAbout);
+	mainPage_OnAbout.SetTopLeft(0, 0);
+
+	audioPage_Off_Back.LoadBitmap(IDB_Audio_Off_Back);
+	audioPage_Off_Back.SetTopLeft(0, 0);
+
+	audioPage_Off_On.LoadBitmap(IDB_Audio_Off_On);
+	audioPage_Off_On.SetTopLeft(0, 0);
+
+	audioPage_On_Back.LoadBitmap(IDB_Audio_On_Back);
+	audioPage_On_Back.SetTopLeft(0, 0);
+
+	audioPage_On_On.LoadBitmap(IDB_Audio_On_On);
+	audioPage_On_On.SetTopLeft(0, 0);
 }
 
 void CGameStateInit::OnBeginState()
@@ -95,26 +108,118 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	const char KEY_ESC = 27;
 	const char KEY_SPACE = ' ';
-	if (nChar == KEY_SPACE)
-		GotoGameState(GAME_STATE_RUN);						// 切換至GAME_STATE_RUN
-	else if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
-		PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE,0,0);	// 關閉遊戲
+	const char KEY_ENTER = 0x0D;
+	const char KEY_UP = 0x26;
+	const char KEY_DOWN = 0x28;
+
+	if (initScreenState == InitScreenState::OnCover)
+	{
+		if (nChar == KEY_SPACE)
+		{
+			// 改變GameStateInit的畫面狀態
+			initScreenState = InitScreenState::OnMainMenu;
+		}
+		else if (nChar == KEY_ESC)								// Demo 關閉遊戲的方法
+			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// 關閉遊戲
+	}
+	else if (initScreenState == InitScreenState::OnMainMenu)
+	{
+		// 空白建
+		if (nChar == KEY_ENTER || nChar == KEY_SPACE)
+		{
+			if (mainMenuState == MainMenuSelectionState::OnStart)
+				GotoGameState(GAME_STATE_RUN);
+			else if (mainMenuState == MainMenuSelectionState::OnAudio)
+			{
+				initScreenState = InitScreenState::OnAudioSettingPage;
+				audioPageState = AudioPageSelectionState::OnSwitch;
+				if (audioOn) audioPage = &audioPage_On_On;
+				else audioPage = &audioPage_Off_On;
+			}
+			else if (mainMenuState == MainMenuSelectionState::OnAbout)
+			{
+
+			}
+		}
+		else if (nChar == KEY_DOWN)
+		{
+			if (mainPageSelector == 2) mainPageSelector = 0;
+			else mainPageSelector++;
+			mainMenuState = (MainMenuSelectionState)mainPageSelector;
+		}
+		else if (nChar == KEY_UP)
+		{
+			if (mainPageSelector == 0) mainPageSelector = 2;
+			else mainPageSelector--;
+			mainMenuState = (MainMenuSelectionState)mainPageSelector;
+		}
+	}
+	else if (initScreenState == InitScreenState::OnAudioSettingPage)
+	{
+		if (nChar == KEY_ENTER || nChar == KEY_SPACE)
+		{
+			if (audioPageState == AudioPageSelectionState::OnBack)
+			{
+				initScreenState = InitScreenState::OnMainMenu;
+			}
+			else if (audioPageState == AudioPageSelectionState::OnSwitch)
+			{
+				audioOn = !audioOn; // 開關反向
+			}
+		}
+		else if (nChar == KEY_DOWN || nChar == KEY_UP)
+		{
+			if (audioPageState == AudioPageSelectionState::OnBack)
+				audioPageState = OnSwitch;
+			else
+				audioPageState = OnBack;
+		}
+	}
 }
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	// 只讓使用者以SPACE進入遊戲
-	//GotoGameState(GAME_STATE_RUN);		// 切換至GAME_STATE_RUN
 }
 
 void CGameStateInit::OnMove()
 {
-	gameUI_cover.OnMove();
+	if (initScreenState == InitScreenState::OnCover)
+	{
+		gameUI_cover.OnMove();
+	}
+	else if (initScreenState == InitScreenState::OnMainMenu)
+	{
+
+	}
+	else if (initScreenState == InitScreenState::OnAudioSettingPage)
+	{
+		if (audioPageState == AudioPageSelectionState::OnSwitch)
+		{
+			if (audioOn) audioPage = &audioPage_On_On;
+			else audioPage = &audioPage_Off_On;
+		}
+		else if (audioPageState == AudioPageSelectionState::OnBack)
+		{
+			if (audioOn) audioPage = &audioPage_On_Back;
+			else audioPage = &audioPage_Off_Back;
+		}
+	}
 }
 
 void CGameStateInit::OnShow()
 {
-	gameUI_cover.OnShow();
+	if (initScreenState == InitScreenState::OnCover)
+	{
+		gameUI_cover.OnShow();
+	}
+	else if (initScreenState == InitScreenState::OnMainMenu)
+	{
+		mainPages.at(mainPageSelector)->ShowBitmap();
+	}
+	else if (initScreenState == InitScreenState::OnAudioSettingPage)
+	{
+		audioPage->ShowBitmap();
+	}
 }								
 
 /////////////////////////////////////////////////////////////////////////////

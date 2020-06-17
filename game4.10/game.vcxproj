@@ -161,6 +161,7 @@
       <WarningLevel>Level3</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <MinimalRebuild />
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -261,6 +262,7 @@
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CChicken.cpp" />
     <ClCompile Include="Source\CCow.cpp" />
+    <ClCompile Include="Source\CDog.cpp" />
     <ClCompile Include="Source\CFood.cpp" />
     <ClCompile Include="Source\CFoodAppleJuice.cpp" />
     <ClCompile Include="Source\CFoodCake.cpp" />
@@ -344,6 +346,7 @@
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CChicken.h" />
     <ClInclude Include="Source\CCow.h" />
+    <ClInclude Include="Source\CDog.h" />
     <ClInclude Include="Source\CFood.h" />
     <ClInclude Include="Source\CFoodAppleJuice.h" />
     <ClInclude Include="Source\CFoodCake.h" />
@@ -524,6 +527,13 @@
     <Image Include="RES\Food\foodIcons\OrangeJuice.bmp" />
     <Image Include="RES\GameUI\Cover\Cover01.bmp" />
     <Image Include="RES\GameUI\Cover\Cover02.bmp" />
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_back.bmp" />
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_on.bmp" />
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_back.bmp" />
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_on.bmp" />
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAbout.bmp" />
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAudio.bmp" />
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnStart.bmp" />
     <Image Include="res\GameUI\Texts\Loading_01.bmp" />
     <Image Include="RES\GameUI\Texts\Loading_01_ani01.bmp" />
     <Image Include="RES\GameUI\Texts\Loading_01_ani02.bmp" />
@@ -989,6 +999,7 @@
     <Image Include="RES\Shops\PlantShop\ShopHouse_Morning\Split\ShopHouse_Morning_s20.bmp" />
     <Image Include="res\shops\toolsmachinesshop\parts\bitmap38.bmp" />
     <Image Include="res\shops\toolsmachinesshop\parts\bitmap41.bmp" />
+    <Image Include="res\shops\toolsmachinesshop\parts\bitmap42.bmp" />
     <Image Include="res\shops\toolsmachinesshop\parts\bitmap79.bmp" />
     <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop01.bmp" />
     <Image Include="RES\Shops\ToolsMachinesShop\Parts\ToolsMachinesShop02.bmp" />

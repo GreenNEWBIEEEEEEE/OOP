@@ -696,8 +696,15 @@
 #define IDB_BITMAP55                    845
 #define IDB_FoodShop17                  845
 #define IDB_ClinicBG                    846
-#define IDB_BITMAP42                    847
 #define IDB_FoodShopBG                  847
+#define IDB_MainPage_OnAbout            848
+#define IDB_MainPage_OnAudio            850
+#define IDB_MainPage_OnStart            851
+#define IDB_Audio_Off_Back              852
+#define IDB_Audio_Off_On                853
+#define IDB_Audio_On_Back               854
+#define IDB_BITMAP47                    855
+#define IDB_Audio_On_On                 855
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -710,7 +717,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        848
+#define _APS_NEXT_RESOURCE_VALUE        856
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

@@ -1232,6 +1232,20 @@ IDB_ClinicBG            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\10
 
 IDB_FoodShopBG          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\FoodShop\\ShopDialogBackground.bmp"
 
+IDB_MainPage_OnAbout    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAbout.bmp"
+
+IDB_MainPage_OnAudio    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAudio.bmp"
+
+IDB_MainPage_OnStart    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnStart.bmp"
+
+IDB_Audio_Off_Back      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_back.bmp"
+
+IDB_Audio_Off_On        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_on.bmp"
+
+IDB_Audio_On_Back       BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_back.bmp"
+
+IDB_Audio_On_On         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_on.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

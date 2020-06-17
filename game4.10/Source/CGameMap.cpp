@@ -20,6 +20,7 @@
 
 
 namespace game_framework {
+
 	CGameMap::CGameMap(string mapinfo_path, bool hasWeather) : row(0), col(0)
 	{
 		CreateMapInfos(mapinfo_path);

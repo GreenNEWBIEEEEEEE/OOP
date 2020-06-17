@@ -226,6 +226,9 @@
     <ClCompile Include="Source\CClinic.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CDog.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -373,6 +376,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CClinic.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CDog.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2234,6 +2240,30 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\Shops\FoodShop\ShopDialogBackground.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAbout.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shops\toolsmachinesshop\parts\bitmap42.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAudio.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnStart.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_back.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_on.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

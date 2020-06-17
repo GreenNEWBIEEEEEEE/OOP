@@ -54,16 +54,6 @@
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
-	// Constants
-	/////////////////////////////////////////////////////////////////////////////
-
-	enum AUDIO_ID {				// 定義各種音效的編號
-		AUDIO_DING,				// 0
-		AUDIO_LAKE,				// 1
-		AUDIO_NTUT				// 2
-	};
-
-	/////////////////////////////////////////////////////////////////////////////
 	// 這個class為遊戲的遊戲開頭畫面物件
 	// 每個Member function的Implementation都要弄懂
 	/////////////////////////////////////////////////////////////////////////////
@@ -79,7 +69,44 @@ namespace game_framework {
 		void OnMove();
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
+		// 開頭畫面狀態，共3種：封面, 主選單, 音效設定頁
+		enum InitScreenState
+		{
+			OnCover,
+			OnMainMenu,
+			OnAudioSettingPage,
+		};
+		// 主選單選擇狀態
+		enum MainMenuSelectionState
+		{
+			OnStart,
+			OnAudio,
+			OnAbout
+		};
+		// 音效設定頁
+		enum AudioPageSelectionState
+		{
+			OnSwitch,
+			OnBack,
+		};
+	private:
+		InitScreenState initScreenState = InitScreenState::OnCover;
 		CAnimation gameUI_cover;
+		// Main Page 
+		CMovingBitmap mainPage_OnStart;
+		CMovingBitmap mainPage_OnAudio;
+		CMovingBitmap mainPage_OnAbout;
+		vector<CMovingBitmap*> mainPages;
+		int mainPageSelector = 0;
+		MainMenuSelectionState mainMenuState = MainMenuSelectionState::OnStart;
+		// Audio Setting Page
+		CMovingBitmap audioPage_On_On;
+		CMovingBitmap audioPage_On_Back;
+		CMovingBitmap audioPage_Off_Back;
+		CMovingBitmap audioPage_Off_On;
+		CMovingBitmap *audioPage = nullptr;
+		AudioPageSelectionState audioPageState = AudioPageSelectionState::OnSwitch;
+		bool audioOn;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
