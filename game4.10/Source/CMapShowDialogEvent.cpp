@@ -37,86 +37,11 @@ namespace game_framework
 
 		switch (eventCode)
 		{
-		case 10001:
-				gd->AddQuestion("Do you like this game?");
-				gd->AddOptionResultMessage("Thank!", "Danke!");
-				gd->AddOptionResultMessage("Have fun!", "Habe Spass!");
-				gd->Enable();
-
-				break;
-		case 10002:
-			gd->AddMessage("Press W to change tools.");
-			gd->AddMessage("Press S to open backpack menu.");
-			gd->AddMessage("In backpack menu. . .");
-			gd->AddMessage("press A to select tool, ");
-			gd->AddMessage("and press D to leave menu.");
-			gd->Enable();
-			break;
-		case 10003:
-			gd->AddMessage("Press A to Use tool.");
-			gd->AddMessage("Do some agricultural work.");
-			gd->AddMessage("Good luck!");
-			gd->Enable();
-			break;
-		case 10004:
-			gd->AddMessage("This is a notice board.");
-			gd->Enable();
-			break;
-		case 10005:
-			gd->AddMessage("Here is your home.");
-			gd->Enable();
-			break;
-		case 10006:
-			gd->AddMessage("Here is Plant Shop.");
-			gd->AddMessage("You can buy seeds in this shop.");
-			gd->AddMessage("Press H at the door to enter shop.");
-			gd->Enable();
-			break;
 		case 10007:
 			gd->AddMessage(today);
 			gd->AddMessage(tomorrow);
 			gd->Enable();
 			break;
-		case 10008:
-			gd->AddMessage("This is chicken coop.");
-			gd->Enable();
-			break;
-		case 10009:
-			gd->AddMessage("This is chicken feed store box.");
-			gd->AddMessage("Press A to take chicken feed.");
-			gd->Enable();
-			break;
-		case 10010:
-			gd->AddMessage("This is chicken feed box.");
-			gd->AddMessage("Press A to put chicken feed.");
-			gd->Enable();
-			break;
-		case 10011:
-			gd->AddMessage("¡ô Area 2");
-			gd->AddMessage("In Area 2, ");
-			gd->AddMessage("There is an animal shop, ...");
-			gd->AddMessage("and a tool & machine shop.");
-			gd->AddMessage("Your cow coop is at Area 2.");
-			gd->Enable();
-			break;
-		case 10012:
-			gd->AddMessage("¡õ Area 1");
-			gd->Enable();
-			break;
-		case 10013:
-			gd->AddMessage("Here is animal shop.");
-			gd->AddMessage("You can buy animals in this shop.");
-			gd->AddMessage("Press Enter at the door to enter shop.");
-			gd->Enable();
-			break;
-		case 10014:
-		{
-			CString now_time_str = "";
-			now_time_str.Format("The time now is %0d:00.", mm->GetTimer()->GetHour());
-			gd->AddMessage((LPCTSTR)now_time_str);
-			gd->Enable();
-			break;
-		}
 		default:
 			break;
 		}
