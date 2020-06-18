@@ -86,18 +86,18 @@ namespace game_framework {
 			gd->AddMessage("Area 1");
 			gd->Enable();
 			break;
-			// «Ç¥~2->¤ûªÙ
+			// «Ç¥~1->¤ûªÙ
 		case 20007:
 			mm->ChangeMap(4);
 			mm->GetCurrentMap()->SetSXSY(50,500);
 			p->SetX(5 * 64);
 			p->SetY(12 * 53);
 			break;
-			// ¤ûªÙ->«Ç¥~2
+			// ¤ûªÙ->«Ç¥~1
 		case 20008:
-			mm->ChangeMap(3);
-			mm->GetCurrentMap()->SetSXSY(50, 450);
-			p->SetX(4 * 64);
+			mm->ChangeMap(0);
+			mm->GetCurrentMap()->SetSXSY(950, 500);
+			p->SetX(18 * 64);
 			p->SetY(11 * 53);
 			break;
 		case 20009:
