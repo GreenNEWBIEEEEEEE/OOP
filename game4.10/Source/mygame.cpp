@@ -1,5 +1,5 @@
-/*
- * mygame.cpp: ¥»ÀÉ®×Àx¹CÀ¸¥»¨­ªºclassªºimplementation
+ï»¿/*
+ * mygame.cpp: æœ¬æª”æ¡ˆå„²éŠæˆ²æœ¬èº«çš„classçš„implementation
  * Copyright (C) 2002-2008 Woei-Kae Chen <wkc@csie.ntut.edu.tw>
  *
  * This file is part of game, a free game development framework for windows.
@@ -63,7 +63,7 @@ namespace game_framework {
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸¶}ÀYµe­±ª«¥ó
+// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²é–‹é ­ç•«é¢ç‰©ä»¶
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g)
@@ -81,7 +81,7 @@ CGameStateInit::CGameStateInit(CGame *g)
 
 void CGameStateInit::OnInit()
 {
-	// ¥~³¡¸ü¤J¦r«¬
+	// å¤–éƒ¨è¼‰å…¥å­—å‹
 	int res = AddFontResourceEx("./RES/Fonts/pricedown_bl.ttf", FR_PRIVATE, nullptr);
 	CAudio::Instance()->Load(BGM_GameStateInit, "./Sounds/BGM/BGM_GameStateInit.mp3");
 	CAudio::Instance()->Load(BGM_GameStateRun, "./Sounds/BGM/BGM_GameStateRun.mp3");
@@ -128,15 +128,15 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		if (nChar == KEY_SPACE)
 		{
-			// §ïÅÜGameStateInitªºµe­±ª¬ºA
+			// æ”¹è®ŠGameStateInitçš„ç•«é¢ç‹€æ…‹
 			initScreenState = InitScreenState::OnMainMenu;
 		}
-		else if (nChar == KEY_ESC)								// Demo Ãö³¬¹CÀ¸ªº¤èªk
-			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// Ãö³¬¹CÀ¸
+		else if (nChar == KEY_ESC)								// Demo é—œé–‰éŠæˆ²çš„æ–¹æ³•
+			PostMessage(AfxGetMainWnd()->m_hWnd, WM_CLOSE, 0, 0);	// é—œé–‰éŠæˆ²
 	}
 	else if (initScreenState == InitScreenState::OnMainMenu)
 	{
-		// ªÅ¥Õ«Ø
+		// ç©ºç™½å»º
 		if (nChar == KEY_ENTER || nChar == KEY_SPACE)
 		{
 			if (mainMenuState == MainMenuSelectionState::OnStart)
@@ -182,7 +182,7 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			}
 			else if (audioPageState == AudioPageSelectionState::OnSwitch)
 			{
-				audioOn = !audioOn; // ¶}Ãö¤Ï¦V
+				audioOn = !audioOn; // é–‹é—œåå‘
 				if (!audioOn) CAudio::Instance()->Stop(BGM_GameStateInit);
 				else CAudio::Instance()->Play(BGM_GameStateInit, true);
 			}
@@ -252,10 +252,11 @@ void CGameStateInit::OnShow()
 			int volume = CAudio::Instance()->GetVolume() / 10;
 			CString volume_str = "";
 			volume_str.Format("%d%%", volume);
-			DrawTexts(volume_str, 192, 140, 320);
+			DrawTexts(volume_str, 192, 125, 320);
+			
 		}
 		else
-			DrawTexts("0%", 192, 140, 320);
+			DrawTexts("0%", 192, 125, 320);
 		
 
 	}
@@ -275,7 +276,7 @@ void CGameStateInit::DrawTexts(CString text, int posX, int posY, int fontSize)
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªºµ²§ôª¬ºA(Game Over)
+// é€™å€‹classç‚ºéŠæˆ²çš„çµæŸç‹€æ…‹(Game Over)
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateOver::CGameStateOver(CGame *g)
@@ -298,37 +299,37 @@ void CGameStateOver::OnBeginState()
 void CGameStateOver::OnInit()
 {
 	//
-	// ·í¹Ï«Ü¦h®É¡AOnInit¸ü¤J©Ò¦³ªº¹Ï­nªá«Ü¦h®É¶¡¡C¬°Á×§Kª±¹CÀ¸ªº¤H
-	//     µ¥ªº¤£­@·Ğ¡A¹CÀ¸·|¥X²{¡uLoading ...¡v¡AÅã¥ÜLoadingªº¶i«×¡C
+	// ç•¶åœ–å¾ˆå¤šæ™‚ï¼ŒOnInitè¼‰å…¥æ‰€æœ‰çš„åœ–è¦èŠ±å¾ˆå¤šæ™‚é–“ã€‚ç‚ºé¿å…ç©éŠæˆ²çš„äºº
+	//     ç­‰çš„ä¸è€ç…©ï¼ŒéŠæˆ²æœƒå‡ºç¾ã€ŒLoading ...ã€ï¼Œé¡¯ç¤ºLoadingçš„é€²åº¦ã€‚
 	//
-	ShowInitProgress(66);	// ±µ­Ó«e¤@­Óª¬ºAªº¶i«×¡A¦¹³B¶i«×µø¬°66%
+	ShowInitProgress(66);	// æ¥å€‹å‰ä¸€å€‹ç‹€æ…‹çš„é€²åº¦ï¼Œæ­¤è™•é€²åº¦è¦–ç‚º66%
 	//
-	// ¶}©l¸ü¤J¸ê®Æ
+	// é–‹å§‹è¼‰å…¥è³‡æ–™
 	//
-	Sleep(300);				// ©ñºC¡A¥H«K¬İ²M·¡¶i«×¡A¹ê»Ú¹CÀ¸½Ğ§R°£¦¹Sleep
+	Sleep(300);				// æ”¾æ…¢ï¼Œä»¥ä¾¿çœ‹æ¸…æ¥šé€²åº¦ï¼Œå¯¦éš›éŠæˆ²è«‹åˆªé™¤æ­¤Sleep
 	//
-	// ³Ì²×¶i«×¬°100%
+	// æœ€çµ‚é€²åº¦ç‚º100%
 	//
 	ShowInitProgress(100);
 }
 
 void CGameStateOver::OnShow()
 {
-	CDC *pDC = CDDraw::GetBackCDC();			// ¨ú±o Back Plain ªº CDC 
+	CDC *pDC = CDDraw::GetBackCDC();			// å–å¾— Back Plain çš„ CDC 
 	CFont f,*fp;
-	f.CreatePointFont(160,"Times New Roman");	// ²£¥Í font f; 160ªí¥Ü16 pointªº¦r
-	fp=pDC->SelectObject(&f);					// ¿ï¥Î font f
+	f.CreatePointFont(160,"Times New Roman");	// ç”¢ç”Ÿ font f; 160è¡¨ç¤º16 pointçš„å­—
+	fp=pDC->SelectObject(&f);					// é¸ç”¨ font f
 	pDC->SetBkColor(RGB(0,0,0));
 	pDC->SetTextColor(RGB(255,255,0));
-	char str[80];								// Demo ¼Æ¦r¹ï¦r¦êªºÂà´«
+	char str[80];								// Demo æ•¸å­—å°å­—ä¸²çš„è½‰æ›
 	sprintf(str, "Game Over ! (%d)", counter / 30);
 	pDC->TextOut(240,210,str);
-	pDC->SelectObject(fp);						// ©ñ±¼ font f (¤d¸U¤£­nº|¤F©ñ±¼)
-	CDDraw::ReleaseBackCDC();					// ©ñ±¼ Back Plain ªº CDC
+	pDC->SelectObject(fp);						// æ”¾æ‰ font f (åƒè¬ä¸è¦æ¼äº†æ”¾æ‰)
+	CDDraw::ReleaseBackCDC();					// æ”¾æ‰ Back Plain çš„ CDC
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸°õ¦æª«¥ó¡A¥D­nªº¹CÀ¸µ{¦¡³£¦b³o¸Ì
+// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²åŸ·è¡Œç‰©ä»¶ï¼Œä¸»è¦çš„éŠæˆ²ç¨‹å¼éƒ½åœ¨é€™è£¡
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateRun::CGameStateRun(CGame *g)
@@ -364,10 +365,10 @@ void CGameStateRun::OnBeginState()
 	
 }
 
-void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
+void CGameStateRun::OnMove()							// ç§»å‹•éŠæˆ²å…ƒç´ 
 {
 	//
-	// ¦pªG§Æ±æ­×§ïcursorªº¼Ë¦¡¡A«h±N¤U­±µ{¦¡ªºcommment¨ú®ø§Y¥i
+	// å¦‚æœå¸Œæœ›ä¿®æ”¹cursorçš„æ¨£å¼ï¼Œå‰‡å°‡ä¸‹é¢ç¨‹å¼çš„commmentå–æ¶ˆå³å¯
 	//
 	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
 
@@ -389,26 +390,26 @@ void CGameStateRun::OnMove()							// ²¾°Ê¹CÀ¸¤¸¯À
 	cow4->OnMove(mapManager.GetCurrentMap(), &obj);
 }
 
-void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
+void CGameStateRun::OnInit()  								// éŠæˆ²çš„åˆå€¼åŠåœ–å½¢è¨­å®š
 {
 	
 	//
-	// ·í¹Ï«Ü¦h®É¡AOnInit¸ü¤J©Ò¦³ªº¹Ï­nªá«Ü¦h®É¶¡¡C¬°Á×§Kª±¹CÀ¸ªº¤H
-	//     µ¥ªº¤£­@·Ğ¡A¹CÀ¸·|¥X²{¡uLoading ...¡v¡AÅã¥ÜLoadingªº¶i«×¡C
+	// ç•¶åœ–å¾ˆå¤šæ™‚ï¼ŒOnInitè¼‰å…¥æ‰€æœ‰çš„åœ–è¦èŠ±å¾ˆå¤šæ™‚é–“ã€‚ç‚ºé¿å…ç©éŠæˆ²çš„äºº
+	//     ç­‰çš„ä¸è€ç…©ï¼ŒéŠæˆ²æœƒå‡ºç¾ã€ŒLoading ...ã€ï¼Œé¡¯ç¤ºLoadingçš„é€²åº¦ã€‚
 	//
-	ShowInitProgress(33);	// ±µ­Ó«e¤@­Óª¬ºAªº¶i«×¡A¦¹³B¶i«×µø¬°33%
+	ShowInitProgress(33);	// æ¥å€‹å‰ä¸€å€‹ç‹€æ…‹çš„é€²åº¦ï¼Œæ­¤è™•é€²åº¦è¦–ç‚º33%
 	//
-	// ¶}©l¸ü¤J¸ê®Æ
+	// é–‹å§‹è¼‰å…¥è³‡æ–™
 	//
 	//mapManager.GetCurrentMap()->LoadBitmap();
 
 	//
-	// §¹¦¨³¡¤ÀLoading°Ê§@¡A´£°ª¶i«×
+	// å®Œæˆéƒ¨åˆ†Loadingå‹•ä½œï¼Œæé«˜é€²åº¦
 	//
 	ShowInitProgress(50);
-	//Sleep(300); // ©ñºC¡A¥H«K¬İ²M·¡¶i«×¡A¹ê»Ú¹CÀ¸½Ğ§R°£¦¹Sleep
+	//Sleep(300); // æ”¾æ…¢ï¼Œä»¥ä¾¿çœ‹æ¸…æ¥šé€²åº¦ï¼Œå¯¦éš›éŠæˆ²è«‹åˆªé™¤æ­¤Sleep
 	//
-	// Ä~Äò¸ü¤J¨ä¥L¸ê®Æ
+	// ç¹¼çºŒè¼‰å…¥å…¶ä»–è³‡æ–™
 	//
 	c1 = new CChicken(200, 400);
 	c2 = new CChicken(200, 600);
@@ -442,9 +443,9 @@ void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
 	//
 	//
 	//
-	c1->SetMap(mapManager.GetChickenCoop()); // ³]©w¥L­Ì©ÒÄİ¦a¹Ï
+	c1->SetMap(mapManager.GetChickenCoop()); // è¨­å®šä»–å€‘æ‰€å±¬åœ°åœ–
 	c1->SetTimer(&timer);
-	c2->SetMap(mapManager.GetChickenCoop()); // ³]©w¥L­Ì©ÒÄİ¦a¹Ï
+	c2->SetMap(mapManager.GetChickenCoop()); // è¨­å®šä»–å€‘æ‰€å±¬åœ°åœ–
 	c2->SetTimer(&timer);
 	c3->SetMap(mapManager.GetChickenCoop());
 	c3->SetTimer(&timer);
@@ -459,7 +460,7 @@ void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
 	cow4->SetMap(mapManager.GetCowCoop());
 	cow4->SetTimer(&timer);
 
-	// °O±oPush°Êª«&¤H¨ì¬¡°Êª«¥óªº°}¦C
+	// è¨˜å¾—Pushå‹•ç‰©&äººåˆ°æ´»å‹•ç‰©ä»¶çš„é™£åˆ—
 	// obj[0] is player
 	obj.push_back(&p1);
 	// obj[1:4] is chickens
@@ -473,14 +474,14 @@ void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
 	obj.push_back(cow3);
 	obj.push_back(cow4);
 
-	// push©Ò¦³°Ó©±¦Ü°Ó©±°}¦C
+	// pushæ‰€æœ‰å•†åº—è‡³å•†åº—é™£åˆ—
 	sms.push_back(&plantShopMenu);
 	sms.push_back(&animalShopMenu);
 	sms.push_back(&toolsMachinesShopMenu);
 
 
 	//
-	// ¦¹OnInit°Ê§@·|±µ¨ìCGameStaterOver::OnInit()¡A©Ò¥H¶i«×ÁÙ¨S¨ì100%
+	// æ­¤OnInitå‹•ä½œæœƒæ¥åˆ°CGameStaterOver::OnInit()ï¼Œæ‰€ä»¥é€²åº¦é‚„æ²’åˆ°100%
 	//
 }
 
@@ -489,7 +490,7 @@ void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
 // 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	// ·íGame Dialog ¥¿¦bÅã¥Ü®ÉPlayer¤£¥i°µ¨ä¥L¾Ş§@
+	// ç•¶Game Dialog æ­£åœ¨é¡¯ç¤ºæ™‚Playerä¸å¯åšå…¶ä»–æ“ä½œ
 	if (gameDialog.IsEnable()) {
 		gameDialog.OnKeyDown(nChar);
 	}
@@ -514,10 +515,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else
 	{
 		p1.OnKeyDown(nChar, &mapManager, &gameDialog, sms, mapManager.GetCurrentMap(), &obj, &foodMenu);
-		const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-		const char KEY_UP = 0x26; // keyboard¤W½bÀY
-		const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-		const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+		const char KEY_LEFT = 0x25; // keyboardå·¦ç®­é ­
+		const char KEY_UP = 0x26; // keyboardä¸Šç®­é ­
+		const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+		const char KEY_DOWN = 0x28; // keyboardä¸‹ç®­é ­
 		const char KEY_S = 0x53; // keyboard S
 
 		timer.OnKeyDown(nChar);
@@ -541,7 +542,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		if (nChar == KEY_S)
 		{
 			backpackMenu.Enable();
-			// ¦b¦¹¶Ç¤Jplayer²{¦bªºmoney¥H¤ÎHP­È ¥H«K¦AmenuÅã¥Ü
+			// åœ¨æ­¤å‚³å…¥playerç¾åœ¨çš„moneyä»¥åŠHPå€¼ ä»¥ä¾¿å†menué¡¯ç¤º
 			backpackMenu.SetMoneyField(p1.GetMoney());
 			backpackMenu.SetHPField(p1.GetHealthPoint());
 		}
@@ -550,10 +551,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard¥ª½bÀY
-	const char KEY_UP    = 0x26; // keyboard¤W½bÀY
-	const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-	const char KEY_DOWN  = 0x28; // keyboard¤U½bÀY
+	const char KEY_LEFT  = 0x25; // keyboardå·¦ç®­é ­
+	const char KEY_UP    = 0x26; // keyboardä¸Šç®­é ­
+	const char KEY_RIGHT = 0x27; // keyboardå³ç®­é ­
+	const char KEY_DOWN  = 0x28; // keyboardä¸‹ç®­é ­
 	if (nChar == KEY_LEFT)
 	{
 		p1.SetMovingLeft(false);
@@ -574,39 +575,39 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	p1.OnKeyUp(nChar, &mapManager, &gameDialog);
 }
 
-void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§@
+void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
 {
 }
 
-void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 {
 }
 
 //
 // Practice : Q : How to do OnMouseNotToMove?
 // 
-void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 {
-	// ¨S¨Æ¡C¦pªG»İ­n³B²z·Æ¹«²¾°Êªº¸Ü¡A¼gcode¦b³o¸Ì
+	// æ²’äº‹ã€‚å¦‚æœéœ€è¦è™•ç†æ»‘é¼ ç§»å‹•çš„è©±ï¼Œå¯«codeåœ¨é€™è£¡
 }
 
-void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§@
+void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // è™•ç†æ»‘é¼ çš„å‹•ä½œ
 {
 }
 
-void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// è™•ç†æ»‘é¼ çš„å‹•ä½œ
 {
 }
 
 void CGameStateRun::OnShow()
 {
 	//
-	//  ª`·N¡GShow¸Ì­±¤d¸U¤£­n²¾°Ê¥ô¦óª«¥óªº®y¼Ğ¡A²¾°Ê®y¼Ğªº¤u§@À³¥ÑMove°µ¤~¹ï¡A
-	//        §_«h·íµøµ¡­«·sÃ¸¹Ï®É(OnDraw)¡Aª«¥ó´N·|²¾°Ê¡A¬İ°_¨Ó·|«Ü©Ç¡C´«­Ó³N»y
-	//        »¡¡AMove­t³dMVC¤¤ªºModel¡AShow­t³dView¡A¦ÓView¤£À³§ó°ÊModel¡C
+	//  æ³¨æ„ï¼šShowè£¡é¢åƒè¬ä¸è¦ç§»å‹•ä»»ä½•ç‰©ä»¶çš„åº§æ¨™ï¼Œç§»å‹•åº§æ¨™çš„å·¥ä½œæ‡‰ç”±Moveåšæ‰å°ï¼Œ
+	//        å¦å‰‡ç•¶è¦–çª—é‡æ–°ç¹ªåœ–æ™‚(OnDraw)ï¼Œç‰©ä»¶å°±æœƒç§»å‹•ï¼Œçœ‹èµ·ä¾†æœƒå¾ˆæ€ªã€‚æ›å€‹è¡“èª
+	//        èªªï¼ŒMoveè² è²¬MVCä¸­çš„Modelï¼ŒShowè² è²¬Viewï¼Œè€ŒViewä¸æ‡‰æ›´å‹•Modelã€‚
 	//
 	//
-	//  ¶K¤W­I´º¹Ï¡B¼²À»¼Æ¡B²y¡BÀ¿¤l¡B¼u¸õªº²y
+	//  è²¼ä¸ŠèƒŒæ™¯åœ–ã€æ’æ“Šæ•¸ã€çƒã€æ“¦å­ã€å½ˆè·³çš„çƒ
 	//
 	mapManager.OnShow();
 	c1->OnShow(mapManager.GetCurrentMap());
