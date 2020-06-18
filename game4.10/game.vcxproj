@@ -262,7 +262,6 @@
     <ClCompile Include="Source\CBackpackMenu.cpp" />
     <ClCompile Include="Source\CChicken.cpp" />
     <ClCompile Include="Source\CCow.cpp" />
-    <ClCompile Include="Source\CDog.cpp" />
     <ClCompile Include="Source\CFood.cpp" />
     <ClCompile Include="Source\CFoodAppleJuice.cpp" />
     <ClCompile Include="Source\CFoodCake.cpp" />
@@ -293,7 +292,6 @@
     <ClCompile Include="Source\CToolHoe.cpp" />
     <ClCompile Include="Source\CToolSeed.cpp" />
     <ClCompile Include="Source\CToolSickle.cpp" />
-    <ClCompile Include="Source\CToolsMachinesShopMenu.cpp" />
     <ClCompile Include="Source\CToolWaterer.cpp" />
     <ClCompile Include="Source\CWeather.cpp" />
     <ClCompile Include="Source\game.cpp">
@@ -346,7 +344,6 @@
     <ClInclude Include="Source\CBackpackMenu.h" />
     <ClInclude Include="Source\CChicken.h" />
     <ClInclude Include="Source\CCow.h" />
-    <ClInclude Include="Source\CDog.h" />
     <ClInclude Include="Source\CFood.h" />
     <ClInclude Include="Source\CFoodAppleJuice.h" />
     <ClInclude Include="Source\CFoodCake.h" />
@@ -377,7 +374,6 @@
     <ClInclude Include="Source\CToolHoe.h" />
     <ClInclude Include="Source\CToolSeed.h" />
     <ClInclude Include="Source\CToolSickle.h" />
-    <ClInclude Include="Source\CToolsMachinesShopMenu.h" />
     <ClInclude Include="Source\CToolWaterer.h" />
     <ClInclude Include="Source\CWeather.h" />
     <ClInclude Include="Source\game.h" />
@@ -889,12 +885,18 @@
     <Image Include="RES\NewMaterial\MachineOnFloor\CowHouse_Floor_Machine02.bmp" />
     <Image Include="RES\NewMaterial\MachineOnFloor\SheepHouse_Floor_Machine03.bmp" />
     <Image Include="RES\NewMaterial\MachineOnFloor\SheepHouse_Floor_Machine04.bmp" />
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox01.bmp" />
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox02.bmp" />
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox03.bmp" />
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox04.bmp" />
     <Image Include="RES\NewMaterial\Terrain\AnimalGrass.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Bush.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Egg.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Fence.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Grass.bmp" />
     <Image Include="RES\NewMaterial\Terrain\NoticeBoard.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowDown.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowUp.bmp" />
     <Image Include="RES\NewMaterial\Terrain\PlantSoil.bmp" />
     <Image Include="RES\NewMaterial\Terrain\RedFlower.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River01.bmp" />

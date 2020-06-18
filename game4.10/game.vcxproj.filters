@@ -193,9 +193,6 @@
     <ClCompile Include="Source\CCow.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CToolsMachinesShopMenu.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CFoodMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -224,9 +221,6 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CClinic.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CDog.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -345,9 +339,6 @@
     <ClInclude Include="Source\CCow.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CToolsMachinesShopMenu.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CFoodMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -376,9 +367,6 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CClinic.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CDog.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2264,6 +2252,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowDown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowUp.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox04.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

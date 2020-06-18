@@ -1246,6 +1246,18 @@ IDB_Audio_On_Back       BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\10
 
 IDB_Audio_On_On         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_on.bmp"
 
+IDB_NoticeBoard_ArrowDown BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowDown.bmp"
+
+IDB_NoticeBoard_ArrowUp BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowUp.bmp"
+
+IDB_PlantCropBox01      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox01.bmp"
+
+IDB_PlantCropBox02      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox02.bmp"
+
+IDB_PlantCropBox03      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox03.bmp"
+
+IDB_PlantCropBox04      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox04.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

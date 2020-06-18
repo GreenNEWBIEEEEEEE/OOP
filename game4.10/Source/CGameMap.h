@@ -86,6 +86,8 @@ namespace game_framework
 		 CMovingBitmap houseOutside_14;
 		 CMovingBitmap houseOutside_15;
 		 CMovingBitmap noticeBoard;
+		 CMovingBitmap noticeBoard_ArrowDown;
+		 CMovingBitmap noticeBoard_ArrowUp;
 		 CMovingBitmap houseFloor;
 		 CMovingBitmap houseWall;
 		 CMovingBitmap houseWall_02;
@@ -339,6 +341,11 @@ namespace game_framework
 		CMovingBitmap clinic_21;
 		CMovingBitmap clinic_22;
 		CMovingBitmap clinic_23;
+
+		CMovingBitmap plantCropBox_01;
+		CMovingBitmap plantCropBox_02;
+		CMovingBitmap plantCropBox_03;
+		CMovingBitmap plantCropBox_04;
 
 
 		// Machine

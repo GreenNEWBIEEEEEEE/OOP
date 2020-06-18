@@ -50,7 +50,6 @@
 #include "CFoodMenu.h"
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
-#include "CToolsMachinesShopMenu.h"
 
 namespace game_framework {
 ////
@@ -164,7 +163,6 @@ namespace game_framework {
 		CPlantShopMenu plantShopMenu;
 		CAnimalShopMenu animalShopMenu;
 		CFoodMenu foodMenu;
-		CToolsMachinesShopMenu toolsMachinesShopMenu;
 		vector<CShopMenu*> sms; // 商店陣列
 		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人
 	};

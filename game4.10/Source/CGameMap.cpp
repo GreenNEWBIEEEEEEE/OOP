@@ -96,6 +96,8 @@ namespace game_framework {
 		houseOutside_14.LoadBitmap(IDB_HouseOutside13);
 		houseOutside_15.LoadBitmap(IDB_HouseOutside14);
 		noticeBoard.LoadBitmap(IDB_NoticeBoard);
+		noticeBoard_ArrowDown.LoadBitmap(IDB_NoticeBoard_ArrowDown);
+		noticeBoard_ArrowUp.LoadBitmap(IDB_NoticeBoard_ArrowUp);
 		houseFloor.LoadBitmap(IDB_HouseFloor);
 		houseWall.LoadBitmap(IDB_HouseWall);
 		houseWall_02.LoadBitmap(IDB_HouseWall02);
@@ -424,6 +426,13 @@ namespace game_framework {
 			clinic_21.LoadBitmap(IDB_Clinic21);
 			clinic_22.LoadBitmap(IDB_Clinic22);
 			clinic_23.LoadBitmap(IDB_Clinic23);
+		}
+
+		{
+			plantCropBox_01.LoadBitmap(IDB_PlantCropBox01);
+			plantCropBox_02.LoadBitmap(IDB_PlantCropBox02);
+			plantCropBox_03.LoadBitmap(IDB_PlantCropBox03);
+			plantCropBox_04.LoadBitmap(IDB_PlantCropBox04);
 		}
 
 		if (weather != nullptr)
@@ -1485,7 +1494,30 @@ namespace game_framework {
 					clinic_23.SetTopLeft(x, y);
 					clinic_23.ShowBitmap();
 					break;
-
+				case -198:
+					noticeBoard_ArrowDown.SetTopLeft(x, y);
+					noticeBoard_ArrowDown.ShowBitmap();
+					break;
+				case -199:
+					noticeBoard_ArrowUp.SetTopLeft(x, y);
+					noticeBoard_ArrowUp.ShowBitmap();
+					break;
+				case -200:
+					plantCropBox_01.SetTopLeft(x, y);
+					plantCropBox_01.ShowBitmap();
+					break;
+				case -201:
+					plantCropBox_02.SetTopLeft(x, y);
+					plantCropBox_02.ShowBitmap();
+					break;
+				case -202:
+					plantCropBox_03.SetTopLeft(x, y);
+					plantCropBox_03.ShowBitmap();
+					break;
+				case -203:
+					plantCropBox_04.SetTopLeft(x, y);
+					plantCropBox_04.ShowBitmap();
+					break;
 
 				default:
 					break;

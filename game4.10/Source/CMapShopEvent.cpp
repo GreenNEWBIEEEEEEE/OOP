@@ -13,7 +13,6 @@
 #include "CMapShopEvent.h"
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
-#include "CToolsMachinesShopMenu.h"
 
 namespace game_framework
 {
@@ -48,24 +47,11 @@ namespace game_framework
 			ansm->Disable();
 		}
 	}
-	void HandleToolsMachinesShop(CGameDialog::DialogOptionsResult dor, CShopMenu *sm)
-	{
-		CToolsMachinesShopMenu *tmsm = (CToolsMachinesShopMenu*)sm;
-		if (dor == CGameDialog::DialogOptionsResult::Yes)
-		{
-			tmsm->Enable_InfoBoard();
-		}
-		else
-		{
-			tmsm->Disable();
-		}
-	}
 
 	void CMapShopEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CPlantShopMenu * psm = ((CPlantShopMenu*)sms.at(0));
 		CAnimalShopMenu * ansm = ((CAnimalShopMenu*)sms.at(1));
-		CToolsMachinesShopMenu *tmsm = ((CToolsMachinesShopMenu*)sms.at(2));
 		
 		switch (eventCode)
 		{
@@ -96,21 +82,6 @@ namespace game_framework
 				ansm->Enable();
 				gd->SetCallback(&HandleAnimalShop, ansm);
 				gd->AddQuestion("Do you want to buy some animals?");
-				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
-				gd->Enable();
-			}
-			break;
-		case 8: // ToolsMachines Shop
-			if (tmsm->GetTimer()->GetHour() >= 19)
-			{
-				gd->AddMessage("Closed now!");
-				gd->Enable();
-			}
-			else
-			{
-				tmsm->Enable();
-				gd->SetCallback(&HandleAnimalShop, tmsm);
-				gd->AddQuestion("Do you want to buy some tools?");
 				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
 				gd->Enable();
 			}
