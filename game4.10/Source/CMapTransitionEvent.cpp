@@ -74,7 +74,7 @@ namespace game_framework {
 			mm->GetCurrentMap()->SetSXSY(880, 500);
 			p->SetX(17 * 64);
 			p->SetY(12 * 53);
-			gd->AddMessage("Area 2");
+			gd->AddMessage("Town 2");
 			gd->Enable();
 			break;
 			// «Ç¥~2->«Ç¥~1
@@ -83,7 +83,7 @@ namespace game_framework {
 			mm->GetCurrentMap()->SetSXSY(750, -100);
 			p->SetX(15 * 64);
 			p->SetY(0 * 53);
-			gd->AddMessage("Area 1");
+			gd->AddMessage("Town 1");
 			gd->Enable();
 			break;
 			// «Ç¥~1->¤ûªÙ
@@ -105,6 +105,8 @@ namespace game_framework {
 			mm->GetCurrentMap()->SetSXSY(400, 500);
 			p->SetX(10 * 64);
 			p->SetY(12 * 53);
+			gd->AddMessage("Town 3");
+			gd->Enable();
 			break;
 			// 
 		case 20010:
@@ -112,6 +114,8 @@ namespace game_framework {
 			mm->GetCurrentMap()->SetSXSY(500, -145);
 			p->SetX(11 * 64);
 			p->SetY(0 * 53);
+			gd->AddMessage("Town 2");
+			gd->Enable();
 			break;
 		default:
 			break;
