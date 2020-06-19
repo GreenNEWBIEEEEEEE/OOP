@@ -91,108 +91,28 @@ namespace game_framework{
 		return elemID;
 	}
 
-	// 新增事件 這裡也要註冊
+	// 事件註冊
 	void CMapInfo::AddEvent(int eventCode)
 	{
-		switch (eventCode)
+		if (eventCode >= 10000 && eventCode <= 19999)
 		{
-		case 5:
+			events.push_back(new CMapShowDialogEvent(eventCode));
+		}
+		else if (eventCode >= 20000 && eventCode <= 29999)
+		{
+			events.push_back(new CMapTransitionEvent(eventCode));
+		}
+		else if (eventCode >= 30000 && eventCode <= 30001)
+		{
+			events.push_back(new CMapSleepEvent(eventCode));
+		}
+		else if (eventCode >= 6 && eventCode <= 10)
+		{
+			events.push_back(new CMapShopEvent(eventCode));
+		}
+		else if (eventCode == 5)
+		{
 			events.push_back(new CMapFarmingEvent());
-			break;
-			// Plant Shop
-		case 6:
-			events.push_back(new CMapShopEvent(6));
-			break;
-			// Animal Shop
-		case 7:
-			events.push_back(new CMapShopEvent(7));
-			break;
-		case 9:
-			events.push_back(new CMapShopEvent(9));
-			break;
-		case 10:
-			events.push_back(new CMapShopEvent(10));
-			break;
-		case 10001:
-			events.push_back(new CMapShowDialogEvent(10001));
-			break;
-		case 10002:
-			events.push_back(new CMapShowDialogEvent(10002));
-			break;
-		case 10003:
-			events.push_back(new CMapShowDialogEvent(10003));
-			break;
-		case 10004:
-			events.push_back(new CMapShowDialogEvent(10004));
-			break;
-		case 10005:
-			events.push_back(new CMapShowDialogEvent(10005));
-			break;
-		case 10006:
-			events.push_back(new CMapShowDialogEvent(10006));
-			break;
-		case 10007:
-			events.push_back(new CMapShowDialogEvent(10007));
-			break;
-		case 10008:
-			events.push_back(new CMapShowDialogEvent(10008));
-			break;
-		case 10009:
-			events.push_back(new CMapShowDialogEvent(10009));
-			break;
-		case 10010:
-			events.push_back(new CMapShowDialogEvent(10010));
-			break;
-		case 10011:
-			events.push_back(new CMapShowDialogEvent(10011));
-			break;
-		case 10012:
-			events.push_back(new CMapShowDialogEvent(10012));
-			break;
-		case 10013:
-			events.push_back(new CMapShowDialogEvent(10013));
-			break;
-		case 10014:
-			events.push_back(new CMapShowDialogEvent(10014));
-			break;
-		case 20001:
-			events.push_back(new CMapTransitionEvent(20001));
-			break;
-		case 20002:
-			events.push_back(new CMapTransitionEvent(20002));
-			break;
-		case 20003:
-			events.push_back(new CMapTransitionEvent(20003));
-			break;
-		case 20004:
-			events.push_back(new CMapTransitionEvent(20004));
-			break;
-		case 20005:
-			events.push_back(new CMapTransitionEvent(20005));
-			break;
-		case 20006:
-			events.push_back(new CMapTransitionEvent(20006));
-			break;
-		case 20007:
-			events.push_back(new CMapTransitionEvent(20007));
-			break;
-		case 20008:
-			events.push_back(new CMapTransitionEvent(20008));
-			break;
-		case 20009:
-			events.push_back(new CMapTransitionEvent(20009));
-			break;
-		case 20010:
-			events.push_back(new CMapTransitionEvent(20010));
-			break;
-		case 30000:
-			events.push_back(new CMapSleepEvent(30000));
-			break;
-		case 30001:
-			events.push_back(new CMapSleepEvent(30001));
-			break;
-		default:
-			break;
 		}
 	}
 

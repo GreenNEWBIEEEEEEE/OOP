@@ -64,12 +64,12 @@ namespace game_framework
 		currentStatus = status;
 	}
 
-	CAnimal::Status CAnimal::GetCurrentStatus()
+	CAnimal::Status CAnimal::GetCurrentStatus() const
 	{
 		return currentStatus;
 	}
 
-	int CAnimal::GetClosePoint()
+	int CAnimal::GetClosePoint() const
 	{
 		return closePoint;
 	}

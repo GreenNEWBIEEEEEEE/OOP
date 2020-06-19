@@ -127,7 +127,10 @@ namespace game_framework {
 	void CGameObject::DecreaseHP(int hp)
 	{
 		if (healthPoint - hp < 0)
+		{
 			healthPoint = 0;
+			isAlive = false; // ¦º±¼
+		}
 		else
 			healthPoint -= hp;
 	}

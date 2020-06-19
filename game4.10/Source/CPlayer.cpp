@@ -1388,7 +1388,6 @@ namespace game_framework {
 				}
 				else
 				{
-
 					facingAnimal->UnableShowAndMove();
 					facingAnimal->SetCollision(false);
 					facingAnimal->SetPickUp(true);

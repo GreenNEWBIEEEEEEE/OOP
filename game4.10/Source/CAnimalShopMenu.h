@@ -1,4 +1,5 @@
 #pragma once
+#include "CGameObject.h"
 #include "CShopMenu.h"
 
 namespace game_framework
@@ -7,13 +8,15 @@ namespace game_framework
 	class CAnimalShopMenu : public CShopMenu
 	{
 	public:
-		CAnimalShopMenu(CPlayer *p, CGameDialog *gd, CTimer *timer);
+		CAnimalShopMenu(CPlayer *p, CGameDialog *gd, CTimer *timer, vector<CGameObject*>* objs);
 		void OnKeyDown(UINT key);
 		void LoadBitmap();
 		void OnShow();
 		void OnMove();
 
+
 	private:
+		vector<CGameObject*>* objs = nullptr;
 		CMovingBitmap good_Chicken;
 		CMovingBitmap good_Cow;
 		CMovingBitmap goods[2] = { good_Chicken, good_Cow };

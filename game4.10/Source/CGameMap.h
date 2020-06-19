@@ -63,6 +63,8 @@ namespace game_framework
 		 CMovingBitmap soil;
 		 CMovingBitmap tileFloor;
 		 CMovingBitmap redFlower;
+		 CMovingBitmap purpleFlower;
+		 CMovingBitmap yellowFlower;
 
 		// obstacle
 		 CMovingBitmap fence;

@@ -203,27 +203,27 @@ namespace game_framework {
 		}
 	}
 
-	int CTimer::GetYear()
+	int CTimer::GetYear() const
 	{
 		return year;
 	}
 
-	int CTimer::GetMonth()
+	int CTimer::GetMonth() const
 	{
 		return month;
 	}
 
-	int CTimer::GetDay()
+	int CTimer::GetDay() const
 	{
 		return day;
 	}
 
-	int CTimer::GetHour()
+	int CTimer::GetHour() const 
 	{
 		return hour;
 	}
 
-	int CTimer::GetHourCounter()
+	int CTimer::GetHourCounter() const
 	{
 		return hourCounter;
 	}

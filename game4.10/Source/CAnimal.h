@@ -15,22 +15,17 @@ namespace game_framework {
 			Left,
 			Right
 		};
-
 		enum class Status {			// 健康狀態
-			HighProduce,				// 更高生產
+			HighProduce,			// 更高生產
 			Produce,				// 可生產
 			Hungry,					// 如果以WaitingForFeed到了明天(NewDay)，就會切換到Hungry
-			NoProduce    			// 無法生產
+			NoProduce,    			// 無法生產
 		};
-
-	
-
 		virtual void LoadBitmap() = 0;
-
 		virtual void OnMove(CGameMap* m, vector<CGameObject*>* obj) = 0;
 		virtual void OnShow(CGameMap* m) = 0;
-		Status GetCurrentStatus();
-		int GetClosePoint();
+		Status GetCurrentStatus() const;
+		int GetClosePoint() const;
 		void UnableShowAndMove();
 		void EnableShowAndMove();
 		void ChangeStatus(Status status);

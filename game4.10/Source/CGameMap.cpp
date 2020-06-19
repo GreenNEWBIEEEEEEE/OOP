@@ -71,6 +71,8 @@ namespace game_framework {
 		soil.LoadBitmap(IDB_Soil);
 		tileFloor.LoadBitmap(IDB_TileFloor01);
 		redFlower.LoadBitmap(IDB_RedFlower);
+		purpleFlower.LoadBitmap(IDB_PurpleFlower);
+		yellowFlower.LoadBitmap(IDB_YellowFlower);
 		fence.LoadBitmap(IDB_Fence);
 		bush.LoadBitmap(IDB_Bush);
 		stone.LoadBitmap(IDB_Stone);
@@ -1517,6 +1519,14 @@ namespace game_framework {
 				case -203:
 					plantCropBox_04.SetTopLeft(x, y);
 					plantCropBox_04.ShowBitmap();
+					break;
+				case -204:
+					yellowFlower.SetTopLeft(x, y);
+					yellowFlower.ShowBitmap();
+					break;
+				case -205:
+					purpleFlower.SetTopLeft(x, y);
+					purpleFlower.ShowBitmap();
 					break;
 
 				default:

@@ -898,6 +898,7 @@
     <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowDown.bmp" />
     <Image Include="RES\NewMaterial\Terrain\NoticeBoard_ArrowUp.bmp" />
     <Image Include="RES\NewMaterial\Terrain\PlantSoil.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\PurpleFlower.bmp" />
     <Image Include="RES\NewMaterial\Terrain\RedFlower.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River01.bmp" />
     <Image Include="RES\NewMaterial\Terrain\River02.bmp" />
@@ -909,6 +910,7 @@
     <Image Include="RES\NewMaterial\Terrain\Stone.bmp" />
     <Image Include="RES\NewMaterial\Terrain\TileFloor01.bmp" />
     <Image Include="RES\NewMaterial\Terrain\Wood.bmp" />
+    <Image Include="RES\NewMaterial\Terrain\YelloFlower.bmp" />
     <Image Include="RES\O1Mask640x480_01.bmp" />
     <Image Include="RES\RainMask01.bmp" />
     <Image Include="RES\RainMask02.bmp" />

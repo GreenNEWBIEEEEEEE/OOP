@@ -2272,5 +2272,11 @@
     <Image Include="RES\NewMaterial\PlantCropBoxes\PlantCropBox04.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\NewMaterial\Terrain\PurpleFlower.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\NewMaterial\Terrain\YelloFlower.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

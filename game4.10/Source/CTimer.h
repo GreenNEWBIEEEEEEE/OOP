@@ -31,6 +31,7 @@ namespace game_framework {
 		~CTimer();
 		void LoadBitmap();
 		void OnShow();
+
 		void OnMove(
 			CWeather* weather, 
 			CTimer* timer, 
@@ -39,11 +40,12 @@ namespace game_framework {
 			CGameDialog *gd, 
 			vector<CShopMenu*> sms,
 			CBackpackMenu *bpm);
-		int GetYear();
-		int GetMonth();
-		int GetDay();
-		int GetHour();
-		int GetHourCounter();
+
+		int GetYear() const;
+		int GetMonth() const;
+		int GetDay() const;
+		int GetHour() const;
+		int GetHourCounter() const;
 		CTimer::Season GetSeason() const;
 		void SetTimerSpeed(int speed);
 		void ChangeToNewDay(CWeather* weather, CTimer* timer);

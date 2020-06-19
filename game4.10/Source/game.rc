@@ -1258,6 +1258,10 @@ IDB_PlantCropBox03      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\10
 
 IDB_PlantCropBox04      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox04.bmp"
 
+IDB_PurpleFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\PurpleFlower.bmp"
+
+IDB_YellowFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\YelloFlower.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

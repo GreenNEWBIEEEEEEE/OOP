@@ -60,8 +60,11 @@ namespace game_framework {
 		bool isMovingLeft, isMovingRight, isMovingUp, isMovingDown;
 
 		int healthPoint;
+		bool isAlive = true;
 
 		int sickPoint = 0;
+
+
 	};
 
 

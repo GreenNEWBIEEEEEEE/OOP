@@ -335,7 +335,7 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g),
 	plantShopMenu(&p1, &gameDialog, &timer),
-	animalShopMenu(&p1, &gameDialog, &timer)
+	animalShopMenu(&p1, &gameDialog, &timer, &obj)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);

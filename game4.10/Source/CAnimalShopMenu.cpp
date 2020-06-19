@@ -4,14 +4,19 @@
 #include <ddraw.h>
 #include "gamelib.h"
 #include "CShopMenu.h"
+#include "CAnimal.h"
 #include "CAnimalShopMenu.h"
 
 namespace game_framework
 {
-	CAnimalShopMenu::CAnimalShopMenu(CPlayer *p, CGameDialog *gd, CTimer *timer)
+	CAnimalShopMenu::CAnimalShopMenu(
+		CPlayer *p, 
+		CGameDialog *gd, 
+		CTimer *timer,
+		vector<CGameObject*>* objs)
 		:CShopMenu(p, gd, timer)
 	{
-
+		this->objs = objs;
 	}
 
 	void CAnimalShopMenu::LoadBitmap()
@@ -27,6 +32,7 @@ namespace game_framework
 		selector.SetTopLeft(170, 230);
 	}
 
+	// Callbacks
 	void ANSM_ReEnableInfoBoard_InGD(CGameDialog::DialogOptionsResult r, CShopMenu *sm)
 	{
 		CAnimalShopMenu *ansm = (CAnimalShopMenu*)sm;
@@ -85,19 +91,34 @@ namespace game_framework
 				{
 				// Purchase a chicken
 				case 0:
+				{
 					if (player->GetMoney() >= PRICE_CHICKEN)
 					{
-						// FIXME: enable尚未enable的雞
+						// 旗標：購買有效與否
+						bool isBought = false;
+						// 從第1隻雞迭代到第4隻 尋找alive=false去改成true
+						for (unsigned i = 1; i <= 4; ++i)
+						{
+						}
+						// 根據購買與否，顯示相應訊息
 						this->enable_infoboard = false;
-						player->DecreaseMoney(PRICE_CHICKEN);
-						gd->AddMessage("You bought a chicken.");
-						gd->AddMessage("Take good care of it, ");
-						gd->AddMessage("otherwise it will die!");
-						CString nowMoney_str = "";
-						nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
-						gd->AddMessage((LPCTSTR)nowMoney_str);
+						if (isBought)
+						{
+							player->DecreaseMoney(PRICE_CHICKEN);
+							gd->AddMessage("You bought a chicken.");
+							gd->AddMessage("Take good care of it, ");
+							gd->AddMessage("otherwise it will die!");
+							CString nowMoney_str = "";
+							nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
+							gd->AddMessage((LPCTSTR)nowMoney_str);
+						}
+						else
+						{
+
+						}
 						gd->SetCallback(&ANSM_ReEnableInfoBoard_InGD, (CShopMenu*)this);
 						gd->Enable();
+						
 					}
 					else
 					{
@@ -105,6 +126,12 @@ namespace game_framework
 						gd->Enable();
 					}
 					break;
+				}
+				case 1:
+				{
+					break;
+				}
+					
 				default:
 					break;
 				}
