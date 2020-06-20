@@ -12,8 +12,9 @@ namespace game_framework {
 		void AddMap(string path, bool hasWeather);
 		void ChangeMap(unsigned mapID);
 		CWeather* GetOutsideWeather();
-		CGameMap* GetChickenCoop(); // 拿雞舍的地圖
-		CGameMap* GetCowCoop(); // 拿牛舍的地圖
+		CWeather* GetMapWeather(unsigned index) const;
+		CGameMap* GetChickenCoop() const; // 拿雞舍的地圖
+		CGameMap* GetCowCoop() const;     // 拿牛舍的地圖
 		CGameMap* GetCurrentMap() const;
 		void LoadBitmapAll();
 		void OnMove();

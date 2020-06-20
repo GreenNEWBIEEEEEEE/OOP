@@ -39,12 +39,12 @@ namespace game_framework {
 	///
 	///
 	///
-	CGameMap* CMapManager::GetChickenCoop()
+	CGameMap* CMapManager::GetChickenCoop() const
 	{
 		return maps[2];
 	}
 
-	CGameMap * CMapManager::GetCowCoop()
+	CGameMap * CMapManager::GetCowCoop() const
 	{
 		return maps[4];
 	}
@@ -67,6 +67,19 @@ namespace game_framework {
 	CWeather* CMapManager::GetOutsideWeather()
 	{
 		return maps[0]->GetWeather(); // 地圖0是戶外
+	}
+
+	CWeather * CMapManager::GetMapWeather(unsigned index) const
+	{
+		if (index < 0 || index >= this->maps.size())
+		{
+			return nullptr;
+		}
+		else
+		{
+			return maps.at(index)->GetWeather();
+		}
+
 	}
 
 	void CMapManager::SetTimer(CTimer* timer)
