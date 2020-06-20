@@ -44,11 +44,11 @@ namespace game_framework
 
 	void CClinic::OnKeyDown(UINT key)
 	{
-		const char KEY_D = 0x44; // keyboard D 取消
+		const char KEY_Q = 'Q'; // keyboard D 取消
 		const char KEY_A = 0x41; // keyboard A 購買
 
 		// Leave
-		if (key == KEY_D)
+		if (key == KEY_Q)
 		{
 			this->enable_infoboard = false;
 			if (gd != nullptr)
@@ -72,13 +72,16 @@ namespace game_framework
 
 				// turn off the info board
 				this->enable_infoboard = false;
-				if (player->GetMoney() >= r_price && player->GetHealthPoint() < 100)
+				if (player->GetMoney() >= r_price && 
+					(player->GetHealthPoint() < 100 || player->GetSickPoint() > 0))
 				{
 					// 
+					player->SetSickPoint(0);
 					player->DecreaseMoney(r_price);
 					player->IncreaseHP(100);
 					
 					// show information after buying
+					gd->AddMessage("You are healthy now.");
 					gd->AddMessage("Your HP is 100 now.");
 
 					// show the current money of player
@@ -86,7 +89,7 @@ namespace game_framework
 					nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
 					gd->AddMessage((LPCTSTR)nowMoney_str);
 				}
-				else if (player->GetHealthPoint() == 100)
+				else if (player->GetHealthPoint() == 100 && player->GetSickPoint() == 0)
 				{
 					gd->AddMessage("You are healthy.");
 					gd->AddMessage("You don't need any treatment.");
@@ -134,7 +137,7 @@ namespace game_framework
 				DrawTexts("Increase HP to 100!", 50, 370, 160);
 				DrawTexts("Price : Random Price!", 50, 400, 160);
 				// 
-				DrawTexts("[A] Buy [D] Quit", 400, 430, 140);
+				DrawTexts("[A] Buy [Q] Quit", 400, 430, 140);
 			}
 
 		}

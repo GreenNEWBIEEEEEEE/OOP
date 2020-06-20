@@ -53,12 +53,12 @@ namespace game_framework {
 		backpack.push_back(new CToolSeed(11, 3)); // Peanut種子
 		
 		
-		food.push_back(new CFoodAppleJuice(0, 1)); // 
-		food.push_back(new CFoodCake(1, 1)); // 
-		food.push_back(new CFoodDrinkBox(2, 1)); // 
-		food.push_back(new CFoodLunchBox(3, 1)); // 
-		food.push_back(new CFoodMeal(4, 6)); // 
-		food.push_back(new CFoodOrangeJuice(5, 1)); // 
+		food.push_back(new CFoodAppleJuice(0, 5)); // 
+		food.push_back(new CFoodCake(1, 5)); // 
+		food.push_back(new CFoodDrinkBox(2, 5)); // 
+		food.push_back(new CFoodLunchBox(3, 5)); // 
+		food.push_back(new CFoodMeal(4, 5)); // 
+		food.push_back(new CFoodOrangeJuice(5, 5)); // 
 
 		toolSelector = 0;  // 一開始是手
 
@@ -968,89 +968,26 @@ namespace game_framework {
 		vector<CGameObject*>* obj, CFoodMenu* fm)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
-		const char KEY_W = 'W'; // keyboard Q鍵
 		const char KEY_B = 'B';  // keyboard B鍵
 
 		//
-		// 按W切換玩家手上拿的工具
-		//
-		if (key == KEY_W)
-		{
-			if (this->currentMoveState != MoveState::NormalMove)	// 如果舉著其他東西的時候 不能切換道具
-				return;
-
-			// 切換工具選擇器
-			toolSelector++;
-			if (toolSelector < 0) toolSelector = backpack.size() - 1;
-			else if (toolSelector >= backpack.size()) toolSelector = 0;
-
-			// 看看選擇了哪個 來切換玩家的圖
-			switch (toolSelector)
-			{
-			case 0:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_0;
-				break;
-			case 1:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_1;
-				break;
-			case 2:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_2;
-				break;
-			case 3:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_3;
-				break;
-			case 4:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_4;
-				break;
-			case 5:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_5;
-				break;
-			case 6:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_6;
-				break;
-			case 7:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_7;
-				break;
-			case 8:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_8;
-				break;
-			case 9:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_9;
-				break;
-			case 10:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_10;
-				break;
-			case 11:
-				lastFacingDirection = facingDirection;
-				facingDirection = &aniChangeTool_11;
-				break;
-			default:
-				break;
-			}
-		}
-		//
 		// 按A使用工具動作的動畫與執行農務事件
 		//
-
-		else if (key == KEY_A)
+		if (key == KEY_A)	
 		{
 			fixAnimation = true;
 			if (this->currentMoveState == MoveState::NormalMove)
 			{
-
-				if (healthPoint <= 0)
+				if (healthPoint <= 20)
+				{
+					gd->AddMessage("Your HP is too low.");
+					gd->AddMessage("You cannot use tools!");
+					gd->AddMessage("Eat some food or go to see a doctor!");
+					gd->Enable();
+					isUsingTool = false;
 					return;
+				}
+					
 
 				// 使用工具動畫的旗標
 				isUsingTool = true;
@@ -1433,15 +1370,8 @@ namespace game_framework {
 	void CPlayer::OnKeyUp(UINT key, CMapManager * mm, CGameDialog * gd)
 	{
 		const char KEY_A = 0x41;  // keyboard A鍵
-		const char KEY_W = 'W'; // keyboard Q鍵
 		const char KEY_B = 'B'; // keyboard B鍵
-		// 放開Q鍵 變回原來的姿勢
-		if (key == KEY_W)
-		{
-			Sleep(200);
-			facingDirection = lastFacingDirection;
-		}
-		else if (key == KEY_B)
+		if (key == KEY_B)
 		{
 			STEP_SIZE = 5;
 		}

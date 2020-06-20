@@ -32,6 +32,6 @@ namespace game_framework {
 		CMovingBitmap test_mask;
 		CAnimation rain;
 		WeatherType weatherType = WeatherType::Sunny;
-		WeatherType nextDayWeatherType = WeatherType::Rain;
+		WeatherType nextDayWeatherType = WeatherType::Sunny;
 	};
 }

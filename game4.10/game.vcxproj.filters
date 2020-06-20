@@ -2281,5 +2281,8 @@
     <Image Include="RES\Shops\Clinic\goods\HP_Up.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\GameUI\GameOver\MissionComplete.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

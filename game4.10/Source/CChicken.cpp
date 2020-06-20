@@ -77,7 +77,7 @@ namespace game_framework
 				}
 				else
 				{
-					DecreaseHP(-34);
+					DecreaseHP(34);
 					currentStatus = Status::Hungry;
 				}
 			}
@@ -85,12 +85,12 @@ namespace game_framework
 			{
 				if (groove01)
 				{
-					map->SetSpecifiedElementID(4, 2, -109);
+					map->SetSpecifiedElementID(2, 4, -109);
 					IncreaseHP(15);
 				}
 				else if (groove02)
 				{
-					map->SetSpecifiedElementID(4, 3, -109);
+					map->SetSpecifiedElementID(3, 4, -109);
 					IncreaseHP(15);
 				}
 				else if (groove03)
@@ -100,11 +100,11 @@ namespace game_framework
 				}
 				else if (groove04)
 				{
-					map->SetSpecifiedElementID(4, 5, -109);
+					map->SetSpecifiedElementID(5, 4, -109);
 					IncreaseHP(15);
 				}
 				else
-					DecreaseHP(-34);
+					DecreaseHP(34);
 
 				if (healthPoint == 100)
 				{

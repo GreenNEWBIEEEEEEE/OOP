@@ -523,6 +523,7 @@
     <Image Include="RES\Food\foodIcons\OrangeJuice.bmp" />
     <Image Include="RES\GameUI\Cover\Cover01.bmp" />
     <Image Include="RES\GameUI\Cover\Cover02.bmp" />
+    <Image Include="RES\GameUI\GameOver\MissionComplete.bmp" />
     <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_back.bmp" />
     <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_off_on.bmp" />
     <Image Include="RES\GameUI\MainMenu\AudioPage\Audio_on_back.bmp" />

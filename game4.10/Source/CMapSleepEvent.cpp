@@ -3,6 +3,7 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
+#include "CShopMenu.h"
 #include "CMapSleepEvent.h"
 #include "CGameDialog.h"
 #include "CMapManager.h"
@@ -49,6 +50,12 @@ namespace game_framework
 			gd->Enable();
 			break;
 		case 30001:
+			// Turn off all dialogs & shop menus
+			gd->Disable();
+			for (unsigned i = 0; i < sms.size(); ++i)
+			{
+				(sms.at(i))->Disable();
+			}
 			gd->SetCallback(&ChangeMapToHome, mm, p);
 			gd->SetCallback(&ChangeToNewDay, mm->GetTimer(), mm->GetOutsideWeather());
 			gd->AddMessage("Now it's 12:00 a.m.");

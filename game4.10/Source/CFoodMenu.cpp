@@ -59,31 +59,9 @@ namespace game_framework {
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
-		const char KEY_D = 0x44; // keyboard D
+		const char KEY_SPACE = ' '; // keyboard D
 		const char KEY_A = 0x41;
 
-		/*  原版
-		if (key == KEY_LEFT)
-		{
-			if (selectCol - 1 >= 0)
-				selectCol -= 1;
-		}
-		else if (key == KEY_RIGHT)
-		{
-			if (selectCol + 1 < COL)
-				selectCol += 1;
-		}
-		else if (key == KEY_DOWN)
-		{
-			if (selectRow + 1 < ROW)
-				selectRow += 1;
-		}
-		else if (key == KEY_UP)
-		{
-			if (selectRow - 1 >= 0)
-				selectRow -= 1;
-		}
-		*/
 		if (key == KEY_LEFT)
 		{
 			if (selectCol - 1 >= 0)
@@ -115,7 +93,7 @@ namespace game_framework {
 			CFood* selectedFood = player->GetSelectedFood(selectRow * column + selectCol);
 			selectedFood->Execute(player);
 		}
-		else if (key == KEY_D)
+		else if (key == KEY_SPACE)
 		{
 			Disable();
 		}
@@ -181,7 +159,7 @@ namespace game_framework {
 			CString info = (*playerFood)[index]->GetInfo().c_str();
 			DrawTexts(info, 50, 380, 160);
 			DrawTexts((*playerFood)[index]->GetDescribe().c_str(), 50, 410, 160);
-			DrawTexts("[A] Eat [D] Quit", 400, 430, 140);
+			DrawTexts("[A] Eat [SPACE] Close", 350, 430, 140);
 		}
 
 	}
