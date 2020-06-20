@@ -13,6 +13,8 @@
 #include "CMapShopEvent.h"
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
+#include "CFoodShopMenu.h"
+#include "CClinicMenu.h"
 
 namespace game_framework
 {
@@ -47,15 +49,42 @@ namespace game_framework
 			ansm->Disable();
 		}
 	}
+	void HandleFoodShop(CGameDialog::DialogOptionsResult dor, CShopMenu *sm)
+	{
+		CFoodShopMenu *fsm = (CFoodShopMenu*)sm;
+		if (dor == CGameDialog::DialogOptionsResult::Yes)
+		{
+			fsm->Enable_InfoBoard();
+		}
+		else
+		{
+			fsm->Disable();
+		}
+	}
+	void HandleClinic(CGameDialog::DialogOptionsResult dor, CShopMenu *sm)
+	{
+		CClinic *clinic = (CClinic*)sm;
+		if (dor == CGameDialog::DialogOptionsResult::Yes)
+		{
+			clinic->Enable_InfoBoard();
+		}
+		else
+		{
+			clinic->Disable();
+		}
+	}
 
 	void CMapShopEvent::Execute(CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
-		CPlantShopMenu * psm = ((CPlantShopMenu*)sms.at(0));
-		CAnimalShopMenu * ansm = ((CAnimalShopMenu*)sms.at(1));
+		CPlantShopMenu * psm = (CPlantShopMenu*)sms.at(0);
+		CAnimalShopMenu * ansm = (CAnimalShopMenu*)sms.at(1);
+		CFoodShopMenu *fsm = (CFoodShopMenu*)sms.at(2);
+		CClinic *clinic = nullptr;
 		
 		switch (eventCode)
 		{
 		case 6: // Plant Shop
+		{
 			if (psm->GetTimer()->GetHour() >= 19)
 			{
 				gd->AddMessage("Closed now!");
@@ -69,9 +98,10 @@ namespace game_framework
 				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
 				gd->Enable();
 			}
-			
 			break;
+		}
 		case 7: // Animal Shop
+		{
 			if (ansm->GetTimer()->GetHour() >= 19)
 			{
 				gd->AddMessage("Closed now!");
@@ -86,6 +116,24 @@ namespace game_framework
 				gd->Enable();
 			}
 			break;
+		}
+		case 8: // Food Shop
+		{
+			if (fsm->GetTimer()->GetHour() >= 19)
+			{
+				gd->AddMessage("Closed now!");
+				gd->Enable();
+			}
+			else
+			{
+				fsm->Enable();
+				gd->SetCallback(&HandleFoodShop, fsm);
+				gd->AddQuestion("Do you want to buy some food?");
+				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
+				gd->Enable();
+			}
+			break;
+		}
 		default:
 			break;
 		}

@@ -7,7 +7,7 @@ namespace game_framework
 	class CChicken : public CAnimal
 	{
 	public:
-		CChicken::CChicken(int positionX, int positionY);
+		CChicken(int positionX, int positionY);
 		~CChicken();
 		void LoadBitmap();
 		void Produce();

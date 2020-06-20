@@ -220,7 +220,7 @@
     <ClCompile Include="Source\CFoodShopMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CClinic.cpp">
+    <ClCompile Include="Source\CClinicMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -366,7 +366,7 @@
     <ClInclude Include="Source\CFoodShopMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CClinic.h">
+    <ClInclude Include="Source\CClinicMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

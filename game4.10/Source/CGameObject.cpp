@@ -129,7 +129,6 @@ namespace game_framework {
 		if (healthPoint - hp < 0)
 		{
 			healthPoint = 0;
-			isAlive = false; // ¦º±¼
 		}
 		else
 			healthPoint -= hp;
@@ -159,6 +158,9 @@ namespace game_framework {
 		int y = this->by + nextY;
 
 		for (unsigned int i = 0; i < obj->size(); i++) {
+			if ((*obj)[i] == nullptr)
+				continue;
+
 			if (this == (*obj)[i])
 				continue;
 

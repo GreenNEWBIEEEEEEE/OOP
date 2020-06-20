@@ -3,7 +3,7 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
-#include "CClinic.h"
+#include "CClinicMenu.h"
 
 namespace game_framework
 {

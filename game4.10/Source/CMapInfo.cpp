@@ -106,7 +106,7 @@ namespace game_framework{
 		{
 			events.push_back(new CMapSleepEvent(eventCode));
 		}
-		else if (eventCode >= 6 && eventCode <= 10)
+		else if (eventCode >= 6 && eventCode <= 9)
 		{
 			events.push_back(new CMapShopEvent(eventCode));
 		}

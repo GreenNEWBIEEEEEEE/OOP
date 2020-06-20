@@ -13,6 +13,7 @@
 namespace game_framework {
 	CCow::CCow(int positionX, int positionY)
 	{
+		healthPoint = MAX_HP;
 		width = 64; height = 20;  // height不用53 是為了讓他更符合碰撞box
 		x = lastX = resetX = positionX;
 		y = lastY = resetY = positionY;

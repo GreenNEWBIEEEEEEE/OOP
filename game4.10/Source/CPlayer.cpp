@@ -52,7 +52,7 @@ namespace game_framework {
 		backpack.push_back(new CToolSeed(10, 3)); // Corn種子
 		backpack.push_back(new CToolSeed(11, 3)); // Peanut種子
 		
-
+		
 		food.push_back(new CFoodAppleJuice(0, 1)); // 
 		food.push_back(new CFoodCake(1, 1)); // 
 		food.push_back(new CFoodDrinkBox(2, 1)); // 

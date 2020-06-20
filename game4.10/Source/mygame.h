@@ -50,6 +50,8 @@
 #include "CFoodMenu.h"
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
+#include "CFoodShopMenu.h"
+#include "CClinicMenu.h"
 
 namespace game_framework {
 ////
@@ -148,20 +150,13 @@ namespace game_framework {
 		// 
 		CTimer timer;
 		CPlayer p1; // 玩家1
-		CChicken* c1 = nullptr;
-		CChicken* c2 = nullptr;
-		CChicken* c3 = nullptr;
-		CChicken* c4 = nullptr;
-		CCow* cow1 = nullptr;
-		CCow* cow2 = nullptr;
-		CCow* cow3 = nullptr;
-		CCow* cow4 = nullptr;
 		
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;
 		CPlantShopMenu plantShopMenu;
 		CAnimalShopMenu animalShopMenu;
+		CFoodShopMenu foodShopMenu;
 		CFoodMenu foodMenu;
 		vector<CShopMenu*> sms; // 商店陣列
 		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人

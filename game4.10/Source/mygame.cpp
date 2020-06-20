@@ -335,7 +335,8 @@ void CGameStateOver::OnShow()
 CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g),
 	plantShopMenu(&p1, &gameDialog, &timer),
-	animalShopMenu(&p1, &gameDialog, &timer, &obj)
+	animalShopMenu(&p1, &gameDialog, &timer, &obj, &mapManager),
+	foodShopMenu(&p1, &gameDialog, &timer)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
@@ -349,14 +350,26 @@ CGameStateRun::CGameStateRun(CGame *g)
 
 CGameStateRun::~CGameStateRun()
 {
-	delete c1;
-	delete c2;
-	delete c3;
-	delete c4;
-	delete cow1;
-	delete cow2;
-	delete cow3;
-	delete cow4;
+	for (unsigned i = 1; i < obj.size(); ++i)
+	{
+		if (obj[i] != nullptr)
+		{
+			if (i >= 1 && i <= 4)
+			{
+				/****重要*****/
+				/****要先轉成真實類型的指標，delete才有用！*****/
+				delete ((CChicken*)obj[i]);
+				obj[i] = nullptr;
+			}
+			else
+			{
+				/****重要*****/
+				/****要先轉成真實類型的指標，delete才有用！*****/
+				delete ((CCow*)obj[i]);
+				obj[i] = nullptr;
+			}
+		}
+	}
 }
 
 void CGameStateRun::OnBeginState()
@@ -364,68 +377,10 @@ void CGameStateRun::OnBeginState()
 	
 }
 
-void CGameStateRun::OnMove()							// 移動遊戲元素
-{
-	//
-	// 如果希望修改cursor的樣式，則將下面程式的commment取消即可
-	//
-	// SetCursor(AfxGetApp()->LoadCursor(IDC_GAMECURSOR));
-
-	CShopMenu *sm = &plantShopMenu;
-	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sms, &backpackMenu);
-	mapManager.OnMove();
-	gameDialog.OnMove();
-	plantShopMenu.OnMove();
-	animalShopMenu.OnMove();
-	p1.OnMove(mapManager.GetCurrentMap(), &obj);
-	c1->OnMove(mapManager.GetCurrentMap(), &obj);
-	c2->OnMove(mapManager.GetCurrentMap(), &obj);
-	c3->OnMove(mapManager.GetCurrentMap(), &obj);
-	c4->OnMove(mapManager.GetCurrentMap(), &obj);
-	cow1->OnMove(mapManager.GetCurrentMap(), &obj);
-	cow2->OnMove(mapManager.GetCurrentMap(), &obj);
-	cow3->OnMove(mapManager.GetCurrentMap(), &obj);
-	cow4->OnMove(mapManager.GetCurrentMap(), &obj);
-}
-
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
-	
-	//
-	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
-	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
-	//
-	ShowInitProgress(33);	// 接個前一個狀態的進度，此處進度視為33%
-	//
-	// 開始載入資料
-	//
-	//mapManager.GetCurrentMap()->LoadBitmap();
-
-	//
-	// 完成部分Loading動作，提高進度
-	//
-	ShowInitProgress(50);
-	//Sleep(300); // 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
-	//
-	// 繼續載入其他資料
-	//
-	c1 = new CChicken(200, 400);
-	c2 = new CChicken(200, 600);
-	c3 = new CChicken(300, 600);
-	c4 = new CChicken(350, 500);
-	cow1 = new CCow(300, 500);
-	cow2 = new CCow(512, 500);
-	cow3 = new CCow(421, 600);
-	cow4 = new CCow(324, 600);
-	p1.LoadBitmap();
-	c1->LoadBitmap();
-	c2->LoadBitmap();
-	c3->LoadBitmap();
-	c4->LoadBitmap();
-	cow1->LoadBitmap();
-	cow2->LoadBitmap();
-	cow3->LoadBitmap();
-	cow4->LoadBitmap();
+	ShowInitProgress(33);
+	Sleep(300);
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
 	mapManager.SetTimer(&timer);
@@ -436,54 +391,80 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	gameDialog.LoadBitmap();
 	plantShopMenu.LoadBitmap();
 	animalShopMenu.LoadBitmap();
+	foodShopMenu.LoadBitmap();
 	mapManager.LoadBitmapAll();
-	//
-	//
-	//
-	c1->SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
-	c1->SetTimer(&timer);
-	c2->SetMap(mapManager.GetChickenCoop()); // 設定他們所屬地圖
-	c2->SetTimer(&timer);
-	c3->SetMap(mapManager.GetChickenCoop());
-	c3->SetTimer(&timer);
-	c4->SetMap(mapManager.GetChickenCoop());
-	c4->SetTimer(&timer);
-	cow1->SetMap(mapManager.GetCowCoop());
-	cow1->SetTimer(&timer);
-	cow2->SetMap(mapManager.GetCowCoop());
-	cow2->SetTimer(&timer);
-	cow3->SetMap(mapManager.GetCowCoop());
-	cow3->SetTimer(&timer);
-	cow4->SetMap(mapManager.GetCowCoop());
-	cow4->SetTimer(&timer);
 
 	// 記得Push動物&人到活動物件的陣列
 	// obj[0] is player
 	obj.push_back(&p1);
 	// obj[1:4] is chickens
-	obj.push_back(c1);
-	obj.push_back(c2);
-	obj.push_back(c3);
-	obj.push_back(c4);
+	obj.push_back(new CChicken(200, 400));
+	obj.push_back(new CChicken(200, 600));
+	obj.push_back(nullptr);
+	obj.push_back(nullptr);
 	// obj[5:8] is cows
-	obj.push_back(cow1);
-	obj.push_back(cow2);
-	obj.push_back(cow3);
-	obj.push_back(cow4);
-
+	obj.push_back(new CCow(300, 500));
+	obj.push_back(new CCow(512, 500));
+	obj.push_back(nullptr);
+	obj.push_back(nullptr);
+	
+	
+	// 載入obj的bitmap & 設定所屬地圖 & 設定時間
+	for (unsigned i = 0; i < obj.size(); ++i)
+	{
+		if (obj[i] != nullptr) {
+			obj[i]->LoadBitmap();
+			if (i != 0) ((CAnimal*)obj[i])->SetTimer(&timer);
+			if (i >= 1 && i <= 4)
+				((CAnimal*)obj[i])->SetMap(mapManager.GetChickenCoop());
+			else if (i >= 5 && i <= 8)
+				((CAnimal*)obj[i])->SetMap(mapManager.GetCowCoop());;
+		}
+	}
 	// push所有商店至商店陣列
 	sms.push_back(&plantShopMenu);
 	sms.push_back(&animalShopMenu);
-
-
-	//
-	// 此OnInit動作會接到CGameStaterOver::OnInit()，所以進度還沒到100%
-	//
+	sms.push_back(&foodShopMenu);
 }
 
-//
-// Practice : "KeyDown" sets something to true, otherwise false.
-// 
+void CGameStateRun::OnMove()							// 移動遊戲元素
+{
+	CShopMenu *sm = &plantShopMenu;
+	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sms, &backpackMenu);
+	mapManager.OnMove();
+	gameDialog.OnMove();
+	plantShopMenu.OnMove();
+	animalShopMenu.OnMove();
+	foodShopMenu.OnMove();
+	for (unsigned i = 0; i < obj.size(); ++i)
+	{
+		if (obj[i] != nullptr)
+		{
+			// 如果有動物死掉，delete掉
+			if (obj[i]->GetHealthPoint() == 0)
+			{
+				if (i >= 1 && i <= 4)
+				{
+					TRACE("\nChicken[%d] is dead.\n", i);
+					delete ((CChicken*)obj[i]);
+					obj[i] = nullptr;
+				}
+				else if (i >= 5 && i <= 8)
+				{
+					TRACE("\nCow[%d] is dead.\n", i);
+					delete ((CCow*)obj[i]);
+					obj[i] = nullptr;
+				}
+			}
+			else
+			{
+				TRACE("\nObj[%d] HP = %d\n", i, obj[i]->GetHealthPoint());
+				obj[i]->OnMove(mapManager.GetCurrentMap(), &obj);
+			}
+		}
+	}
+}
+
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	// 當Game Dialog 正在顯示時Player不可做其他操作
@@ -503,6 +484,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (animalShopMenu.IsEnable())
 	{
 		animalShopMenu.OnKeyDown(nChar);
+	}
+	else if (foodShopMenu.IsEnable())
+	{
+		foodShopMenu.OnKeyDown(nChar);
 	}
 	else
 	{
@@ -575,12 +560,8 @@ void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 {
 }
 
-//
-// Practice : Q : How to do OnMouseNotToMove?
-// 
 void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 {
-	// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
 }
 
 void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
@@ -593,23 +574,15 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	//
-	//  注意：Show裡面千萬不要移動任何物件的座標，移動座標的工作應由Move做才對，
-	//        否則當視窗重新繪圖時(OnDraw)，物件就會移動，看起來會很怪。換個術語
-	//        說，Move負責MVC中的Model，Show負責View，而View不應更動Model。
-	//
-	//
-	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
-	//
 	mapManager.OnShow();
-	c1->OnShow(mapManager.GetCurrentMap());
-	c2->OnShow(mapManager.GetCurrentMap());
-	c3->OnShow(mapManager.GetCurrentMap());
-	c4->OnShow(mapManager.GetCurrentMap());
-	cow1->OnShow(mapManager.GetCurrentMap());
-	cow2->OnShow(mapManager.GetCurrentMap());
-	cow3->OnShow(mapManager.GetCurrentMap());
-	cow4->OnShow(mapManager.GetCurrentMap());
+	// 先Show動物再show玩家
+	for (unsigned i = 1; i < obj.size(); ++i)
+	{
+		if (obj[i] != nullptr)
+		{
+			obj.at(i)->OnShow(mapManager.GetCurrentMap());
+		}
+	}
 	p1.OnShow(mapManager.GetCurrentMap());
 	mapManager.OnShow_Weather();
 	mapManager.OnShow_Timer();
@@ -617,7 +590,7 @@ void CGameStateRun::OnShow()
 	foodMenu.OnShow();
 	plantShopMenu.OnShow();
 	animalShopMenu.OnShow();
+	foodShopMenu.OnShow();
 	gameDialog.OnShow();
-	
 }
 }
