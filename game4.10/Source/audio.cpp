@@ -78,6 +78,7 @@ CAudio::CAudio()
 {
 	const int PIPE_SIZE = 400;
 	isOpened = false;
+	isPlaying = false;
 	// Create a pipe and a thread for MCI commands
 	DWORD dwThreadID;
 	HANDLE hReadEnd; 
@@ -206,6 +207,7 @@ void CAudio::Close()
 			SendMciCommand(command);
 		}
 	}
+	isPlaying = false;
 }
 
 CAudio *CAudio::Instance()
@@ -290,6 +292,7 @@ void CAudio::Pause()
 			SendMciCommand(command);
 		}
 	}
+	isPlaying = false;
 }
 
 void CAudio::Play(unsigned id, bool repeat_flag)
@@ -308,6 +311,7 @@ void CAudio::Play(unsigned id, bool repeat_flag)
 	else
 		sprintf(command, "play device%d from 0", id);
 	SendMciCommand(command);
+	isPlaying = true;
 }
 
 void CAudio::SetPowerResume()
@@ -326,6 +330,7 @@ void CAudio::Resume()
 		sprintf(command, "resume device%d", i->first);
 		SendMciCommand(command);
 	}
+	isPlaying = true;
 }
 
 void CAudio::Stop(unsigned id)
@@ -338,6 +343,7 @@ void CAudio::Stop(unsigned id)
 		sprintf(command, "stop device%d", id);
 		SendMciCommand(command);
 	}
+	isPlaying = false;
 }
 
 void CAudio::SetVolume(int volume)
@@ -345,6 +351,8 @@ void CAudio::SetVolume(int volume)
 	if (!isOpened)
 		return;
 	this->volume = volume;
+	if (volume == 0) isPlaying = false;
+	else isPlaying = true;
 	for (unsigned id = 0; id < info.size(); ++id)
 	{
 		if (info[id].isGood)
@@ -371,6 +379,7 @@ void CAudio::IncreaseVolume()
 			SendMciCommand(command);
 		}
 	}
+	isPlaying = true;
 }
 
 void CAudio::DecreaseVolume()
@@ -378,6 +387,8 @@ void CAudio::DecreaseVolume()
 	if (!isOpened)
 		return;
 	if (volume > 0) volume -= 100;
+	if (volume == 0) isPlaying = false;
+	else isPlaying = true;
 	for (unsigned id = 0; id < info.size(); ++id)
 	{
 		if (info[id].isGood)
@@ -389,11 +400,14 @@ void CAudio::DecreaseVolume()
 	}
 }
 
-
-
 int CAudio::GetVolume() const
 {
 	return volume;
+}
+
+bool CAudio::IsPlaying() const
+{
+	return isPlaying;
 }
 
 }

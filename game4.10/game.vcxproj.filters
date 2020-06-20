@@ -223,6 +223,9 @@
     <ClCompile Include="Source\CClinicMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CSettingPage.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -368,6 +371,9 @@
     </ClInclude>
     <ClInclude Include="Source\CClinicMenu.h">
       <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CSettingPage.h">
+      <Filter>MFC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -2282,6 +2288,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="RES\GameUI\GameOver\MissionComplete.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Audio.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Quit.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Resume.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

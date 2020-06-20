@@ -284,6 +284,7 @@
     <ClCompile Include="Source\CMapSleepEvent.cpp" />
     <ClCompile Include="Source\CMapTransitionEvent.cpp" />
     <ClCompile Include="Source\CPlantShopMenu.cpp" />
+    <ClCompile Include="Source\CSettingPage.cpp" />
     <ClCompile Include="Source\CTimer.cpp" />
     <ClCompile Include="Source\CTool.cpp" />
     <ClCompile Include="Source\CToolAxe.cpp" />
@@ -366,6 +367,7 @@
     <ClInclude Include="Source\CMapSleepEvent.h" />
     <ClInclude Include="Source\CMapTransitionEvent.h" />
     <ClInclude Include="Source\CPlantShopMenu.h" />
+    <ClInclude Include="Source\CSettingPage.h" />
     <ClInclude Include="Source\CTimer.h" />
     <ClInclude Include="Source\CTool.h" />
     <ClInclude Include="Source\CToolAxe.h" />
@@ -531,6 +533,9 @@
     <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAbout.bmp" />
     <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnAudio.bmp" />
     <Image Include="RES\GameUI\MainMenu\MainPage\MainPage_OnStart.bmp" />
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Audio.bmp" />
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Quit.bmp" />
+    <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Resume.bmp" />
     <Image Include="res\GameUI\Texts\Loading_01.bmp" />
     <Image Include="RES\GameUI\Texts\Loading_01_ani01.bmp" />
     <Image Include="RES\GameUI\Texts\Loading_01_ani02.bmp" />

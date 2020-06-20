@@ -94,6 +94,7 @@ public:
 	void           IncreaseVolume();            // 全體音量增加，統一
 	void           DecreaseVolume();            // 全體音量增加，統一
 	int            GetVolume() const;
+	bool           IsPlaying() const;
 private:
 	class Info {
 	public:
@@ -114,6 +115,8 @@ private:
 	HANDLE				hWriteEnd;	// Pipe write handle for thread
 	const static int	MAX_MCI_COMMAND_SIZE = 400;
 	static int          volume;      // 統一音量
+	bool                isPlaying;    // 是否正在播放
+
 };
 
 }

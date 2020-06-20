@@ -1228,43 +1228,49 @@ IDB_FoodShop16          BITMAP                  "..\\RES\\Shops\\FoodShop\\Part\
 
 IDB_FoodShop17          BITMAP                  "..\\RES\\Shops\\FoodShop\\Part\\FoodShop17.bmp"
 
-IDB_ClinicBG            BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\Clinic\\ShopDialogBackground.bmp"
+IDB_ClinicBG            BITMAP                  "..\\RES\\Shops\\Clinic\\ShopDialogBackground.bmp"
 
-IDB_FoodShopBG          BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\FoodShop\\ShopDialogBackground.bmp"
+IDB_FoodShopBG          BITMAP                  "..\\RES\\Shops\\FoodShop\\ShopDialogBackground.bmp"
 
-IDB_MainPage_OnAbout    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAbout.bmp"
+IDB_MainPage_OnAbout    BITMAP                  "..\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAbout.bmp"
 
-IDB_MainPage_OnAudio    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAudio.bmp"
+IDB_MainPage_OnAudio    BITMAP                  "..\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnAudio.bmp"
 
-IDB_MainPage_OnStart    BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnStart.bmp"
+IDB_MainPage_OnStart    BITMAP                  "..\\RES\\GameUI\\MainMenu\\MainPage\\MainPage_OnStart.bmp"
 
-IDB_Audio_Off_Back      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_back.bmp"
+IDB_Audio_Off_Back      BITMAP                  "..\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_back.bmp"
 
-IDB_Audio_Off_On        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_on.bmp"
+IDB_Audio_Off_On        BITMAP                  "..\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_off_on.bmp"
 
-IDB_Audio_On_Back       BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_back.bmp"
+IDB_Audio_On_Back       BITMAP                  "..\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_back.bmp"
 
-IDB_Audio_On_On         BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_on.bmp"
+IDB_Audio_On_On         BITMAP                  "..\\RES\\GameUI\\MainMenu\\AudioPage\\Audio_on_on.bmp"
 
-IDB_NoticeBoard_ArrowDown BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowDown.bmp"
+IDB_NoticeBoard_ArrowDown BITMAP                  "..\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowDown.bmp"
 
-IDB_NoticeBoard_ArrowUp BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowUp.bmp"
+IDB_NoticeBoard_ArrowUp BITMAP                  "..\\RES\\NewMaterial\\Terrain\\NoticeBoard_ArrowUp.bmp"
 
-IDB_PlantCropBox01      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox01.bmp"
+IDB_PlantCropBox01      BITMAP                  "..\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox01.bmp"
 
-IDB_PlantCropBox02      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox02.bmp"
+IDB_PlantCropBox02      BITMAP                  "..\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox02.bmp"
 
-IDB_PlantCropBox03      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox03.bmp"
+IDB_PlantCropBox03      BITMAP                  "..\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox03.bmp"
 
-IDB_PlantCropBox04      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox04.bmp"
+IDB_PlantCropBox04      BITMAP                  "..\\RES\\NewMaterial\\PlantCropBoxes\\PlantCropBox04.bmp"
 
-IDB_PurpleFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\PurpleFlower.bmp"
+IDB_PurpleFlower        BITMAP                  "..\\RES\\NewMaterial\\Terrain\\PurpleFlower.bmp"
 
-IDB_YellowFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\YelloFlower.bmp"
+IDB_YellowFlower        BITMAP                  "..\\RES\\NewMaterial\\Terrain\\YelloFlower.bmp"
 
-IDB_HP_Up               BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\Clinic\\goods\\HP_Up.bmp"
+IDB_HP_Up               BITMAP                  "..\\RES\\Shops\\Clinic\\goods\\HP_Up.bmp"
 
-IDB_UI_MissionComplete  BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\GameOver\\MissionComplete.bmp"
+IDB_UI_MissionComplete  BITMAP                  "..\\RES\\GameUI\\GameOver\\MissionComplete.bmp"
+
+IDB_Settings_Audio      BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\Settings\\SettingsPage\\Settings_Audio.bmp"
+
+IDB_Settings_Quit       BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\Settings\\SettingsPage\\Settings_Quit.bmp"
+
+IDB_Settings_Resume     BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\GameUI\\Settings\\SettingsPage\\Settings_Resume.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

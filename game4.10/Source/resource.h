@@ -715,6 +715,10 @@
 #define IDB_HP_Up                       864
 #define IDB_BITMAP42                    865
 #define IDB_UI_MissionComplete          865
+#define IDB_Settings_Audio              866
+#define IDB_Settings_Quit               867
+#define IDB_BITMAP47                    868
+#define IDB_Settings_Resume             868
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -727,7 +731,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        866
+#define _APS_NEXT_RESOURCE_VALUE        869
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

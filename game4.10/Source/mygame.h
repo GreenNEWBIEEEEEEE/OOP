@@ -52,6 +52,7 @@
 #include "CAnimalShopMenu.h"
 #include "CFoodShopMenu.h"
 #include "CClinicMenu.h"
+#include "CSettingPage.h"
 
 namespace game_framework {
 ////
@@ -150,7 +151,8 @@ namespace game_framework {
 		// 
 		CTimer timer;
 		CPlayer p1; // 玩家1
-		
+		bool quitFromSettingPage = false;
+		CSettingPage settingPage;
 		CMapManager mapManager;
 		CGameDialog gameDialog;
 		CBackpackMenu backpackMenu;

@@ -364,6 +364,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	ShowInitProgress(33);
 	Sleep(300);
+	settingPage.LoadBitmap();
 	backpackMenu.SetBackpack(p1.GetBackpack());
 	backpackMenu.SetTimer(&timer);
 	mapManager.SetTimer(&timer);
@@ -414,39 +415,44 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
-	CShopMenu *sm = &plantShopMenu;
-	timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sms, &backpackMenu);
-	mapManager.OnMove();
-	gameDialog.OnMove();
-	plantShopMenu.OnMove();
-	animalShopMenu.OnMove();
-	foodShopMenu.OnMove();
-	clinic.OnMove();
-	p1.OnMove(mapManager.GetCurrentMap(), &obj);
-	for (unsigned i = 1; i < obj.size(); ++i)
+	settingPage.OnMove(quitFromSettingPage);
+	// 如果設定頁面正在跑，其他所有遊戲中物件不可更新
+	if (!settingPage.IsEnable())
 	{
-		if (obj[i] != nullptr)
+		CShopMenu *sm = &plantShopMenu;
+		timer.OnMove(mapManager.GetOutsideWeather(), &timer, &p1, &mapManager, &gameDialog, sms, &backpackMenu);
+		mapManager.OnMove();
+		gameDialog.OnMove();
+		plantShopMenu.OnMove();
+		animalShopMenu.OnMove();
+		foodShopMenu.OnMove();
+		clinic.OnMove();
+		p1.OnMove(mapManager.GetCurrentMap(), &obj);
+		for (unsigned i = 1; i < obj.size(); ++i)
 		{
-			// 如果有動物死掉，delete掉
-			if (obj[i]->GetHealthPoint() == 0)
+			if (obj[i] != nullptr)
 			{
-				if (i >= 1 && i <= 4)
+				// 如果有動物死掉，delete掉
+				if (obj[i]->GetHealthPoint() == 0)
 				{
-					TRACE("\nChicken[%d] is dead.\n", i);
-					delete ((CChicken*)obj[i]);
-					obj[i] = nullptr;
+					if (i >= 1 && i <= 4)
+					{
+						TRACE("\nChicken[%d] is dead.\n", i);
+						delete ((CChicken*)obj[i]);
+						obj[i] = nullptr;
+					}
+					else if (i >= 5 && i <= 8)
+					{
+						TRACE("\nCow[%d] is dead.\n", i);
+						delete ((CCow*)obj[i]);
+						obj[i] = nullptr;
+					}
 				}
-				else if (i >= 5 && i <= 8)
+				else
 				{
-					TRACE("\nCow[%d] is dead.\n", i);
-					delete ((CCow*)obj[i]);
-					obj[i] = nullptr;
+					TRACE("\nObj[%d] HP = %d\n", i, obj[i]->GetHealthPoint());
+					obj[i]->OnMove(mapManager.GetCurrentMap(), &obj);
 				}
-			}
-			else
-			{
-				TRACE("\nObj[%d] HP = %d\n", i, obj[i]->GetHealthPoint());
-				obj[i]->OnMove(mapManager.GetCurrentMap(), &obj);
 			}
 		}
 	}
@@ -454,8 +460,10 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
+
 	// 當Game Dialog 正在顯示時Player不可做其他操作
-	if (gameDialog.IsEnable()) {
+	if (settingPage.IsEnable()) settingPage.OnKeyDown(nChar);
+	else if (gameDialog.IsEnable()) {
 		gameDialog.OnKeyDown(nChar);
 	}
 	else if (backpackMenu.IsEnable()) {
@@ -488,9 +496,14 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
 		const char KEY_S = 0x53; // keyboard S
+		const char KEY_ESC = 27;
 
 		timer.OnKeyDown(nChar);
-
+		
+		if (nChar == KEY_ESC)
+		{
+			settingPage.Enable();
+		}
 		if (nChar == KEY_LEFT)
 		{
 			p1.SetMovingLeft(true);
@@ -514,6 +527,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 			backpackMenu.SetMoneyField(p1.GetMoney());
 			backpackMenu.SetHPField(p1.GetHealthPoint());
 		}
+		
 	}
 }
 
@@ -565,29 +579,37 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	mapManager.OnShow();
-	// 先Show動物再show玩家
-	for (unsigned i = 1; i < obj.size(); ++i)
+	if (settingPage.IsEnable())
 	{
-		if (obj[i] != nullptr)
-		{
-			obj.at(i)->OnShow(mapManager.GetCurrentMap());
-		}
+		settingPage.OnShow();
 	}
-	p1.OnShow(mapManager.GetCurrentMap());
-	mapManager.OnShow_Weather();
-	mapManager.OnShow_Timer();
-	backpackMenu.OnShow();
-	foodMenu.OnShow();
-	plantShopMenu.OnShow();
-	animalShopMenu.OnShow();
-	foodShopMenu.OnShow();
-	clinic.OnShow();
-	gameDialog.OnShow();
-
+	else
+	{
+		mapManager.OnShow();
+		// 先Show動物再show玩家
+		for (unsigned i = 1; i < obj.size(); ++i)
+		{
+			if (obj[i] != nullptr)
+			{
+				obj.at(i)->OnShow(mapManager.GetCurrentMap());
+			}
+		}
+		p1.OnShow(mapManager.GetCurrentMap());
+		mapManager.OnShow_Weather();
+		mapManager.OnShow_Timer();
+		backpackMenu.OnShow();
+		foodMenu.OnShow();
+		plantShopMenu.OnShow();
+		animalShopMenu.OnShow();
+		foodShopMenu.OnShow();
+		clinic.OnShow();
+		gameDialog.OnShow();
+	}
+	
+	// 可能不是很好的寫法，權責不在OnShow
 	// 在這裡轉換直接銜接GameStateOver不會閃爍
-	// 遊戲目標：賺到10000元後結束
-	if (p1.GetMoney() >= 10000)
+	// 遊戲目標：賺到10000元後結束 or 在設定頁面按下quit game
+	if (p1.GetMoney() >= 10000 || quitFromSettingPage)
 	{
 		// 跳到game over狀態
 		GotoGameState(GAME_STATE_OVER);
