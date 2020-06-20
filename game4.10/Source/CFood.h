@@ -1,4 +1,5 @@
 #pragma once
+#include "CPlayer.h"
 namespace game_framework
 {
 
@@ -10,7 +11,10 @@ namespace game_framework
 		bool IsEnable() const;
 		void LoadBitmap();
 		void ShowIcon(int x, int y);
+		string GetName() const;
 		string GetInfo() const;
+		string GetDescribe() const;
+		string GetWholeDescribe() const;
 		int GetFoodID() const;
 		int GetNumber() const;
 		virtual void Execute(CPlayer* p) = 0;
@@ -22,6 +26,7 @@ namespace game_framework
 	protected:
 		int foodID;
 		string foodName;
+		string describe;
 		int number;
 		CMovingBitmap appleJuice;
 		CMovingBitmap orangeJuice;

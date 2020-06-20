@@ -21,7 +21,10 @@ namespace game_framework
 
 	void CFoodCake::Execute(CPlayer* p)
 	{
-		p->GetFood()->at(1)->DecreaseNumber(1);
-		p->IncreaseHP(15);
+		if (p->GetHealthPoint() != 100)
+		{
+			p->GetFood()->at(1)->DecreaseNumber(1);
+			p->IncreaseHP(10);
+		}
 	}
 }

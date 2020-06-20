@@ -18,26 +18,32 @@ namespace game_framework {
 		case 0:			// appleJuice
 			icon = &appleJuice;
 			foodName = "AppleJuice";
+			describe = "+ 15 HP";
 			break;
 		case 1:			// cake
 			icon = &cake;
 			foodName = "Cake";
+			describe = "+ 10 HP";
 			break;
 		case 2:			// drinkBox
 			icon = &drinkBox;
 			foodName = "DrinkBox";
+			describe = "+ 20 HP";
 			break;
 		case 3:			// lunchBox
 			icon = &lunchBox;
 			foodName = "LunchBox";
+			describe = "+ 25 HP";
 			break;
 		case 4:			// meal
 			icon = &meal;
 			foodName = "Meal";
+			describe = "+ 20 HP";
 			break;
 		case 5:			// orangeJuice
 			icon = &orangeJuice;
 			foodName = "OrangeJuice";
+			describe = "+ 15 HP";
 			break;
 		default:
 			break;
@@ -80,9 +86,24 @@ namespace game_framework {
 		icon->ShowBitmap();
 	}
 
+	string CFood::GetName() const
+	{
+		return foodName;
+	}
+
 	string CFood::GetInfo() const
 	{
 		return foodName + "  *" + to_string(number);
+	}
+
+	string CFood::GetDescribe() const
+	{
+		return describe;
+	}
+
+	string CFood::GetWholeDescribe() const
+	{
+		return foodName + " " + describe;
 	}
 
 	void CFood::IncreaseNumber(int number)

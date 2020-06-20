@@ -3,6 +3,7 @@
 #include <mmsystem.h>
 #include <ddraw.h>
 #include "gamelib.h"
+#include "CFood.h"
 #include "CFoodShopMenu.h"
 
 namespace game_framework
@@ -42,12 +43,12 @@ namespace game_framework
 		background.LoadBitmap(IDB_FoodShopBG);
 		background.SetTopLeft(0, 0);
 
-		good_AppleJuice.LoadBitmap(IDB_AppleJuice);
-		good_Cake.LoadBitmap(IDB_Cake);
-		good_DrinkBox.LoadBitmap(IDB_DrinkBox);
-		good_LunchBox.LoadBitmap(IDB_LunchBox);
-		good_Meal.LoadBitmap(IDB_Meal);
-		good_OrangeJuice.LoadBitmap(IDB_OrangeJuice);
+		good_AppleJuice.LoadBitmap(IDB_AppleJuice, RGB(255,255,255));
+		good_Cake.LoadBitmap(IDB_Cake, RGB(255, 255, 255));
+		good_DrinkBox.LoadBitmap(IDB_DrinkBox, RGB(255, 255, 255));
+		good_LunchBox.LoadBitmap(IDB_LunchBox, RGB(255, 255, 255));
+		good_Meal.LoadBitmap(IDB_Meal, RGB(255, 255, 255));
+		good_OrangeJuice.LoadBitmap(IDB_OrangeJuice, RGB(255, 255, 255));
 	}
 
 	void CFoodShopMenu::OnKeyDown(UINT key)
@@ -60,12 +61,12 @@ namespace game_framework
 		const char KEY_A = 0x41; // keyboard A 購買
 		if (key == KEY_LEFT)
 		{
-			if (goodSelector == 0) goodSelector = 1;
+			if (goodSelector == 0) goodSelector = 5;
 			else goodSelector--;
 		}
 		else if (key == KEY_RIGHT)
 		{
-			if (goodSelector == 1) goodSelector = 0;
+			if (goodSelector == 5) goodSelector = 0;
 			else goodSelector++;
 		}
 		// Leave
@@ -89,6 +90,22 @@ namespace game_framework
 				{
 					// 
 				case 0:
+					processBuyingFood(15, 0);
+					break;
+				case 1:
+					processBuyingFood(10, 1);
+					break;
+				case 2:
+					processBuyingFood(20, 2);
+					break;
+				case 3:
+					processBuyingFood(25, 3);
+					break;
+				case 4:
+					processBuyingFood(20, 4);
+					break;
+				case 5:
+					processBuyingFood(15, 5);
 					break;
 				default:
 					break;
@@ -103,7 +120,18 @@ namespace game_framework
 
 	void CFoodShopMenu::OnMove()
 	{
-
+		if (goodSelector % 3 == 0)
+		{
+			selector.SetTopLeft(120, 230);
+		}
+		else if (goodSelector % 3 == 1)
+		{
+			selector.SetTopLeft(240, 230);
+		}
+		else if (goodSelector % 3 == 2)
+		{
+			selector.SetTopLeft(360, 230);
+		}
 	}
 
 	void CFoodShopMenu::OnShow()
@@ -113,6 +141,26 @@ namespace game_framework
 			blackBG.ShowBitmap();
 			background.ShowBitmap();
 
+			// Show goods & infos
+			if (goodSelector < 3)
+			{
+				goods[0]->SetTopLeft(120, 230);
+				goods[0]->ShowBitmap();
+				goods[1]->SetTopLeft(240, 230);
+				goods[1]->ShowBitmap();
+				goods[2]->SetTopLeft(360, 230);
+				goods[2]->ShowBitmap();
+			}
+			else
+			{
+				goods[3]->SetTopLeft(120, 230);
+				goods[3]->ShowBitmap();
+				goods[4]->SetTopLeft(240, 230);
+				goods[4]->ShowBitmap();
+				goods[5]->SetTopLeft(360, 230);
+				goods[5]->ShowBitmap();
+			}
+
 			if (enable_infoboard)
 			{
 				selector.ShowBitmap();
@@ -120,8 +168,28 @@ namespace game_framework
 				switch (goodSelector)
 				{
 				case 0:
+					DrawTexts("Apple Juice (+ 15 HP)", 40, 370, 160);
+					DrawTexts("Price : $15", 40, 400, 160);
 					break;
 				case 1:
+					DrawTexts("Cake (+ 10 HP)", 40, 370, 160);
+					DrawTexts("Price : $10", 40, 400, 160);
+					break;
+				case 2:
+					DrawTexts("DrinkBox (+ 20 HP)", 40, 370, 160);
+					DrawTexts("Price : $20", 40, 400, 160);
+					break;
+				case 3:
+					DrawTexts("LunchBox (+ 25 HP)", 40, 370, 160);
+					DrawTexts("Price : $25", 40, 400, 160);
+					break;
+				case 4:
+					DrawTexts("Meal (+ 20 HP)", 40, 370, 160);
+					DrawTexts("Price : $20", 40, 400, 160);
+					break;
+				case 5:
+					DrawTexts("Orange Juice (+ 15 HP)", 40, 370, 160);
+					DrawTexts("Price : $15", 40, 400, 160);
 					break;
 				default:
 					break;
@@ -129,6 +197,39 @@ namespace game_framework
 				DrawTexts("[A] Buy [D] Quit", 400, 430, 140);
 			}
 
+		}
+	}
+
+	void CFoodShopMenu::processBuyingFood(int price, int foodPosition)
+	{
+		if (player->GetMoney() >= price)
+		{
+			// 交錢&交貨
+			player->DecreaseMoney(price);
+			player->GetFood()->at(foodPosition)->IncreaseNumber(1);
+
+			// turn off the info board
+			this->enable_infoboard = false;
+
+			// show information after buying
+			CString food_name;
+			food_name.Format("You bought a %s.",
+				player->GetFood()->at(foodPosition)->GetName().c_str());
+			gd->AddMessage((LPCTSTR)food_name);
+
+			// show the current money of player
+			CString nowMoney_str = "";
+			nowMoney_str.Format("You now have $ %d left.", player->GetMoney());
+			gd->AddMessage((LPCTSTR)nowMoney_str);
+
+			// Re-enable the information board
+			gd->SetCallback(&FSM_ReEnableInfoBoard_InGD, (CShopMenu*)this);
+			gd->Enable();
+		}
+		else
+		{
+			gd->AddMessage("You don't have enough money.");
+			gd->Enable();
 		}
 	}
 

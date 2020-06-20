@@ -3,6 +3,7 @@
 
 namespace game_framework
 {
+
 	class CFoodShopMenu : public CShopMenu
 	{
 	public:
@@ -20,6 +21,10 @@ namespace game_framework
 		CMovingBitmap good_Meal;
 		CMovingBitmap good_OrangeJuice;
 		vector<CMovingBitmap*> goods;
+		const int PRICE[6] = {10,12,13,4,5,6};
+
+	private:
+		void processBuyingFood(int price, int foodPosition);
 	};
 }
 

@@ -177,8 +177,10 @@ namespace game_framework {
 
 			// Third block:
 			// Draw tool information text
-			CString info = (*playerFood)[selectRow * column + selectCol]->GetInfo().c_str();
+			unsigned index = selectRow * column + selectCol;
+			CString info = (*playerFood)[index]->GetInfo().c_str();
 			DrawTexts(info, 50, 380, 160);
+			DrawTexts((*playerFood)[index]->GetDescribe().c_str(), 50, 410, 160);
 			DrawTexts("[A] Eat [D] Quit", 400, 430, 140);
 		}
 

@@ -51,10 +51,6 @@ namespace game_framework
 		good_PotatoSeed.LoadBitmap(IDB_PotatoSeed, RGB(255, 255, 255));
 		good_EggplantSeed.LoadBitmap(IDB_EggplantSeed, RGB(255, 255, 255));
 		good_PeanutSeed.LoadBitmap(IDB_PeanutSeed, RGB(255, 255, 255));
-		
-		//good_RadishSeed.SetTopLeft(120, 230);
-		//good_Seed02.SetTopLeft(240, 230);
-		//good_Seed03.SetTopLeft(360, 230);
 	}
 
 	// Callback functions

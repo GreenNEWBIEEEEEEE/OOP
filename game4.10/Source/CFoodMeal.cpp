@@ -19,7 +19,10 @@ namespace game_framework
 
 	void CFoodMeal::Execute(CPlayer* p)
 	{
-		p->GetFood()->at(4)->DecreaseNumber(1);
-		p->IncreaseHP(15);
+		if (p->GetHealthPoint() != 100)
+		{
+			p->GetFood()->at(4)->DecreaseNumber(1);
+			p->IncreaseHP(20);
+		}
 	}
 }
