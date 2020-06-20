@@ -944,6 +944,7 @@
     <Image Include="res\shops\animalshop\shophouse_morning\bitmap33.bmp" />
     <Image Include="RES\Shops\Backgrounds\PlantShopSelector.bmp" />
     <Image Include="RES\Shops\Backgrounds\ShopMenuBlackBG.bmp" />
+    <Image Include="RES\Shops\Clinic\goods\HP_Up.bmp" />
     <Image Include="RES\Shops\Clinic\part\Clinic01.bmp" />
     <Image Include="RES\Shops\Clinic\part\Clinic02.bmp" />
     <Image Include="RES\Shops\Clinic\part\Clinic03.bmp" />

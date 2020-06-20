@@ -1262,6 +1262,8 @@ IDB_PurpleFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\10
 
 IDB_YellowFlower        BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\NewMaterial\\Terrain\\YelloFlower.bmp"
 
+IDB_HP_Up               BITMAP                  "C:\\Users\\user\\NTUTC\\#CS\\108-2\\OOP-2\\GameDevelop\\Official\\oopcourse822\\game4.10\\RES\\Shops\\Clinic\\goods\\HP_Up.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

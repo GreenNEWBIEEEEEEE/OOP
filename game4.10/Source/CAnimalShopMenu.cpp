@@ -207,7 +207,6 @@ namespace game_framework
 		else
 		{
 			gd->AddMessage("You don't have enough money.");
-			gd->Enable();
 		}
 		gd->SetCallback(&ANSM_ReEnableInfoBoard_InGD, (CShopMenu*)this);
 		gd->Enable();

@@ -79,7 +79,7 @@ namespace game_framework
 		CPlantShopMenu * psm = (CPlantShopMenu*)sms.at(0);
 		CAnimalShopMenu * ansm = (CAnimalShopMenu*)sms.at(1);
 		CFoodShopMenu *fsm = (CFoodShopMenu*)sms.at(2);
-		CClinic *clinic = nullptr;
+		CClinic *clinic = (CClinic*)sms.at(3);
 		
 		switch (eventCode)
 		{
@@ -130,6 +130,23 @@ namespace game_framework
 				gd->SetCallback(&HandleFoodShop, fsm);
 				gd->AddQuestion("Do you want to buy some food?");
 				gd->AddOptionResultMessage("Welcome to this shop.", "Good Bye!");
+				gd->Enable();
+			}
+			break;
+		}
+		case 9:
+		{
+			if (clinic->GetTimer()->GetHour() >= 19)
+			{
+				gd->AddMessage("Closed now!");
+				gd->Enable();
+			}
+			else
+			{
+				clinic->Enable();
+				gd->SetCallback(&HandleClinic, clinic);
+				gd->AddQuestion("Do you want to see a doctor?");
+				gd->AddOptionResultMessage("Welcome to this clinic.", "Good Bye!");
 				gd->Enable();
 			}
 			break;

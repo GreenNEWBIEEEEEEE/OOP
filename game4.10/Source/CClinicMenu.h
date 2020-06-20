@@ -11,5 +11,7 @@ namespace game_framework
 		void LoadBitmap();
 		void OnShow();
 		void OnMove();
+	private:
+		CMovingBitmap hp_up;
 	};
 }

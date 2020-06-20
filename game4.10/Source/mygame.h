@@ -158,6 +158,7 @@ namespace game_framework {
 		CAnimalShopMenu animalShopMenu;
 		CFoodShopMenu foodShopMenu;
 		CFoodMenu foodMenu;
+		CClinic clinic;
 		vector<CShopMenu*> sms; // 商店陣列
 		vector<CGameObject*> obj;    // 用來放人和動物，index 0一定要放人
 	};

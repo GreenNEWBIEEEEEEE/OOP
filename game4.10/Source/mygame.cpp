@@ -336,7 +336,8 @@ CGameStateRun::CGameStateRun(CGame *g)
 	: CGameState(g),
 	plantShopMenu(&p1, &gameDialog, &timer),
 	animalShopMenu(&p1, &gameDialog, &timer, &obj, &mapManager),
-	foodShopMenu(&p1, &gameDialog, &timer)
+	foodShopMenu(&p1, &gameDialog, &timer),
+	clinic(&p1, &gameDialog, &timer)
 {
 	mapManager.AddMap("Scripts/MapInfos/MapE01.txt", true);
 	mapManager.AddMap("Scripts/MapInfos/MapE02.txt", false);
@@ -392,6 +393,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	plantShopMenu.LoadBitmap();
 	animalShopMenu.LoadBitmap();
 	foodShopMenu.LoadBitmap();
+	clinic.LoadBitmap();
 	mapManager.LoadBitmapAll();
 
 	// 記得Push動物&人到活動物件的陣列
@@ -425,6 +427,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	sms.push_back(&plantShopMenu);
 	sms.push_back(&animalShopMenu);
 	sms.push_back(&foodShopMenu);
+	sms.push_back(&clinic);
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
@@ -436,6 +439,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	plantShopMenu.OnMove();
 	animalShopMenu.OnMove();
 	foodShopMenu.OnMove();
+	clinic.OnMove();
 	for (unsigned i = 0; i < obj.size(); ++i)
 	{
 		if (obj[i] != nullptr)
@@ -488,6 +492,10 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	else if (foodShopMenu.IsEnable())
 	{
 		foodShopMenu.OnKeyDown(nChar);
+	}
+	else if (clinic.IsEnable())
+	{
+		clinic.OnKeyDown(nChar);
 	}
 	else
 	{
@@ -591,6 +599,7 @@ void CGameStateRun::OnShow()
 	plantShopMenu.OnShow();
 	animalShopMenu.OnShow();
 	foodShopMenu.OnShow();
+	clinic.OnShow();
 	gameDialog.OnShow();
 }
 }
