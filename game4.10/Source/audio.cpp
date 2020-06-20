@@ -379,7 +379,6 @@ void CAudio::IncreaseVolume()
 			SendMciCommand(command);
 		}
 	}
-	isPlaying = true;
 }
 
 void CAudio::DecreaseVolume()
@@ -387,8 +386,6 @@ void CAudio::DecreaseVolume()
 	if (!isOpened)
 		return;
 	if (volume > 0) volume -= 100;
-	if (volume == 0) isPlaying = false;
-	else isPlaying = true;
 	for (unsigned id = 0; id < info.size(); ++id)
 	{
 		if (info[id].isGood)

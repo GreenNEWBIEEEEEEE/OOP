@@ -194,11 +194,11 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			else
 				audioPageState = OnBack;
 		}
-		else if (nChar == KEY_LEFT)
+		else if (nChar == KEY_LEFT && audioOn)
 		{
 			CAudio::Instance()->DecreaseVolume();
 		}
-		else if (nChar == KEY_RIGHT)
+		else if (nChar == KEY_RIGHT && audioOn)
 		{
 			CAudio::Instance()->IncreaseVolume();
 		}
@@ -460,8 +460,6 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-
-	// 當Game Dialog 正在顯示時Player不可做其他操作
 	if (settingPage.IsEnable()) settingPage.OnKeyDown(nChar);
 	else if (gameDialog.IsEnable()) {
 		gameDialog.OnKeyDown(nChar);

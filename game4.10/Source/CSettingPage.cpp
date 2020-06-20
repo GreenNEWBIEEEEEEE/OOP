@@ -107,11 +107,11 @@ namespace game_framework
 				else
 					audioPageState = OnBack;
 			}
-			else if (key == KEY_LEFT)
+			else if (key == KEY_LEFT && audio_on)
 			{
 				CAudio::Instance()->DecreaseVolume();
 			}
-			else if (key == KEY_RIGHT)
+			else if (key == KEY_RIGHT && audio_on)
 			{
 				CAudio::Instance()->IncreaseVolume();
 			}
