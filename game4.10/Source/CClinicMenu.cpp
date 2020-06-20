@@ -101,7 +101,6 @@ namespace game_framework
 				gd->SetCallback(&Clinic_ReEnableInfoBoard_InGD, (CShopMenu*)this);
 				gd->Enable();
 			}
-			
 		}
 		else
 		{
