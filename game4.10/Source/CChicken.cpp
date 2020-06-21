@@ -32,6 +32,7 @@ namespace game_framework
 
 	void CChicken::Produce()
 	{
+
 		if (timer->IsNewDay())
 		{
 			TRACE("\nTRIGGER EGG\n");
@@ -39,7 +40,42 @@ namespace game_framework
 			bool groove02 = map->GetSpecifiedElementID(3, 4) == -116;
 			bool groove03 = map->GetSpecifiedElementID(4, 4) == -116;
 			bool groove04 = map->GetSpecifiedElementID(5, 4) == -116;
-			if (currentStatus == Status::NoProduce || currentStatus == Status::Produce || currentStatus == Status::HighProduce)
+
+
+			if (currentStatus == Status::Hungry)
+			{
+				if (groove01)
+				{
+					map->SetSpecifiedElementID(2, 4, -109);
+					IncreaseHP(15);
+				}
+				else if (groove02)
+				{
+					map->SetSpecifiedElementID(3, 4, -109);
+					IncreaseHP(15);
+				}
+				else if (groove03)
+				{
+					map->SetSpecifiedElementID(4, 4, -109);
+					IncreaseHP(15);
+				}
+				else if (groove04)
+				{
+					map->SetSpecifiedElementID(5, 4, -109);
+					IncreaseHP(15);
+				}
+				else
+				{
+					DecreaseHP(34);
+					TRACE("\nhP hungry:%d\n", healthPoint);
+				}
+
+				if (healthPoint == 100)
+				{
+					currentStatus = Status::Produce;
+				}
+			}
+			else
 			{
 				int rnd = (rand() % 100);
 				bool highProduce = (rand() % 100) >= 50;  // ª÷³J
@@ -78,37 +114,8 @@ namespace game_framework
 				else
 				{
 					DecreaseHP(34);
+					TRACE("\nhP noproduce:%d\n", healthPoint);
 					currentStatus = Status::Hungry;
-				}
-			}
-			else if (currentStatus == Status::Hungry)
-			{
-				if (groove01)
-				{
-					map->SetSpecifiedElementID(2, 4, -109);
-					IncreaseHP(15);
-				}
-				else if (groove02)
-				{
-					map->SetSpecifiedElementID(3, 4, -109);
-					IncreaseHP(15);
-				}
-				else if (groove03)
-				{
-					map->SetSpecifiedElementID(4, 4, -109);
-					IncreaseHP(15);
-				}
-				else if (groove04)
-				{
-					map->SetSpecifiedElementID(5, 4, -109);
-					IncreaseHP(15);
-				}
-				else
-					DecreaseHP(34);
-
-				if (healthPoint == 100)
-				{
-					currentStatus = Status::Produce;
 				}
 			}
 

@@ -22,6 +22,7 @@ namespace game_framework {
 
 	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms, CBackpackMenu *bpm)
 	{
+		//TRACE("\nHOUR=%d  Counter=%d\n", hour, hourCounter);
 		CountTime();
 		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)	// ¤Ó±ß¡A±j¨î»ºªð
 		{

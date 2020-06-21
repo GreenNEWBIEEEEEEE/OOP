@@ -138,7 +138,10 @@ namespace game_framework {
 
 				if (healthPoint == 100)
 				{
-					currentStatus = Status::Produce;
+					if (closePoint >= 10)
+						currentStatus = Status::HighProduce;
+					else
+						currentStatus = Status::Produce;
 				}
 			}
 
