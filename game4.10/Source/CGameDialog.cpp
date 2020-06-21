@@ -18,6 +18,7 @@ namespace game_framework {
 		done = true;
 		isOnQuestion = false;
 		currentOptionResult = DialogOptionsResult::Yes;
+		allDone = false;
 	}
 
 	CGameDialog::~CGameDialog() {
@@ -186,6 +187,7 @@ namespace game_framework {
 				if (allDone) // 如果所有messages中的訊息都已顯示完畢，則結束對話框
 				{
 					TRACE("\nallDone=%d\n", allDone);
+					TRACE("\n TRIGGERRRRRRRRRrr \n");
 					Disable();
 				}
 				else // 跳到下一個message

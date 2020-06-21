@@ -13,7 +13,7 @@ namespace game_framework {
 		int year = 2020;	
 		int month = 1;
 		int day = 1;
-		int hour = 23;
+		int hour = 8;
 		enum class Brightness {
 			Morning,
 			Dusk,

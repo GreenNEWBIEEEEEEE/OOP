@@ -66,6 +66,7 @@ namespace game_framework {
 	void CTimer::ForceToRepatriate(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CMapSleepEvent* toHome = new CMapSleepEvent(30001); // 時間太晚，強制睡眠
+		hourCounter = 0;				// 改時間，避免在對話的過程，現在時間=觸發的時間，會無限觸發
 		toHome->Execute(p, mm, gd, sms);
 		delete toHome;
 	}
@@ -73,6 +74,7 @@ namespace game_framework {
 	void CTimer::ForceToRest(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms)
 	{
 		CMapSleepEvent* toHome = new CMapSleepEvent(30002); // 淋太多雨，強制睡眠
+		hourCounter = 0;
 		toHome->Execute(p, mm, gd, sms);
 		delete toHome;
 	}

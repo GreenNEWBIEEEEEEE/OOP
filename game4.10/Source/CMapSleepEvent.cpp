@@ -63,7 +63,7 @@ namespace game_framework
 			{
 				(sms.at(i))->Disable();
 			}
-			//gd->SetCallback(&ChangeMapToHome, mm, p);
+			gd->SetCallback(&ChangeMapToHome, mm, p);
 			gd->SetCallback(&ChangeToNewDay2, mm->GetTimer(), mm->GetOutsideWeather());
 			gd->AddMessage("Now it's 12:00 a.m.");
 			gd->AddMessage("We have to force you to go home.");
