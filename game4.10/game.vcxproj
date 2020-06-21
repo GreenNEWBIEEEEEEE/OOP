@@ -274,7 +274,7 @@
     <ClCompile Include="Source\CGameDialog.cpp" />
     <ClCompile Include="Source\CGameMap.cpp" />
     <ClCompile Include="Source\CGameObject.cpp" />
-    <ClCompile Include="Source\CClinicMenu.cpp" />
+    <ClCompile Include="Source\CClinic.cpp" />
     <ClCompile Include="Source\CMapEvent.cpp" />
     <ClCompile Include="Source\CMapFarmingEvent.cpp" />
     <ClCompile Include="Source\CMapInfo.cpp" />
@@ -357,7 +357,7 @@
     <ClInclude Include="Source\CGameDialog.h" />
     <ClInclude Include="Source\CGameMap.h" />
     <ClInclude Include="Source\CGameObject.h" />
-    <ClInclude Include="Source\CClinicMenu.h" />
+    <ClInclude Include="Source\CClinic.h" />
     <ClInclude Include="Source\CMapEvent.h" />
     <ClInclude Include="Source\CMapFarmingEvent.h" />
     <ClInclude Include="Source\CMapInfo.h" />

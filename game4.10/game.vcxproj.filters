@@ -220,10 +220,10 @@
     <ClCompile Include="Source\CFoodShopMenu.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CClinicMenu.cpp">
+    <ClCompile Include="Source\CSettingPage.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CSettingPage.cpp">
+    <ClCompile Include="Source\CClinic.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -369,11 +369,11 @@
     <ClInclude Include="Source\CFoodShopMenu.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CClinicMenu.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CSettingPage.h">
       <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CClinic.h">
+      <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

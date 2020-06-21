@@ -14,7 +14,7 @@
 #include "CPlantShopMenu.h"
 #include "CAnimalShopMenu.h"
 #include "CFoodShopMenu.h"
-#include "CClinicMenu.h"
+#include "CClinic.h"
 
 namespace game_framework
 {
