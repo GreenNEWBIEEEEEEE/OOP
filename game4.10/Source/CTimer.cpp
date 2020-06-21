@@ -36,7 +36,7 @@ namespace game_framework {
 		}
 		if (hour == 8 && hourCounter == 3)				// 生病，強制睡眠
 		{												// 觸發時間和颱風觸發時間不同，如果相同會有bug
-			if (p->GetSickPoint() > 200)
+			if (p->GetSickPoint() > 2800)
 			{
 				gd->Disable();
 				((CPlantShopMenu*)sms.at(0))->Disable();
