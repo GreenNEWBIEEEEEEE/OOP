@@ -68,7 +68,7 @@ namespace game_framework
 	void CMapFarmingEvent::Weed(CPlayer *p, CMapManager *mm, CGameDialog *gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;
@@ -107,7 +107,7 @@ namespace game_framework
 	void CMapFarmingEvent::CutTrunk(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;
@@ -161,7 +161,7 @@ namespace game_framework
 		// e6 e7 e8
 
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得全部9格的格座標
 		int ex[9] = 
@@ -241,7 +241,7 @@ namespace game_framework
 	void CMapFarmingEvent::Water(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;
@@ -323,7 +323,7 @@ namespace game_framework
 	void CMapFarmingEvent::Harvest(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;
@@ -374,7 +374,7 @@ namespace game_framework
 	void CMapFarmingEvent::BreakStone(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;
@@ -411,7 +411,7 @@ namespace game_framework
 	void CMapFarmingEvent::Hoeing(CPlayer * p, CMapManager * mm, CGameDialog * gd)
 	{
 		// 取得player現在站的格座標
-		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 60) / 53;
+		int pgx = (p->GetBodyX() + 30) / 64, pgy = (p->GetBodyY() + 70) / 53;
 
 		// 取得player面向的事件作用格的格座標
 		int ex = pgx, ey = pgy;

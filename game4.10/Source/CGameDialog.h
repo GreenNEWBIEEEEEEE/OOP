@@ -27,7 +27,7 @@ namespace game_framework {
 		void SetCallback(Callback cbp);
 		void SetCallback(CallbackWithResult cbp);
 		void SetCallback(CallbackWithResultForShopMenu cbp, CShopMenu* sm);
-		void SetCallback(CallbackForChangeToNewDay cbp, CTimer* timer, CWeather* weather);
+		void SetCallback(CallbackForChangeToNewDay cbp, CTimer* timer, CWeather* weather);	
 		void SetCallback(CallbackForTransitionMap cbp, CMapManager* mm, CPlayer* p);
 		void Enable();
 		void Disable();
