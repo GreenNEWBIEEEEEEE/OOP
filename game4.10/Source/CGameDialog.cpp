@@ -152,53 +152,58 @@ namespace game_framework {
 		// 如果現在這則message是一個question, 則不能馬上按掉, 必須等待顯示完畢,並做出選擇
 		// 按了SPACE 可以顯示下一個訊息了
 
-		if (isOnQuestion)
+		if (enable)
 		{
-			if (done)
+			if (isOnQuestion)
 			{
-				switch (key)
+				if (done)
 				{
-					// 方向鍵左右選擇
-				case KEY_LEFT:
-					currentOptionResult = DialogOptionsResult::Yes;
-					break;
-				case KEY_RIGHT:
-					currentOptionResult = DialogOptionsResult::No;
-					break;
-					// 空白鍵選定
-				case KEY_SPACE:
-					// 解除question狀態
-					// 跳到下一個message
-					isOnQuestion = false;
-					done = false;
-					canContinue = true;
-					msgSelector++;
-					ss = 0;
-					break;
-				default:
-					break;
+					switch (key)
+					{
+						// 方向鍵左右選擇
+					case KEY_LEFT:
+						currentOptionResult = DialogOptionsResult::Yes;
+						break;
+					case KEY_RIGHT:
+						currentOptionResult = DialogOptionsResult::No;
+						break;
+						// 空白鍵選定
+					case KEY_SPACE:
+						// 解除question狀態
+						// 跳到下一個message
+						isOnQuestion = false;
+						done = false;
+						canContinue = true;
+						msgSelector++;
+						ss = 0;
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			else
+			{
+				if (key == KEY_SPACE)
+				{
+					if (allDone) // 如果所有messages中的訊息都已顯示完畢，則結束對話框
+					{
+						TRACE("\nallDone=%d\n", allDone);
+						TRACE("\n TRIGGERRRRRRRRRrr \n");
+						Disable();
+					}
+					else // 跳到下一個message
+					{
+						done = false;
+						canContinue = true;
+						msgSelector++;
+						ss = 0;
+					}
 				}
 			}
 		}
-		else
-		{
-			if (key == KEY_SPACE)
-			{
-				if (allDone) // 如果所有messages中的訊息都已顯示完畢，則結束對話框
-				{
-					TRACE("\nallDone=%d\n", allDone);
-					TRACE("\n TRIGGERRRRRRRRRrr \n");
-					Disable();
-				}
-				else // 跳到下一個message
-				{
-					done = false;
-					canContinue = true;
-					msgSelector++;	
-					ss = 0;
-				}
-			}
-		}
+
+		
 		
 	}
 
