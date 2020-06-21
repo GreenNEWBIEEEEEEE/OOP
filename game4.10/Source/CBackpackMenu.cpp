@@ -108,6 +108,12 @@ namespace game_framework {
 		}
 	}
 
+	void CBackpackMenu::OnMove(CPlayer * p)
+	{
+		HPField = p->GetHealthPoint();
+		moneyField = p->GetMoney();
+	}
+
 	
 
 	void CBackpackMenu::OnShow()

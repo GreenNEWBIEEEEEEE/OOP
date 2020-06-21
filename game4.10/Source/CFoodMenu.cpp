@@ -99,6 +99,11 @@ namespace game_framework {
 		}
 	}
 
+	void CFoodMenu::OnMove(CPlayer * p)
+	{
+		HPField = p->GetHealthPoint();
+	}
+
 
 
 	void CFoodMenu::OnShow()

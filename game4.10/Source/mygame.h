@@ -85,6 +85,7 @@ namespace game_framework {
 			OnCover,
 			OnMainMenu,
 			OnAudioSettingPage,
+			OnAboutPages,
 		};
 		// 主選單選擇狀態
 		enum MainMenuSelectionState
@@ -117,6 +118,9 @@ namespace game_framework {
 		CMovingBitmap *audioPage = nullptr;
 		AudioPageSelectionState audioPageState = AudioPageSelectionState::OnSwitch;
 		bool audioOn;
+		// About pages
+		int aboutSelector = 0;
+		vector<CMovingBitmap> aboutPages;
 	// tool functions
 	private:
 		void DrawTexts(CString text, int posX, int posY, int fontSize);

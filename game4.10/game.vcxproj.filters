@@ -2299,5 +2299,59 @@
     <Image Include="RES\GameUI\Settings\SettingsPage\Settings_Resume.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="RES\GameUI\About\UI_About_00.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_0A.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_01.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_02.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_03.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_04.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_05.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_06.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_07.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_08.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_09.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="RES\GameUI\About\UI_About_16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

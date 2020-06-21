@@ -18,6 +18,7 @@ namespace game_framework {
 
 		void LoadBitmap();
 		void OnKeyDown(UINT key, CPlayer* player);
+		void OnMove(CPlayer *p);
 		void OnShow();
 	private:
 		// Backpack menu

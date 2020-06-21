@@ -717,8 +717,26 @@
 #define IDB_UI_MissionComplete          865
 #define IDB_Settings_Audio              866
 #define IDB_Settings_Quit               867
-#define IDB_BITMAP47                    868
 #define IDB_Settings_Resume             868
+#define IDB_UI_About_00                 869
+#define IDB_UI_About_0A                 870
+#define IDB_UI_About_01                 871
+#define IDB_UI_About_02                 872
+#define IDB_UI_About_03                 873
+#define IDB_UI_About_04                 874
+#define IDB_UI_About_05                 875
+#define IDB_UI_About_06                 876
+#define IDB_UI_About_07                 877
+#define IDB_UI_About_08                 878
+#define IDB_UI_About_09                 879
+#define IDB_UI_About_10                 880
+#define IDB_UI_About_11                 881
+#define IDB_UI_About_12                 882
+#define IDB_UI_About_13                 883
+#define IDB_UI_About_14                 884
+#define IDB_UI_About_15                 885
+#define IDB_BITMAP65                    886
+#define IDB_UI_About_16                 886
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
@@ -731,7 +749,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        869
+#define _APS_NEXT_RESOURCE_VALUE        887
 #define _APS_NEXT_COMMAND_VALUE         32776
 #define _APS_NEXT_CONTROL_VALUE         1003
 #define _APS_NEXT_SYMED_VALUE           101

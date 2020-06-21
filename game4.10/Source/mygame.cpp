@@ -70,13 +70,13 @@ CGameStateInit::CGameStateInit(CGame *g)
 
 : CGameState(g)
 {
-	
-	
 	gameUI_cover.SetDelayCount(15);
 	mainPages.push_back(&mainPage_OnStart);
 	mainPages.push_back(&mainPage_OnAudio);
 	mainPages.push_back(&mainPage_OnAbout);
 	audioOn = true;
+	for (unsigned i = 0; i < 18; ++i)
+		aboutPages.push_back(CMovingBitmap());
 }
 
 void CGameStateInit::OnInit()
@@ -90,12 +90,12 @@ void CGameStateInit::OnInit()
 	gameUI_cover.AddBitmap(IDB_UI_Cover01);
 	gameUI_cover.AddBitmap(IDB_UI_Cover02);
 	gameUI_cover.SetTopLeft(0, 0);
+
 	mainPage_OnStart.LoadBitmap(IDB_MainPage_OnStart);
-	mainPage_OnStart.SetTopLeft(0, 0);
 	mainPage_OnAudio.LoadBitmap(IDB_MainPage_OnAudio);
-	mainPage_OnAudio.SetTopLeft(0, 0);
 	mainPage_OnAbout.LoadBitmap(IDB_MainPage_OnAbout);
-	mainPage_OnAbout.SetTopLeft(0, 0);
+	for (unsigned i = 0; i < mainPages.size(); ++i)
+		mainPages.at(i)->SetTopLeft(0, 0);
 
 	audioPage_Off_Back.LoadBitmap(IDB_Audio_Off_Back);
 	audioPage_Off_Back.SetTopLeft(0, 0);
@@ -108,6 +108,27 @@ void CGameStateInit::OnInit()
 
 	audioPage_On_On.LoadBitmap(IDB_Audio_On_On);
 	audioPage_On_On.SetTopLeft(0, 0);
+
+	aboutPages.at(0).LoadBitmap(IDB_UI_About_00);
+	aboutPages.at(1).LoadBitmap(IDB_UI_About_0A);
+	aboutPages.at(2).LoadBitmap(IDB_UI_About_01);
+	aboutPages.at(3).LoadBitmap(IDB_UI_About_02);
+	aboutPages.at(4).LoadBitmap(IDB_UI_About_03);
+	aboutPages.at(5).LoadBitmap(IDB_UI_About_04);
+	aboutPages.at(6).LoadBitmap(IDB_UI_About_05);
+	aboutPages.at(7).LoadBitmap(IDB_UI_About_06);
+	aboutPages.at(8).LoadBitmap(IDB_UI_About_07);
+	aboutPages.at(9).LoadBitmap(IDB_UI_About_08);
+	aboutPages.at(10).LoadBitmap(IDB_UI_About_09);
+	aboutPages.at(11).LoadBitmap(IDB_UI_About_10);
+	aboutPages.at(12).LoadBitmap(IDB_UI_About_11);
+	aboutPages.at(13).LoadBitmap(IDB_UI_About_12);
+	aboutPages.at(14).LoadBitmap(IDB_UI_About_13);
+	aboutPages.at(15).LoadBitmap(IDB_UI_About_14);
+	aboutPages.at(16).LoadBitmap(IDB_UI_About_15);
+	aboutPages.at(17).LoadBitmap(IDB_UI_About_16);
+	for (unsigned i = 0; i < aboutPages.size(); ++i)
+		aboutPages.at(i).SetTopLeft(0, 0);
 }
 
 void CGameStateInit::OnBeginState()
@@ -156,7 +177,8 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 			}
 			else if (mainMenuState == MainMenuSelectionState::OnAbout)
 			{
-
+				initScreenState = InitScreenState::OnAboutPages;
+				aboutSelector = 0;
 			}
 		}
 		else if (nChar == KEY_DOWN)
@@ -202,6 +224,19 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 		{
 			CAudio::Instance()->IncreaseVolume();
 		}
+	}
+	else if (initScreenState == InitScreenState::OnAboutPages)
+	{
+		if (nChar == KEY_SPACE || nChar == KEY_ENTER || nChar == KEY_DOWN || nChar == KEY_RIGHT)
+		{
+			if (aboutSelector == 17) initScreenState = InitScreenState::OnMainMenu;
+			else aboutSelector++;
+		}
+		else if (nChar == KEY_LEFT || nChar == KEY_UP)
+		{
+			if (aboutSelector > 0) aboutSelector--;
+		}
+		else if (nChar == KEY_ESC) initScreenState = InitScreenState::OnMainMenu;
 	}
 }
 
@@ -259,6 +294,10 @@ void CGameStateInit::OnShow()
 			DrawTexts("0%", 192, 125, 320);
 		
 
+	}
+	else if (initScreenState == InitScreenState::OnAboutPages)
+	{
+		aboutPages.at(aboutSelector).ShowBitmap();
 	}
 }
 
@@ -437,24 +476,23 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 				{
 					if (i >= 1 && i <= 4)
 					{
-						TRACE("\nChicken[%d] is dead.\n", i);
 						delete ((CChicken*)obj[i]);
 						obj[i] = nullptr;
 					}
 					else if (i >= 5 && i <= 8)
 					{
-						TRACE("\nCow[%d] is dead.\n", i);
 						delete ((CCow*)obj[i]);
 						obj[i] = nullptr;
 					}
 				}
 				else
 				{
-					TRACE("\nObj[%d] HP = %d\n", i, obj[i]->GetHealthPoint());
 					obj[i]->OnMove(mapManager.GetCurrentMap(), &obj);
 				}
 			}
 		}
+		foodMenu.OnMove(&p1);
+		backpackMenu.OnMove(&p1);
 	}
 }
 
