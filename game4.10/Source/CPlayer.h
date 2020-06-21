@@ -27,7 +27,9 @@ namespace game_framework {
 			BigMilkMove,
 			GoldenEggMove,
 			CheeseMove,
-			ButterMove
+			ButterMove,
+			BigCheeseMove,
+			BigButterMove
 		};
 
 		CPlayer();

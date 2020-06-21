@@ -46,11 +46,11 @@ namespace game_framework {
 		backpack.push_back(new CToolSeed(4, 6)); // Radish種子
 		backpack.push_back(new CToolSickle(5, 1)); // 鐮刀
 		backpack.push_back(new CToolWaterer(6, 1)); // 澆水器
-		backpack.push_back(new CToolSeed(7, 3)); //Potato種子
-		backpack.push_back(new CToolSeed(8, 3)); //Tomato種子
-		backpack.push_back(new CToolSeed(9, 3)); // Eggplant種子
-		backpack.push_back(new CToolSeed(10, 3)); // Corn種子
-		backpack.push_back(new CToolSeed(11, 3)); // Peanut種子
+		backpack.push_back(new CToolSeed(7, 5)); //Potato種子
+		backpack.push_back(new CToolSeed(8, 5)); //Tomato種子
+		backpack.push_back(new CToolSeed(9, 5)); // Eggplant種子
+		backpack.push_back(new CToolSeed(10, 5)); // Corn種子
+		backpack.push_back(new CToolSeed(11, 5)); // Peanut種子
 		
 		
 		food.push_back(new CFoodAppleJuice(0, 5)); // 
@@ -96,6 +96,7 @@ namespace game_framework {
 		money = 100;
 		healthPoint = 100;
 		sickPoint = 0;
+		currentMoveState = NormalMove;
 	}
 
 	CPlayer::~CPlayer() {
@@ -736,12 +737,12 @@ namespace game_framework {
 			Move(m, &aniMilkMoveUp, &aniMilkMoveDown, &aniMilkMoveLeft, &aniMilkMoveRight, obj);
 			TRACE("\nChickenMOve\n");
 		}
-		else if (currentMoveState == CheeseMove)
+		else if (currentMoveState == CheeseMove || currentMoveState == BigCheeseMove)
 		{
 			Move(m, &aniCheeseMoveUp, &aniCheeseMoveDown, &aniCheeseMoveLeft, &aniCheeseMoveRight, obj);
 			TRACE("\nChickenMOve\n");
 		}
-		else if (currentMoveState == ButterMove)
+		else if (currentMoveState == ButterMove || currentMoveState == BigButterMove)
 		{
 			Move(m, &aniButterMoveUp, &aniButterMoveDown, &aniButterMoveLeft, &aniButterMoveRight, obj);
 			TRACE("\nChickenMOve\n");
@@ -1237,6 +1238,10 @@ namespace game_framework {
 				money += 150;
 			else if (currentMoveState == MoveState::CheeseMove)
 				money += 300;
+			else if (currentMoveState == MoveState::BigButterMove)
+				money += 240;
+			else if (currentMoveState == MoveState::BigCheeseMove)
+				money += 400;
 			else if (currentMoveState == MoveState::EggMove)
 				money += 50;
 			else if (currentMoveState == MoveState::GoldenEggMove)
@@ -1308,7 +1313,23 @@ namespace game_framework {
 				(facingDirection == &aniSmallMilkMoveRight && DetectRightElementID(m, cheeseMachine)))  // 偵測人物面向是否有飼料箱
 			{
 				this->ChangeMoveState(MoveState::CheeseMove);
-				TRACE("\nTRIGGER Butter MOVE\n");
+				TRACE("\nTRIGGER Cheese MOVE\n");
+			}
+			else if ((facingDirection == &aniMilkMoveUp && DetectUpElementID(m, butterMachine)) ||
+				(facingDirection == &aniMilkMoveDown && DetectDownElementID(m, butterMachine)) ||
+				(facingDirection == &aniMilkMoveLeft && DetectLeftElementID(m, butterMachine)) ||
+				(facingDirection == &aniMilkMoveRight && DetectRightElementID(m, butterMachine)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::BigButterMove);
+				TRACE("\nTRIGGER BigButter MOVE\n");
+			}
+			else if ((facingDirection == &aniMilkMoveUp && DetectUpElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniMilkMoveDown && DetectDownElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniMilkMoveLeft && DetectLeftElementID(m, cheeseMachine)) ||
+				(facingDirection == &aniMilkMoveRight && DetectRightElementID(m, cheeseMachine)))  // 偵測人物面向是否有飼料箱
+			{
+				this->ChangeMoveState(MoveState::BigCheeseMove);
+				TRACE("\nTRIGGER BigCheese MOVE\n");
 			}
 		}
 	}

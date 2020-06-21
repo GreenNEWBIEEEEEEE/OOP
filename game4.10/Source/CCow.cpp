@@ -24,6 +24,7 @@ namespace game_framework {
 		isMovingLeft = isMovingRight = isMovingUp = isMovingDown = false;
 		STEP_SIZE = 5;
 		isPickedUp = false;
+		closePoint = 5;
 	}
 
 	CCow::~CCow()
