@@ -74,6 +74,13 @@ namespace game_framework {
 		this->sm = sm;
 	}
 
+	void CGameDialog::SetCallback(CallbackForChangeToNewDay2 cbfctnd2, CTimer* timer, CWeather* weather)
+	{
+		this->cbfctnd2 = cbfctnd2;
+		this->timer = timer;
+		this->weather = weather;
+	}
+
 	void CGameDialog::Enable()
 	{
 		TRACE("\n Game Dialog is enable now. \n");
@@ -96,6 +103,10 @@ namespace game_framework {
 			cbfwdor_sm(currentOptionResult, sm);
 		}
 		
+		if (cbfctnd2 != nullptr)
+		{
+			cbfctnd2(timer, weather);
+		}
 		if (cbftm != nullptr)
 		{
 			cbftm(mm, p);
@@ -111,6 +122,7 @@ namespace game_framework {
 		cbfwdor_sm = nullptr;
 		cbftm = nullptr;
 		cbfctnd = nullptr;
+		cbfctnd2 = nullptr;
 		
 		dialogMessages.clear();
 		TRACE("\n Game Dialog is disable now. \n");

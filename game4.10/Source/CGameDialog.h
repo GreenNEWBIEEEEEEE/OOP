@@ -12,6 +12,7 @@ namespace game_framework {
 		};
 		typedef void(*Callback) (void);
 		typedef void(*CallbackForChangeToNewDay) (DialogOptionsResult, CTimer*, CWeather*);
+		typedef void(*CallbackForChangeToNewDay2) (CTimer*, CWeather*);
 		typedef void(*CallbackWithResult)(DialogOptionsResult);
 		typedef void(*CallbackWithResultForShopMenu)(DialogOptionsResult, CShopMenu*);
 		typedef void(*CallbackForTransitionMap)(CMapManager*, CPlayer*);
@@ -28,6 +29,7 @@ namespace game_framework {
 		void SetCallback(CallbackWithResult cbp);
 		void SetCallback(CallbackWithResultForShopMenu cbp, CShopMenu* sm);
 		void SetCallback(CallbackForChangeToNewDay cbp, CTimer* timer, CWeather* weather);	
+		void SetCallback(CallbackForChangeToNewDay2 cbp, CTimer* timer, CWeather* weather);
 		void SetCallback(CallbackForTransitionMap cbp, CMapManager* mm, CPlayer* p);
 		void Enable();
 		void Disable();
@@ -136,6 +138,7 @@ namespace game_framework {
 		CallbackWithResult cbfwdor = nullptr;
 		CallbackWithResultForShopMenu cbfwdor_sm = nullptr;
 		CallbackForChangeToNewDay cbfctnd = nullptr;
+		CallbackForChangeToNewDay2 cbfctnd2 = nullptr;
 		CallbackForTransitionMap cbftm = nullptr;
 
 

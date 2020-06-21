@@ -22,16 +22,18 @@ namespace game_framework {
 
 	void CTimer::OnMove(CWeather* weather, CTimer* timer, CPlayer *p, CMapManager *mm, CGameDialog *gd, vector<CShopMenu*> sms, CBackpackMenu *bpm)
 	{
-		//TRACE("\nHOUR=%d  Counter=%d\n", hour, hourCounter);
+		TRACE("\nHOUR=%d  Counter=%d\n", hour, hourCounter);
 		CountTime();
 		if (hour == 23 && hourCounter == HOUR_COUNTER_MAX - 1)	// 太晚，強制遣返
 		{
 			// 先把目前的所有dialog 商店都disable
 			gd->Disable();
-			((CPlantShopMenu*)sms.at(0))->Disable();
+			for (unsigned i = 0; i < sms.size(); ++i)
+				sms[i]->Disable();
 			bpm->Disable();
 	
 			SetTimerSpeed(0);
+			TRACE("\nSpeed = 0\n");
 			ForceToRepatriate(weather, timer, p, mm, gd, sms);
 		}
 		if (hour == 8 && hourCounter == 3)				// 生病，強制睡眠
@@ -39,7 +41,9 @@ namespace game_framework {
 			if (p->GetSickPoint() > 2800)
 			{
 				gd->Disable();
-				((CPlantShopMenu*)sms.at(0))->Disable();
+				for (unsigned i = 0; i < sms.size(); ++i)
+					sms[i]->Disable();
+
 				bpm->Disable();
 
 				SetTimerSpeed(0);

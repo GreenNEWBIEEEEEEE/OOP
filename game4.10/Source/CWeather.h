@@ -31,7 +31,7 @@ namespace game_framework {
 		bool nextSunny = true;
 		CMovingBitmap test_mask;
 		CAnimation rain;
-		WeatherType weatherType = WeatherType::Sunny;
+		WeatherType weatherType = WeatherType::Rain;
 		WeatherType nextDayWeatherType = WeatherType::Sunny;
 	};
 }

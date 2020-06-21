@@ -28,6 +28,13 @@ namespace game_framework
 		}
 	}
 
+	void ChangeToNewDay2( CTimer* timer, CWeather* weather)
+	{
+		timer->ChangeToNewDay(weather, timer);
+		timer->SetTimerSpeed(1);
+		TRACE("\nSpeed = 1\n");
+	}
+
 	void ChangeMapToHome(CMapManager* mm, CPlayer* p)
 	{
 		mm->ChangeMap(1);
@@ -56,8 +63,8 @@ namespace game_framework
 			{
 				(sms.at(i))->Disable();
 			}
-			gd->SetCallback(&ChangeMapToHome, mm, p);
-			gd->SetCallback(&ChangeToNewDay, mm->GetTimer(), mm->GetOutsideWeather());
+			//gd->SetCallback(&ChangeMapToHome, mm, p);
+			gd->SetCallback(&ChangeToNewDay2, mm->GetTimer(), mm->GetOutsideWeather());
 			gd->AddMessage("Now it's 12:00 a.m.");
 			gd->AddMessage("We have to force you to go home.");
 			if (p->GetCurrentMoveState() != CPlayer::MoveState::NormalMove)
