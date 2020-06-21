@@ -23,7 +23,7 @@ namespace game_framework {
 		int GetY() const;
 		int GetHealthPoint() const;
 		int GetSickPoint() const;
-		void SetSickPoint(int sp);
+		void SetSickPoint(int sp);															// 設定玩家的生病點數
 		int GetBodyX() const;
 		int GetBodyY() const;
 		int GetLastX() const;
@@ -32,7 +32,7 @@ namespace game_framework {
 		void IncreaseHP(int hp);
 		void IncreaseMaxHP(int hp);
 		CAnimal* GetFacingAnimal();
-		bool DetectCollision(vector<CGameObject*>* obj, int nextX, int nextY);
+		bool DetectCollision(vector<CGameObject*>* obj, int nextX, int nextY);				// 偵測是否碰撞，順便設定目前玩家面前的動物
 		virtual void OnMove(CGameMap* m, vector<CGameObject*>* obj) = 0;
 		virtual void OnShow(CGameMap* m) = 0;
 		virtual void LoadBitmap() = 0;

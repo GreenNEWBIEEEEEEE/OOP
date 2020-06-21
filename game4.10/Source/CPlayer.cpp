@@ -1084,7 +1084,7 @@ namespace game_framework {
 			// 
 			if (this->currentMoveState == MoveState::NormalMove)
 				mm->GetCurrentMap()->triggerMapEvents(key, this, mm, gd, sms);
-			else if (this->currentMoveState == MoveState::ChickenMove)
+			else if (this->currentMoveState == MoveState::ChickenMove)				// 抱著小雞移動的狀態
 			{
 				if (m == mm->GetChickenCoop())// 如果現在的地圖是雞舍，才能放下小雞
 				{
@@ -1093,7 +1093,9 @@ namespace game_framework {
 					{
 						this->currentMoveState = MoveState::NormalMove;
 						TRACE("\nTRIGGER Animal\n");
-						pickUpAnimal->SetX(bx);
+						// 設定被放下來的小雞
+						// 設定內容為：放置位置、可碰撞(被抱起來是不可碰撞)
+						pickUpAnimal->SetX(bx);											
 						pickUpAnimal->SetY(by - pickUpAnimal->GetHeight());
 						pickUpAnimal->SetBodyX(bx);
 						pickUpAnimal->SetBodyY(by - pickUpAnimal->GetHeight());

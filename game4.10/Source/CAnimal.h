@@ -16,18 +16,18 @@ namespace game_framework {
 			Right
 		};
 		enum class Status {			// 健康狀態
-			HighProduce,			// 更高生產
-			Produce,				// 可生產
-			Hungry,					// 如果以WaitingForFeed到了明天(NewDay)，就會切換到Hungry
-			NoProduce,    			// 無法生產
+			HighProduce,			// 更高的生產量
+			Produce,				// 普通的生產量
+			Hungry,					// 飢餓狀態
+			NoProduce,    			// 沒有生產量
 		};
 		virtual void LoadBitmap() = 0;
 		virtual void OnMove(CGameMap* m, vector<CGameObject*>* obj) = 0;
 		virtual void OnShow(CGameMap* m) = 0;
 		Status GetCurrentStatus() const;
 		int GetClosePoint() const;
-		void UnableShowAndMove();
-		void EnableShowAndMove();
+		void UnableShowAndMove();		// 若玩家跟動物不在同一張地圖，就會關閉OnShow跟OnMove
+		void EnableShowAndMove();		
 		void ChangeStatus(Status status);
 		void SetMap(CGameMap* map);   // 設定雞舍or牛舍or羊舍地圖
 		void SetTimer(CTimer* timer);

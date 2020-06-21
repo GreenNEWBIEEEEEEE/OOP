@@ -54,8 +54,8 @@ namespace game_framework {
 		bool DetectUpCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 		bool DetectDownCollision(CGameMap* m, vector<CGameObject*>* obj, bool hasAnimal);
 
-		bool DetectLeftElementID(CGameMap* m, vector<int> elemID, int distance = 1); 
-		bool DetectRightElementID(CGameMap* m, vector<int> elemID, int distance = 1);
+		bool DetectLeftElementID(CGameMap* m, vector<int> elemID, int distance = 1);   // ノㄓ盎代產ヘ玡よ琌璶盎代瓜elemID
+		bool DetectRightElementID(CGameMap* m, vector<int> elemID, int distance = 1);  // 材把计產ヘ玡瓜材把计璶盎代瓜elemID材把计盎代絛瞅
 		bool DetectUpElementID(CGameMap* m, vector<int> elemID, int distance = 1);
 		bool DetectDownElementID(CGameMap* m, vector<int> elemID, int distance = 1);
 
