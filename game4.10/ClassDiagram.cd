@@ -1,2 +1,482 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="game_framework::CSettingPage" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CSettingPage::ScreenState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CSettingPage.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CSettingPage::PageSelectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CSettingPage.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CSettingPage::AudioPageSelectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CSettingPage.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAwAAAkAADCgECAIAAEAGQQAhAIAAIAAAAAgAIAEAIA=</HashCode>
+      <FileName>Source\CSettingPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAudio" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="game_framework::CAudio::Info" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\audio.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgoAAAAAIQIAAQIIAAAAQRAAQCCICE4AIAAAiCAAA=</HashCode>
+      <FileName>Source\audio.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGame" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACgBACEQAgBAABAwADAABpAgAQAQAIgAAAwAAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateInit" Collapsed="true">
+    <Position X="3" Y="13.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CGameStateInit::InitScreenState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\mygame.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CGameStateInit::MainMenuSelectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\mygame.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CGameStateInit::AudioPageSelectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\mygame.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>hARAiAgEABCgACAAkAEAEAAAAEAQAwQAAAAABAAUAIA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateRun" Collapsed="true">
+    <Position X="5.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAQIAAACEYAAAAQEQAABAABIIAgQAgAQBAEgUAAA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameStateOver" Collapsed="true">
+    <Position X="0.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAACAAAAAAAAAAAAAAABAAgQAAAAAAAAEACA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameState" Collapsed="true">
+    <Position X="3" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAgAAECAAAAAAABAAABAABIAAgQIAAAAAAIUAEA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameObject" Collapsed="true">
+    <Position X="11.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEQIgAAABAAAANYAYmARCIRAQIIAUIgwYQBgBEE0A0E=</HashCode>
+      <FileName>Source\CGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameMap" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>+IfVWz+XlBnet1ZraQQcsxQikP+e/13jFyjt/wq2xoc=</HashCode>
+      <FileName>Source\CGameMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CTimer" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CTimer::Brightness" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CTimer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CTimer::Season" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CTimer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAYkAAAAAQGAAABBQQACAQYYAAYBQgAFBIACAAgEIAA=</HashCode>
+      <FileName>Source\CTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAnimal" Collapsed="true">
+    <Position X="10.25" Y="11.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CAnimal::Direction" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CAnimal.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CAnimal::Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CAnimal.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABQAGIAVAAAABgEAAACAIwWAAASAAAEAhAAEGEAEBAA=</HashCode>
+      <FileName>Source\CAnimal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CAnimalShopMenu" Collapsed="true">
+    <Position X="7.5" Y="10.75" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="game_framework::CAnimalShopMenu::ProcessingFlag" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CAnimalShopMenu.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQIIAQAAAQAAAEAAAAAAAQADAIAAAAAgAQAIAAEABA=</HashCode>
+      <FileName>Source\CAnimalShopMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CBackpackMenu" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAABKAAIAAgAQIYAEFGAQSQCZAEAMAAEAgAAAEBIA=</HashCode>
+      <FileName>Source\CBackpackMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CChicken" Collapsed="true">
+    <Position X="9.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAIAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\CChicken.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CCow" Collapsed="true">
+    <Position X="11.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAIAAAAEAAA=</HashCode>
+      <FileName>Source\CCow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFood" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQmgABQAwAIAEAgAQAAFACCECAAQgAAAAABAA=</HashCode>
+      <FileName>Source\CFood.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodAppleJuice" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Source\CFoodAppleJuice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodCake" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAAEAAAAAA=</HashCode>
+      <FileName>Source\CFoodCake.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodDrinkBox" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAABAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CFoodDrinkBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodLunchBox" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAABAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CFoodLunchBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodMeal" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAACAAAA=</HashCode>
+      <FileName>Source\CFoodMeal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodMenu" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAIAAgAQIQAEBGAwCQKIIEAEAAAAgAAAEAIM=</HashCode>
+      <FileName>Source\CFoodMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodOrangeJuice" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQBAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CFoodOrangeJuice.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CFoodShopMenu" Collapsed="true">
+    <Position X="3" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAQAAAACAAAACAQAASIAAAAAAQAAIAAEACA=</HashCode>
+      <FileName>Source\CFoodShopMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CGameDialog">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CGameDialog::DialogOptionsResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Typedef Name="game_framework::CGameDialog::Callback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="game_framework::CGameDialog::CallbackForChangeToNewDay" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="game_framework::CGameDialog::CallbackWithResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="game_framework::CGameDialog::CallbackWithResultForShopMenu" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="game_framework::CGameDialog::CallbackForTransitionMap" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Struct Name="game_framework::CGameDialog::GameDialogMessage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CGameDialog.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAUAAAMIRABMAAEIEEEqCASAABYQQAASIUAgIAAEIIA=</HashCode>
+      <FileName>Source\CGameDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapInfo" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CMapInfo::ArableLandState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CMapInfo.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="game_framework::CMapInfo::Crop" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CMapInfo.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CARAAAAoCAAAEiBACQQAIAAAQAAQCAIACBAAAAASACg=</HashCode>
+      <FileName>Source\CMapInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapEvent" Collapsed="true">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAAAAEAAAAQAAAABAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CMapEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapManager" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIwAAACgAAEAAIAAQAAAEIEAAAAAAABCAAAEAEAEDAA=</HashCode>
+      <FileName>Source\CMapManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CPlayer" Collapsed="true">
+    <Position X="13.5" Y="13.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CPlayer::MoveState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CPlayer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>UYTDhdAkoYSIrCiUFhAojhWK+EYkECAwdgVKqBA2MoI=</HashCode>
+      <FileName>Source\CPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CWeather" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CWeather::WeatherType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CWeather.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gQQgBAAgAAAAAAAAAAAAhAQAgAAAAABAAAAABAAUAAA=</HashCode>
+      <FileName>Source\CWeather.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CShopMenu" Collapsed="true">
+    <Position X="4.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABCAAQAAAAAIAAEACgQAEQAAAAgBAAAgIMAQIII=</HashCode>
+      <FileName>Source\CShopMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CClinic" Collapsed="true">
+    <Position X="5.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAEAAAAAAAAAQAAAIAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Source\CClinicMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapFarmingEvent" Collapsed="true">
+    <Position X="1" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAAAAAEQBAAIIAAAAAIAiAAAAABAAAAAEAAA=</HashCode>
+      <FileName>Source\CMapFarmingEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapShopEvent" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CMapShopEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapShowDialogEvent" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Source\CMapShowDialogEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapSleepEvent" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CMapSleepEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CMapTransitionEvent" Collapsed="true">
+    <Position X="10.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Source\CMapTransitionEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CPlantShopMenu" Collapsed="true">
+    <Position X="0.75" Y="10.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="game_framework::CPlantShopMenu::SeedGoods" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Source\CPlantShopMenu.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQUAAAAAAIICAAAgAEAEASABAICAAIQiBABAAAHAgA=</HashCode>
+      <FileName>Source\CPlantShopMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CTool" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DBAABABIABABQAAgCAFIgQQAAAACBECAAQgAAAAAJAg=</HashCode>
+      <FileName>Source\CTool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolAxe" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolAxe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolHammer" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolHammer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolHand" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolHand.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolHoe" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolHoe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolSeed" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolSeed.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolSickle" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\CToolSickle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="game_framework::CToolWaterer" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAEAAA=</HashCode>
+      <FileName>Source\CToolWaterer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GAME_STATES" Collapsed="true">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Source\gamelib.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="game_framework::BGM" Collapsed="true">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\mygame.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft JhengHei UI" Size="9" />
+</ClassDiagram>
