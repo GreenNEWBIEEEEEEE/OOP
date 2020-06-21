@@ -1210,6 +1210,10 @@ namespace game_framework {
 		sellBox.push_back(-98);
 		sellBox.push_back(-99);
 		sellBox.push_back(-100);
+		sellBox.push_back(-200);
+		sellBox.push_back(-201);
+		sellBox.push_back(-202);
+		sellBox.push_back(-203);
 		if ((direction == 1 && DetectUpElementID(m, sellBox)) ||
 			(direction == 2 && DetectDownElementID(m, sellBox)) ||
 			(direction == 3 && DetectLeftElementID(m, sellBox)) ||
@@ -1218,16 +1222,30 @@ namespace game_framework {
 			if (currentMoveState == MoveState::MilkMove)
 				money += 100;
 			else if (currentMoveState == MoveState::RadishMove)
-				money += 10;
+				money += 30;
+			else if (currentMoveState == MoveState::CornMove)
+				money += 45;
+			else if (currentMoveState == MoveState::PotatoMove)
+				money += 20;
+			else if (currentMoveState == MoveState::TomatoMove)
+				money += 45;
+			else if (currentMoveState == MoveState::PeanutMove)
+				money += 20;
+			else if (currentMoveState == MoveState::EggPlantMove)
+				money += 20;
 			else if (currentMoveState == MoveState::ButterMove)
 				money += 150;
 			else if (currentMoveState == MoveState::CheeseMove)
 				money += 300;
 			else if (currentMoveState == MoveState::EggMove)
-				money += 10;
+				money += 50;
 			else if (currentMoveState == MoveState::GoldenEggMove)
 				money += 1000;
+			else if (currentMoveState == MoveState::BigMilkMove)
+				money += 170;
 		}
+
+
 	}
 
 	void CPlayer::DoSomethingInCowCoop(CMapManager *mm, CGameMap* m, vector<CGameObject*>* obj)

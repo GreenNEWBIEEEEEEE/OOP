@@ -67,39 +67,43 @@ namespace game_framework {
 			bool groove02 = map->GetSpecifiedElementID(3, 4) == -116;
 			bool groove03 = map->GetSpecifiedElementID(4, 4) == -116;
 			bool groove04 = map->GetSpecifiedElementID(5, 4) == -116;
-			if (currentStatus == Status::NoProduce)
+			if (currentStatus == Status::NoProduce || currentStatus == Status::Produce || currentStatus == Status::HighProduce)
 			{
 				if (groove01)
 				{
 					map->SetSpecifiedElementID(2, 4, -109);
-					if (closePoint >= 2)
+					if (closePoint >= 10)
 						currentStatus = Status::HighProduce;
 					else
 						currentStatus = Status::Produce;
+					closePoint += 1;
 				}
 				else if (groove02)
 				{
 					map->SetSpecifiedElementID(3, 4, -109);
-					if (closePoint >= 2)
+					if (closePoint >= 10)
 						currentStatus = Status::HighProduce;
 					else
 						currentStatus = Status::Produce;
+					closePoint += 1;
 				}
 				else if (groove03)
 				{
 					map->SetSpecifiedElementID(4, 4, -109);
-					if (closePoint >= 2)
+					if (closePoint >= 10)
 						currentStatus = Status::HighProduce;
 					else
 						currentStatus = Status::Produce;
+					closePoint += 1;
 				}
 				else if (groove04)
 				{
 					map->SetSpecifiedElementID(5, 4, -109);
-					if (closePoint >= 2)
+					if (closePoint >= 10)
 						currentStatus = Status::HighProduce;
 					else
 						currentStatus = Status::Produce;
+					closePoint += 1;
 				}
 				else
 				{

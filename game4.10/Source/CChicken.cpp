@@ -39,7 +39,7 @@ namespace game_framework
 			bool groove02 = map->GetSpecifiedElementID(3, 4) == -116;
 			bool groove03 = map->GetSpecifiedElementID(4, 4) == -116;
 			bool groove04 = map->GetSpecifiedElementID(5, 4) == -116;
-			if (currentStatus == Status::NoProduce)
+			if (currentStatus == Status::NoProduce || currentStatus == Status::Produce || currentStatus == Status::HighProduce)
 			{
 				int rnd = (rand() % 100);
 				bool highProduce = (rand() % 100) >= 50;  // ª÷³J
